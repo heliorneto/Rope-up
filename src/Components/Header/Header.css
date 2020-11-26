@@ -1,0 +1,35 @@
+#navbar{
+    background-color: white;
+    width: 100%;
+    box-shadow: 2px 2px 2px #6f6f70a6;
+    align-content: center;
+    justify-content: space-around;
+    height: 100px;
+}
+
+#Logo{
+    width: 250px;
+    height: 100px;
+}
+
+#Opcoes{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+#ComoFunciona{
+    margin-right: 40px;
+}
+
+#Sobre{
+    margin-right: 40px;
+}
+
+#Blog{
+    margin-right: 40px;
+}
+
+#Ajuda{
+    margin-right: 40px;
+}

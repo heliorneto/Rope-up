@@ -1,0 +1,20 @@
+#Textos1{
+    display: flex;
+    flex-direction: column;
+    margin-top: 300px;
+    margin-left: 50px;
+}
+
+#Textos2{
+    display: flex;
+    flex-direction: column;
+    margin-top: 300px;
+    margin-right: 50px;
+}
+
+#linha{
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-around;
+}
