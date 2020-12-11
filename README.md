@@ -1,70 +1,39 @@
-# Getting Started with Create React App
+# Site Roupe Up (Front-end)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este repositório é dedicado para os arquivos de código fonte (React/JavaScript) do front-end da página da Rope Up na internet. Para o back-end utilize o repositório: [Rope-up-backend](https://github.com/heliorneto/Rope-up-backend).
 
-## Available Scripts
+## Dependências
 
-In the project directory, you can run:
+O site utiliza a biblioteca React, de JavaScript, por meio da tecnologia Node.js. Além de **instalar o Node.js** no seu sistema, é necessário que você instale as seguintes dependências (utilizando o gerenciador de pacotes *npm*):
 
-### `npm start`
+- ReactRouter (Possibilita a criação de múltiplas páginas e o redirecionamento entre elas)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Comando de instalação: `react-router-dom`
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- React-bootstrap (Biblioteca externa com templates de estilos prontos) (?)
 
-### `npm test`
+Comando de instalação: `npm i react-bootstrap bootstrap`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Favicons
 
-### `npm run build`
+Os ícones de favorito e web-app foram gerados a partir de uma única imagem .png com fundo transparente com um tom cinza claro (que gera melhor contraste em temas claros e escuros). Todas as versões da imagem (escaladas e convertidas no formato de cada plataforma), bem como as configurações (.xml e .json) necessárias. Para gerar esses arquivos foi usado o site [RealFaviconGenerator](https://realfavicongenerator.net/), que gera um pacote (*favicon package*) .zip contendo esses arquivos. O site também pode ser utilizado para verificar a implementação dos *favicons* após o *deploy* do site.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Organização do código e componentização
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+A biblioteca React facilita o trabalho em páginas web por meio do processo de "componentização", em que as páginas são dividas entre vários componentes (que funcionam como uma "unidade" na implementação). Sendo assim, o código dessa página segue a "componentização" como boa prática e está dividido em diretórios da maneira que é apresentada a seguir.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Estrutura de diretórios
 
-### `npm run eject`
+A pasta de código fonte (***src***) é dividida nos seguintes sub-diretórios:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- Components (Contém os componentes menores da interface que são divididos por várias páginas do site)
+- Pages (Contém os arquivos de código e estilo das páginas que compõem o site)
+- Raiz (Contém o código da página principal e do ReactRouter, que permite a mudança de páginas, bem como os estilos aplicáveis a todo o site, isto é, em todas as páginas)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Já a pasta ***public*** contém os arquivos que serão acessados pelo usuário da página (como os ícones da página e arquivos de imagem e vídeo, por exemplo), bem como o arquivo base HTML (em que se modifica o título, ícones, meta-dados e *analytics* para a página, dentre outros). Via de regra, arquivos referenciados pelo atributo `href` do html em algum componente não serão carregados corretamente se não estiverem na pasta ***public***. Subdiretórios podem ser utilizados, tomando como raiz (referência) a pasta public.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Divisão de componentes
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Se um componente será usado por várias páginas, seus arquivos devem ser colocados na pasta ***Components*** em um subdiretório com o nome do componente. Caso contrário, seus arquivos devem ficar no diretório da página que o usa (que, por sua vez, é um subdiretório da pasta ***Pages***).
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Após determinar se um componente é específico para uma página ou se é geral, convencionamos nomear o arquivo fonte (JavaScript) e o arquivo de estilo (CSS) com o mesmo nome (que remete ao componente em questão), iniciando sempre com letra maiúscula.
