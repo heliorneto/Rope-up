@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
-import Header from '../../Components/Header/Header'
-import "./Home.css"
+import Header from '../../Components/Header/Header';
+import Footer from '../../Components/Footer/Footer';
+import "./Home.css";
 import { Button } from 'react-bootstrap';
 
 function Home(){
@@ -29,6 +30,7 @@ function Home(){
                     </div>
                 </div>
             </div>
+            <Footer/>
         </div>
     );
 }

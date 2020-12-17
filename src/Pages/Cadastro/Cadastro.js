@@ -1,8 +1,9 @@
 import React from 'react';
 import './Cadastro.css';
-import Header from '../../Components/Header/Header'
+import Header from '../../Components/Header/Header';
+import Footer from '../../Components/Footer/Footer';
 import {Form, Button} from 'react-bootstrap';
-import {useHistory} from 'react-router-dom'
+import {useHistory} from 'react-router-dom';
 
 function Cadastro(){
     const History = useHistory();
@@ -30,7 +31,8 @@ function Cadastro(){
                         </div>
                     </div>
                 </div>
-            </div>
+            <Footer/>
+        </div>
     );
 }
 

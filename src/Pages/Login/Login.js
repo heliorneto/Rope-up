@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import {Form, Button} from 'react-bootstrap';
 import {useHistory} from 'react-router-dom';
-import Header from '../../Components/Header/Header'
+import Header from '../../Components/Header/Header';
+import Footer from '../../Components/Footer/Footer';
 import './Login.css';
 
 function Login() {
@@ -37,6 +38,7 @@ function Login() {
                         </Form>
                 </div>
             </div>
+            <Footer/>
         </div>
     );
 }
