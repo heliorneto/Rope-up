@@ -1,3 +1,16 @@
+#homeGeral{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#BotãoGeral{
+    margin-right: 60%;
+    margin-top: 5%;
+}
+
 #Textos1{
     display: flex;
     flex-direction: column;
@@ -17,4 +30,35 @@
     flex-direction: row;
     align-content: center;
     justify-content: space-around;
+}
+
+#esquerda{
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-around;
+}
+
+#menu{
+    display: flex;
+    flex-direction: column;
+}
+
+#Textos1Menu{
+    margin-top: 100px;
+}
+
+#Textos2Menu{
+    margin-top: 140px;
+}
+
+#Textos3Menu{
+    margin-top: 140px;
+}
+
+#botãoAlavancar{
+    display: flex;
+    align-content: center;
+    margin-left: 40%;
+    margin-right: 40%;
 }
