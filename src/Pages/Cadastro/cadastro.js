@@ -1,7 +1,7 @@
 import React from 'react';
-import './Cadastro.css';
-import Header from '../../Components/Header/Header';
-import Footer from '../../Components/Footer/Footer';
+import './cadastro.css';
+import Header from '../../Components/Header/header';
+import Footer from '../../Components/Footer/footer';
 import {Form, Button} from 'react-bootstrap';
 import {useHistory} from 'react-router-dom';
 
