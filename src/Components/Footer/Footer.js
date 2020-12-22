@@ -6,27 +6,27 @@ import "./Footer.css";
 function Footer(){
     return(
         <Navbar id="navbarFooter" expand="lg">
-            <Nav id="LogoFooter" href="/home">
+            <Nav id="logoFooter" href="/home">
                 <img src="/Imagens/Logo-Footer.jpg" alt="Logo"></img>
             </Nav>
-            <Nav id="OpcoesFooter">
-                <div id="ComoFuncionaFooter">
+            <Nav id="optionsFooter">
+                <div id="comoFuncionaFooter">
                     <h3>Como Funciona</h3>
                 </div>
-                <div id="CasesFooter">
+                <div id="casesFooter">
                     <h3>Cases</h3>
                 </div>
-                <div id="BlogFooter">
+                <div id="blogFooter">
                     <h3>Blog</h3>
                 </div>
-                <div id="LoginFooter">
+                <div id="loginFooter">
                     <h3><b>Login</b></h3>
                 </div>
-                <div id="OndeEstamosFooter">
+                <div id="ondeEstamosFooter">
                     <h3>Onde Estamos</h3>
                 </div>
             </Nav>
-            <Nav id="Direitos">
+            <Nav id="direitos">
                 <h4>@2020 Todos os direitos reservados</h4>
             </Nav>
         </Navbar>

@@ -1,20 +1,20 @@
 import React from 'react';
-import './Cadastro.css';
+import './Register.css';
 import Header from '../../Components/Header/Header';
 import Footer from '../../Components/Footer/Footer';
 import {Form, Button} from 'react-bootstrap';
 import {useHistory} from 'react-router-dom';
 
-function Cadastro(){
+function Register(){
     const History = useHistory();
 
     return(
         <div id="page">
             <Header/>
-                <div id="GeralCadastro">
-                    <div id="ContainerCadastro">
+                <div id="generalRegister">
+                    <div id="containerRegister">
                         <h1><b>Cadastrar</b></h1>
-                        <div id="inputsCadastro">
+                        <div id="inputsRegister">
                             <Form.Group controlId="formBasicEmail">
                                 <Form.Control type="email" placeholder="Email" />
                             </Form.Group>
@@ -36,4 +36,4 @@ function Cadastro(){
     );
 }
 
-export default Cadastro;
+export default Register;
