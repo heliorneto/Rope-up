@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { Nav, Navbar, FormControl, InputGroup, Button, Dropdown}from 'react-bootstrap'
 import { Link } from 'react-router-dom';
+import Logo from '../../Components/Logo/logo.js';
 import "./header.css";
 
 function Header(){
     return(
         <Navbar id="navbar" expand="lg">
             <Nav id="Logo" href="/home">
-                <img src="/Imagens/Logo.jpg" alt="Logo"></img>
+                <Logo/>
             </Nav>
             <Nav id="Opcoes">
                 <div id="ComoFunciona">

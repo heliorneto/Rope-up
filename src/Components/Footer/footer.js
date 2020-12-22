@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { Nav, Navbar, FormControl, InputGroup, Button, Dropdown}from 'react-bootstrap'
 import { Link } from 'react-router-dom';
+import Logo from './../../Components/Logo/logo.js';
 import "./footer.css";
 
 function Footer(){
     return(
         <Navbar id="navbarFooter" expand="lg">
             <Nav id="LogoFooter" href="/home">
-                <img src="/Imagens/Logo-Footer.jpg" alt="Logo"></img>
+                <Logo color='#ffffff'/>
             </Nav>
             <Nav id="OpcoesFooter">
                 <div id="ComoFuncionaFooter">
