@@ -14,6 +14,8 @@ Comando de instalação: `react-router-dom`
 
 Comando de instalação: `npm i react-bootstrap bootstrap`
 
+Para **instalar todas as dependências**, basta executar o comando `npm i` no diretório do projeto.
+
 ## Favicons
 
 Os ícones de favorito e web-app foram gerados a partir de uma única imagem .png com fundo transparente com um tom cinza claro (que gera melhor contraste em temas claros e escuros). Todas as versões da imagem (escaladas e convertidas no formato de cada plataforma), bem como as configurações (.xml e .json) necessárias. Para gerar esses arquivos foi usado o site [RealFaviconGenerator](https://realfavicongenerator.net/), que gera um pacote (*favicon package*) .zip contendo esses arquivos. O site também pode ser utilizado para verificar a implementação dos *favicons* após o *deploy* do site.
@@ -37,3 +39,51 @@ Já a pasta ***public*** contém os arquivos que serão acessados pelo usuário 
 Se um componente será usado por várias páginas, seus arquivos devem ser colocados na pasta ***Components*** em um subdiretório com o nome do componente. Caso contrário, seus arquivos devem ficar no diretório da página que o usa (que, por sua vez, é um subdiretório da pasta ***Pages***).
 
 Após determinar se um componente é específico para uma página ou se é geral, convencionamos nomear o arquivo fonte (JavaScript) e o arquivo de estilo (CSS) com o mesmo nome (que remete ao componente em questão), iniciando sempre com letra maiúscula.
+
+## Padrões de escrita de código
+
+- **Idioma** para nomes de variáveis, funções, classes, componentes, comentários, etc.:
+  - Usamos o **inglês** como **único** idioma para nosso código (incluindo comentários e *commits* do git)
+
+### Padrões de nomenclatura
+
+A seguir, são definidos, individualmente, os padrões de nomenclatura que serão utilizados em cada um dos componentes envolvidos no processo de desenvolvimento (como variáveis, funções, arquivos e diretórios):
+
+- **Variáveis e funções:**
+  - Seguimos o **padrão do JavaScript** usando o sistema *camelCase* que define o seguinte:
+    1. Os nomes se iniciam com letra **minúscula**
+    2. Nomes compostos têm o 2º, 3º, ..., n-ésimo nome iniciado com letra maiúscula
+  - Exemplo: `var umaVariavelQualuqer = 10;`
+
+- **Classes e componentes (React)**
+  - São **iniciados** com letra **maiúscula**, seguindo, então, o sistema *camelCase*
+  - Exemplo: `class ClasseQualquer`
+
+- **Arquivos**:
+  - Os nomes devem ser escritos com **letra minúscula** e nomes compostos devem ser **separados com underline ('_')**
+  - Exemplo: `componente-teste.js`
+
+- **Diretórios**:
+  - Os nomes devem se iniciar com **letra maiúscula** e ser, preferencialmente, simples (apenas um nome)
+  - Exemplo: `/Home/`
+
+- **Classes e IDs (CSS)**
+  - Vamos usar a convenção de nomenclatura do CSS, que define que os nomes devem ser escritos com **letra minúscula** e nomes compostos devem ser **separados por hífen (-)**
+  - Exemplo: `.classe1-css #id-componente`
+
+## Uso do git
+
+Aqui são definidos os padrões/regras que devem ser utilizados na operação do repositório git (para criar *commits*, *branches* e fazer *merges*).
+
+- **Nomenclatura e manutenção de *branches*:**
+  - Novos *branches* de **funcionalidade** deve ser **criados a partir do *branch development*** e nomeados como `feature-"Nome-da-funcionalidade"`.
+  - Quando um *branch* não estiver mais sendo usado (por exemplo, quando uma funcionalidade for concluída), você deve fazer um merge com o *development*, para manter o repositório organizado.
+  - *Branches* de **manutenção** (usados para refatorar código) devem ser nomeados como `fix-"Nome-do-problema`, também criados a partir do *develop*
+  - *Branches* ***release*** devem ser nomeados de acordo com o **número da versão a ser lançada** o número de versão deverá, a princípio, seguir o seguinte padrão:
+    - `(Nº da versão principal).(Número do fix atual, começando do 0)`
+    - Uma **tag deverá ser criada no *main*** quando for feito o *merge* do *release-branch*
+
+- **Uso do *branch main*:**
+  - O branch *main* é **protegido**, ou seja, **não deve receber commits diretamente**, apenas *merge* dos *release-branches* e *hotfix*
+
+Via de regra, **utilizamos o padrão de trabalho "Git-Flow"** que você pode pesquisar sobre caso tenha alguma dúvida que não está escrita aqui. Uma boa **refêrencia** sobre o git-flow pode ser encontrada [aqui](https://medium.com/trainingcenter/utilizando-o-fluxo-git-flow-e63d5e0d5e04).
