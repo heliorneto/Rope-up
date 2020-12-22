@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
-import Header from '../../Components/Header/Header';
-import Footer from '../../Components/Footer/Footer';
-import "./Home.css";
+import Header from '../../Components/Header/header';
+import Footer from '../../Components/Footer/footer';
+import "./home.css";
 import { Button } from 'react-bootstrap';
 
 function Home(){

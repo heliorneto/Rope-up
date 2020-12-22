@@ -1,0 +1,26 @@
+#GeralCadastro{
+    display: block;
+    position: relative;
+    min-height: 100vh;
+}
+
+#ContainerCadastro{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+#inputsCadastro{
+    display: flex;
+    flex-direction: column;
+    flex: 1 4 auto;
+    margin-left: 16px;
+    margin-right: 16px;
+    border: 1px solid black;
+    border-radius: 6px;
+    padding: 30px;
+    background-color: white;
+    box-shadow: 2px 2px 2px #6f6f70a6;
+}
