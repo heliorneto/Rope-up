@@ -4,32 +4,38 @@
     box-shadow: 2px 2px 2px #6f6f70a6;
     align-content: center;
     justify-content: space-around;
-    height: 100px;
+    height: 125px;
 }
 
-#Logo{
+#logo{
     width: 250px;
     height: 100px;
 }
 
-#Opcoes{
+#options{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
 }
 
-#ComoFunciona{
+#comoFunciona{
     margin-right: 40px;
 }
 
-#Sobre{
+#sobre{
     margin-right: 40px;
 }
 
-#Blog{
+#blog{
     margin-right: 40px;
 }
 
-#Ajuda{
+#ajuda{
     margin-right: 40px;
+}
+
+@media (max-width: 420px) {
+    #navbar{
+        height: 250px;
+    }
 }

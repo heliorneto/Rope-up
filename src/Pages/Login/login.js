@@ -10,7 +10,7 @@ function Login() {
     const [password, setPassword] = useState();
     const history = useHistory();
 
-    function login() {
+    function Enter() {
         if(email==="helioneto29@hotmail.com" && password==="123"){
             alert("Bem-vindo(a) " + email);
             history.push('home');
@@ -22,7 +22,7 @@ function Login() {
     return(
         <div className="page">
             <Header />
-            <div className="geral">
+            <div className="general">
                 <div className="container">
                         <h1><b>Entrar</b></h1>
                         <Form className="inputs">
@@ -32,7 +32,7 @@ function Login() {
                             <Form.Group controlId="senha">
                                 <Form.Control type="password" placeholder="Senha" onChange={(e)=>{setPassword(e.target.value)}}/>
                             </Form.Group>
-                            <Button variant="outline-dark" onClick={login}>Login</Button>                          
+                            <Button variant="outline-dark" onClick={Enter}>Login</Button>                          
                             <hr/>
                             <Button variant="outline-dark" onClick={()=>history.push("cadastro")}>Criar conta</Button>
                         </Form>
