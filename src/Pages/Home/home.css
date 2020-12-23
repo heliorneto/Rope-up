@@ -1,4 +1,4 @@
-#homeGeral{
+#homeGeneral{
     display: flex;
     flex-direction: column;
     align-content: center;
@@ -6,33 +6,33 @@
     align-items: center;
 }
 
-#BotãoGeral{
+#buttonGeneral{
     margin-right: 60%;
     margin-top: 5%;
 }
 
-#Textos1{
+#text1{
     display: flex;
     flex-direction: column;
     margin-top: 300px;
     margin-left: 50px;
 }
 
-#Textos2{
+#text2{
     display: flex;
     flex-direction: column;
     margin-top: 300px;
     margin-right: 50px;
 }
 
-#linha{
+#line{
     display: flex;
     flex-direction: row;
     align-content: center;
     justify-content: space-around;
 }
 
-#esquerda{
+#left{
     display: flex;
     flex-direction: row;
     align-content: center;
@@ -44,19 +44,19 @@
     flex-direction: column;
 }
 
-#Textos1Menu{
+#text1Menu{
     margin-top: 100px;
 }
 
-#Textos2Menu{
+#text2Menu{
     margin-top: 140px;
 }
 
-#Textos3Menu{
+#text3Menu{
     margin-top: 140px;
 }
 
-#botãoAlavancar{
+#buttonUp{
     display: flex;
     align-content: center;
     margin-left: 40%;
