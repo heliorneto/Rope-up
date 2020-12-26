@@ -1,0 +1,57 @@
+.bcard-container{
+    width: 260px;
+    height: 200px;
+    position: relative;
+    background-image: linear-gradient(to right, rgba(246, 246, 246, 0.4) 0%, rgba(211, 211, 211, 0.6) 20%, rgba(195, 195, 195, 0.8) 70%, rgba(255, 255, 255, 0.4) 100% );
+}
+
+.bcard-mask{
+    width: 220px;
+    height: 180px;
+    position: absolute;
+    left: 40px;
+    top: 0px;
+    z-index: 1;
+    background-image: url('./Resources/card_mask.png');
+    background-color: transparent;
+}
+
+.bcard-cover{
+    width: 180px;
+    height: 150px;
+    position: absolute;
+    left: 40px;
+    top: 10px;
+    z-index: 2;
+    opacity: 0.35;
+    user-select: none;
+}
+
+.bcard-content{
+    display: block;
+    width: 220px;
+    height: 180px;
+    position: absolute;
+    left: 40px;
+    top: 0px;
+    z-index: 3;
+    padding: 40px 20px 40px 10px;
+}
+
+.bcard-title{
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.bcard-link{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #000;
+}
+
+.bcard-link:hover{
+    color: #000;  
+}
