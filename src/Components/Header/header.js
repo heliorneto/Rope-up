@@ -8,7 +8,7 @@ function Header(){
     return(
         <Navbar id="navbar" expand="lg">
             <Nav id="Logo" href="/home">
-                <Logo/>
+                <Logo width="120" height="120" color="#000" fontSize="30"/>
             </Nav>
             <Nav id="options">
                 <div id="comoFunciona">

@@ -8,7 +8,7 @@ function Footer(){
     return(
         <Navbar id="navbarFooter" expand="lg">
             <Nav id="LogoFooter" href="/home">
-                <Logo color='#ffffff'/>
+                <Logo color='#ffffff' width="120" heigth="120" fontSize="20"/>
             </Nav>
             <Nav id="OpcoesFooter">
                 <div id="ComoFuncionaFooter">
