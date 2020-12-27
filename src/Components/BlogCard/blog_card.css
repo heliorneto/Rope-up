@@ -16,6 +16,10 @@
     background-color: transparent;
 }
 
+.bcard-cover:not([src]){
+    display: none;
+}
+
 .bcard-cover{
     width: 180px;
     height: 150px;
