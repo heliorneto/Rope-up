@@ -18,6 +18,10 @@
     margin-left: 50px;
 }
 
+#imageTop{
+    padding-top: 2px;
+}
+
 #text2{
     display: flex;
     flex-direction: column;

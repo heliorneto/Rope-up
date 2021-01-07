@@ -17,7 +17,7 @@ function Home(){
                             <Button variant="danger">Quero um software personalizado</Button>
                         </div>
                     </div>
-                    <div id="image1">
+                    <div id="imageTop">
                         <img src="/Imagens/Imagem1.jpg" alt="image1"></img>
                     </div>
                 </div>

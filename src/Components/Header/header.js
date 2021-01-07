@@ -6,11 +6,11 @@ import "./header.css";
 
 function Header(){
     return(
-        <Navbar id="navbar" expand="lg">
-            <Nav id="Logo" href="/home">
+        <div id="navbar" expand="lg">
+            <div id="Logo" href="/home">
                 <Logo width="120" height="120" color="#000" fontSize="30"/>
-            </Nav>
-            <Nav id="options">
+            </div>
+            <div id="options">
                 <div id="comoFunciona">
                     <h3>Como Funciona</h3>
                 </div>
@@ -26,8 +26,8 @@ function Header(){
                 <div id="login">
                     <h3><b>Login</b></h3>
                 </div>
-            </Nav>
-        </Navbar>
+            </div>
+        </div>
     );
 }
 
