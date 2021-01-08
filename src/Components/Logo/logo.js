@@ -2,6 +2,16 @@ import React from 'react';
 import {ReactComponent as LogoImage} from './logo-ropeup.svg';
 import './logo.css';    
 
+
+/*
+This component takes the following props:
+- color: The color of the "LogoImage" and logo text
+- width: The width of the "LogoImage"
+- height: The height of the "LogoImage"
+- fontSize: The font size of the logo text
+*/
+
+
 function Logo(props){
     return (
         <div className='logo-container'>
