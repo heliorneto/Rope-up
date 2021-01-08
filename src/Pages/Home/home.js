@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import Header from '../../Components/Header/header';
 import Footer from '../../Components/Footer/footer';
+import ButtonH from '../../Components/Button/button';
 import "./home.css";
 import { Button } from 'react-bootstrap';
 
