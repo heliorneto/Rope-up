@@ -15,7 +15,7 @@ function Home(){
                         <h1>Personalize seu software empresarial</h1>
                         <h4>Trabalhe com o que é realmente importante dentro de um software de gestão de maneira integrada e eficiente</h4>
                         <div id="buttonGeneral">
-                            <Button variant="danger">Quero um software personalizado</Button>
+                            <ButtonH label="Quero um software personalizado">Quero um software personalizado</ButtonH>
                         </div>
                     </div>
                     <div id="imageTop">
@@ -30,7 +30,7 @@ function Home(){
                         <h1>Controle os dados da sua empresa onde estiver</h1>
                         <h4>Seu software de gestão intuitivo e fácil. Para você analisar os resultados da sua empresa em qualquer lugar</h4>
                         <div id="buttonGeneral">
-                            <Button variant="danger">Conheça mais sobre nossos trabalhos</Button>
+                            <ButtonH label="Conheça mais sobre nossos trabalhos">Conheça mais sobre nossos trabalhos</ButtonH>
                         </div>
                     </div>
                 </div>
@@ -74,7 +74,7 @@ function Home(){
                     </div>
                 </div>
                 <div id="buttonUp">
-                    <Button variant="danger">Quero alavancar os meus resultados</Button>
+                    <ButtonH label="Quero alavancar os meus resultados">Quero alavancar os meus resultados</ButtonH>
                 </div>
             <Footer/>
         </div>
