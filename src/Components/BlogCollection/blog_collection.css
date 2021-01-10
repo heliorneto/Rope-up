@@ -1,0 +1,57 @@
+.carrousel-container{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    width: min-content;
+    position: relative;
+}
+
+.carrousel-items{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    width: 900px;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+}
+
+.carrousel-items *{
+    margin: 0px 15px 0px 15px;
+}
+
+.carrousel-next, .carrousel-previous{
+    visibility: hidden;
+    width: 15px;
+    height: 25px;
+    position: absolute;
+    top: 88.5px;
+    z-index: 2;
+    background-image: url(./Resources/Left-arrow.png);
+    background-size: cover;
+    background-color: transparent;
+    border: none;
+}
+
+.carrousel-next:focus, .carrousel-previous:focus{
+    outline: none;
+}
+
+.carrousel-container:hover .carrousel-next, .carrousel-container:hover .carrousel-previous{
+    visibility: visible;
+}
+
+.carrousel-previous{
+    transform: rotate(180deg);
+    left: 865px;
+}
+
+.carrousel-next{
+    left: 25px;
+}
+
+.carrousel-pageselect{
+    display: none;
+}
