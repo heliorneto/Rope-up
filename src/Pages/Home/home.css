@@ -1,4 +1,4 @@
-#homeGeneral{
+#home-general{
     display: flex;
     flex-direction: column;
     align-content: center;
@@ -6,7 +6,7 @@
     align-items: center;
 }
 
-#buttonGeneral{
+#button-general{
     margin-right: 60%;
     margin-top: 5%;
 }
@@ -18,7 +18,7 @@
     margin-left: 50px;
 }
 
-#imageTop{
+#image-top{
     padding-top: 2px;
 }
 
@@ -48,19 +48,28 @@
     flex-direction: column;
 }
 
-#text1Menu{
+#numero-menu {
+    font-size: 80px;
+    color: red;
+    margin-left: 10px;
+}
+
+#text1-menu{
     margin-top: 100px;
+    margin-right: 100px;
 }
 
-#text2Menu{
+#text2-menu{
     margin-top: 140px;
+    margin-right: 100px;
 }
 
-#text3Menu{
+#text3-menu{
     margin-top: 140px;
+    margin-right: 100px;
 }
 
-#buttonUp{
+#button-up{
     display: flex;
     align-content: center;
     margin-left: 40%;

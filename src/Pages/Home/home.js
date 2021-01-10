@@ -4,21 +4,23 @@ import Footer from '../../Components/Footer/footer';
 import ButtonH from '../../Components/Button/button';
 import "./home.css";
 import { Button } from 'react-bootstrap';
+import textBar from '../../Components/TextBar/textBar';
 
 function Home(){
     return(
-        <div id="pageHome">
+        <div id="page-home">
             <Header/>
-            <div id="homeGeneral">
+            <div id="home-general">
                 <div id="line">
                     <div id="text1">
-                        <h1>Personalize seu software empresarial</h1>
-                        <h4>Trabalhe com o que é realmente importante dentro de um software de gestão de maneira integrada e eficiente</h4>
-                        <div id="buttonGeneral">
-                            <ButtonH label="Quero um software personalizado">Quero um software personalizado</ButtonH>
+                        <h1>Consultoria Empresarial Com Solução em Software</h1>
+                        <textBar select="true" placeholder="Buscar"></textBar>
+                        <h3>Trabalhe de maneira eficiente com o que é realmente importante usando softwares de gestão indegrados e usuais</h3>
+                        <div id="button-general">
+                            <ButtonH label="Otimize sua gestão com tecnologia">Otimize sua gestão com tecnologia</ButtonH>
                         </div>
                     </div>
-                    <div id="imageTop">
+                    <div id="image-top">
                         <img src="/Imagens/Imagem1.jpg" alt="image1"></img>
                     </div>
                 </div>
@@ -27,10 +29,10 @@ function Home(){
                         <img src="/Imagens/Imagem2.jpg" alt="image2"></img>
                     </div>
                     <div id="text2">
-                        <h1>Controle os dados da sua empresa onde estiver</h1>
-                        <h4>Seu software de gestão intuitivo e fácil. Para você analisar os resultados da sua empresa em qualquer lugar</h4>
-                        <div id="buttonGeneral">
-                            <ButtonH label="Conheça mais sobre nossos trabalhos">Conheça mais sobre nossos trabalhos</ButtonH>
+                        <h2>Controle toos os dados da sua empresa em um unico lugar</h2>
+                        <h3>Otimizamos seus processos para melhor implatação de um sistema integrado feito especialmente para sua empresa</h3>
+                        <div id="button-general">
+                            <ButtonH label="Conheça como trabalhamos">Conheça como trabalhamos</ButtonH>
                         </div>
                     </div>
                 </div>
@@ -39,41 +41,41 @@ function Home(){
                     <img src="/Imagens/Linha.jpg" alt="image2"></img>
                     <div id="menu">
                         <div id="line">
-                            <h1>Como funciona</h1>
+                            <h2>Como funciona</h2>
                         </div>
                         <div id="line">
                             <div id="image1Menu">
                                 <img src="/Imagens/Menu1.jpg" alt="image2"></img>
                             </div>
-                            <div id="text1Menu">
-                                <h1>01</h1>
-                                <h3>Você tem uma necessidade de controle de dados</h3>
-                                <h5>Você entende a importância da gestão por meio da tecnologia e dos dados e precisa de um software que não exija muito esforço de adequação</h5>
+                            <div id="text1-menu">
+                                <h4 id='numero-menu'>01</h4>
+                                <h3>Diagnostico dos problemas da sua empresa</h3>
+                                <h5>Analisamos os gargalos que existem nos processos empresariais da sua empresa da sua rotina</h5>
                             </div>
                         </div>
                         <div id="line">
-                            <div id="text2Menu">
-                                <h1>02</h1>
-                                <h3>A ropeup desenvolve seu software</h3>
-                                <h5>Criamos o software personalizado para as necessidades da sua empresa</h5>
+                            <div id="text2-menu">
+                                <h4 id='numero-menu'>02</h4>
+                                <h3>Solução com softwares de gestão integrados</h3>
+                                <h5>Indentificamos em quais circunstâncias os principais softwares de gestão (do mercado) podem otimizar seus processos atuando de forma integrada</h5>
                             </div>
-                            <div id="image1Menu">
+                            <div id="image1-menu">
                                 <img src="/Imagens/Menu2.jpg" alt="image2"></img>
                             </div>
                         </div>
                         <div id="line">
-                            <div id="image1Menu">
+                            <div id="image1-menu">
                                 <img src="/Imagens/Menu3.jpg" alt="image2"></img>
                             </div>
-                            <div id="text3Menu">
-                                <h1>03</h1>
-                                <h3>Você administra seus dados de maneira eficiente</h3>
-                                <h5>Pelo computador ou celular, no escritório ou na praia, seus dados atualizados e trabalhos para sua melhor análise e gestão</h5>
+                            <div id="text3-menu">
+                                <h4 id='numero-menu'>03</h4>
+                                <h3>Implatação e otimização dos processos</h3>
+                                <h5>Nos certicamos que as nossas soluções serão colocadas em prática por meio de processos consolidados</h5>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div id="buttonUp">
+                <div id="button-up">
                     <ButtonH label="Quero alavancar os meus resultados">Quero alavancar os meus resultados</ButtonH>
                 </div>
             <Footer/>
