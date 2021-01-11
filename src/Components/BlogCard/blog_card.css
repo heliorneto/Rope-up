@@ -6,6 +6,10 @@
     position: relative;
 }
 
+.bcard-container:hover{
+    cursor: pointer;
+}
+
 .bcard-cover{
     width: 200px;
     height: 160px;
