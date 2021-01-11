@@ -10,7 +10,7 @@ This component takes the following props:
 function Button(props){
     return (
         <button
-        className={"RoundButton " + props.customStyleClass} 
+        className="red-button" 
         onClick={()=>props.clickAction()}
         >
             {props.label}

@@ -1,4 +1,4 @@
-.RoundButton{
+.red-button{
     width: 200px;
     height: 65px;
     border: 1px solid #e79d9d;
@@ -11,11 +11,11 @@
     background-color: #D40F1C;
 }
 
-.RoundButton:hover{
+.red-button:hover{
     filter: brightness(110%);
 }
 
-.RoundButton:active{
+.red-button:active{
     border: 1px inset;
     filter: brightness(80%);
 }
