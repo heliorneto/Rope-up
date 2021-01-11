@@ -12,7 +12,6 @@ This component takes the following props:
 function BlogCard(props){
     return (
         <div className="bcard-container">
-            <div className="bcard-mask"/>
             <img src={props.coverImage} alt={props.coverAlt}  className="bcard-cover"/>
             <div className="bcard-content">
                 <h3 className="bcard-title">{props.title}</h3>
