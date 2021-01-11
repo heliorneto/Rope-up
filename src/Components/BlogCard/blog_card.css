@@ -6,10 +6,6 @@
     position: relative;
 }
 
-.bcard-cover:not([src]){
-    display: none;
-}
-
 .bcard-cover{
     width: 200px;
     height: 160px;
@@ -21,32 +17,16 @@
     user-select: none;
 }
 
-.bcard-content{
-    display: block;
+.bcard-title{
     width: 200px;
     height: 160px;
     position: absolute;
     top: 0px;
     left: 0px;
     z-index: 2;
-    padding-top: 40px;
-    padding-left: 15px;
-}
-
-.bcard-title{
+    padding: 40px 15px 40px 15px;
     text-transform: uppercase;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
     font-size: 20px;
     font-weight: bold;
-    margin-bottom: 30px;
-}
-
-.bcard-link{
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
-    color: #000;
-}
-
-.bcard-link:hover{
-    color: #000;  
 }
