@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from '../../Components/Header/header';
 import Footer from '../../Components/Footer/footer';
-import ButtonH from '../../Components/Button/button';
+import Button from '../../Components/Button/button';
 import "./home.css";
 
 function Home(){
@@ -15,7 +15,7 @@ function Home(){
                         <textBar select="true" placeholder="Buscar"></textBar>
                         <h3>Trabalhe de maneira eficiente com o que é realmente importante usando softwares de gestão indegrados e usuais</h3>
                         <div id="button-general">
-                            <ButtonH label="Otimize sua gestão com tecnologia">Otimize sua gestão com tecnologia</ButtonH>
+                            <Button label="Otimize sua gestão com tecnologia"/>
                         </div>
                     </div>
                     <div id="image-top">
@@ -30,7 +30,7 @@ function Home(){
                         <h2>Controle toos os dados da sua empresa em um unico lugar</h2>
                         <h3>Otimizamos seus processos para melhor implatação de um sistema integrado feito especialmente para sua empresa</h3>
                         <div id="button-general">
-                            <ButtonH label="Conheça como trabalhamos">Conheça como trabalhamos</ButtonH>
+                            <Button label="Conheça como trabalhamos"/>
                         </div>
                     </div>
                 </div>
@@ -74,7 +74,7 @@ function Home(){
                     </div>
                 </div>
                 <div id="button-up">
-                    <ButtonH label="Quero alavancar os meus resultados">Quero alavancar os meus resultados</ButtonH>
+                    <Button label="Quero alavancar os meus resultados"/>
                 </div>
             <Footer/>
         </div>
