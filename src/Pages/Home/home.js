@@ -12,7 +12,6 @@ function Home(){
                 <div id="line">
                     <div id="text1">
                         <h1>Consultoria Empresarial Com Solução em Software</h1>
-                        <textBar select="true" placeholder="Buscar"></textBar>
                         <h3>Trabalhe de maneira eficiente com o que é realmente importante usando softwares de gestão indegrados e usuais</h3>
                         <div id="button-general">
                             <Button label="Otimize sua gestão com tecnologia"/>
