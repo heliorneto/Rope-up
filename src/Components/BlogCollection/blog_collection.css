@@ -11,11 +11,13 @@
     display: flex;
     flex-flow: row nowrap;
     justify-content: flex-start;
-    width: 900px;
+    width: 690px;
     position: relative;
     top: 0px;
     left: 0px;
     z-index: 1;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .carrousel-items *{
@@ -27,7 +29,7 @@
     width: 15px;
     height: 25px;
     position: absolute;
-    top: 88.5px;
+    top: 67.5px;
     z-index: 2;
     background-image: url(./Resources/Left-arrow.png);
     background-size: cover;
@@ -45,11 +47,11 @@
 
 .carrousel-previous{
     transform: rotate(180deg);
-    left: 865px;
+    left: 695px;
 }
 
 .carrousel-next{
-    left: 25px;
+    left: 0px;
 }
 
 .carrousel-pageselect{
