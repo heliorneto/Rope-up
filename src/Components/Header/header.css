@@ -1,10 +1,14 @@
 #navbar{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
     background-color: white;
     width: 100%;
     box-shadow: 2px 2px 2px #6f6f70a6;
     align-content: center;
     justify-content: space-around;
     height: 125px;
+    position: fixed;
 }
 
 #logo{
@@ -16,26 +20,65 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    padding-top: 48px;
 }
 
 #comoFunciona{
     margin-right: 40px;
+    color: none;
+    list-style-type: none;
 }
 
 #sobre{
     margin-right: 40px;
+    list-style-type: none;
 }
 
 #blog{
     margin-right: 40px;
+    list-style-type: none;
 }
 
 #ajuda{
     margin-right: 40px;
+    list-style-type: none;
+}
+
+#login{
+    list-style-type: none;
+}
+
+#comoFunciona a{
+    color: black;
+    font-size: 24px;
+}
+
+#sobre a{
+    color: black;
+    font-size: 24px;
+}
+
+#blog a{
+    color: black;
+    font-size: 24px;
+}
+
+#ajuda a{
+    color: black;
+    font-size: 24px;
+}
+
+#login a{
+    color: black;
+    font-size: 24px;
 }
 
 @media (max-width: 420px) {
     #navbar{
         height: 250px;
+    }
+
+    #options{
+        margin-left: 13px;
     }
 }
