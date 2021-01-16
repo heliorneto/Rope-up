@@ -12,7 +12,8 @@ class BlogCollection extends React.Component{
         this.numPages = Math.ceil(props.children.length/this.maxItems);
         this.refreshInterval = null;
         this.state = {
-            currentPage: 1
+            currentPage: 1,
+            animate: false //Variable to control the carrousel slide animation
         };
         this.nextPage = this.nextPage.bind(this);
         this.previousPage = this.previousPage.bind(this);
@@ -41,16 +42,6 @@ class BlogCollection extends React.Component{
     genPageIndex(){
         const pageRange = [...Array(this.numPages).keys()].map((i)=>i+1);
         return pageRange;
-    }
-
-    componentDidMount(){
-        if(this.props.type === 'carrousel'){
-            //this.refreshInterval = setInterval(this.nextPage,this.props.refreshInterval,true);
-        }
-    }
-
-    componentWillUnmount(){
-        clearInterval(this.refreshInterval);
     }
 
     render(){
