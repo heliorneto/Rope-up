@@ -17,7 +17,6 @@ class Carrousel extends React.Component{
         };
         this.nextPage = this.nextPage.bind(this);
         this.previousPage = this.previousPage.bind(this);
-        this.genPageIndex = this.genPageIndex.bind(this);
     }
 
     nextPage(){
@@ -54,11 +53,6 @@ class Carrousel extends React.Component{
             previousPage: this.state.currentPage,
             animationDirection: null
         }), this.animationDuration - 20);
-    }
-
-    genPageIndex(){
-        const pageRange = [...Array(this.numPages).keys()].map((i)=>i+1);
-        return pageRange;
     }
 
     render(){
