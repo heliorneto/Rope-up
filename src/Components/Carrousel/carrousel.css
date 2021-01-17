@@ -5,6 +5,9 @@
     align-items: center;
     width: min-content;
     position: relative;
+    overflow: hidden;
+    padding-top: 17px;
+    padding-bottom: 17px;
 }
 
 .carrousel-items{
@@ -31,20 +34,26 @@
     width: 690px;
     position: absolute;
     top: 0px;
-    left: -400px;
     z-index: 1;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin: 17px 10px 0px 10px;
 }
 
 .carrousel-animator-duplicate *{
     margin: 0px 15px 0px 15px;
 }
 
+.carrousel-slide-right{
+    animation: Slide-Right 750ms 1;
+}
+
+.carrousel-slide-left{
+    animation: Slide-Left 750ms 1;
+}
+
 .carrousel-next, .carrousel-previous{
     visibility: hidden;
     width: 15px;
-    height: 25px;
+    height: 42px;
     position: absolute;
     top: 67.5px;
     z-index: 2;
@@ -72,6 +81,21 @@
     left: 0px;
 }
 
-.carrousel-pageselect{
-    display: none;
+/*Carrousel slide animations*/
+@keyframes Slide-Left{
+    from{
+        left: 0px;
+    }
+    to{
+        left: -750px;
+    }
+}
+
+@keyframes Slide-Right{
+    from{
+        left: 0px;
+    }
+    to{
+        left: 750px;
+    }
 }
