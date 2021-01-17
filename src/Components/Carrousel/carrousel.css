@@ -6,8 +6,7 @@
     width: min-content;
     position: relative;
     overflow: hidden;
-    padding-top: 17px;
-    padding-bottom: 17px;
+    padding: 17px 5px 17px 5px;
 }
 
 .carrousel-items{
@@ -53,9 +52,9 @@
 .carrousel-next, .carrousel-previous{
     visibility: hidden;
     width: 15px;
-    height: 42px;
+    height: 25px;
     position: absolute;
-    top: 67.5px;
+    top: 84.5px;
     z-index: 2;
     background-image: url(./Resources/Left-arrow.png);
     background-size: cover;
@@ -74,7 +73,7 @@
 
 .carrousel-previous{
     transform: rotate(180deg);
-    left: 695px;
+    left: 705px;
 }
 
 .carrousel-next{
