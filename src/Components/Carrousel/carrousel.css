@@ -24,6 +24,23 @@
     margin: 0px 15px 0px 15px;
 }
 
+.carrousel-animator-duplicate{ 
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    width: 690px;
+    position: absolute;
+    top: 0px;
+    left: -400px;
+    z-index: 1;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.carrousel-animator-duplicate *{
+    margin: 0px 15px 0px 15px;
+}
+
 .carrousel-next, .carrousel-previous{
     visibility: hidden;
     width: 15px;
