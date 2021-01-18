@@ -46,8 +46,9 @@
 
 #capture-button-up{
     display: flex;
+    align-content: center;
     margin-bottom: 30px;
-    margin-left: 575px;
+    margin-left: 370px;
 }
 
 #image-top{

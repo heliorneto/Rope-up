@@ -35,7 +35,7 @@ function Capture(){
                     </div>
                     <div id="capture-button">
                         <div id="capture-button-up">
-                            <Button label="Quero alavancar os meus resultados"/>
+                            <Button width="600px" color="#D40F1C" label="Quero alavancar os meus resultados"/>
                         </div>
                     </div>
                 </div>
@@ -47,7 +47,7 @@ function Capture(){
                 </div>
                 <div id="capture-button">
                     <div id="capture-button-up">
-                        <Button label="Falar com um especialista"/>
+                        <Button width="600px" color="#D40F1C" label="Falar com um especialista"/>
                     </div>
                 </div>
                 <div id="capture-end">

@@ -1,26 +1,26 @@
 #navbar{
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+    align-items: center;
     background-color: white;
     width: 100%;
-    box-shadow: 2px 2px 2px #6f6f70a6;
-    align-content: center;
-    justify-content: space-around;
     height: 125px;
+    padding-right: 50px;
+    padding-left: 50px;
     position: fixed;
+    box-shadow: 2px 2px 2px rgba(111, 111, 112, 0.65);
 }
 
 #logo{
-    width: 250px;
-    height: 100px;
+    margin-right: auto;
+    cursor: pointer;
 }
 
 #options{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    padding-top: 48px;
 }
 
 #comoFunciona{
@@ -48,27 +48,7 @@
     list-style-type: none;
 }
 
-#comoFunciona a{
-    color: black;
-    font-size: 24px;
-}
-
-#sobre a{
-    color: black;
-    font-size: 24px;
-}
-
-#blog a{
-    color: black;
-    font-size: 24px;
-}
-
-#ajuda a{
-    color: black;
-    font-size: 24px;
-}
-
-#login a{
+#options li a{
     color: black;
     font-size: 24px;
 }
