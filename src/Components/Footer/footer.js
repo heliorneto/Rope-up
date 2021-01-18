@@ -15,7 +15,7 @@ function Footer(){
                 </li>
             </ul>
             <ul id="direitos">
-                <h4>©2020 Todos os direitos reservados</h4>
+                <p><small>©2020 Todos os direitos reservados</small></p>
             </ul>
         </nav>
     );
