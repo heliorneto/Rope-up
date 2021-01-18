@@ -1,13 +1,15 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 import Logo from '../../Components/Logo/logo.js';
 import "./header.css";
 
 function Header(){
+    let history = useHistory();
     return(
         <nav id="navbar" expand="lg">
-            <ul id="logo" href="/home">
+            <div id="logo" onClick={()=>{history.push("/home")}}>
                 <Logo width="120" height="120" color="#000" fontSize="30"/>
-            </ul>
+            </div>
             <ul id="options">
                 <li id="comoFunciona">
                     <a href='/home'>Como Funciona</a>
