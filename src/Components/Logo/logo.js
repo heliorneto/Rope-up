@@ -27,7 +27,7 @@ function Logo(props){
                     color: props.color,
                     fontSize: props.fontSize + "px"
                 }
-            }>rope up</span>
+            }>ropeup</span>
         </div>
     );
 }
