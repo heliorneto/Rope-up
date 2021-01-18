@@ -14,7 +14,7 @@ function Home(){
                         <h1>Consultoria Empresarial Com Solução em Software</h1>
                         <h3>Trabalhe de maneira eficiente com o que é realmente importante usando softwares de gestão indegrados e usuais</h3>
                         <div id="button-general">
-                            <Button label="Otimize sua gestão com tecnologia"/>
+                            <Button width="200px" color="#D40F1C" label="Otimize sua gestão com tecnologia"/>
                         </div>
                     </div>
                     <div id="image-top">
@@ -29,7 +29,7 @@ function Home(){
                         <h2>Controle toos os dados da sua empresa em um unico lugar</h2>
                         <h3>Otimizamos seus processos para melhor implatação de um sistema integrado feito especialmente para sua empresa</h3>
                         <div id="button-general">
-                            <Button label="Conheça como trabalhamos"/>
+                            <Button width="200px" color="#D40F1C" label="Conheça como trabalhamos"/>
                         </div>
                     </div>
                 </div>
@@ -72,8 +72,10 @@ function Home(){
                         </div>
                     </div>
                 </div>
-                <div id="button-up">
-                    <Button label="Quero alavancar os meus resultados"/>
+                <div id="home-button">
+                    <div id="button-up">
+                        <Button width="200px" color="#D40F1C" label="Quero alavancar os meus resultados"/>
+                    </div>
                 </div>
             <Footer/>
         </div>
