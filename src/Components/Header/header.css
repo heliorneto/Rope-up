@@ -53,6 +53,16 @@
     font-size: 24px;
 }
 
+#options li a:hover{
+    color: #023B59;
+    text-decoration: none;
+}
+
+/*Class to add different colour to the current selected page*/
+.header-selected{
+    color: #023B59;
+}
+
 @media (max-width: 420px) {
     #navbar{
         height: 250px;
