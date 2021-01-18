@@ -48,27 +48,7 @@
     list-style-type: none;
 }
 
-#comoFunciona a{
-    color: black;
-    font-size: 24px;
-}
-
-#sobre a{
-    color: black;
-    font-size: 24px;
-}
-
-#blog a{
-    color: black;
-    font-size: 24px;
-}
-
-#ajuda a{
-    color: black;
-    font-size: 24px;
-}
-
-#login a{
+#options li a{
     color: black;
     font-size: 24px;
 }
