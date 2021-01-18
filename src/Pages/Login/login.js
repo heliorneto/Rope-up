@@ -21,7 +21,7 @@ function Login() {
 
     return(
         <div className="page">
-            <Header />
+            <Header selectedPage="login" />
             <div className="general">
                 <div className="container">
                         <h1><b>Entrar</b></h1>

@@ -6,7 +6,7 @@ import "./sobre.css";
 function Sobre() {
     return(
         <div id="sobre-page">
-            <Header/>
+            <Header selectedPage="sobre"/>
             <div id="sobre-general">
                 <div id="introducao-text">
                     <div id="introducao-title">
