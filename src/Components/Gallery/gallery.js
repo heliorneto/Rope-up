@@ -27,6 +27,9 @@ class Gallery extends React.Component{
             let colStart = this.props.columns * i;
             let colEnd = colStart + 3;
             matrix[i] = items.slice(colStart, colEnd);
+            if(matrix[i].length === 0){
+                matrix[i] = Array(this.props.columns).fill("");
+            }
         }
         return matrix;
     }
@@ -57,7 +60,13 @@ class Gallery extends React.Component{
                             {
                                 pages.map((page,index)=>(
                                     <td key={index}>
-                                        <p className="gallery-page-num" onClick={()=>this.goToPage(page)}>{page}</p>
+                                        <span 
+                                        className="gallery-page-num" 
+                                        selectedpage={(this.state.currentPage === page)? "true": "false"} 
+                                        onClick={()=>this.goToPage(page)}
+                                        >
+                                            {page}
+                                        </span>
                                     </td>
                                 ))
                             }
