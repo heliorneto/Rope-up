@@ -14,22 +14,24 @@ function Capture(){
                         <img src="/Imagens/Capture1.jpeg" alt="image1" style={{height: 600, paddingTop: 125, width: 570}}></img>
                     </div>
                     <div id="capture-text1">
+                        <div id="letras">
                             <h1 style={{fontSize: 64}}>Solução em softwares de gestão</h1>
                             <h3>Tenha o software empresarial adequado para sua empresa de forma estruturada completamente implementada</h3>
+                        </div>
                     </div>
                 </div>
                 <div id="line2">
                     <div id="cards">
-                        <div id="card">
-                            <h3>Consultoria</h3>
+                        <div id="card1">
+                            <h3><b>Consultoria</b></h3>
                             <h5>Para quem quer investir em tecnologia</h5>
                         </div>
-                        <div id="card">
-                            <h3>Integração</h3>
+                        <div id="card2">
+                            <h3><b>Integração</b></h3>
                             <h5>Para quem quer otimizar sua ferramenta</h5>
                         </div>
-                        <div id="card">
-                            <h3>Personalização</h3>
+                        <div id="card3">
+                            <h3 style={{fontSize: 24}}><b>Personalização</b></h3>
                             <h5>Para quem sabe exatamente o que quer</h5>
                         </div>
                     </div>
@@ -42,7 +44,7 @@ function Capture(){
             </div>
                 <div id="diagram">
                     <div id="image-top">
-                        <img src="/Imagens/Capture2.jpeg" alt="image1" style={{width: 1300}}></img>
+                        <img src="/Imagens/Capture2.jpeg" alt="image1" style={{width: "100%"}}></img>
                     </div>
                 </div>
                 <div id="capture-button">

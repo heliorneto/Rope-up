@@ -18,7 +18,7 @@ function Header(props){
             </div>
             <ul id="options">
                 <li id="comoFunciona">
-                    <a href='/home'>Como Funciona</a>
+                    <a href='/home#link'>Como Funciona</a>
                 </li>
                 <li id="blog">
                     <a href='/blog' style={(props.selectedPage === "blog")? {color: "#023B59"}: {}}>Blog</a>

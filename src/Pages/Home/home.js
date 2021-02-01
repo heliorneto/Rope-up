@@ -33,11 +33,12 @@ function Home(){
                         </div>
                     </div>
                 </div>
+            <div id='link'/>
             </div>
                 <div id="left">
                     <img src="/Imagens/Linha.jpg" alt="image2"></img>
                     <div id="menu">
-                        <div id="line">
+                        <div id="lineComoFunciona">
                             <h2>Como funciona</h2>
                         </div>
                         <div id="line">

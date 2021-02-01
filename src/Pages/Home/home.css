@@ -36,6 +36,11 @@
     justify-content: space-around;
 }
 
+#lineComoFunciona{
+    display: flex;
+    align-self: center;
+}
+
 #left{
     display: flex;
     flex-direction: row;
