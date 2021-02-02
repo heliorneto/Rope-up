@@ -22,7 +22,6 @@ function Sobre() {
                     
                 </div>
             </div>
-            <TextBar placeholder="Buscar" width="200px"/>
             <Footer/>
         </div>
     );
