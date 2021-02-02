@@ -11,8 +11,8 @@ function Home(){
             <div id="home-general">
                 <div id="line">
                     <div id="text1">
-                        <h1>Consultoria Empresarial Com Solução em Software</h1>
-                        <h3>Trabalhe de maneira eficiente com o que é realmente importante usando softwares de gestão indegrados e usuais</h3>
+                        <h1><b>Consultoria Empresarial Com Solução em Software</b></h1>
+                        <h3>Trabalhe de maneira eficiente com o que é realmente importante usando softwares de gestão integrados e usuais</h3>
                         <div id="button-general">
                             <Button width="200px" color="#D40F1C" label="Otimize sua gestão com tecnologia"/>
                         </div>
@@ -26,7 +26,7 @@ function Home(){
                         <img src="/Imagens/Imagem2.jpg" alt="image2"></img>
                     </div>
                     <div id="text2">
-                        <h2>Controle toos os dados da sua empresa em um unico lugar</h2>
+                        <h2><b>Controle todos os dados da sua empresa em um único lugar</b></h2>
                         <h3>Otimizamos seus processos para melhor implatação de um sistema integrado feito especialmente para sua empresa</h3>
                         <div id="button-general">
                             <Button width="200px" color="#D40F1C" label="Conheça como trabalhamos"/>
@@ -47,7 +47,7 @@ function Home(){
                             </div>
                             <div id="text1-menu">
                                 <h4 id='numero-menu'>01</h4>
-                                <h3>Diagnostico dos problemas da sua empresa</h3>
+                                <h3>Diagnóstico dos problemas da sua empresa</h3>
                                 <h5>Analisamos os gargalos que existem nos processos empresariais da sua empresa da sua rotina</h5>
                             </div>
                         </div>
@@ -55,7 +55,7 @@ function Home(){
                             <div id="text2-menu">
                                 <h4 id='numero-menu'>02</h4>
                                 <h3>Solução com softwares de gestão integrados</h3>
-                                <h5>Indentificamos em quais circunstâncias os principais softwares de gestão (do mercado) podem otimizar seus processos atuando de forma integrada</h5>
+                                <h5>Indentificamos em quais circunstâncias os principais softwares de gestão do mercado podem otimizar seus processos atuando de forma integrada</h5>
                             </div>
                             <div id="image1-menu">
                                 <img src="/Imagens/Menu2.jpg" alt="image2"></img>
@@ -67,8 +67,8 @@ function Home(){
                             </div>
                             <div id="text3-menu">
                                 <h4 id='numero-menu'>03</h4>
-                                <h3>Implatação e otimização dos processos</h3>
-                                <h5>Nos certicamos que as nossas soluções serão colocadas em prática por meio de processos consolidados</h5>
+                                <h3>Implantação e otimização dos processos</h3>
+                                <h5>Nos certificamos que as nossas soluções serão colocadas em prática por meio de processos consolidados</h5>
                             </div>
                         </div>
                     </div>
