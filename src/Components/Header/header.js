@@ -21,7 +21,6 @@ function Header(props){
         }
     });
 
-    //!Original height 120px
     return(
         <nav id="header" className={shrink? 'small': ''}>
             <div id="logo" onClick={()=>{history.push("/home")}}>
