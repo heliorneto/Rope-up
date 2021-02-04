@@ -8,9 +8,17 @@ O site utiliza a biblioteca React, de JavaScript, por meio da tecnologia Node.js
 
 - ReactRouter (Possibilita a criação de múltiplas páginas e o redirecionamento entre elas)
 
-Comando de instalação: `react-router-dom`
+Comando de instalação: `npm install react-router-dom`
 
 - ~~React-bootstrap~~
+
+- Axios (Facilita o envio de requisições http/http(s) no client-side)
+
+Comando de instalação: `npm install axios`
+
+- ReactMarkdown (Converte o markdown do conteúdo de um artigo, vindo do servidor, em HTML)
+
+Comando de instalação: `npm install react-markdown`
 
 Para **instalar todas as dependências**, basta executar o comando `npm i` no diretório do projeto.
 
