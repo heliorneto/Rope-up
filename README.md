@@ -10,9 +10,7 @@ O site utiliza a biblioteca React, de JavaScript, por meio da tecnologia Node.js
 
 Comando de instalação: `react-router-dom`
 
-- React-bootstrap (Biblioteca externa com templates de estilos prontos) (?)
-
-Comando de instalação: `npm i react-bootstrap bootstrap`
+- ~~React-bootstrap~~
 
 Para **instalar todas as dependências**, basta executar o comando `npm i` no diretório do projeto.
 
