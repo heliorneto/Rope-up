@@ -19,13 +19,15 @@ function Logo(props){
             fill={props.color}
             width={props.width}
             height={props.height}
+            style={{transition: "width 0.4s cubic-bezier(.79,.14,.15,.86), height 0.4s cubic-bezier(.79,.14,.15,.86)"}}
             />
             <span 
             className='logo-text' 
             style={
                 {
                     color: props.color,
-                    fontSize: props.fontSize + "px"
+                    fontSize: props.fontSize + "px",
+                    transition: "font-size 0.4s cubic-bezier(.79,.14,.15,.86)"
                 }
             }>ropeup</span>
         </div>
