@@ -20,6 +20,10 @@ Comando de instalação: `npm install axios`
 
 Comando de instalação: `npm install react-markdown`
 
+- RemarkGFM (Adiciona suporte a mais itens da sintaxe do Markdown)
+
+Comando de instalação: `npm install remark-gfm`
+
 Para **instalar todas as dependências**, basta executar o comando `npm i` no diretório do projeto.
 
 ## Favicons
