@@ -1,0 +1,100 @@
+.carrousel-container{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    width: min-content;
+    position: relative;
+    overflow: hidden;
+    padding: 17px 5px 17px 5px;
+}
+
+.carrousel-items{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    width: 690px;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.carrousel-items *{
+    margin: 0px 15px 0px 15px;
+}
+
+.carrousel-animator-duplicate{ 
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    width: 690px;
+    position: absolute;
+    top: 0px;
+    z-index: 1;
+    margin: 17px 10px 0px 10px;
+}
+
+.carrousel-animator-duplicate *{
+    margin: 0px 15px 0px 15px;
+}
+
+.carrousel-slide-right{
+    animation: Slide-Right 750ms 1;
+}
+
+.carrousel-slide-left{
+    animation: Slide-Left 750ms 1;
+}
+
+.carrousel-next, .carrousel-previous{
+    visibility: hidden;
+    width: 15px;
+    height: 25px;
+    position: absolute;
+    top: 84.5px;
+    z-index: 2;
+    background-image: url(./Resources/Left-arrow.png);
+    background-size: cover;
+    background-color: transparent;
+    border: none;
+    filter: drop-shadow(2px 2px 1px rgba(0,0,0,0.5));
+}
+
+.carrousel-next:focus, .carrousel-previous:focus{
+    outline: none;
+}
+
+.carrousel-container:hover .carrousel-next, .carrousel-container:hover .carrousel-previous{
+    visibility: visible;
+}
+
+.carrousel-previous{
+    transform: rotate(180deg);
+    left: 705px;
+}
+
+.carrousel-next{
+    left: 0px;
+}
+
+/*Carrousel slide animations*/
+@keyframes Slide-Left{
+    from{
+        left: 0px;
+    }
+    to{
+        left: -750px;
+    }
+}
+
+@keyframes Slide-Right{
+    from{
+        left: 0px;
+    }
+    to{
+        left: 750px;
+    }
+}
