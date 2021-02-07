@@ -1,4 +1,4 @@
-import React from 'react';
+import {React, useState} from 'react';
 import { useHistory } from 'react-router-dom';
 import Logo from '../../Components/Logo/logo.js';
 import "./header.css";
@@ -11,10 +11,24 @@ link will receive a different colour in the Header.
 
 function Header(props){
     let history = useHistory();
+    const [shrink, setShrink] = useState(false);
+
+    window.addEventListener('scroll',()=>{
+        if(document.body.scrollTop > 50 || document.documentElement.scrollTop > 50){
+            setShrink(true);
+        }else{
+            setShrink(false);
+        }
+    });
+
+    //!Original height 120px
     return(
-        <nav id="navbar" expand="lg">
+        <nav id="header" className={shrink? 'small': ''}>
             <div id="logo" onClick={()=>{history.push("/home")}}>
-                <Logo width="120" height="120" color="#000" fontSize="30"/>
+                {
+                    shrink? <Logo width="80" height="80" color="#000" fontSize="28"/>:
+                    <Logo width="120" height="120" color="#000" fontSize="30"/>
+                }
             </div>
             <ul id="options">
                 <li id="comoFunciona">
