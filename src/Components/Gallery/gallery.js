@@ -1,6 +1,14 @@
 import React from 'react';
 import './gallery.css';
 
+/*
+    This component renders a gallery (a structure with the items in a grid and
+    different pages) with the items passes inside the tag (as props.children).
+    It also receives the following props:
+    - rows: The number of rows per page
+    - columns: The number of columns per page
+*/
+
 class Gallery extends React.Component{
     constructor(props){
         super(props);
