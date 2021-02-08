@@ -9,6 +9,7 @@
     padding-right: 50px;
     padding-left: 20px;
     position: fixed;
+    z-index: 10;
     transition: height 0.4s cubic-bezier(.79,.14,.15,.86), box-shadow 0.4s cubic-bezier(.79,.14,.15,.86);
 }
 
