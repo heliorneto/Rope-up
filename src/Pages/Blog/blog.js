@@ -5,6 +5,7 @@ import Button from '../../Components/Button/button';
 import "./blog.css";
 import Card from '../../Components/BlogCard/blog_card';
 import TextBox from '../../Components/TextBox/textBox';
+import Carrousel from '../../Components/Carrousel/carrousel';
 
 function Blog(){
     return(
@@ -47,12 +48,18 @@ function Blog(){
                     <div id="title">
                         <h3>Mais Lidas</h3>
                     </div>
-                    <div id="carousel">
-
+                    <div id="carrousel">
+                        <Carrousel> 
+                            <Card title="Finanças" link="" coverImage="" coverAlt="Para quem busca organizar suas cartas"/>
+                            <Card title="Finanças" link="" coverImage="" coverAlt="Para quem busca organizar suas cartas"/>
+                            <Card title="Finanças" link="" coverImage="" coverAlt="Para quem busca organizar suas cartas"/>
+                            <Card title="Finanças" link="" coverImage="" coverAlt="Para quem busca organizar suas cartas"/>
+                            <Card title="Finanças" link="" coverImage="" coverAlt="Para quem busca organizar suas cartas"/>
+                        </Carrousel>
                     </div>
                 </div>
                 <div id="column">
-                    <div id="title">
+                    <div id="title2">
                         <h3>Mais recentes</h3>
                     </div>    
                     <div id="line">

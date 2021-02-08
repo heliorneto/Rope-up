@@ -16,6 +16,11 @@
     margin-left: 10vh;
 }
 
+#carrousel{
+    display: flex;
+    justify-content: center;
+}
+
 #text1-blog{
     background-color: #023B59;
     width: 200vh;
@@ -46,6 +51,12 @@
 }
 
 #title{
+    text-align: center;
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+}
+
+#title2{
     text-align: center;
     padding-top: 10vh;
 }
