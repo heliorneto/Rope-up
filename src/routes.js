@@ -4,6 +4,7 @@ import Home from './Pages/Home';
 import Capture from './Pages/Capture';
 import Blog from './Pages/Blog';
 import Sobre from './Pages/Sobre';
+import Artigos from './Pages/Artigos/artigos';
 
 function Routes() {
     return(
@@ -11,8 +12,9 @@ function Routes() {
             <Switch>
                 <Route path="/home" component={Home}/>
                 <Route path="/capture" component={Capture}/>
-                <Route path='/blog' component={Blog}/>
+                <Route exact path='/blog' component={Blog}/>
                 <Route path="/sobre" component={Sobre}/>
+                <Route path="/blog/artigos/:id" component={Artigos}/>
             </Switch>
         </BrowserRouter>
     );
