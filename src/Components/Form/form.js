@@ -11,9 +11,9 @@ function Form(props){
             <label htmlFor="email">Email <span className="form-required">*</span></label>
             <input id="email" type="email" name="Email" required/>
             <label htmlFor="telefone">Telefone <span className="form-required">*</span></label>
-            <input id="telefone" type="tel" name="Phone" required/>
+            <input id="telefone" type="tel" name="Phone" pattern="(\+[0-9]{2})? ?(\(?0?[0-9]{2}\)?) ?[0-9]{5}-?[0-9]{4}" required/>
             <label htmlFor="telefone-alternativo">Telefone (alternativo)</label>
-            <input id="telefone-alternativo" type="tel" name="Phone2"/>
+            <input id="telefone-alternativo" type="tel" name="Phone2" pattern="(\+[0-9]{2})? ?(\(?0?[0-9]{2}\)?) ?[0-9]{5}-?[0-9]{4}"/>
             <label htmlFor="cargo">Cargo <span className="form-required">*</span></label>
             <input id="cargo" type="text" name="Role" maxLength="40" required/>
             <label htmlFor="empresa">Nome da empresa <span className="form-required">*</span></label>
