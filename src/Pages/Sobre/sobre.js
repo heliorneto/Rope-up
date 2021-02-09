@@ -2,13 +2,12 @@ import React from 'react';
 import Header from '../../Components/Header/header';
 import Footer from '../../Components/Footer/footer';
 import "./sobre.css";
-import TextBar from '../../Components/TextBar/textBar';
 
 function Sobre() {
     return(
         <div id="sobre-page">
             <Header selectedPage="sobre"/>
-            <div id="sobre-general">
+            <div id="sobre-general" >
                 <div id="introducao-text">
                     <div id="introducao-title">
                         <h1>Sobre a Ropeup</h1>
@@ -18,9 +17,7 @@ function Sobre() {
                         <h3 id="text">Nos movemos pelo <b>sucesso do cliente,</b> sempre buscando o resultado e a melhor experiência detro e fora do projeto.</h3>
                     </div>
                 </div>
-                <div id="image-top">
-                    
-                </div>
+                <img id="image-top" src="/Imagens/Sobre1.png" alt="Sobre1" ></img>
             </div>
             <Footer/>
         </div>

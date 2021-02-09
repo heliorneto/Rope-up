@@ -3,12 +3,17 @@
     flex-direction: row;
     align-content: center;
     background-color: rgb(202, 202, 202);
-    padding-bottom: 70px;
+    padding-bottom: 10px;
+    background-image: url(Cut-logo.png);
+    background-repeat: no-repeat;
+    background-size: 45%;
+    background-position: -21% 260%;
 }
+
 
 #introducao-text{
     margin-top: 200px;
-    margin-right: 600px;
+    margin-right: 8%;
     margin-left: 150px;
     text-align: left;
     width: 500px;
@@ -27,4 +32,9 @@
 
 #text{
     font-size: 23px;
+}
+
+#image-top{
+    margin-top: 110px;
+    width: 550px;
 }
