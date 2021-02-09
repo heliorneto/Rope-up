@@ -1,9 +1,13 @@
 #search{
-    background-position:99%;
+    background-position: 95%;
     background-image: url(Lupa.png);
     background-size: 15px 15px;
     background-repeat: no-repeat;
-    border-radius: 7px;
-    padding: px;
+    background-color: #d9d9d9;
+    border-radius: 15px;
+    height: 30px;
+    padding: 4px 10px 4px 10px;
+    border: 1px solid #000;
+    font-size: 16px;
 }
 
