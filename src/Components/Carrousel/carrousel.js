@@ -2,7 +2,11 @@ import React from 'react';
 import './carrousel.css';
 
 /*
-
+    This component renders the child items (passed inside the tag as
+    props.children) in the form of a carrousel. It also receives a prop
+    named 'numItems' that controls the number of items displayed per 
+    "page" in the carrousel.
+    !WIP: numItems doesn't work yet!
 */
 
 class Carrousel extends React.Component{

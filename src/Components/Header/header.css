@@ -53,6 +53,7 @@
     color: black;
     font-size: 24px;
     transition: font-size 0.4s cubic-bezier(.79,.14,.15,.86);
+    text-decoration: none;
 }
 
 #options li a:hover{
