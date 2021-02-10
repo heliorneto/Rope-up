@@ -6,13 +6,45 @@
     align-items: center;
 }
 
-#capture-text1{
-    background-color: #023B59;
-    color: white;
+#capture-heading{
     display: flex;
-    flex-direction: column;
-    margin-top: 150px;
-    border-radius: 200px 0px 0px 0px;
+    flex-flow: row nowrap;
+    justify-items: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    padding-top: 130px;
+    align-self: flex-start;
+}
+
+#capture-heading img{
+    display: block;
+    width: 480px;
+    height: 480px;
+}
+
+#heading-text{
+    align-self: flex-end;
+    margin-left: auto;
+    width: 40%;
+    padding: 40px;
+    border-top-left-radius: 50px;
+    background-color: #023B59;
+    background-image: url(./Resources/Logo-cut.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 350px;
+}
+
+#heading-text h1{
+    font-size: 64px;
+    color: #fff;
+    margin-bottom: 40px;
+}
+
+#heading-text p{
+    font-size: 20px;
+    color: #fff;
+    margin-bottom: 60px;
 }
 
 #line2{
@@ -67,25 +99,23 @@
     padding-bottom: 20px;
 }
 
-#letras{
-    margin-left: 10vh;
-    margin-top: 10vh;
-    margin-top: 30%;
-}
-
-#letras-texto{
-    margin-top: 3%;
-    margin-right: 100px;
-}
-
-#image-top-capture{
-    padding-top: 2px;
-    width: 100%;
-    margin-top: 100px;
-    background-image: url(Top-background.png);
+#diagram{
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    background-image: url(./Resources/Top-background.png);
+    background-size: contain;
     background-repeat: no-repeat;
-    background-size: 200%;
-    background-position: 0px 340px;
+}
+
+#diagram h3{
+    font-size: 32px;
+    background-color: #fff;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 20px;
 }
 
 #image-text{
@@ -100,13 +130,6 @@
     flex-direction: column;
     margin-top: 300px;
     margin-right: 50px;
-}
-
-#line{
-    display: flex;
-    flex-direction: row;
-    align-content: center;
-    justify-content: space-around;
 }
 
 #left{

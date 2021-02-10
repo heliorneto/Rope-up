@@ -10,15 +10,11 @@ function Capture(){
         <div id="page-capture">
             <Header/>
             <div id="capture-general">
-                <div id="line">
-                    <div id="image-top">
-                        <img src="/Imagens/Capture1.png" alt="image1" style={{height: 600, paddingTop: 125, width: 570}}></img>
-                    </div>
-                    <div id="capture-text1">
-                        <div id="letras">
-                            <h1 style={{fontSize: 64}}>Solução em softwares de gestão</h1>
-                            <h3 id="letras-texto">Tenha o software empresarial adequado para sua empresa de forma estruturada completamente implementada</h3>
-                        </div>
+                <div id="capture-heading">
+                    <img src="/Imagens/Capture1.png" alt="image1"/>
+                    <div id="heading-text">
+                        <h1>Solução em softwares de gestão</h1>
+                        <p>Tenha o software empresarial adequado para sua empresa de forma estruturada completamente implementada.</p>
                     </div>
                 </div>
                 <div id="line2">
@@ -47,11 +43,8 @@ function Capture(){
                 </div>
             </div>
                 <div id="diagram">
-                    <div id="image-top-capture">
-                        <div id="image-text">
-                            <h3><b>O processo de transformação</b></h3>
-                        </div>
-                    </div>
+                    <h3>O processo de transformação</h3>
+                    <img src="/Imagens/Processo.png" alt="Diagrama do processo de transformação"/>
                 </div>
                  <h3 id="form-title">Preencha o formulário abaixo para que possamos entrar em contato com você o mais breve possível:</h3>
                 <div id="capture-form-area">
