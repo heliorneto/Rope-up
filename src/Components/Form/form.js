@@ -1,6 +1,15 @@
 import React from 'react';
 import './form.css';
 
+
+/*
+   This component renders the capture page's form.
+   It takes the following props:
+   - action: the url of the page that is going to receive the data
+   It also has configurable error messages for the HTML5 form validation
+   system (they can be configured in the errorMessages object).
+*/
+
 class Form extends React.Component{
     constructor(props){
         super(props);
