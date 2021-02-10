@@ -2,7 +2,6 @@ import React from 'react';
 import Header from '../../Components/Header/header';
 import Footer from '../../Components/Footer/footer';
 import "./sobre.css";
-import TextBar from '../../Components/TextBar/textBar';
 
 function Sobre() {
     return(
