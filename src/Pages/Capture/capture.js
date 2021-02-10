@@ -2,6 +2,7 @@ import React from 'react';
 import Header from '../../Components/Header/header';
 import Footer from '../../Components/Footer/footer';
 import Button from '../../Components/Button/button';
+import Form from '../../Components/Form/form'
 import "./capture.css";
 
 function Capture(){
@@ -50,20 +51,14 @@ function Capture(){
                         <div id="image-text">
                             <h3><b>O processo de transformação</b></h3>
                         </div>
-                        <img src="/Imagens/Capture2.png" alt="image1" style={{height: "1300px"}}></img>
                     </div>
                 </div>
-                <div id="capture-button">
-                    <div id="capture-button-up">
-                        <Button width="600px" color="#D40F1C" label="Falar com um especialista"/>
+                 <h3 id="form-title">Preencha o formulário abaixo para que possamos entrar em contato com você o mais breve possível:</h3>
+                <div id="capture-form-area">
+                    <div id="capture-form">
+                        <Form action="#"/>
                     </div>
-                </div>
-                <div id="capture-end">
-                    <div id="image-end">
-                        <div id="forms-box">
-                        </div>
-                        <img src="/Imagens/Capture3.png" alt="image1" style={{height: "500px"}}></img>
-                    </div>
+                    <img src="/Imagens/Capture3.png" alt="image1" style={{height: "500px"}}></img>
                 </div>
             <Footer/>
         </div>
