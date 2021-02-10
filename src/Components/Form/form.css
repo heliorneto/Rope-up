@@ -28,7 +28,7 @@
     border-radius: 19px;
     border: 1px solid #000;
     padding: 4px 15px 4px 15px;
-    margin: 4px 0px 16px 0px;
+    margin: 4px 0px 4px 0px;
     background-color: #d9d9d9;
     font-size: 16px;
 }
@@ -43,6 +43,7 @@
     font-size: 16px;
     font-weight: bold;
     color: #fff;
+    margin-top: 10px;
 }
 
 .form-container input[type="submit"]:hover{
@@ -57,4 +58,19 @@
 .form-required{
     color: red;
     font-size: 13px;
+}
+
+/*
+    Form validation system related styles
+*/
+
+.form-container input.invalid{
+    border-color: #D40F1C;
+}
+
+.form-error-msg{
+    align-self: flex-end;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    color: #D40F1C;
 }
