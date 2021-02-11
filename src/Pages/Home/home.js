@@ -2,11 +2,23 @@ import React from 'react';
 import Header from '../../Components/Header/header';
 import Footer from '../../Components/Footer/footer';
 import Button from '../../Components/Button/button';
+import MetaData from '../../meta/reactHelmet';
 import "./home.css";
 
 function Home(){
+
+    const meta = {
+        titlePage: "Ropeup | Home",
+        titleSearch: "Ropeup | Home",
+        description: "Ajudamos nossos clientes a alavancar seus resultados por meio da tecnologia. Venha conhecer nossos serviços!",
+        keyWords: "Ropeup | Home | tecnologia",
+        imageUrl: "",
+        imageAlt: "",
+    }
+
     return(
         <div id="page-home">
+            <MetaData titlePage={meta.titlePage} titleSearch={meta.titleSearch} description={meta.description} keyWords={meta.keyWords} imageUrl={meta.imageUrl} imageAlt={meta.imageAlt} />
             <Header/>
             <div id="home-general">
                 <div id="line">

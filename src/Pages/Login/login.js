@@ -3,12 +3,22 @@ import {Form, Button} from 'react-bootstrap';
 import {useHistory} from 'react-router-dom';
 import Header from '../../Components/Header/header';
 import Footer from '../../Components/Footer/footer';
+import MetaData from '../../meta/reactHelmet';
 import './login.css';
 
 function Login() {
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
     const history = useHistory();
+
+    const meta = {
+        titlePage: "Ropeup | Login",
+        titleSearch: "Ropeup | Login",
+        description: "Entre já na sua conta ropeup e desfute dos nossos serviços da melhor maneir possível!",
+        keyWords: "Ropeup | Login | Entrar",
+        imageUrl: "",
+        imageAlt: "",
+    }
 
     function Enter() {
         if(email==="helioneto29@hotmail.com" && password==="123"){
@@ -21,6 +31,7 @@ function Login() {
 
     return(
         <div className="page">
+            <MetaData titlePage={meta.titlePage} titleSearch={meta.titleSearch} description={meta.description} keyWords={meta.keyWords} imageUrl={meta.imageUrl} imageAlt={meta.imageAlt} />
             <Header selectedPage="login" />
             <div className="general">
                 <div className="container">

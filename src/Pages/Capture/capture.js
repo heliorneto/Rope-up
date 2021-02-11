@@ -2,12 +2,24 @@ import React from 'react';
 import Header from '../../Components/Header/header';
 import Footer from '../../Components/Footer/footer';
 import Button from '../../Components/Button/button';
+import MetaData from '../../meta/reactHelmet';
 import Form from '../../Components/Form/form'
 import "./capture.css";
 
 function Capture(){
+
+    const meta = {
+        titlePage: "Ropeup | Captura",
+        titleSearch: "Ropeup | Captura",
+        description: "Venha conhecer mais dos nossos serviços e como podemos te ajudar através da tecnologia. Não perca tempo e fale com um especialista",
+        keyWords: "Ropeup | Captura | tecnologia",
+        imageUrl: "",
+        imageAlt: "",
+    }
+
     return(
         <div id="page-capture">
+            <MetaData titlePage={meta.titlePage} titleSearch={meta.titleSearch} description={meta.description} keyWords={meta.keyWords} imageUrl={meta.imageUrl} imageAlt={meta.imageAlt} />
             <Header/>
             <div id="capture-general">
                 <div id="capture-heading">
