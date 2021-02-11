@@ -165,19 +165,6 @@
     margin-right: 100px;
 }
 
-#image-end{
-    display: flex;
-    flex-direction: row;
-}
-
-#forms-box{
-    width: 70%;
-    height: 500px;
-    background-color: #023B59;
-    border-radius: 0px 350px 0px 0px;
-    margin-right: -270px;
-}
-
 #form-title{
     text-align: center;
     font-size: 28px;
