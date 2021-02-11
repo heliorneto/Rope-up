@@ -2,14 +2,26 @@ import React from 'react';
 import Header from '../../Components/Header/header';
 import Footer from '../../Components/Footer/footer';
 import Button from '../../Components/Button/button';
+import MetaData from '../../meta/reactHelmet';
 import "./blog.css";
 import Card from '../../Components/BlogCard/blog_card';
 import TextBox from '../../Components/TextBox/textBox';
 import Carrousel from '../../Components/Carrousel/carrousel';
 
 function Blog(){
+
+    const meta = {
+        titlePage: "Ropeup | Blog",
+        titleSearch: "Ropeup | Blog",
+        description: "Não queremos apenas propor uma solução através da tecnologia, queremos também espalhar conhecimento pelo mundo. Confira nosso blog e as maiores novidades no campo de inovação e tecnologia.",
+        keyWords: "Ropeup | Blog | tecnologia",
+        imageUrl: "",
+        imageAlt: "",
+    }
+
     return(
         <div id="page-blog">
+            <MetaData titlePage={meta.titlePage} titleSearch={meta.titleSearch} description={meta.description} keyWords={meta.keyWords} imageUrl={meta.imageUrl} imageAlt={meta.imageAlt} />
             <Header/>
             <div id="blog-general">
                 <div id="line5">
