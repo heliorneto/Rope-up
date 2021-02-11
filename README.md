@@ -24,7 +24,11 @@ Comando de instalação: `npm install react-markdown`
 
 Comando de instalação: `npm install remark-gfm`
 
-Para **instalar todas as dependências**, basta executar o comando `npm i` no diretório do projeto.
+- ReactHelmet (Facilita a alteração do head da página, atuando, por exemplo, no SEO)
+
+Comando de instalação: `npm install react-helmet`
+
+Para **instalar/atualizar todas as dependências**, basta executar o comando `npm i` no diretório do projeto.
 
 ## Favicons
 
