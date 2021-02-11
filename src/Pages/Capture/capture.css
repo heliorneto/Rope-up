@@ -182,6 +182,7 @@
     text-align: center;
     font-size: 28px;
     font-weight: bold;
+    margin-bottom: 10px;
 }
 
 #capture-form-area{
@@ -198,4 +199,12 @@
 
 #capture-form{
     margin-left: auto;
+}
+
+#capture-form p{
+    font-size: 16px;
+}
+
+#form-obligatory{
+    color: red;
 }
