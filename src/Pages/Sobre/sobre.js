@@ -21,15 +21,11 @@ function Sobre() {
             <Header selectedPage="sobre"/>
             <div id="sobre-general" >
                 <div id="introducao-text">
-                    <div id="introducao-title">
-                        <h1>Sobre a Ropeup</h1>
-                    </div>
-                    <div id="introducao">
-                        <h3 id="text">Acreditamos na utilização da <b>tecnologia para uma gestão mais inteligente. </b>Nossos especialistas desenvolvedores são conectados com grandes universidaes do país sempre levando <b>para seus projetos.</b></h3>
-                        <h3 id="text">Nos movemos pelo <b>sucesso do cliente,</b> sempre buscando o resultado e a melhor experiência detro e fora do projeto.</h3>
-                    </div>
+                    <h1 id="introducao-title">Sobre a Ropeup</h1>
+                    <p id="text">Acreditamos na utilização da <strong>tecnologia para uma gestão mais inteligente.</strong> Nossos especialistas desenvolvedores são conectados com grandes universidades do país sempre levando <strong>para seus projetos.</strong></p>
+                    <p id="text">Nos movemos pelo <strong>sucesso do cliente,</strong> sempre buscando o resultado e a melhor experiência dentro e fora do projeto.</p>
                 </div>
-                <img id="image-top" src="/Imagens/Sobre1.png" alt="Sobre1" ></img>
+                <img id="image-top" src="/Imagens/Sobre1.png" alt="Sobre1"/>
             </div>
             <Footer/>
         </div>
