@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react';
 import Logo from './../../Components/Logo/logo.js';
 import "./footer.css";
 
 function Footer(){
     return(
-        <nav id="nav-footer" expand="lg">
+        <nav id="nav-footer">
             <ul id="logo-footer" href="/home">
                 <Logo color='#ffffff' width="130" heigth="120" fontSize="40"/>
             </ul>
