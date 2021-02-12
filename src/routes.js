@@ -10,6 +10,7 @@ function Routes() {
     return(
         <BrowserRouter>
             <Switch>
+                <Redirect exact path="/" to="/home"/>
                 <Route path="/home" component={Home}/>
                 <Route path="/capture" component={Capture}/>
                 <Route exact path='/blog' component={Blog}/>
