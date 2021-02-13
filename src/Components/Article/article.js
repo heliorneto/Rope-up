@@ -85,19 +85,31 @@ class Article extends React.Component{
             //!Check if it is ok to allowHTML (security)
             return (
                 <article className="article-container">
-                    <h1>{this.state.articleData.title}</h1>
-                    <ReactMarkdown 
-                    plugins={[gmf]} 
-                    allowDangerousHtml={true}
-                    transformImageUri={(url)=> this.props.baseMediaUrl + url}
-                    >
-                        {this.state.articleData.contentMD}
-                    </ReactMarkdown>
-                    <footer className="article-info">
+                    <header className="article-header">
+                        <div className="decorate-circle"/>
+                        <img src="/Imagens/Teste.jpg" alt="Capa do artigo" className="article-cover"/>
+                        <h1>{this.state.articleData.title}</h1>
+                    </header>
+                    <div className="article-content">
+                        <ReactMarkdown 
+                        plugins={[gmf]} 
+                        allowDangerousHtml={true}
+                        transformImageUri={(url)=> this.props.baseMediaUrl + url}
+                        >
+                            {this.state.articleData.contentMD}
+                        </ReactMarkdown>
+                    </div>
+                    <aside className="article-info">
+                        <img src="/Imagens/Autor.jpg" alt="Foto do autor" className="author-photo"/>
                         <p>Autor: {this.state.articleData.author}</p>
                         <p>Publicado em: {this.state.articleData.datePublished}</p>
                         {(this.state.articleData.dateLastEdited !== '') && <p>Editado em: {this.state.articleData.dateLastEdited}</p>}
-                    </footer>
+                    </aside>
+                    <aside className="other-articles">
+                        {/* 
+                        //TODO: add the article cards in here
+                        */}
+                    </aside>
                 </article>
             );
         }else if(this.state.requested && this.state.error){    
