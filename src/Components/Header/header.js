@@ -21,8 +21,10 @@ function Header(props){
         }
     }
 
-    useEffect(()=>{window.addEventListener('scroll',shrinkHeader)},[]);
-    useEffect(()=>{return window.removeEventListener('scroll',shrinkHeader)},[]);
+    useEffect(()=>{
+        window.addEventListener('scroll',shrinkHeader);
+        return ()=>{window.removeEventListener('scroll',shrinkHeader);};
+    },[]);
 
     return(
         <nav id="header" className={shrink? 'small': ''}>
