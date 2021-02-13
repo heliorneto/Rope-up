@@ -1,4 +1,4 @@
-import {React, useState} from 'react';
+import {React, useState, useEffect} from 'react';
 import { useHistory } from 'react-router-dom';
 import Logo from '../../Components/Logo/logo.js';
 import "./header.css";
@@ -13,13 +13,16 @@ function Header(props){
     let history = useHistory();
     const [shrink, setShrink] = useState(false);
 
-    window.addEventListener('scroll',()=>{
+    const shrinkHeader = ()=>{
         if(document.body.scrollTop > 50 || document.documentElement.scrollTop > 50){
             setShrink(true);
         }else{
             setShrink(false);
         }
-    });
+    }
+
+    useEffect(()=>{window.addEventListener('scroll',shrinkHeader)},[]);
+    useEffect(()=>{return window.removeEventListener('scroll',shrinkHeader)},[]);
 
     return(
         <nav id="header" className={shrink? 'small': ''}>
