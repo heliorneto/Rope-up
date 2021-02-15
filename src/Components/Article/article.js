@@ -20,7 +20,11 @@ class Article extends React.Component{
             error: false,
             articleData: {
                 title: '',
-                coverImage: '',
+                coverImage: {
+                    altText: '', 
+                    sources: [],
+                    sizes: []
+                },
                 contentMD: '',
                 author: '',
                 datePublished: '',
@@ -45,6 +49,9 @@ class Article extends React.Component{
             let articleData = this.state.articleData;
             const response = await this.webInterface.get(`${this.props.articleID}`);
             articleData.title = response.data.Titulo;
+            articleData.coverImage.altText = response.data.Capa.alternativeText;
+            articleData.coverImage.sources = [response.data.Capa.formats.small.url, response.data.Capa.formats.medium.url, response.data.Capa.formats.large.url];
+            articleData.coverImage.sizes = [response.data.Capa.formats.small.width, response.data.Capa.formats.medium.width, response.data.Capa.formats.large.width];
             articleData.contentMD = response.data.Conteudo;
             articleData.author = response.data.Autor;
             articleData.datePublished = response.data.created_at;
@@ -87,7 +94,11 @@ class Article extends React.Component{
                 <article className="article-container">
                     <header className="article-header">
                         <div className="decorate-circle"/>
-                        <img src="/Imagens/Teste.jpg" alt="Capa do artigo" className="article-cover"/>
+                        <img 
+                        src={this.props.baseMediaUrl + this.state.articleData.coverImage.sources[1]}
+                        srcSet={this.state.articleData.coverImage.sources.map((item,index)=> this.props.baseMediaUrl + item + ' ' + this.state.articleData.coverImage.sizes[index] + 'w, ')}
+                        alt={this.state.articleData.coverImage.altText} 
+                        className="article-cover"/>
                         <hr/>
                         <h1>{this.state.articleData.title}</h1>
                     </header>
@@ -103,7 +114,7 @@ class Article extends React.Component{
                         </div>
                         <aside className="article-info">
                             <img src="/Imagens/Autor.jpg" alt="Foto do autor" className="author-photo"/>
-                            <p>Autor: {this.state.articleData.author}</p>
+                            <p>Por: {this.state.articleData.author}</p>
                             <p>Publicado em: {this.state.articleData.datePublished}</p>
                             {(this.state.articleData.dateLastEdited !== '') && <p>Editado em: {this.state.articleData.dateLastEdited}</p>}
                         </aside>
@@ -118,11 +129,13 @@ class Article extends React.Component{
         }else if(this.state.requested && this.state.error){    
             return (
                 <article className="article-container">
+                    <h1>{this.state.error}</h1>
                 </article>
             );
         }else{      
             return (
                 <article className="article-container">
+                    <h1>{this.state.error}</h1>
                 </article>
             );
         }
