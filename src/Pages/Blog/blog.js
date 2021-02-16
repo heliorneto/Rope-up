@@ -61,7 +61,15 @@ function Blog(){
                         <h3>Mais Lidas</h3>
                     </div>
                     <div id="carrousel">
-                        <Carrousel> 
+                        <Carrousel numItems={5} width="60%"> 
+                            <Card title="Finanças" link="" coverImage="" coverAlt="Para quem busca organizar suas cartas"/>
+                            <Card title="Finanças" link="" coverImage="" coverAlt="Para quem busca organizar suas cartas"/>
+                            <Card title="Finanças" link="" coverImage="" coverAlt="Para quem busca organizar suas cartas"/>
+                            <Card title="Finanças" link="" coverImage="" coverAlt="Para quem busca organizar suas cartas"/>
+                            <Card title="Finanças" link="" coverImage="" coverAlt="Para quem busca organizar suas cartas"/>
+                            <Card title="Finanças" link="" coverImage="" coverAlt="Para quem busca organizar suas cartas"/>
+                            <Card title="Finanças" link="" coverImage="" coverAlt="Para quem busca organizar suas cartas"/>
+                            <Card title="Finanças" link="" coverImage="" coverAlt="Para quem busca organizar suas cartas"/>
                             <Card title="Finanças" link="" coverImage="" coverAlt="Para quem busca organizar suas cartas"/>
                             <Card title="Finanças" link="" coverImage="" coverAlt="Para quem busca organizar suas cartas"/>
                             <Card title="Finanças" link="" coverImage="" coverAlt="Para quem busca organizar suas cartas"/>
