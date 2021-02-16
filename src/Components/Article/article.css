@@ -137,6 +137,19 @@
 
 .article-content blockquote{
     font-style: italic;
+    margin-left: 80px;
+}
+
+.article-content blockquote p::before{
+    content: "“";
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 36px;
+}
+
+.article-content blockquote p::after{
+    content: "”";
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 36px;
 }
 
 .article-content pre{
@@ -147,4 +160,16 @@
     font-size: 18px;
     font-family: Consolas, Menlo, Monaco, "Lucida Console", "Liberation Mono", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace, serif;
     font-weight: 500;
+}
+
+.article-content img{
+    max-width: 50vw;
+    max-height: 50vh;
+    margin-left: calc(25% - 96px);
+}
+
+.article-content img + em{
+    display: block;
+    text-align: center;
+    font-style: normal;
 }
