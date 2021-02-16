@@ -3,17 +3,16 @@
     flex-flow: row nowrap;
     justify-content: center;
     align-items: center;
-    width: min-content;
     position: relative;
     overflow: hidden;
-    padding: 17px 5px 17px 5px;
+    padding: 17px 12px 17px 12px;
 }
 
 .carrousel-items{
     display: flex;
     flex-flow: row nowrap;
     justify-content: flex-start;
-    width: 690px;
+    width: 100%;
     position: relative;
     top: 0px;
     left: 0px;
@@ -30,7 +29,6 @@
     display: flex;
     flex-flow: row nowrap;
     justify-content: flex-start;
-    width: 690px;
     position: absolute;
     top: 0px;
     z-index: 1;
@@ -73,7 +71,7 @@
 
 .carrousel-previous{
     transform: rotate(180deg);
-    left: 705px;
+    left: calc(100% - 15px);
 }
 
 .carrousel-next{
@@ -83,18 +81,18 @@
 /*Carrousel slide animations*/
 @keyframes Slide-Left{
     from{
-        left: 0px;
+        left: 0%;
     }
     to{
-        left: -750px;
+        left: -100%;
     }
 }
 
 @keyframes Slide-Right{
     from{
-        left: 0px;
+        left: 0%;
     }
     to{
-        left: 750px;
+        left: 100%;
     }
 }

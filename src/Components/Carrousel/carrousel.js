@@ -3,16 +3,16 @@ import './carrousel.css';
 
 /*
     This component renders the child items (passed inside the tag as
-    props.children) in the form of a carrousel. It also receives a prop
-    named 'numItems' that controls the number of items displayed per 
-    "page" in the carrousel.
-    !WIP: numItems doesn't work yet!
+    props.children) in the form of a carrousel. It also receives the
+    following props:
+    - numItems: sets the number of items (cards) that will appear per page
+    - width: controls the component container's line width
 */
 
 class Carrousel extends React.Component{
     constructor(props){
         super(props);
-        this.numPages = Math.ceil(props.children.length/3);
+        this.numPages = Math.ceil(props.children.length/props.numItems);
         this.animationDuration = 750; // Animation duration in milliseconds
         this.state = {
             currentPage: 1,
@@ -60,12 +60,12 @@ class Carrousel extends React.Component{
     }
 
     render(){
-        const begin = (this.state.currentPage - 1) * 3;
-        const slicedItems = this.props.children.slice(begin,begin + 3);
-        const pbegin = (this.state.previousPage - 1) * 3;
-        const previrousItems = this.props.children.slice(pbegin,pbegin + 3);
+        const begin = (this.state.currentPage - 1) * this.props.numItems;
+        const slicedItems = this.props.children.slice(begin,begin + this.props.numItems);
+        const pbegin = (this.state.previousPage - 1) * this.props.numItems;
+        const previrousItems = this.props.children.slice(pbegin,pbegin + this.props.numItems);
         return (
-            <div className="carrousel-container">
+            <div className="carrousel-container" style={{width: this.props.width}}>
                 <button className="carrousel-next" onClick={()=>this.previousPage()}/>
                 <div className="carrousel-items">
                     {slicedItems}
