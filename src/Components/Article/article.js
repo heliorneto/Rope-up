@@ -26,7 +26,10 @@ class Article extends React.Component{
                     sizes: []
                 },
                 contentMD: '',
-                author: '',
+                author: {
+                    name: '',
+                    photoSrc: ''
+                },
                 datePublished: '',
                 dateLastEdited: ''
             },
@@ -53,7 +56,8 @@ class Article extends React.Component{
             articleData.coverImage.sources = [response.data.Capa.formats.small.url, response.data.Capa.formats.medium.url, response.data.Capa.formats.large.url];
             articleData.coverImage.sizes = [response.data.Capa.formats.small.width, response.data.Capa.formats.medium.width, response.data.Capa.formats.large.width];
             articleData.contentMD = response.data.Conteudo;
-            articleData.author = response.data.Autor;
+            articleData.author.name = response.data.Autor.Nome;
+            articleData.author.profilePicSrc = response.data.Autor.Foto.url;
             articleData.datePublished = response.data.created_at;
             articleData.dateLastEdited = (response.data.updated_at === articleData.datePublished)? '': response.data.updated_at;
             this.setState({
@@ -113,8 +117,8 @@ class Article extends React.Component{
                             </ReactMarkdown>
                         </div>
                         <aside className="article-info">
-                            <img src="/Imagens/Autor.jpg" alt="Foto do autor" className="author-photo"/>
-                            <p>Por: {this.state.articleData.author}</p>
+                            <img src={this.props.baseMediaUrl + this.state.articleData.author.profilePicSrc} alt="Foto do autor" className="author-photo"/>
+                            <p>Por: {this.state.articleData.author.name}</p>
                             <p>Publicado em: {this.state.articleData.datePublished}</p>
                             {(this.state.articleData.dateLastEdited !== '') && <p>Editado em: {this.state.articleData.dateLastEdited}</p>}
                         </aside>
