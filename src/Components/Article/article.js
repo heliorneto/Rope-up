@@ -30,8 +30,8 @@ class Article extends React.Component{
                     name: '',
                     photoSrc: ''
                 },
-                datePublished: '',
-                dateLastEdited: ''
+                datePublished: null,
+                dateLastEdited: null
             },
             errorInfo: {
                 code: 0,
@@ -58,8 +58,12 @@ class Article extends React.Component{
             articleData.contentMD = response.data.Conteudo;
             articleData.author.name = response.data.Autor.Nome;
             articleData.author.profilePicSrc = response.data.Autor.Foto.url;
-            articleData.datePublished = response.data.created_at;
-            articleData.dateLastEdited = (response.data.updated_at === articleData.datePublished)? '': response.data.updated_at;
+            const pubDate = new Date(response.data.created_at);
+            const editDate = new Date(response.data.updated_at);
+            articleData.datePublished = pubDate.toLocaleDateString();
+            if(articleData.datePublished !== editDate.toLocaleDateString()){
+                articleData.dateLastEdited = editDate.toLocaleDateString();
+            }
             this.setState({
                 requested: true,
                 error: false,
@@ -120,7 +124,7 @@ class Article extends React.Component{
                             <img src={this.props.baseMediaUrl + this.state.articleData.author.profilePicSrc} alt="Foto do autor" className="author-photo"/>
                             <p>Por: {this.state.articleData.author.name}</p>
                             <p>Publicado em: {this.state.articleData.datePublished}</p>
-                            {(this.state.articleData.dateLastEdited !== '') && <p>Editado em: {this.state.articleData.dateLastEdited}</p>}
+                            {(this.state.articleData.dateLastEdited) && <p>Editado em: {this.state.articleData.dateLastEdited}</p>}
                         </aside>
                         <aside className="other-articles">
                             {/* 
