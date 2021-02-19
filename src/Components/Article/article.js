@@ -124,7 +124,7 @@ class Article extends React.Component{
                             <img src={this.props.baseMediaUrl + this.state.articleData.author.profilePicSrc} alt="Foto do autor" className="author-photo"/>
                             <p>Por: {this.state.articleData.author.name}</p>
                             <p>Publicado em: {this.state.articleData.datePublished}</p>
-                            {(this.state.articleData.dateLastEdited) && <p>Editado em: {this.state.articleData.dateLastEdited}</p>}
+                            {(this.state.articleData.dateLastEdited) && <p>Atualizado em: {this.state.articleData.dateLastEdited}</p>}
                         </aside>
                         <aside className="other-articles">
                             {/* 
