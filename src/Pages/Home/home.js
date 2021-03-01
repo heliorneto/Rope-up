@@ -23,8 +23,8 @@ function Home(){
             <div id="home-general">
                 <div id="line">
                     <div id="text1">
-                        <h1>Consultoria Empresarial Com Solução em Software</h1>
-                        <h3>Trabalhe de maneira eficiente com o que é realmente importante usando softwares de gestão integrados e usuais</h3>
+                        <h1>Consultoria empresarial com soluções tecnológicas</h1>
+                        <h3>Otimize sua gestão através de um trabalho automatizado e ágil usando softwares e transformação tecnológica</h3>
                         <div id="button-general">
                             <Button width="200px" color="#D40F1C" label="Otimize sua gestão com tecnologia"/>
                         </div>
@@ -38,8 +38,8 @@ function Home(){
                         <img src="/Imagens/Imagem2.jpg" alt="image2"></img>
                     </div>
                     <div id="text2">
-                        <h2>Controle todos os dados da sua empresa em um único lugar</h2>
-                        <h3>Otimizamos seus processos para melhor implantação de um sistema integrado feito especialmente para sua empresa</h3>
+                        <h2>Controle todos os dados e o gerenciamento da sua empresa em um único lugar</h2>
+                        <h3>Otimizamos seus processos para melhor implantação de um sistema integrado personalizado especialmente para sua empresa</h3>
                         <div id="button-general">
                             <Button width="200px" color="#D40F1C" label="Conheça como trabalhamos"/>
                         </div>
@@ -67,7 +67,7 @@ function Home(){
                             <div id="text2-menu">
                                 <h4 id='numero-menu'>02</h4>
                                 <h3>Solução com softwares de gestão integrados</h3>
-                                <h5>Identificamos em quais circunstâncias os principais softwares de gestão do mercado podem otimizar seus processos atuando de forma integrada</h5>
+                                <h5>Aprimoramos a tecnologia na sua empresa para que os processos funcionem adequadamente</h5>
                             </div>
                             <div id="image1-menu">
                                 <img src="/Imagens/Menu2.jpg" alt="image2"></img>

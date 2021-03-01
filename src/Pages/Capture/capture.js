@@ -26,7 +26,7 @@ function Capture(){
                     <img src="/Imagens/Capture1.png" alt="image1"/>
                     <div id="heading-text">
                         <h1>Solução em softwares de gestão</h1>
-                        <p>Tenha o software empresarial adequado para sua empresa de forma estruturada completamente implementada.</p>
+                        <p>Tenha uma consultoria tecnológica especializada e dedicada para a implementação da solução tecnológica mais adequada para seu negócio</p>
                     </div>
                 </div>
                 <div id="line2">
