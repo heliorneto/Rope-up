@@ -30,14 +30,14 @@ function Home(){
                         </div>
                     </div>
                     <div id="image-top">
-                        <img src="/Imagens/Imagem1.jpg" alt="image1"></img>
+                        <img src="/Imagens/Imagem1.jpg" alt="image1" style={{height: '85vh'}}></img>
                     </div>
                 </div>
                 <div id="line">
                     <div id="image1">
-                        <img src="/Imagens/Imagem2.jpg" alt="image2"></img>
+                        <img src="/Imagens/Imagem2.jpg" alt="image2" style={{height: '85vh'}}></img>
                     </div>
-                    <div id="text2">
+                    <div id="text20">
                         <h2>Controle todos os dados e o gerenciamento da sua empresa em um único lugar</h2>
                         <h3>Otimizamos seus processos para melhor implantação de um sistema integrado personalizado especialmente para sua empresa</h3>
                         <div id="button-general">
