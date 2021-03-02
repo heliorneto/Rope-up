@@ -61,15 +61,28 @@ function Header(props){
         );
     }else{
         return (
-            <div id="header-container">
-                <header id="header" className={expanded? 'expand': ''}>
+            <div id="header-container" className={expanded? "expanded": ""}>
+                <header id="header" className={(shrink || expanded)? 'small': ''}>
                     <div id="logo" onClick={()=>{history.push("/home")}}>
                         <Logo width="80" height="80" color="#000" fontSize="28"/>
                     </div>
                     <button id="menu-icon" onClick={()=>{setExpanded(!expanded)}}/>
                 </header>
                 <nav id="menu-options">
-
+                    <ul className={(expanded)? "show": "hide"}>
+                        <li id="comoFunciona">
+                            <a href='/home#link'>Como Funciona</a>
+                        </li>
+                        <li id="blog">
+                            <a href='/blog' style={(props.selectedPage === "blog")? {color: "#023B59"}: {}}>Blog</a>
+                        </li>
+                        <li id="sobre">
+                            <a href='/sobre' style={(props.selectedPage === "sobre")? {color: "#023B59"}: {}}>Sobre</a>
+                        </li>
+                        <li id="login">
+                            <a href='/login' style={(props.selectedPage === "login")? {color: "#023B59"}: {}}><b>Login</b></a>
+                        </li>
+                    </ul>
                 </nav>
             </div>
         );
