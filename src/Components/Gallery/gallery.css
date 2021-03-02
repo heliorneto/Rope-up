@@ -1,0 +1,35 @@
+.gallery-container{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    width: min-content;
+    border: 1px solid #000;
+}
+
+.gallery-items{
+    border-collapse: separate;
+    border-spacing: 30px;
+    empty-cells: show;
+}
+
+.gallery-items td{
+    width: 200px;
+    height: 160px;
+}
+
+.gallery-pages{
+    border-collapse: separate;
+    border-spacing: 5px;
+}
+
+.gallery-page-num{
+    cursor: pointer;
+}
+
+.gallery-page-num:hover{
+    text-decoration: underline;
+}
+
+.gallery-page-num[selectedpage="true"]{
+    color: #023B59;
+}

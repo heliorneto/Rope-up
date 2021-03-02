@@ -1,0 +1,19 @@
+.red-button{
+    height: 65px;
+    border: 1px solid #e79d9d;
+    border-radius: 30px;
+    outline-style: none;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.red-button:hover{
+    filter: brightness(110%);
+}
+
+.red-button:active{
+    border: 1px inset;
+    filter: brightness(80%);
+}

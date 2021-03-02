@@ -1,0 +1,12 @@
+.textBox{
+    width: 500px;
+    height: 500px;
+    border-radius: 30px;
+    text-align: justify;
+}
+
+#button-text-box{
+    display: flex;
+    justify-content: center;
+    padding-top: 8vh;
+}

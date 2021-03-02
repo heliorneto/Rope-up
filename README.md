@@ -8,13 +8,27 @@ O site utiliza a biblioteca React, de JavaScript, por meio da tecnologia Node.js
 
 - ReactRouter (Possibilita a criação de múltiplas páginas e o redirecionamento entre elas)
 
-Comando de instalação: `react-router-dom`
+Comando de instalação: `npm install react-router-dom`
 
-- React-bootstrap (Biblioteca externa com templates de estilos prontos) (?)
+- ~~React-bootstrap~~
 
-Comando de instalação: `npm i react-bootstrap bootstrap`
+- Axios (Facilita o envio de requisições http/http(s) no client-side)
 
-Para **instalar todas as dependências**, basta executar o comando `npm i` no diretório do projeto.
+Comando de instalação: `npm install axios`
+
+- ReactMarkdown (Converte o markdown do conteúdo de um artigo, vindo do servidor, em HTML)
+
+Comando de instalação: `npm install react-markdown`
+
+- RemarkGFM (Adiciona suporte a mais itens da sintaxe do Markdown)
+
+Comando de instalação: `npm install remark-gfm`
+
+- ReactHelmet (Facilita a alteração do head da página, atuando, por exemplo, no SEO)
+
+Comando de instalação: `npm install react-helmet`
+
+Para **instalar/atualizar todas as dependências**, basta executar o comando `npm i` no diretório do projeto.
 
 ## Favicons
 

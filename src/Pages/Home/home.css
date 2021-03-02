@@ -1,42 +1,55 @@
-#homeGeneral{
+#home-general{
     display: flex;
     flex-direction: column;
-    align-content: center;
-    justify-content: space-around;
-    align-items: center;
 }
 
-#buttonGeneral{
-    margin-right: 60%;
+#button-general{
+    margin-left: 30px;
     margin-top: 5%;
 }
 
 #text1{
     display: flex;
     flex-direction: column;
-    margin-top: 300px;
-    margin-left: 50px;
+    margin-top: 45vh;
+    margin-left: 5vw;
+    width: 40vw;
 }
 
-#text2{
+#image-top{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding-top: 2px;
+}
+
+#image1{
+    display: flex;
+}
+
+#text20{
     display: flex;
     flex-direction: column;
-    margin-top: 300px;
-    margin-right: 50px;
+    margin-right: 5vw;
+    width: 40vw;
+    margin-top: 25vh;
 }
 
 #line{
     display: flex;
     flex-direction: row;
-    align-content: center;
-    justify-content: space-around;
+    justify-content: space-between;
+}
+
+#lineComoFunciona{
+    display: flex;
+    align-self: center;
+    padding-right: 20vw;
 }
 
 #left{
     display: flex;
     flex-direction: row;
-    align-content: center;
-    justify-content: space-around;
 }
 
 #menu{
@@ -44,21 +57,78 @@
     flex-direction: column;
 }
 
-#text1Menu{
+#numero-menu {
+    font-size: 80px;
+    color: red;
+    margin-left: 10px;
+}
+
+#text1-menu{
     margin-top: 100px;
+    margin-right: 100px;
 }
 
-#text2Menu{
+#text2-menu{
     margin-top: 140px;
+    margin-right: 100px;
 }
 
-#text3Menu{
+#text3-menu{
     margin-top: 140px;
+    margin-right: 100px;
 }
 
-#buttonUp{
+#button-up{
     display: flex;
-    align-content: center;
-    margin-left: 40%;
-    margin-right: 40%;
+    margin-bottom: 30px;
+    justify-content: center;
+}
+
+@media(max-width: 600px){
+    #line{
+        flex-wrap: wrap;
+    }
+    #text1{
+        flex-wrap: wrap;
+        text-align: center;
+        width: 95vw;
+        justify-content: flex-end;
+        margin-top: 30vh;
+    }
+    #text20{
+        flex-wrap: wrap;
+        text-align: center;
+        width: 95vw;
+        justify-content: flex-end;
+        margin-top: 0vh;
+        margin-bottom: 5vh;
+    }
+    #left{
+        margin-right: 25vw;
+    }
+    #lineComoFunciona{
+        margin-right: 35vw;
+    }
+    #image1Menu{
+        margin-right: 70vw;
+    }
+    #text1-menu{
+        width: 350px;
+        text-align: center;
+        margin-left: 5vw;
+        margin-top: 0px;
+    }
+    #text2-menu{
+        width: 350px;
+        text-align: center;
+        margin-left: 5vw;
+        margin-top: 0px;
+    }
+    #text3-menu{
+        width: 350px;
+        text-align: center;
+        margin-left: 5vw;
+        margin-top: 0px;
+        padding-bottom: 5vh;
+    }
 }

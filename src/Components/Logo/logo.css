@@ -1,0 +1,12 @@
+.logo-container{
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.logo-text{
+    display: inline-block;
+    font-weight: 600;
+    font-size: 16px;
+}
