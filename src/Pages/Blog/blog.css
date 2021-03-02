@@ -6,8 +6,8 @@
 
 #line5{
     display: flex;
-    justify-content: flex-start;
-    padding-right: 20vh;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 #text3{
@@ -23,7 +23,7 @@
 
 #text1-blog{
     background-color: #023B59;
-    width: 200vh;
+    width: 100vw;
     height: 98vh;
     border-radius: 0px 800px 800px 0px;
 }
@@ -50,6 +50,12 @@
     padding-top: 5vh;
 }
 
+#line-blog{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
 #title{
     text-align: center;
     padding-top: 10vh;
@@ -63,7 +69,7 @@
 
 #right{
     padding-top: 10vh;
-    padding-left: 70vh;
+    padding-right: 4vw;
 }
 
 #components2{
@@ -77,11 +83,54 @@
 }
 
 #tb{
-    padding-top: 40vh;
-    padding-left: 200vh;
+    padding-top: 20vh;
 }
 
 #image-bottom-blog{
     display: flex;
     justify-content: flex-end;
+}
+
+@media(max-width: 600px){
+    #line5{
+        flex-wrap: wrap;
+    }
+    #text3{
+        margin-left: 2vw;
+        margin-top: 25vh;
+    }
+    #components{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    #midle1{
+        padding-bottom: 5vh;
+        margin-left: 0vh;
+    }
+    #midle4{
+        margin-top: 5vh;
+        margin-right: 0vh;
+    }
+    #line-blog{
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+    #left-blog{
+        display: flex;
+        flex-direction: column;
+        margin-left: 0vw;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    #right{
+        padding-right: 0vw;
+        padding-left: 22vw;
+    }
+    #components2{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    #image-bottom-blog{
+        flex-wrap: wrap;
+    }
 }

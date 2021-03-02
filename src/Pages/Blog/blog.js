@@ -27,12 +27,12 @@ function Blog(){
                 <div id="line5">
                     <div id="text1-blog" >
                         <div id="text3">
-                            <h2 style={{fontSize: 52}}>Publicações sobre gestão e desenvolvimento</h2>
+                            <h2 style={{fontSize: 49}}>Publicações sobre gestão e desenvolvimento</h2>
                             <h3 style={{fontSize: 28}}>Porque nos movemos pelo conhecimento</h3>
                         </div>
                     </div>
                     <div id="image-top-blog">
-                        <img src="/Imagens/1.png" alt="image1-blog" style={{width:"70vh", paddingTop:"15vh"}}></img>
+                        <img src="/Imagens/1.png" alt="image1-blog" style={{height:"85vh", paddingTop:"15vh"}}></img>
                     </div>
                 </div>
                 <div id="column">
@@ -82,9 +82,9 @@ function Blog(){
                     <div id="title2">
                         <h3>Mais recentes</h3>
                     </div>    
-                    <div id="line">
-                        <div id="left">
-                            <img src="/Imagens/8.png" alt="image1-blog" style={{width:"70vh", paddingTop:"10vh"}}></img>
+                    <div id="line-blog">
+                        <div id="left-blog">
+                            <img src="/Imagens/8.png" alt="image1-blog" style={{width:"40vw", paddingTop:"10vh"}}></img>
                         </div>
                         <div id="right">
                             <div id="midle2">
@@ -142,7 +142,9 @@ function Blog(){
                         <div id="tb">
                             <TextBox color="#D40F1C"></TextBox>
                         </div>
-                        <img src="/Imagens/9.png" alt="image1-blog" style={{width:"120vh", paddingTop:"2vh"}}></img>
+                        <div>
+                            <img src="/Imagens/9.png" alt="image1-blog" style={{width:"100vh", paddingTop:"2vh"}}></img>
+                        </div>
                     </div>
                 </div>
             </div>
