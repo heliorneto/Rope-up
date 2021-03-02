@@ -14,6 +14,7 @@ function Header(props){
     const scrollOffset = (isPhone)? 10: 50;
     let history = useHistory();
     const [shrink, setShrink] = useState(false);
+    const [expanded, setExpanded] = useState(false);
 
     useEffect(()=>{
     
@@ -31,37 +32,46 @@ function Header(props){
 
     if(!isPhone){
         return(
-            <nav id="header" className={shrink? 'small': ''}>
-                <div id="logo" onClick={()=>{history.push("/home")}}>
-                    {
-                        (shrink)? <Logo width="80" height="80" color="#000" fontSize="28"/>:
-                        <Logo width="120" height="120" color="#000" fontSize="30"/>
-                    }
-                </div>
-                <ul id="options">
-                    <li id="comoFunciona">
-                        <a href='/home#link'>Como Funciona</a>
-                    </li>
-                    <li id="blog">
-                        <a href='/blog' style={(props.selectedPage === "blog")? {color: "#023B59"}: {}}>Blog</a>
-                    </li>
-                    <li id="sobre">
-                        <a href='/sobre' style={(props.selectedPage === "sobre")? {color: "#023B59"}: {}}>Sobre</a>
-                    </li>
-                    <li id="login">
-                        <a href='/login' style={(props.selectedPage === "login")? {color: "#023B59"}: {}}><b>Login</b></a>
-                    </li>
-                </ul>
-            </nav>
+            <div id="header-container">
+                <header id="header" className={shrink? 'small': ''}>
+                    <div id="logo" onClick={()=>{history.push("/home")}}>
+                        {
+                            (shrink)? <Logo width="80" height="80" color="#000" fontSize="28"/>:
+                            <Logo width="120" height="120" color="#000" fontSize="30"/>
+                        }
+                    </div>
+                    <nav>
+                        <ul id="options">
+                            <li id="comoFunciona">
+                                <a href='/home#link'>Como Funciona</a>
+                            </li>
+                            <li id="blog">
+                                <a href='/blog' style={(props.selectedPage === "blog")? {color: "#023B59"}: {}}>Blog</a>
+                            </li>
+                            <li id="sobre">
+                                <a href='/sobre' style={(props.selectedPage === "sobre")? {color: "#023B59"}: {}}>Sobre</a>
+                            </li>
+                            <li id="login">
+                                <a href='/login' style={(props.selectedPage === "login")? {color: "#023B59"}: {}}><b>Login</b></a>
+                            </li>
+                        </ul>
+                    </nav>
+                </header>
+            </div>
         );
     }else{
         return (
-            <nav id="header" className={shrink? 'small': ''}>
-                <div id="logo" onClick={()=>{history.push("/home")}}>
-                    <Logo width="80" height="80" color="#000" fontSize="28"/>
-                </div>
-                <button id="menu-icon"/>
-            </nav>
+            <div id="header-container">
+                <header id="header" className={expanded? 'expand': ''}>
+                    <div id="logo" onClick={()=>{history.push("/home")}}>
+                        <Logo width="80" height="80" color="#000" fontSize="28"/>
+                    </div>
+                    <button id="menu-icon" onClick={()=>{setExpanded(!expanded)}}/>
+                </header>
+                <nav id="menu-options">
+
+                </nav>
+            </div>
         );
     }
 }
