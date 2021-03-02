@@ -76,12 +76,34 @@
     font-size: 22px;
 }
 
-@media (max-width: 420px) {
-    #navbar{
-        height: 250px;
+@media (max-width: 600px){
+    #header{
+        width: 100vw;
+        max-width: 100%;
+        height: 100px;
     }
 
-    #options{
-        margin-left: 13px;
+    #header.small{
+        height: 100px;
+    }
+
+    #menu-icon{
+        width: 80px;
+        height: 80px;
+        background-image: url("Resources/Menu.png");
+        background-size: cover;
+        border: none;
+        background-color: transparent;
+    }
+
+    #menu-icon:active{
+        outline: none;
+        box-shadow: inset 3px 3px 4px rgba(0,0,0,0.6), inset -2px -2px 4px rgba(27, 17, 17, 0.5);
+        transition: all 100ms linear;
+    }
+
+    #logo:active{
+        box-shadow: inset 3px 3px 4px rgba(0,0,0,0.6), inset -2px -2px 4px rgba(27, 17, 17, 0.5);
+        transition: all 100ms linear;
     }
 }
