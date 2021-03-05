@@ -38,6 +38,10 @@
 
 @media(max-width: 600px){
     #sobre-general{
+        flex-direction:column;
+        justify-content: space-around;
+        background-image: url(Cut-logo.png);
+        background-repeat: no-repeat;
         background-size: 80%;
         background-position: -20vw 42vh;
     }

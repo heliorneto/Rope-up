@@ -6,6 +6,7 @@
     flex-direction: column;
     flex-wrap: wrap;
     padding-right: 40px;
+    padding-bottom: 10px;
     flex-grow: 0;
 }
 
