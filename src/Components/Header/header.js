@@ -64,7 +64,7 @@ function Header(props){
             <div id="header-container" className={expanded? "expanded": ""}>
                 <header id="header" className={(shrink || expanded)? 'small': ''}>
                     <div id="logo" onClick={()=>{history.push("/home")}}>
-                        <Logo width="80" height="80" color="#000" fontSize="28"/>
+                        <Logo width="80" height="80" color="#000" fontSize="26"/>
                     </div>
                     <button id="menu-icon" onClick={()=>{setExpanded(!expanded)}}/>
                 </header>
