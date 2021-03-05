@@ -2,12 +2,12 @@
     display: flex;
     flex-direction: row;
     align-content: center;
-    background-color: rgb(202, 202, 202);
+    background-color:#e9e9e9;
     padding-bottom: 10px;
     background-image: url(Cut-logo.png);
     background-repeat: no-repeat;
     background-size: 45%;
-    background-position: -21% 260%;
+    background-position: -12vw 30vh;
 }
 
 
@@ -34,4 +34,38 @@
 #image-top{
     margin-top: 110px;
     width: 550px;
+}
+
+@media(max-width: 600px){
+    #sobre-general{
+        background-size: 80%;
+        background-position: -20vw 42vh;
+    }
+    
+    
+    #introducao-text{
+        margin-top: 150px;
+        margin-right: 8%;
+        margin-left: 5vh;
+        text-align: left;
+        width: 85%;
+    }
+    
+    #introducao-title{
+        width: 68%;
+        border-bottom-style: solid;
+        border-bottom-color: red;
+        border-bottom-width: 1px;
+        margin-bottom: 30px;
+        white-space: nowrap;
+    }
+    
+    #text{
+        font-size: 20px;
+    }
+    
+    #image-top{
+        margin-top: 5vh;
+        width: 90%;
+    }
 }

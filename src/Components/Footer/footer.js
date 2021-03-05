@@ -6,7 +6,7 @@ function Footer(){
     return(
         <nav id="nav-footer">
             <ul id="logo-footer" href="/home">
-                <Logo color='#ffffff' width="130" heigth="120" fontSize="40"/>
+                <Logo id="logo" color='#ffffff' width="130" heigth="120" fontSize="40"/>
             </ul>
             <ul id="opcoes-footer">
                 <li id="onde-estamos-footer">
