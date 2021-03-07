@@ -74,3 +74,45 @@
     margin-bottom: 4px;
     color: #D40F1C;
 }
+
+/*Styles for small smartphones*/
+@media (max-width: 320px){
+    .form-container{
+        padding: 10px;
+    }
+
+    .form-container input:not([type="number"],[type="submit"]){
+        width: 300px;
+        margin: 16px 0px 16px 0px;
+    }
+
+    .form-container input[type="number"]{
+        margin: 16px 0px 16px 0px;
+    }
+
+    .form-container input[type="submit"]{
+        width: 220px;
+        height: 60px;
+        border-radius: 30px;
+        font-size: 18px;
+    }
+}
+
+/*Styles for smartphones*/
+@media (min-width: 321px) and (max-width: 600px){
+    .form-container input:not([type="number"],[type="submit"]){
+        width: 300px;
+        margin: 16px 0px 16px 0px;
+    }
+
+    .form-container input[type="number"]{
+        margin: 16px 0px 16px 0px;
+    }
+
+    .form-container input[type="submit"]{
+        width: 220px;
+        height: 60px;
+        border-radius: 30px;
+        font-size: 18px;
+    }
+}
