@@ -7,7 +7,7 @@ import Form from '../../Components/Form/form'
 import "./capture.css";
 
 function Capture(){
-    const isPhone = window.matchMedia("(max-width: 600px)").matches;
+    const isPhone = window.matchMedia("(max-width: 600px), (max-height: 600px) and (orientation: landscape)").matches;
 
     const meta = {
         titlePage: "Ropeup | Captura",
