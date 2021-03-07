@@ -10,7 +10,7 @@ link will receive a different colour in the Header.
 */
 
 function Header(props){
-    const isPhone = window.matchMedia("(max-width: 600px)").matches;
+    const isPhone = window.matchMedia("(max-width: 600px), (max-height: 600px) and (orientation: landscape)").matches;
     const isTablet = window.matchMedia("(max-width: 992px)").matches;
     const scrollOffset = (isPhone)? 10: 50;
     let history = useHistory();

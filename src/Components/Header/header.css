@@ -78,7 +78,9 @@
     font-size: 22px;
 }
 
-@media (max-width: 600px){
+
+/*Style for smartphones and low res tables*/
+@media (max-width: 600px), (max-height: 600px) and (orientation: landscape){
     #header{
         width: 100vw;
         max-width: 100%;
@@ -183,5 +185,35 @@
 
     #nav-footer{
         overflow: hidden;
+    }
+}
+
+/*Styles for landscape phones*/
+@media (max-height: 600px) and (orientation: landscape){
+    #header-container.expanded{
+        height: 240px;
+    }
+
+    #menu-options li{
+        height: 60px;
+    }
+
+    #menu-options li a{
+        font-size: 28px;
+    }
+}
+
+/*Styles for small landscape phones*/
+@media (max-height: 320px) and (orientation: landscape){
+    #header-container.expanded{
+        height: 200px;
+    }
+
+    #menu-options li{
+        height: 50px;
+    }
+
+    #menu-options li a{
+        font-size: 24px;
     }
 }
