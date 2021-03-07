@@ -11,6 +11,7 @@ link will receive a different colour in the Header.
 
 function Header(props){
     const isPhone = window.matchMedia("(max-width: 600px)").matches;
+    const isTablet = window.matchMedia("(max-width: 992px)").matches;
     const scrollOffset = (isPhone)? 10: 50;
     let history = useHistory();
     const [shrink, setShrink] = useState(false);
@@ -36,8 +37,11 @@ function Header(props){
                 <header id="header" className={shrink? 'small': ''}>
                     <div id="logo" onClick={()=>{history.push("/home")}}>
                         {
-                            (shrink)? <Logo width="80" height="80" color="#000" fontSize="28"/>:
-                            <Logo width="120" height="120" color="#000" fontSize="30"/>
+                            (isTablet)? 
+                            ((shrink)? <Logo width="80" height="80" color="#000" fontSize="26"/>:
+                            <Logo width="100" height="100" color="#000" fontSize="28"/>):
+                            ((shrink)? <Logo width="80" height="80" color="#000" fontSize="28"/>:
+                            <Logo width="120" height="120" color="#000" fontSize="30"/>)
                         }
                     </div>
                     <nav>
