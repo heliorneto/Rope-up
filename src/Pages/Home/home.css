@@ -16,7 +16,7 @@
     width: 40vw;
 }
 
-#image-top{
+#image-top-home{
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
@@ -41,10 +41,15 @@
     justify-content: space-between;
 }
 
+#line-menu{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
 #lineComoFunciona{
     display: flex;
-    align-self: center;
-    padding-right: 20vw;
+    justify-content: center;
 }
 
 #left{
@@ -52,7 +57,7 @@
     flex-direction: row;
 }
 
-#menu{
+#menu-home{
     display: flex;
     flex-direction: column;
 }
@@ -84,51 +89,87 @@
     justify-content: center;
 }
 
-@media(max-width: 600px){
+@media(max-width: 800px){
     #line{
+        display: flex;
         flex-wrap: wrap;
+    }
+    #image-top-home{
+        display: flex;
+        justify-content: flex-end;
+        width: 100vw;
+    }
+    #image-top-home img{
+        width: 100vw;
     }
     #text1{
         flex-wrap: wrap;
         text-align: center;
-        width: 95vw;
-        justify-content: flex-end;
+        width: 100vw;
+        justify-self: center;
+        margin-left: 0vw;
         margin-top: 30vh;
     }
     #text20{
         flex-wrap: wrap;
         text-align: center;
-        width: 95vw;
-        justify-content: flex-end;
+        width: 100vw;
+        justify-self: center;
         margin-top: 0vh;
+        margin-right: 0vw;
         margin-bottom: 5vh;
     }
-    #left{
-        margin-right: 25vw;
+    #image1{
+        display: flex;
+        justify-content: flex-end;
+        width: 100vw;
     }
-    #lineComoFunciona{
-        margin-right: 35vw;
+    #image1 img{
+        width: 100vw;
+        height: 10vh;
+    }
+    #left > img{
+        display: none;
+    }
+    #menu-home{
+        width: 100vw;
+        justify-content: center;
+    }
+    #line-menu{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
     }
     #image1Menu{
-        margin-right: 70vw;
+        display: flex;
+        justify-self: center;
     }
     #text1-menu{
-        width: 350px;
+        display: flex;
+        flex-direction: column;
         text-align: center;
-        margin-left: 5vw;
+        width: 350px;
+        margin-right: 0px;
         margin-top: 0px;
+        margin-left: 20vw;
     }
     #text2-menu{
-        width: 350px;
+        display: flex;
+        flex-direction: column;
         text-align: center;
-        margin-left: 5vw;
+        width: 350px;
+        margin-left: 0px;
         margin-top: 0px;
+        margin-left: 20vw;
     }
     #text3-menu{
-        width: 350px;
+        display: flex;
+        flex-direction: column;
         text-align: center;
-        margin-left: 5vw;
+        width: 350px;
+        margin-left: 0px;
         margin-top: 0px;
         padding-bottom: 5vh;
+        margin-left: 20vw;
     }
 }
