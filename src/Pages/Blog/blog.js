@@ -142,8 +142,8 @@ function Blog(){
                         <div id="tb">
                             <TextBox color="#D40F1C"></TextBox>
                         </div>
-                        <div>
-                            <img src="/Imagens/9.png" alt="image1-blog" style={{width:"100vh", paddingTop:"2vh"}}></img>
+                        <div id="final-image-blog">
+                            <img src="/Imagens/9.png" alt="image1-blog" style={{width:"45vw", paddingTop:"2vh"}}></img>
                         </div>
                     </div>
                 </div>

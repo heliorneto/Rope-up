@@ -83,6 +83,8 @@
 }
 
 #tb{
+    display: flex;
+    justify-content: flex-start;
     padding-top: 20vh;
 }
 
@@ -91,7 +93,12 @@
     justify-content: flex-end;
 }
 
-@media(max-width: 600px){
+#final-image-blog{
+    display: flex;
+    justify-content: flex-end;
+}
+
+@media(max-width: 800px){
     #line5{
         flex-wrap: wrap;
     }
@@ -102,6 +109,9 @@
     #components{
         display: flex;
         flex-wrap: wrap;
+    }
+    #image-top-blog img{
+        width: 100vw;
     }
     #midle1{
         padding-bottom: 5vh;
@@ -131,6 +141,7 @@
         flex-wrap: wrap;
     }
     #image-bottom-blog{
+        flex-direction: column;
         flex-wrap: wrap;
     }
 }
