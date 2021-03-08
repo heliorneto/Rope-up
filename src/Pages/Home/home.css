@@ -68,17 +68,17 @@
     margin-left: 10px;
 }
 
-#text1-menu{
+#text1-menu-home{
     margin-top: 100px;
     margin-right: 100px;
 }
 
-#text2-menu{
+#text2-menu-home{
     margin-top: 140px;
     margin-right: 100px;
 }
 
-#text3-menu{
+#text3-menu-home{
     margin-top: 140px;
     margin-right: 100px;
 }
@@ -144,32 +144,32 @@
         display: flex;
         justify-self: center;
     }
-    #text1-menu{
+    #text1-menu-home{
         display: flex;
         flex-direction: column;
         text-align: center;
+        justify-content: center;
         width: 350px;
         margin-right: 0px;
         margin-top: 0px;
-        margin-left: 20vw;
     }
-    #text2-menu{
+    #text2-menu-home{
         display: flex;
         flex-direction: column;
         text-align: center;
+        justify-content: center;
         width: 350px;
-        margin-left: 0px;
+        margin-right: 0px;
         margin-top: 0px;
-        margin-left: 20vw;
     }
-    #text3-menu{
+    #text3-menu-home{
         display: flex;
         flex-direction: column;
         text-align: center;
+        justify-content: center;
         width: 350px;
-        margin-left: 0px;
+        margin-right: 0px;
         margin-top: 0px;
         padding-bottom: 5vh;
-        margin-left: 20vw;
     }
 }
