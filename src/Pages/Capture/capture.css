@@ -32,7 +32,7 @@
     background-image: url(./Resources/Logo-cut.png);
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: 350px;
+    background-position: bottom -20vh right -10vw;
 }
 
 #heading-text h1{
