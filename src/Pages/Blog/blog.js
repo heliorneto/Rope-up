@@ -32,7 +32,7 @@ function Blog(){
                         </div>
                     </div>
                     <div id="image-top-blog">
-                        <img src="/Imagens/1.png" alt="image1-blog" style={{height:"85vh", paddingTop:"15vh"}}></img>
+                        <img src="/Imagens/1.png" alt="image1-blog" style={{width: "40vw", paddingTop:"10vh"}}></img>
                     </div>
                 </div>
                 <div id="column">
