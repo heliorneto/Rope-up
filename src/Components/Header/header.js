@@ -10,12 +10,12 @@ link will receive a different colour in the Header.
 */
 
 function Header(props){
-    const isPhone = window.matchMedia("(max-width: 600px), (max-height: 600px) and (orientation: landscape)").matches;
-    const isTablet = window.matchMedia("(max-width: 992px)").matches;
-    const scrollOffset = (isPhone)? 10: 50;
     let history = useHistory();
     const [shrink, setShrink] = useState(false);
     const [expanded, setExpanded] = useState(false);
+    const [isPhone, setPhone] = useState(window.matchMedia("(max-width: 600px), (max-height: 600px) and (orientation: landscape)").matches)
+    const [isTablet, setTablet] = useState(window.matchMedia("(max-width: 992px)").matches);
+    const [scrollOffset, setScrollOffset] = useState((isPhone)? 10: 50);
 
     useEffect(()=>{
     
@@ -27,9 +27,19 @@ function Header(props){
             }
         }
 
+        const checkDisplay = () => {
+            setPhone(window.matchMedia("(max-width: 600px), (max-height: 600px) and (orientation: landscape)").matches);
+            setTablet(window.matchMedia("(max-width: 992px)").matches);
+            setScrollOffset((isPhone)? 10: 50);
+        }
+
         window.addEventListener('scroll',shrinkHeader);
-        return ()=>{window.removeEventListener('scroll',shrinkHeader);};
-    },[scrollOffset]);
+        window.addEventListener('resize',checkDisplay);
+        return ()=>{
+            window.removeEventListener('scroll',shrinkHeader);
+            window.removeEventListener('resize',checkDisplay);
+        };
+    },[scrollOffset,isPhone,isTablet]);
 
     if(!isPhone){
         return(
