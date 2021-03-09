@@ -101,17 +101,29 @@
 @media(max-width: 800px){
     #line5{
         flex-wrap: wrap;
+        flex-direction: column;
     }
     #text3{
         margin-left: 2vw;
         margin-top: 25vh;
     }
+    #text3 h2{
+        font-size: 55px;
+    }
+    #text3 h3{
+        font-size: 2px;
+    }
     #components{
         display: flex;
         flex-wrap: wrap;
     }
-    #image-top-blog img{
-        width: 100vw;
+    #image-top-blog{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-left: 0vw;
+        align-items: center;
+        flex-wrap: wrap;
     }
     #midle1{
         padding-bottom: 5vh;
