@@ -28,7 +28,7 @@ function Header(props){
         }
 
         const checkDisplay = () => {
-            setPhone(window.matchMedia("(max-width: 600px), (max-height: 600px) and (orientation: landscape)").matches);
+            setPhone(window.matchMedia("(max-width: 750px), (max-height: 750px) and (orientation: landscape)").matches);
             setTablet(window.matchMedia("(max-width: 992px)").matches);
             setScrollOffset((isPhone)? 10: 50);
         }

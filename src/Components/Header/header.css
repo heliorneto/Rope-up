@@ -80,7 +80,7 @@
 
 
 /*Style for smartphones and low res tables*/
-@media (max-width: 600px), (max-height: 600px) and (orientation: landscape){
+@media (max-width: 750px), (max-height: 750px) and (orientation: landscape){
     #header{
         width: 100vw;
         max-width: 100%;
@@ -189,7 +189,7 @@
 }
 
 /*Styles for landscape phones*/
-@media (max-height: 600px) and (orientation: landscape){
+@media (max-height: 750px) and (orientation: landscape){
     #header-container.expanded{
         height: 240px;
     }
