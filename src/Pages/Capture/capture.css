@@ -32,7 +32,7 @@
     background-image: url(./Resources/Logo-cut.png);
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: 350px;
+    background-position: bottom -20vh right -10vw;
 }
 
 #heading-text h1{
@@ -59,10 +59,10 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
-    padding: 20px 12.5vw 40px 12.5vw;
+    padding: 40px 0px 50px 0px;
 }
 
-#card1{
+.capture-card{
     background-color: white;
     width: 190px;
     height: 200px;
@@ -70,33 +70,20 @@
     text-align: center;
 }
 
-#card2{
-    background-color: white;
-    width: 190px;
-    height: 200px;
-    border-radius: 10px;
-    text-align: center;
+.capture-card img{
+    height: 100px;
 }
-
-#card3{
-    background-color: white;
-    width: 190px;
-    height: 200px;
-    border-radius: 10px;
-    text-align: center;
-}
-
 
 #image-diagram{
     display: flex;
     width: 1300px;
 }
 
-#capture-button-up{
+#capture-button{
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
-    padding-bottom: 20px;
+    padding-bottom: 40px;
 }
 
 #diagram{
@@ -170,6 +157,8 @@
     font-size: 28px;
     font-weight: bold;
     margin-bottom: 10px;
+    margin-top: 30px;
+    padding: 0px 20px 0px 20px;
 }
 
 #capture-form-area{
@@ -181,7 +170,9 @@
 
 #capture-form-area img{
     align-self: flex-end;
-    margin-left: auto;
+    margin-left: 20px;
+    max-width: 40%;
+    height: auto;
 }
 
 #capture-form{
@@ -194,4 +185,243 @@
 
 #form-obligatory{
     color: red;
+}
+
+/*Styles for small smartphones*/
+@media (max-width: 320px){
+    #capture-heading{
+        position: relative;
+    }
+
+    #capture-heading img{
+        max-width: 60%;
+        height: auto;
+        position: absolute;
+        z-index: 1;
+    }
+
+    #heading-text{
+        width: 75%;
+        padding: 140px 5px 10px 30px;
+        margin-left: 25%;
+        margin-top: 20%;
+    }
+
+    #heading-text h1{
+        font-size: 44px;
+        margin-bottom: 20px;
+    }
+
+    #heading-text p{
+        margin-bottom: 30px;
+    }
+
+    #cards{
+        padding: 30px 0px 40px 0px;
+    }
+
+    .capture-card{
+        width: 115px;
+        height: 130px;
+    }
+
+    .capture-card h3{
+        font-size: 17px;
+    }
+
+    .capture-card img{
+        max-width: 80%;
+        height: auto;
+    }
+
+    #diagram{
+        background-size: contain;
+        background-position: start;
+    }
+
+    #diagram h3{
+        margin-left: 10px;
+        text-align: center;
+    }
+
+    #diagram img{
+        max-width: 90%;
+        height: auto;
+    }
+
+    #form-title{
+        font-size: 26px;
+        padding: 0px 10px 0px 10px;
+        margin-top: 20px;
+    }
+    
+    #capture-form-area{
+        justify-content: center;
+    }
+
+    #capture-form-area img{
+        display: none;
+    }
+
+    #capture-form{
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        justify-items: center;
+        margin-left: 0;
+    }
+}
+
+/*Styles for smartphones*/
+@media (min-width: 321px) and (max-width: 600px), (max-height: 600px) and (orientation: landscape){
+    #capture-heading{
+        position: relative;
+    }
+
+    #capture-heading img{
+        max-width: 60%;
+        height: auto;
+        position: absolute;
+        z-index: 1;
+    }
+
+    #heading-text{
+        width: 75%;
+        padding: 140px 5px 10px 30px;
+        margin-left: 25%;
+        margin-top: 22%;
+    }
+
+    #heading-text h1{
+        font-size: 50px;
+        margin-bottom: 20px;
+    }
+
+    #heading-text p{
+        margin-bottom: 30px;
+    }
+
+    #cards{
+        padding: 30px 0px 40px 0px;
+    }
+
+    .capture-card{
+        width: 115px;
+        height: 130px;
+    }
+
+    .capture-card h3{
+        font-size: 17px;
+    }
+
+    .capture-card img{
+        max-width: 80%;
+        height: auto;
+    }
+
+    #diagram{
+        background-size: contain;
+        background-position: start;
+    }
+
+    #diagram h3{
+        margin-left: 10px;
+        text-align: center;
+    }
+
+    #diagram img{
+        max-width: 90%;
+        height: auto;
+    }
+
+    #form-title{
+        font-size: 26px;
+        padding: 0px 10px 0px 10px;
+        margin-top: 20px;
+    }
+    
+    #capture-form-area{
+        justify-content: center;
+    }
+
+    #capture-form-area img{
+        display: none;
+    }
+
+    #capture-form{
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        justify-items: center;
+        margin-left: 0;
+    }
+}
+
+/*Styles for landscape smartphones*/
+@media (max-height: 600px) and (orientation: landscape){
+    #capture-heading{
+        position: initial;
+    }
+
+    #capture-heading img{
+        position: initial;
+        max-width: 40%;
+        height: auto;
+    }
+
+    #heading-text{
+        width: 50%;
+        padding-right: 20px;
+        margin-left: auto;
+        margin-top: 0px;
+    }
+
+    #heading-text h1{
+        margin-bottom: 30px;
+        font-size: 60px;
+    }
+
+    #heading-text p{
+        margin-bottom: 20px;
+    }
+}
+
+/*Styles for tables*/
+@media (min-width: 601px) and (max-width: 992px){
+    #capture-heading img{
+        max-width: 50%;
+        height: auto;
+    }
+
+    #heading-text{
+        width: 50%;
+        padding-right: 20px;
+    }
+
+    #heading-text h1{
+        margin-bottom: 30px;
+        font-size: 60px;
+    }
+
+    #heading-text p{
+        margin-bottom: 20px;
+    }
+
+    #cards{
+        padding: 30px 0px 40px 0px;
+    }
+
+    #capture-form-area{
+        padding: 0px 10px 0px 20px;
+    }
+
+    #capture-form-area img{
+        max-width: 40%;
+        height: auto;
+        margin: 0;
+    }
+
+    #capture-form{
+        /*margin-left: 0;*/
+    }
 }

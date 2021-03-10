@@ -7,6 +7,7 @@ import Form from '../../Components/Form/form'
 import "./capture.css";
 
 function Capture(){
+    const isPhone = window.matchMedia("(max-width: 600px), (max-height: 600px) and (orientation: landscape)").matches;
 
     const meta = {
         titlePage: "Ropeup | Captura",
@@ -31,26 +32,24 @@ function Capture(){
                 </div>
                 <div id="line2">
                     <div id="cards">
-                        <div id="card1">
-                            <img src="/Imagens/Card1.png" alt="card1" style={{height: "90px"}}></img>
-                            <h3 id="card-text"><b>Consultoria</b></h3>
-                            <h5>Para quem quer investir em tecnologia</h5>
+                        <div className="capture-card">
+                            <img src="/Imagens/Card1.png" alt="card1"/>
+                            <h3>Consultoria</h3>
+                            {(!isPhone) && <p>Para quem quer investir em tecnologia</p>}
                         </div>
-                        <div id="card2">
-                            <img src="/Imagens/Card2.png" alt="card2" style={{height: "100px"}}></img>
-                            <h3 id="card-text"><b>Integração</b></h3>
-                            <h5>Para quem quer otimizar sua ferramenta</h5>
+                        <div className="capture-card">
+                            <img src="/Imagens/Card2.png" alt="card2"/>
+                            <h3>Integração</h3>
+                            {(!isPhone) && <p>Para quem quer otimizar sua ferramenta</p>}
                         </div>
-                        <div id="card3">
-                            <img src="/Imagens/Card3.png" alt="card3" style={{height: "100px"}}></img>
-                            <h3 id="card-text"><b>Personalização</b></h3>
-                            <h5>Para quem sabe exatamente o que quer</h5>
+                        <div className="capture-card">
+                            <img src="/Imagens/Card3.png" alt="card3"/>
+                            <h3>Personalização</h3>
+                            {(!isPhone) && <p>Para quem sabe exatamente o que quer</p>}
                         </div>
                     </div>
                     <div id="capture-button">
-                        <div id="capture-button-up">
-                            <Button width="600px" color="#D40F1C" label="Quero alavancar os meus resultados"/>
-                        </div>
+                        <Button width={(isPhone)? "300px": "600px"} color="#D40F1C" label="Quero alavancar os meus resultados"/>
                     </div>
                 </div>
             </div>
@@ -64,7 +63,7 @@ function Capture(){
                         <p><span id="form-obligatory">*</span> Campo obrigatório</p>
                         <Form action="#"/>
                     </div>
-                    <img src="/Imagens/Capture3.png" alt="image1" style={{height: "500px"}}></img>
+                    <img src="/Imagens/Capture3.png" alt="image1"></img>
                 </div>
             <Footer/>
         </div>

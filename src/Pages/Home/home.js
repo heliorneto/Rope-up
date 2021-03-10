@@ -29,7 +29,7 @@ function Home(){
                             <Button width="200px" color="#D40F1C" label="Otimize sua gestão com tecnologia"/>
                         </div>
                     </div>
-                    <div id="image-top">
+                    <div id="image-top-home">
                         <img src="/Imagens/Imagem1.jpg" alt="image1" style={{height: '85vh'}}></img>
                     </div>
                 </div>
@@ -47,24 +47,24 @@ function Home(){
                 </div>
             <div id='link'/>
             </div>
+                <div id="lineComoFunciona">
+                    <h2>Como funciona</h2>
+                </div>
                 <div id="left">
                     <img src="/Imagens/Linha.jpg" alt="image2"></img>
-                    <div id="menu">
-                        <div id="lineComoFunciona">
-                            <h2>Como funciona</h2>
-                        </div>
-                        <div id="line">
+                    <div id="menu-home">
+                        <div id="line-menu">
                             <div id="image1Menu">
                                 <img src="/Imagens/Menu1.jpg" alt="image2"></img>
                             </div>
-                            <div id="text1-menu">
+                            <div id="text1-menu-home">
                                 <h4 id='numero-menu'>01</h4>
                                 <h3>Diagnóstico dos problemas da sua empresa</h3>
                                 <h5>Analisamos os gargalos que existem nos processos empresariais da sua empresa e na sua rotina</h5>
                             </div>
                         </div>
-                        <div id="line">
-                            <div id="text2-menu">
+                        <div id="line-menu">
+                            <div id="text2-menu-home">
                                 <h4 id='numero-menu'>02</h4>
                                 <h3>Solução com softwares de gestão integrados</h3>
                                 <h5>Aprimoramos a tecnologia na sua empresa para que os processos funcionem adequadamente</h5>
@@ -73,11 +73,11 @@ function Home(){
                                 <img src="/Imagens/Menu2.jpg" alt="image2"></img>
                             </div>
                         </div>
-                        <div id="line">
+                        <div id="line-menu">
                             <div id="image1-menu">
                                 <img src="/Imagens/Menu3.jpg" alt="image2"></img>
                             </div>
-                            <div id="text3-menu">
+                            <div id="text3-menu-home">
                                 <h4 id='numero-menu'>03</h4>
                                 <h3>Implantação e otimização dos processos</h3>
                                 <h5>Nos certificamos que as nossas soluções serão colocadas em prática por meio de processos consolidados</h5>

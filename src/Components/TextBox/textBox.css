@@ -1,6 +1,6 @@
 .textBox{
-    width: 500px;
-    height: 500px;
+    width: 28rem;
+    height: 70vh;
     border-radius: 30px;
     text-align: justify;
 }
@@ -8,5 +8,11 @@
 #button-text-box{
     display: flex;
     justify-content: center;
-    padding-top: 8vh;
+}
+
+@media(max-width: 800px){
+    .textBox{
+        height: 50vh;
+        width: 100vw;
+    }
 }

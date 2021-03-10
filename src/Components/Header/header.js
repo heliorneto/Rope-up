@@ -10,11 +10,12 @@ link will receive a different colour in the Header.
 */
 
 function Header(props){
-    const isPhone = window.matchMedia("(max-width: 600px)").matches;
-    const scrollOffset = (isPhone)? 10: 50;
     let history = useHistory();
     const [shrink, setShrink] = useState(false);
     const [expanded, setExpanded] = useState(false);
+    const [isPhone, setPhone] = useState(window.matchMedia("(max-width: 600px), (max-height: 600px) and (orientation: landscape)").matches)
+    const [isTablet, setTablet] = useState(window.matchMedia("(max-width: 992px)").matches);
+    const [scrollOffset, setScrollOffset] = useState((isPhone)? 10: 50);
 
     useEffect(()=>{
     
@@ -26,9 +27,19 @@ function Header(props){
             }
         }
 
+        const checkDisplay = () => {
+            setPhone(window.matchMedia("(max-width: 750px), (max-height: 750px) and (orientation: landscape)").matches);
+            setTablet(window.matchMedia("(max-width: 992px)").matches);
+            setScrollOffset((isPhone)? 10: 50);
+        }
+
         window.addEventListener('scroll',shrinkHeader);
-        return ()=>{window.removeEventListener('scroll',shrinkHeader);};
-    },[scrollOffset]);
+        window.addEventListener('resize',checkDisplay);
+        return ()=>{
+            window.removeEventListener('scroll',shrinkHeader);
+            window.removeEventListener('resize',checkDisplay);
+        };
+    },[scrollOffset,isPhone,isTablet]);
 
     if(!isPhone){
         return(
@@ -36,8 +47,11 @@ function Header(props){
                 <header id="header" className={shrink? 'small': ''}>
                     <div id="logo" onClick={()=>{history.push("/home")}}>
                         {
-                            (shrink)? <Logo width="80" height="80" color="#000" fontSize="28"/>:
-                            <Logo width="120" height="120" color="#000" fontSize="30"/>
+                            (isTablet)? 
+                            ((shrink)? <Logo width="80" height="80" color="#000" fontSize="26"/>:
+                            <Logo width="100" height="100" color="#000" fontSize="28"/>):
+                            ((shrink)? <Logo width="80" height="80" color="#000" fontSize="28"/>:
+                            <Logo width="120" height="120" color="#000" fontSize="30"/>)
                         }
                     </div>
                     <nav>
