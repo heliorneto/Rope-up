@@ -29,10 +29,6 @@
     padding: 40px;
     border-top-left-radius: 50px;
     background-color: #023B59;
-    background-image: url(./Resources/Logo-cut.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: bottom -20vh right -10vw;
 }
 
 #heading-text h1{
@@ -419,9 +415,5 @@
         max-width: 40%;
         height: auto;
         margin: 0;
-    }
-
-    #capture-form{
-        /*margin-left: 0;*/
     }
 }

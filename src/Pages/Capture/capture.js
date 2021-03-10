@@ -1,4 +1,4 @@
-import React from 'react';
+import {React, useState, useEffect} from 'react';
 import Header from '../../Components/Header/header';
 import Footer from '../../Components/Footer/footer';
 import Button from '../../Components/Button/button';
@@ -7,7 +7,7 @@ import Form from '../../Components/Form/form'
 import "./capture.css";
 
 function Capture(){
-    const isPhone = window.matchMedia("(max-width: 600px), (max-height: 600px) and (orientation: landscape)").matches;
+    const [isPhone, setPhone] = useState(window.matchMedia("(max-width: 600px), (max-height: 600px) and (orientation: landscape)").matches);
 
     const meta = {
         titlePage: "Ropeup | Captura",
@@ -17,6 +17,17 @@ function Capture(){
         imageUrl: "",
         imageAlt: "",
     }
+
+    useEffect(()=>{
+        const checkDisplay = () =>{
+            setPhone(window.matchMedia("(max-width: 600px), (max-height: 600px) and (orientation: landscape)").matches);
+        }
+
+        window.addEventListener('resize',checkDisplay);
+        return () => {
+            window.removeEventListener('resize',checkDisplay);
+        }
+    },[isPhone])
 
     return(
         <div id="page-capture">
