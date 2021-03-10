@@ -22,7 +22,7 @@ function Blog(){
     return(
         <div id="page-blog">
             <MetaData titlePage={meta.titlePage} titleSearch={meta.titleSearch} description={meta.description} keyWords={meta.keyWords} imageUrl={meta.imageUrl} imageAlt={meta.imageAlt} />
-            <Header/>
+            <Header selectedPage="blog"/>
             <div id="blog-general">
                 <div id="line5">
                     <div id="text1-blog" >
