@@ -31,3 +31,11 @@
     background-color: rgba(2, 59, 89, 0.9);
     
 }
+
+/*Styles for smartphones*/
+@media (max-width: 600px), (max-heigth: 600px) and (orientation: landscape){
+    .read-progress-bar{
+        height: 12px;
+        top: 100px;
+    }
+}
