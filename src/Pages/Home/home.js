@@ -30,12 +30,12 @@ function Home(){
                         </div>
                     </div>
                     <div id="image-top-home">
-                        <img src="/Imagens/Imagem1.jpg" alt="image1" style={{height: '85vh'}}></img>
+                        <img src="/Imagens/Imagem1.jpg" alt="image1" style={{width: '40vw'}}></img>
                     </div>
                 </div>
                 <div id="line">
                     <div id="image1">
-                        <img src="/Imagens/Imagem2.jpg" alt="image2" style={{height: '85vh'}}></img>
+                        <img src="/Imagens/Imagem2.jpg" alt="image2" style={{width: '40vw'}}></img>
                     </div>
                     <div id="text20">
                         <h2>Controle todos os dados e o gerenciamento da sua empresa em um único lugar</h2>
@@ -54,7 +54,7 @@ function Home(){
                     <img src="/Imagens/Linha.jpg" alt="image2"></img>
                     <div id="menu-home">
                         <div id="line-menu">
-                            <div id="image1Menu">
+                            <div id="image1-menu-home">
                                 <img src="/Imagens/Menu1.jpg" alt="image2"></img>
                             </div>
                             <div id="text1-menu-home">
@@ -69,12 +69,12 @@ function Home(){
                                 <h3>Solução com softwares de gestão integrados</h3>
                                 <h5>Aprimoramos a tecnologia na sua empresa para que os processos funcionem adequadamente</h5>
                             </div>
-                            <div id="image1-menu">
+                            <div id="image2-menu-home">
                                 <img src="/Imagens/Menu2.jpg" alt="image2"></img>
                             </div>
                         </div>
                         <div id="line-menu">
-                            <div id="image1-menu">
+                            <div id="image3-menu-home">
                                 <img src="/Imagens/Menu3.jpg" alt="image2"></img>
                             </div>
                             <div id="text3-menu-home">

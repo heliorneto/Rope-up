@@ -13,6 +13,7 @@
 @media(max-width: 800px){
     .textBox{
         height: 50vh;
-        width: 100vw;
+        width: 95vw;
+        margin-left: 0.6rem;
     }
 }
