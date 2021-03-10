@@ -15,7 +15,7 @@
     margin-top: 200px;
     margin-right: 8%;
     margin-left: 150px;
-    text-align: left;
+    text-align:justify;
     width: 500px;
 }
 
@@ -36,14 +36,14 @@
     width: 550px;
 }
 
-@media(max-width: 600px){
+@media(max-width: 600px),(max-height: 600px)and(orientation:landscape){
     #sobre-general{
         flex-direction:column;
         justify-content: space-around;
         background-image: url(Cut-logo.png);
         background-repeat: no-repeat;
         background-size: 80%;
-        background-position: -20vw 42vh;
+        background-position: -100% 52%;
     }
     
     
@@ -51,12 +51,12 @@
         margin-top: 150px;
         margin-right: 8%;
         margin-left: 5vh;
-        text-align: left;
+        text-align: justify;
         width: 85%;
     }
     
     #introducao-title{
-        width: 68%;
+        width: 80%;
         border-bottom-style: solid;
         border-bottom-color: red;
         border-bottom-width: 1px;
