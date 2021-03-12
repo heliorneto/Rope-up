@@ -1,4 +1,4 @@
-import React from 'react';
+import {React, useState, useEffect} from 'react';
 import Header from '../../Components/Header/header';
 import Footer from '../../Components/Footer/footer';
 import Button from '../../Components/Button/button';
@@ -9,6 +9,9 @@ import TextBox from '../../Components/TextBox/textBox';
 import Carrousel from '../../Components/Carrousel/carrousel';
 
 function Blog(){
+    const [isPhone, setPhone] = useState(window.matchMedia("(max-width: 600px), (max-height: 600px) and (orientation: landscape)").matches);
+    const [itens, setItens] = useState(5);
+    const [carrouselWidth, setCarrouselWidth] = useState("60%");
 
     const meta = {
         titlePage: "Ropeup | Blog",
@@ -18,6 +21,32 @@ function Blog(){
         imageUrl: "",
         imageAlt: "",
     }
+
+    useEffect(()=>{
+        const checkDisplay = () =>{
+            setPhone(window.matchMedia("(max-width: 600px), (max-height: 200px) and (orientation: landscape)").matches);
+        }
+
+        window.addEventListener('resize',checkDisplay);
+        return () => {
+            window.removeEventListener('resize',checkDisplay);
+        }
+
+    },[isPhone])
+
+    function CarrouselItens() {
+        if(isPhone){
+            setItens(2);
+            setCarrouselWidth("100%");
+        }else{
+            setItens(4);
+            setCarrouselWidth("60%");
+        }
+    }
+
+    useEffect(()=>{
+        CarrouselItens();
+    },[isPhone])
 
     return(
         <div id="page-blog">
@@ -61,7 +90,7 @@ function Blog(){
                         <h3>Mais Lidas</h3>
                     </div>
                     <div id="carrousel">
-                        <Carrousel numItems={5} width="60%"> 
+                        <Carrousel numItems={itens} width={carrouselWidth}> 
                             <Card title="Finanças" link="" coverImage="" coverAlt="Para quem busca organizar suas cartas"/>
                             <Card title="Finanças" link="" coverImage="" coverAlt="Para quem busca organizar suas cartas"/>
                             <Card title="Finanças" link="" coverImage="" coverAlt="Para quem busca organizar suas cartas"/>

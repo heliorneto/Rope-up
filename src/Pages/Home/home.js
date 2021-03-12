@@ -1,4 +1,4 @@
-import React from 'react';
+import {React, useState, useEffect} from 'react';
 import Header from '../../Components/Header/header';
 import Footer from '../../Components/Footer/footer';
 import Button from '../../Components/Button/button';
@@ -6,6 +6,7 @@ import MetaData from '../../meta/reactHelmet';
 import "./home.css";
 
 function Home(){
+    const [isPhone, setPhone] = useState(window.matchMedia("(max-width: 600px), (max-height: 600px) and (orientation: landscape)").matches);
 
     const meta = {
         titlePage: "Ropeup | Home",
@@ -15,6 +16,17 @@ function Home(){
         imageUrl: "",
         imageAlt: "",
     }
+
+    useEffect(()=>{
+        const checkDisplay = () =>{
+            setPhone(window.matchMedia("(max-width: 800px), (max-height: 200px) and (orientation: landscape)").matches);
+        }
+
+        window.addEventListener('resize',checkDisplay);
+        return () => {
+            window.removeEventListener('resize',checkDisplay);
+        }
+    },[isPhone])
 
     return(
         <div id="page-home">
@@ -30,6 +42,7 @@ function Home(){
                         </div>
                     </div>
                     <div id="image-top-home">
+                        {(isPhone) && <img src="/Imagens/HomeMobile1.png" alt="image1" style={{width: '70vw'}}></img>}
                         <img src="/Imagens/Imagem1.jpg" alt="image1" style={{width: '40vw'}}></img>
                     </div>
                 </div>
