@@ -10,86 +10,47 @@
     flex-grow: 0;
 }
 
-#logo-footer{
-    height: 100px;
-    width: 200px;
+#upper-footer{
     display: flex;
-    margin-top: 30px;
-    margin-left: 20px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2vw;
     white-space: nowrap;
-}
-
-#opcoes-footer{
-    display: flex;
-    flex-direction: row-reverse;
-    flex-wrap: wrap;
 }
 
 #onde-estamos-footer{
     color: white;
     list-style-type: none;
-}
-
-#onde-estamos-footer a{
-    color: white;
-    list-style-type: none;
-    flex-direction: row-reverse;
+    position: relative;
 }
 
 #direitos{
     color: white;
-    margin-right: 750px;
     margin-top: 40px;
     margin-bottom: 20px;
-    margin-left: 60px;
+    margin-left: 5vw;
+    white-space: nowrap;
 }
 
 
-@media (max-width: 600px) {
+@media (max-width: 600px),(max-height: 600px)and(orientation: landscape){
 
     #nav-footer{
-        background-color: black;
-        width: 100%;
-        box-shadow: 2px 2px 2px #6f6f70a6;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
+        padding-top: 2vh;
     }
-    
-    #logo-footer{
-        height: 200px;
-        width: 200px;
-        display: flex;
-        margin-right: 500px;
-        white-space: nowrap;
+
+    #upper-footer{
+        margin-left: 6vw;
+        border-color: white;
+        border-bottom-style:solid;
+        border-width: 1px;
     }
-    
-    #ptions-footer{
-        display: flex;
-        flex-direction: row-reverse;
-        flex-wrap: wrap;
-        margin-left: 1px;
-        margin-right: 450px;
-    }
-    
-    #onde-estamos-footer{
-        color: white;
-        list-style-type: none;
-        margin-right: 10px;
-    }
-    
-    #onde-estamos-footer a{
-        color: white;
-        list-style-type: none;
-    }
-    
+
     #direitos{
-        color: white;
-        margin-right: 750px;
-        margin-top: 40px;
-        margin-bottom: 20px;
         white-space: nowrap;
+        margin-top: 5%;
+        margin-left: 8vw;
     }
 }
 
