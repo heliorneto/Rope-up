@@ -16,7 +16,7 @@
     margin-right: 8%;
     margin-left: 150px;
     text-align:justify;
-    width: 500px;
+    max-width: 500px;
 }
 
 #introducao-title{
@@ -36,14 +36,47 @@
     width: 550px;
 }
 
-@media(max-width: 600px),(max-height: 600px)and(orientation:landscape){
+@media(max-width: 600px){
     #sobre-general{
         flex-direction:column;
+        justify-content: space-evenly;
+        background-size: 80%;
+        background-position: -100% 52%;
+        padding-right: 5vh;
+    }
+    
+    
+    #introducao-text{
+        margin-top: 150px;
+        text-align: justify;
+        margin-left: 5vh;
+        width: 85%;
+    }
+    
+    #introducao-title{
+        width: 80%;
+        white-space: nowrap;
+    }
+    
+    #text{
+        font-size: 20px;
+    }
+    
+    #image-top{
+        margin-top: 2vh;
+        width: 90%;
+    }
+}
+
+@media(max-height: 600px) and (orientation: landscape){
+    #sobre-general{
+        flex-direction:row;
         justify-content: space-around;
         background-image: url(Cut-logo.png);
         background-repeat: no-repeat;
         background-size: 80%;
-        background-position: -100% 52%;
+        background-position: -100% -25%;
+        padding-bottom: 5vw;
     }
     
     
@@ -57,10 +90,6 @@
     
     #introducao-title{
         width: 80%;
-        border-bottom-style: solid;
-        border-bottom-color: red;
-        border-bottom-width: 1px;
-        margin-bottom: 30px;
         white-space: nowrap;
     }
     
@@ -69,7 +98,7 @@
     }
     
     #image-top{
-        margin-top: 5vh;
-        width: 90%;
+        margin-top: 30vw;
+        width: 30%;
     }
 }
