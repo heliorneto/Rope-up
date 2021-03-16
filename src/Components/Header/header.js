@@ -65,9 +65,6 @@ function Header(props){
                             <li id="sobre">
                                 <a href='/sobre' style={(props.selectedPage === "sobre")? {color: "#023B59"}: {}}>Sobre</a>
                             </li>
-                            <li id="login">
-                                <a href='/login' style={(props.selectedPage === "login")? {color: "#023B59"}: {}}><b>Login</b></a>
-                            </li>
                         </ul>
                     </nav>
                 </header>
@@ -92,9 +89,6 @@ function Header(props){
                         </li>
                         <li id="sobre">
                             <a href='/sobre' style={(props.selectedPage === "sobre")? {color: "#023B59"}: {}}>Sobre</a>
-                        </li>
-                        <li id="login">
-                            <a href='/login' style={(props.selectedPage === "login")? {color: "#023B59"}: {}}><b>Login</b></a>
                         </li>
                     </ul>
                 </nav>
