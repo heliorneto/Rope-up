@@ -120,7 +120,7 @@
     }
 
     #header-container.expanded{
-        height: 280px;
+        height: 210px;
     }
 
     #menu-options{
@@ -188,7 +188,7 @@
 /*Styles for landscape phones*/
 @media (max-height: 750px) and (orientation: landscape){
     #header-container.expanded{
-        height: 240px;
+        height: 180px;
     }
 
     #menu-options li{
@@ -203,7 +203,7 @@
 /*Styles for small landscape phones*/
 @media (max-height: 320px) and (orientation: landscape){
     #header-container.expanded{
-        height: 200px;
+        height: 150px;
     }
 
     #menu-options li{
