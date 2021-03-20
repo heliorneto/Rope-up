@@ -10,8 +10,7 @@ import Carrousel from '../../Components/Carrousel/carrousel';
 
 function Blog(){
     const [isPhone, setPhone] = useState(window.matchMedia("(max-width: 600px), (max-height: 600px) and (orientation: landscape)").matches);
-    const [itens, setItens] = useState(5);
-    const [carrouselWidth, setCarrouselWidth] = useState("60%");
+    const [maxWidth, setMaxWidth] = useState(isPhone? 100: 80);
 
     const meta = {
         titlePage: "Ropeup | Blog",
@@ -25,6 +24,7 @@ function Blog(){
     useEffect(()=>{
         const checkDisplay = () =>{
             setPhone(window.matchMedia("(max-width: 600px), (max-height: 200px) and (orientation: landscape)").matches);
+            setMaxWidth(isPhone? 100: 80);
         }
 
         window.addEventListener('resize',checkDisplay);
@@ -32,21 +32,7 @@ function Blog(){
             window.removeEventListener('resize',checkDisplay);
         }
 
-    },[isPhone])
-
-    function CarrouselItens() {
-        if(isPhone){
-            setItens(2);
-            setCarrouselWidth("100%");
-        }else{
-            setItens(4);
-            setCarrouselWidth("60%");
-        }
-    }
-
-    useEffect(()=>{
-        CarrouselItens();
-    },[isPhone])
+    },[isPhone,setMaxWidth]);
 
     return(
         <div id="page-blog">
@@ -90,20 +76,20 @@ function Blog(){
                         <h3>Mais Lidas</h3>
                     </div>
                     <div id="carrousel">
-                        <Carrousel numItems={itens} width={carrouselWidth}> 
-                            <Card title="Finanças" link="" coverImage="" coverAlt="Para quem busca organizar suas cartas"/>
-                            <Card title="Finanças" link="" coverImage="" coverAlt="Para quem busca organizar suas cartas"/>
-                            <Card title="Finanças" link="" coverImage="" coverAlt="Para quem busca organizar suas cartas"/>
-                            <Card title="Finanças" link="" coverImage="" coverAlt="Para quem busca organizar suas cartas"/>
-                            <Card title="Finanças" link="" coverImage="" coverAlt="Para quem busca organizar suas cartas"/>
-                            <Card title="Finanças" link="" coverImage="" coverAlt="Para quem busca organizar suas cartas"/>
-                            <Card title="Finanças" link="" coverImage="" coverAlt="Para quem busca organizar suas cartas"/>
-                            <Card title="Finanças" link="" coverImage="" coverAlt="Para quem busca organizar suas cartas"/>
-                            <Card title="Finanças" link="" coverImage="" coverAlt="Para quem busca organizar suas cartas"/>
-                            <Card title="Finanças" link="" coverImage="" coverAlt="Para quem busca organizar suas cartas"/>
-                            <Card title="Finanças" link="" coverImage="" coverAlt="Para quem busca organizar suas cartas"/>
-                            <Card title="Finanças" link="" coverImage="" coverAlt="Para quem busca organizar suas cartas"/>
-                            <Card title="Finanças" link="" coverImage="" coverAlt="Para quem busca organizar suas cartas"/>
+                        <Carrousel maxWidth={maxWidth} mobile={isPhone}> 
+                            <Card title="Finanças" link="" coverImage="Imagens/Capa1.jpeg" coverAlt="Para quem busca organizar suas cartas"/>
+                            <Card title="Finanças" link="" coverImage="Imagens/Capa1.jpeg" coverAlt="Para quem busca organizar suas cartas"/>
+                            <Card title="Finanças" link="" coverImage="Imagens/Capa1.jpeg" coverAlt="Para quem busca organizar suas cartas"/>
+                            <Card title="Finanças" link="" coverImage="Imagens/Capa1.jpeg" coverAlt="Para quem busca organizar suas cartas"/>
+                            <Card title="Finanças" link="" coverImage="Imagens/Capa1.jpeg" coverAlt="Para quem busca organizar suas cartas"/>
+                            <Card title="Finanças" link="" coverImage="Imagens/Capa1.jpeg" coverAlt="Para quem busca organizar suas cartas"/>
+                            <Card title="Finanças" link="" coverImage="Imagens/Capa1.jpeg" coverAlt="Para quem busca organizar suas cartas"/>
+                            <Card title="Finanças" link="" coverImage="Imagens/Capa1.jpeg" coverAlt="Para quem busca organizar suas cartas"/>
+                            <Card title="Finanças" link="" coverImage="Imagens/Capa1.jpeg" coverAlt="Para quem busca organizar suas cartas"/>
+                            <Card title="Finanças" link="" coverImage="Imagens/Capa1.jpeg" coverAlt="Para quem busca organizar suas cartas"/>
+                            <Card title="Finanças" link="" coverImage="Imagens/Capa1.jpeg" coverAlt="Para quem busca organizar suas cartas"/>
+                            <Card title="Finanças" link="" coverImage="Imagens/Capa1.jpeg" coverAlt="Para quem busca organizar suas cartas"/>
+                            <Card title="Finanças" link="" coverImage="Imagens/Capa1.jpeg" coverAlt="Para quem busca organizar suas cartas"/>
                         </Carrousel>
                     </div>
                 </div>

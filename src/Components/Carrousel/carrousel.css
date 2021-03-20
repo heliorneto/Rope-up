@@ -6,6 +6,8 @@
     position: relative;
     overflow: hidden;
     padding: 17px 12px 17px 12px;
+    height: fit-content;
+    min-height: 60px;
 }
 
 .carrousel-items{
@@ -19,9 +21,10 @@
     z-index: 1;
     margin-left: 10px;
     margin-right: 10px;
+    flex: 0 0 100%;
 }
 
-.carrousel-items *{
+.carrousel-items div{
     margin: 0px 15px 0px 15px;
 }
 
@@ -94,5 +97,12 @@
     }
     to{
         left: 100%;
+    }
+}
+
+/*Styles for smartphones*/
+@media (min-width: 321px) and (max-width: 600px), (min-height: 321px) and (max-height: 600px) and (orientation: landscape){
+    .carrousel-items div{
+        margin: 0px 10px 0px 10px;
     }
 }
