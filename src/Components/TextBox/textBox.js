@@ -1,6 +1,6 @@
 import React from 'react';
 import './textBox.css';
-import Button2 from '../Button2/button2'
+import Button from '../Button/button'
 
 /*
 This component takes the following props:
@@ -11,11 +11,11 @@ function TextBox(props){
     return (
         <div 
         className="textBox" 
-        style={{backgroundColor: props.color, fontSize: 28}}
+        style={{backgroundColor: props.color}}
         >
             <h3 style={{padding: "5vh", textAlign: 'center'}}>Assine nossa newsletter e fique por dentro de conteúdos de gestão e tecnologia</h3>
             <div id="button-text-box">
-                <Button2 width="200px" color="White" label="Veja todos os assuntos"></Button2>
+                <Button width="200px" color="White" color2="black" label="Veja todos os assuntos"></Button>
             </div>
         </div>
     );

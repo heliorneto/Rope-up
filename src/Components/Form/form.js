@@ -1,5 +1,6 @@
 import React from 'react';
 import './form.css';
+import Button from '../../Components/Button/button';
 
 
 /*
@@ -186,7 +187,7 @@ class Form extends React.Component{
                     {this.generateMessage(7)}
                     </div>: null
                 }
-                <input type="submit" value="Fale com um especialista"/>
+                <Button width="200px" color="#D40F1C" color2='white' label="Quero alavancar os meus resultados" clickAction={this.props.clickAction}/>
             </form>
         );
     }

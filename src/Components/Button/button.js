@@ -6,6 +6,7 @@ This component takes the following props:
 - clickAction: The action after a click event
 - label: The text of the button
 - color: The background color of the textBox
+- color2: the color of the button text
 - width: The width of the button
 */
 
@@ -14,7 +15,7 @@ function Button(props){
         <button
         className="red-button" 
         onClick={()=>props.clickAction()}
-        style={{backgroundColor: props.color,width: props.width}}
+        style={{backgroundColor: props.color, color: props.color2 , width: props.width, cursor: 'pointer'}}
         >
             {props.label}
         </button>
