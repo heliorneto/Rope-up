@@ -12,31 +12,39 @@
 }
 
 .bcard-cover{
-    max-width: 90%;
+    max-width: 100%;
     height: auto;
     opacity: 0.35;
     position: absolute;
     top: center;
     left: center;
     z-index: 1;
-    user-select: none;
 }
 
 .bcard-title{
-    width: 200px;
-    height: 160px;
+    width: 100%;
     position: absolute;
-    top: 0px;
-    left: 0px;
+    top: 0;
+    left: 0;
     z-index: 2;
-    padding: 40px 15px 40px 15px;
+    padding: 50px 15px 50px 15px;
     text-transform: uppercase;
+    text-align: center;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
     font-size: 20px;
     font-weight: bold;
+    user-select: none;
 }
 
-@media (max-width: 600px), (max-height: 600px) and (orientation: landscape){
+@media (max-width: 320px), (max-height: 320px) and (orientation: landscape){
+    .bcard-container{
+        min-width: 120px;
+        max-height: 90px;
+    }
+}
+
+/*Styles for smartphones*/
+@media (min-width: 321px) and (max-width: 600px), (max-height: 600px) and (orientation: landscape){
     .bcard-container{
         min-width: 150px;
         max-height: 110px;
