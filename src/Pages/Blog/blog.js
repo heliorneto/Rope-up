@@ -66,7 +66,7 @@ function Blog(){
                         <div id="midle4">
                             <Card title="Finanças" link="" coverImage="" coverAlt="Para quem busca organizar suas cartas"/>
                             <div id="midle5">
-                                <Button width="200px" color="#D40F1C" label="Veja todos os assuntos"/>
+                                <Button width="200px" color="#D40F1C" color2='white' label="Veja todos os assuntos"/>
                             </div>
                         </div>
                     </div>

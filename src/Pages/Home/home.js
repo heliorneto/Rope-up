@@ -1,4 +1,5 @@
 import {React, useState, useEffect} from 'react';
+import { Link, useHistory } from "react-router-dom";
 import Header from '../../Components/Header/header';
 import Footer from '../../Components/Footer/footer';
 import Button from '../../Components/Button/button';
@@ -7,6 +8,7 @@ import "./home.css";
 
 function Home(){
     const [isPhone, setPhone] = useState(window.matchMedia("(max-width: 600px), (max-height: 600px) and (orientation: landscape)").matches);
+    const history = useHistory();
 
     const meta = {
         titlePage: "Ropeup | Home",
@@ -15,6 +17,10 @@ function Home(){
         keyWords: "Ropeup | Home | tecnologia",
         imageUrl: "",
         imageAlt: "",
+    }
+
+    function goCapture() {
+        history.push('/capture');
     }
 
     useEffect(()=>{
@@ -38,7 +44,7 @@ function Home(){
                         <h1>Consultoria empresarial com soluções tecnológicas</h1>
                         <h3>Otimize sua gestão através de um trabalho automatizado e ágil usando softwares e transformação tecnológica</h3>
                         <div id="button-general">
-                            <Button width="200px" color="#D40F1C" label="Otimize sua gestão com tecnologia"/>
+                            <Button width="200px" color="#D40F1C" color2='white' label="Otimize sua gestão com tecnologia" clickAction={goCapture}/>
                         </div>
                     </div>
                     <div id="image-top-home">
@@ -54,7 +60,7 @@ function Home(){
                         <h2>Controle todos os dados e o gerenciamento da sua empresa em um único lugar</h2>
                         <h3>Otimizamos seus processos para melhor implantação de um sistema integrado personalizado especialmente para sua empresa</h3>
                         <div id="button-general">
-                            <Button width="200px" color="#D40F1C" label="Conheça como trabalhamos"/>
+                            <Button width="200px" color="#D40F1C" color2='white' label="Conheça como trabalhamos" clickAction={goCapture}/>
                         </div>
                     </div>
                 </div>
@@ -100,7 +106,7 @@ function Home(){
                 </div>
                 <div id="home-button">
                     <div id="button-up">
-                        <Button width="200px" color="#D40F1C" label="Quero alavancar os meus resultados"/>
+                        <Button width="200px" color="#D40F1C" color2='white' label="Quero alavancar os meus resultados" clickAction={goCapture}/>
                     </div>
                 </div>
             <Footer/>

@@ -1,7 +1,8 @@
 .textBox{
     width: 28rem;
-    height: 70vh;
+    height: 350px;
     border-radius: 30px;
+    font-size: 28px;
     text-align: justify;
 }
 
@@ -12,8 +13,18 @@
 
 @media(max-width: 800px){
     .textBox{
+        height: 30vh;
+        width: 75vw;
+        font-size: 26px;
+        margin-left: 12vw;
+    }
+}
+
+@media(max-width: 600px){
+    .textBox{
         height: 50vh;
         width: 95vw;
+        font-size: 24px;
         margin-left: 0.6rem;
     }
 }

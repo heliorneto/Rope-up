@@ -2,12 +2,14 @@ import {React, useState, useEffect} from 'react';
 import Header from '../../Components/Header/header';
 import Footer from '../../Components/Footer/footer';
 import Button from '../../Components/Button/button';
+import {Modal} from '../../Components/Modal/modal';
 import MetaData from '../../meta/reactHelmet';
 import Form from '../../Components/Form/form'
 import "./capture.css";
 
 function Capture(){
     const [isPhone, setPhone] = useState(window.matchMedia("(max-width: 600px), (max-height: 600px) and (orientation: landscape)").matches);
+    const [isModalOpen, setModalOpen] = useState(false);
 
     const meta = {
         titlePage: "Ropeup | Captura",
@@ -16,6 +18,14 @@ function Capture(){
         keyWords: "Ropeup | Captura | tecnologia",
         imageUrl: "",
         imageAlt: "",
+    }
+
+    function openModal() {
+        setModalOpen(true);
+    }
+
+    function closeModal() {
+        setModalOpen(false);
     }
 
     useEffect(()=>{
@@ -60,7 +70,7 @@ function Capture(){
                         </div>
                     </div>
                     <div id="capture-button">
-                        <Button width={(isPhone)? "300px": "600px"} color="#D40F1C" label="Quero alavancar os meus resultados"/>
+                        <Button width={(isPhone)? "300px": "600px"} color="#D40F1C" color2='white' label="Quero alavancar os meus resultados"/>
                     </div>
                 </div>
             </div>
@@ -72,10 +82,11 @@ function Capture(){
                 <div id="capture-form-area">
                     <div id="capture-form">
                         <p><span id="form-obligatory">*</span> Campo obrigatório</p>
-                        <Form action="#"/>
+                        <Form action="#" clickAction={openModal}/>
                     </div>
                     <img src="/Imagens/Capture3.png" alt="image1"></img>
                 </div>
+                {isModalOpen && <Modal label1='Obrigado!' label2='Você respondeu ao nosso formulário.' image="/icons/check.JPG" clickAction={closeModal}/>}
             <Footer/>
         </div>
     );
