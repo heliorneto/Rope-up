@@ -178,6 +178,22 @@
     font-style: normal;
 }
 
+.article-loader{
+    width: 80px;
+    height: 80px;
+    border: 10px solid #d9d9d9;
+    border-top-color: #023B59;
+    border-radius: 50%;
+    align-self: center;
+    animation: spin 2s linear infinite;
+}
+
+/*Loader spin animation*/
+@keyframes spin{
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+}
+
 .error-image{
     max-width: 29vw;
     height: auto;

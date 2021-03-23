@@ -153,7 +153,7 @@ class Article extends React.Component{
         }else{      
             return (
                 <article className="article-container">
-                    <h1>Carregando</h1>
+                    <div className="article-loader"/>
                 </article>
             );
         }
