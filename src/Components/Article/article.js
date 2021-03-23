@@ -139,13 +139,21 @@ class Article extends React.Component{
         }else if(this.state.requested && this.state.error){    
             return (
                 <article className="article-container">
-                    <h1>{this.state.error}</h1>
+                    <img src="/Imagens/Error-Image.png" alt="Lamentamos, mas ocorreu um erro! Ele é temporário! Tente novamente mais tarde ou entre em contato conosco." className="error-image"/>
+                    <details className="error-info">
+                        <summary>Mais informações:</summary>
+                        <div className="error-info-details">
+                            <p>Código do erro: {this.state.errorInfo.code}</p>
+                            <p>Descrição: {this.state.errorInfo.description}</p>
+                        </div>
+                
+                    </details>
                 </article>
             );
         }else{      
             return (
                 <article className="article-container">
-                    <h1>{this.state.error}</h1>
+                    <h1>Carregando</h1>
                 </article>
             );
         }
