@@ -84,7 +84,7 @@ class Carrousel extends React.Component{
 
     resize(){
         const availableSize = (window.innerWidth * this.props.maxWidth)/100;
-        const cardSize = (this.props.mobile)? 185: 235;
+        const cardSize = (this.props.mobile)? ((window.innerWidth <= 320)? 155: 185): 235;
         const numCards = Math.floor(availableSize/cardSize); 
         const componentSize = (numCards * cardSize) + 30;
         const numPages = Math.ceil(this.props.children.length/numCards);
