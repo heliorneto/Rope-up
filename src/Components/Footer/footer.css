@@ -7,6 +7,7 @@
     flex-wrap: wrap;
     padding-right: 40px;
     padding-bottom: 10px;
+    height: 276px;
     flex-grow: 0;
 }
 
@@ -38,6 +39,7 @@
 
     #nav-footer{
         padding-top: 2vh;
+        height: 186px;
     }
 
     #upper-footer{
