@@ -134,9 +134,7 @@ class Carrousel extends React.Component{
             <div 
             className="carrousel-container" 
             style={{width: this.state.width + "px"}} 
-            onMouseDown={this.lock} 
             onTouchStart={this.lock} 
-            onMouseUp={this.move} 
             onTouchEnd={this.move}>
                 <button className="carrousel-previous" onClick={()=>this.previousPage()}/>
                 <div className="carrousel-items">
