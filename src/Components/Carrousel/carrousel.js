@@ -18,6 +18,7 @@ class Carrousel extends React.Component{
         const componentSize = (numCards * cardSize) + 30;
         const numPages = Math.ceil(props.children.length/numCards);
         this.animationDuration = 750; // Animation duration in milliseconds
+        this.x0 = null;
         this.state = {
             numCards: numCards,
             width: componentSize,
@@ -29,6 +30,8 @@ class Carrousel extends React.Component{
         this.nextPage = this.nextPage.bind(this);
         this.previousPage = this.previousPage.bind(this);
         this.resize = this.resize.bind(this);
+        this.lock = this.lock.bind(this);
+        this.move = this.move.bind(this);
     }
 
     nextPage(){
@@ -83,7 +86,7 @@ class Carrousel extends React.Component{
         const availableSize = (window.innerWidth * this.props.maxWidth)/100;
         const cardSize = (this.props.mobile)? 185: 235;
         const numCards = Math.floor(availableSize/cardSize); 
-        const componentSize = numCards * cardSize;
+        const componentSize = (numCards * cardSize) + 30;
         const numPages = Math.ceil(this.props.children.length/numCards);
         this.setState({
             numCards: numCards,
@@ -93,6 +96,25 @@ class Carrousel extends React.Component{
             previousPage: this.state.previousPage,
             animationDirection: this.state.animationDirection
         });
+    }
+
+    lock(e){
+        const unify = e.changedTouches? e.changedTouches[0]: e;
+        this.x0 = unify.clientX;
+    }
+
+    move(e){
+        const unify = e.changedTouches? e.changedTouches[0]: e;
+        if(this.x0 || this.x0 === 0){
+            const dx = unify.clientX - this.x0;
+            const signal = Math.sign(dx);
+            if(signal > 0){
+                this.nextPage();
+            }else{
+                this.previousPage();
+            }
+            this.x0 = null;
+        }
     }
 
     componentDidMount(){
@@ -109,8 +131,14 @@ class Carrousel extends React.Component{
         const pbegin = (this.state.previousPage - 1) * this.state.numCards;
         const previrousItems = this.props.children.slice(pbegin,pbegin + this.state.numCards);
         return (
-            <div className="carrousel-container" style={{width: this.state.width + "px"}}>
-                <button className="carrousel-next" onClick={()=>this.previousPage()}/>
+            <div 
+            className="carrousel-container" 
+            style={{width: this.state.width + "px"}} 
+            onMouseDown={this.lock} 
+            onTouchStart={this.lock} 
+            onMouseUp={this.move} 
+            onTouchEnd={this.move}>
+                <button className="carrousel-previous" onClick={()=>this.previousPage()}/>
                 <div className="carrousel-items">
                     {slicedItems}
                 </div>
@@ -120,7 +148,7 @@ class Carrousel extends React.Component{
                         {previrousItems}
                     </div>)
                 }
-                <button className="carrousel-previous" onClick={()=>this.nextPage()}/>
+                <button className="carrousel-next" onClick={()=>this.nextPage()}/>
             </div>
         );
     }
