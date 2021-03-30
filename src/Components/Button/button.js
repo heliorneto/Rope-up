@@ -15,7 +15,7 @@ function Button(props){
         <button
         className="red-button" 
         onClick={()=>props.clickAction()}
-        style={{backgroundColor: props.color, color: props.color2 , width: props.width, cursor: 'pointer'}}
+        style={{backgroundColor: props.color, color: props.color2 , width: props.width, cursor: 'pointer', paddingLeft: '13px', paddingRight: '13px'}}
         >
             {props.label}
         </button>

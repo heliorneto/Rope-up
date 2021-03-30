@@ -16,6 +16,10 @@
     width: 40vw;
 }
 
+#text1 h3{
+    padding-top: 1vh;
+}
+
 #image-top-home{
     display: flex;
     justify-content: flex-end;
@@ -33,6 +37,10 @@
     margin-right: 5vw;
     width: 40vw;
     margin-top: 25vh;
+}
+
+#text20 h3{
+    padding-top: 1vh;
 }
 
 #line{
@@ -73,14 +81,26 @@
     margin-right: 100px;
 }
 
+#text1-menu-home h5{
+    padding-top: 1vh;
+}
+
 #text2-menu-home{
-    margin-top: 140px;
-    margin-right: 100px;
+    margin-top: 130px;
+    padding-left: 7vw;
+}
+
+#text2-menu-home h5{
+    padding-top: 1vh;
 }
 
 #text3-menu-home{
     margin-top: 140px;
-    margin-right: 100px;
+    margin-right: 50px;
+}
+
+#text3-menu-home h5{
+    padding-top: 1vh;
 }
 
 #button-up{

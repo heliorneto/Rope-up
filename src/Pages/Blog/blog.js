@@ -1,7 +1,6 @@
 import {React, useState, useEffect} from 'react';
 import Header from '../../Components/Header/header';
 import Footer from '../../Components/Footer/footer';
-import Button from '../../Components/Button/button';
 import MetaData from '../../meta/reactHelmet';
 import "./blog.css";
 import Card from '../../Components/BlogCard/blog_card';
@@ -66,14 +65,13 @@ function Blog(){
                         <div id="midle4">
                             <Card title="Finanças" link="" coverImage="" coverAlt="Para quem busca organizar suas cartas"/>
                             <div id="midle5">
-                                <Button width="200px" color="#D40F1C" color2='white' label="Veja todos os assuntos"/>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div id="column">
                     <div id="title">
-                        <h3>Mais Lidas</h3>
+                        <h3 style={{fontSize: '32px'}}>Mais Lidas</h3>
                     </div>
                     <div id="carrousel">
                         <Carrousel maxWidth={maxWidth} mobile={isPhone}> 
@@ -95,7 +93,7 @@ function Blog(){
                 </div>
                 <div id="column">
                     <div id="title2">
-                        <h3>Mais recentes</h3>
+                        <h3 style={{fontSize: '32px'}}>Mais recentes</h3>
                     </div>    
                     <div id="line-blog">
                         <div id="left-blog">

@@ -75,6 +75,10 @@
     color: #D40F1C;
 }
 
+.button-form{
+    padding-top: 2vh;
+}
+
 /*Styles for small smartphones*/
 @media (max-width: 320px){
     .form-container{

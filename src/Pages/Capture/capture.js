@@ -1,4 +1,5 @@
 import {React, useState, useEffect} from 'react';
+import { useHistory } from "react-router-dom";
 import Header from '../../Components/Header/header';
 import Footer from '../../Components/Footer/footer';
 import Button from '../../Components/Button/button';
@@ -10,6 +11,7 @@ import "./capture.css";
 function Capture(){
     const [isPhone, setPhone] = useState(window.matchMedia("(max-width: 600px), (max-height: 600px) and (orientation: landscape)").matches);
     const [isModalOpen, setModalOpen] = useState(false);
+    const history = useHistory();
 
     const meta = {
         titlePage: "Ropeup | Captura",
@@ -26,6 +28,10 @@ function Capture(){
 
     function closeModal() {
         setModalOpen(false);
+    }
+
+    function goForms() {
+        history.push('/capture#form-title');
     }
 
     useEffect(()=>{
@@ -54,23 +60,23 @@ function Capture(){
                 <div id="line2">
                     <div id="cards">
                         <div className="capture-card">
-                            <img src="/Imagens/Card1.png" alt="card1"/>
+                            <img src="/Imagens/Card1.png" alt="card1" style={{height: '95px', paddingTop: '10px'}}/>
                             <h3>Consultoria</h3>
-                            {(!isPhone) && <p>Para quem quer investir em tecnologia</p>}
+                            {(!isPhone) && <p style={{paddingLeft: '15px', paddingRight: '15px'}}>Para quem quer investir em tecnologia</p>}
                         </div>
                         <div className="capture-card">
-                            <img src="/Imagens/Card2.png" alt="card2"/>
+                            <img src="/Imagens/Card2.png" alt="card2" style={{height: '95px', paddingTop: '10px'}}/>
                             <h3>Integração</h3>
                             {(!isPhone) && <p>Para quem quer otimizar sua ferramenta</p>}
                         </div>
                         <div className="capture-card">
-                            <img src="/Imagens/Card3.png" alt="card3"/>
+                            <img src="/Imagens/Card3.png" alt="card3" style={{height: '95px', paddingTop: '10px'}}/>
                             <h3>Personalização</h3>
                             {(!isPhone) && <p>Para quem sabe exatamente o que quer</p>}
                         </div>
                     </div>
                     <div id="capture-button">
-                        <Button width={(isPhone)? "300px": "600px"} color="#D40F1C" color2='white' label="Quero alavancar os meus resultados"/>
+                        <Button width={(isPhone)? "300px": "600px"} color="#D40F1C" color2='white' label="Quero alavancar os meus resultados" clickAction={goForms}/>
                     </div>
                 </div>
             </div>

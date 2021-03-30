@@ -187,7 +187,9 @@ class Form extends React.Component{
                     {this.generateMessage(7)}
                     </div>: null
                 }
-                <Button width="200px" color="#D40F1C" color2='white' label="Quero alavancar os meus resultados" clickAction={this.props.clickAction}/>
+                <div className="button-form">
+                    <Button width="200px" color="#D40F1C" color2='white' label="Quero alavancar os meus resultados" clickAction={this.props.clickAction}/>
+                </div>
             </form>
         );
     }
