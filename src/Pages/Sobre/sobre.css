@@ -37,6 +37,7 @@
     width: 550px;
 }
 
+/*Styles for smartphones*/
 @media(max-width: 600px){
     #sobre-general{
         flex-direction:column;
@@ -66,10 +67,12 @@
     #image-top{
         margin-top: 2vh;
         width: 90%;
+        height: auto;
         margin-left: auto;
     }
 }
 
+/*Styles for landscape smartphones*/
 @media(max-height: 600px) and (orientation: landscape){
     #sobre-general{
         flex-direction:row;
@@ -102,5 +105,35 @@
     #image-top{
         margin-top: auto;
         width: 30%;
+    }
+}
+
+/*Styles for tables*/
+@media (min-width: 601px) and (max-width: 992px), (min-height: 601px) and (max-height: 992px) and (orientation: landscape){
+    #introducao-text{
+        margin: 80px 50px 0 50px;
+        max-width: 50%;
+        align-self: center;
+    }
+
+    #image-top{
+        max-width: 35%;
+        height: 35%;
+        align-self: center;
+    }
+}
+
+/*Styles for large tables (iPad Pro)*/
+@media (min-width: 993px) and (max-width: 1024px){
+    #introducao-text{
+        margin: 80px 50px 0 50px;
+        max-width: 50%;
+        align-self: center;
+    }
+
+    #image-top{
+        max-width: 38%;
+        height: 38%;
+        align-self: center;
     }
 }
