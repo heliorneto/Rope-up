@@ -31,7 +31,7 @@ function Capture(){
     }
 
     function goForms() {
-        history.push('/capture#form-title');
+       window.location.href = '/capture#form-title';
     }
 
     useEffect(()=>{
