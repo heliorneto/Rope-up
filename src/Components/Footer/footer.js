@@ -4,11 +4,11 @@ import "./footer.css";
 
 function Footer(){
 
-    const [isPhone, setPhone] = useState(window.matchMedia("(max-width: 600px)").matches);
+    const [isPhone, setPhone] = useState(window.matchMedia("(max-width: 600px),(max-height: 600px) and (orientation: landscape)").matches);
 
     useEffect(()=>{
         const checkDisplay = () => {
-            setPhone(window.matchMedia("(max-width: 600px)").matches);
+            setPhone(window.matchMedia("(max-width: 600px),(max-height: 600px) and (orientation: landscape)").matches);
         }
         window.addEventListener('resize',checkDisplay);
         return ()=>{
@@ -20,7 +20,7 @@ function Footer(){
         return(
             <nav id="nav-footer">
                 <div id="upper-footer">
-                    <Logo id="logo" color='#ffffff' width="130" heigth="120" fontSize="40"/>
+                    <Logo color='#ffffff' width="130" heigth="120" fontSize="40"/>
                     <a id="onde-estamos-footer" href='/sobre'>Onde Estamos</a>
                 </div>
                 <p id="direitos"><small>©2020 Todos os direitos reservados</small></p>
@@ -30,7 +30,7 @@ function Footer(){
         return(
             <nav id="nav-footer">
                 <div id="upper-footer">
-                    <Logo id="logo" color='#ffffff' width="55" heigth="60" fontSize="23"/>
+                    <Logo color='#ffffff' width="60" heigth="60" fontSize="26"/>
                     <a id="onde-estamos-footer" href='/sobre'>Onde Estamos</a>
                 </div>
                 <p id="direitos"><small>©2020 Todos os direitos reservados</small></p>

@@ -36,19 +36,18 @@
 
 
 @media (max-width: 600px),(max-height: 600px) and (orientation: landscape){
-
     #nav-footer{
-        padding-top: 2vh;
-        height: 186px;
-        padding-right: 10px;
+        height: 165px;
+        padding: 20px;
     }
 
     #upper-footer{
-        margin-left: 5vw;
         border-color: white;
         border-bottom-style:solid;
         border-width: 1px;
-        padding: 2.5vh;
+        padding: 0;
+        padding-bottom: 20px;
+        margin: 0;
     }
 
     #onde-estamos-footer{
@@ -57,8 +56,7 @@
 
     #direitos{
         white-space: nowrap;
-        margin-top: 5%;
-        margin-left: 8vw;
+        margin: 0;
+        margin-top: 20px;
     }
 }
-
