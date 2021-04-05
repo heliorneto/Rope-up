@@ -28,7 +28,7 @@
     margin-bottom: 30px;
 }
 
-#text{
+.text{
     font-size: 23px;
 }
 
@@ -60,7 +60,7 @@
         white-space: nowrap;
     }
     
-    #text{
+    .text{
         font-size: 20px;
     }
     
@@ -98,7 +98,7 @@
         white-space: nowrap;
     }
     
-    #text{
+    .text{
         font-size: 20px;
     }
     
