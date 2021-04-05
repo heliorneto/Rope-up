@@ -49,13 +49,13 @@ function Blog(){
                         <img src="/Imagens/1.png" alt="image1-blog" style={{width: "40vw", paddingTop:"10vh"}}></img>
                     </div>
                 </div>
-                <div id="column">
+                <div>
                     <div id="components">
                         <div id="midle1">
                             <Card title="Finanças" link="" coverImage="" coverAlt="Para quem busca organizar suas cartas"/>
                         </div>
                         <div>
-                            <div id="midle2">
+                            <div className="midle2">
                                 <Card title="Finanças" link="" coverImage="" coverAlt="Para quem busca organizar suas cartas"/>
                             </div>
                             <div id="midle3">
@@ -69,7 +69,7 @@ function Blog(){
                         </div>
                     </div>
                 </div>
-                <div id="column">
+                <div>
                     <div id="title">
                         <h3 style={{fontSize: '32px'}}>Mais Lidas</h3>
                     </div>
@@ -91,7 +91,7 @@ function Blog(){
                         </Carrousel>
                     </div>
                 </div>
-                <div id="column">
+                <div>
                     <div id="title2">
                         <h3 style={{fontSize: '32px'}}>Mais recentes</h3>
                     </div>    
@@ -100,52 +100,52 @@ function Blog(){
                             <img src="/Imagens/8.png" alt="image1-blog" style={{width:"40vw", paddingTop:"10vh"}}></img>
                         </div>
                         <div id="right">
-                            <div id="midle2">
+                            <div className="midle2">
                                 <Card title="Finanças" link="" coverImage="" coverAlt="Para quem busca organizar suas cartas"/>
                             </div>
-                            <div id="midle2">
+                            <div className="midle2">
                                 <Card title="Finanças" link="" coverImage="" coverAlt="Para quem busca organizar suas cartas"/>
                             </div>
-                            <div id="midle2">
+                            <div className="midle2">
                                 <Card title="Finanças" link="" coverImage="" coverAlt="Para quem busca organizar suas cartas"/>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div id="line3">
-                    <div id="components2">
-                        <div id="midle2">
+                <div className="line3">
+                    <div className="components2">
+                        <div className="midle2">
                             <Card title="Finanças" link="" coverImage="" coverAlt="Para quem busca organizar suas cartas"/>
                         </div>
-                        <div id="midle2">
+                        <div className="midle2">
                             <Card title="Finanças" link="" coverImage="" coverAlt="Para quem busca organizar suas cartas"/>
                         </div>
-                        <div id="midle2">
+                        <div className="midle2">
                             <Card title="Finanças" link="" coverImage="" coverAlt="Para quem busca organizar suas cartas"/>
                         </div>
-                        <div id="midle2">
+                        <div className="midle2">
                             <Card title="Finanças" link="" coverImage="" coverAlt="Para quem busca organizar suas cartas"/>
                         </div>
-                        <div id="midle2">
+                        <div className="midle2">
                             <Card title="Finanças" link="" coverImage="" coverAlt="Para quem busca organizar suas cartas"/>
                         </div>
                     </div>
                 </div>
-                <div id="line3">
-                    <div id="components2">
-                        <div id="midle2">
+                <div className="line3">
+                    <div className="components2">
+                        <div className="midle2">
                             <Card title="Finanças" link="" coverImage="" coverAlt="Para quem busca organizar suas cartas"/>
                         </div>
-                        <div id="midle2">
+                        <div className="midle2">
                             <Card title="Finanças" link="" coverImage="" coverAlt="Para quem busca organizar suas cartas"/>
                         </div>
-                        <div id="midle2">
+                        <div className="midle2">
                             <Card title="Finanças" link="" coverImage="" coverAlt="Para quem busca organizar suas cartas"/>
                         </div>
-                        <div id="midle2">
+                        <div className="midle2">
                             <Card title="Finanças" link="" coverImage="" coverAlt="Para quem busca organizar suas cartas"/>
                         </div>
-                        <div id="midle2">
+                        <div className="midle2">
                             <Card title="Finanças" link="" coverImage="" coverAlt="Para quem busca organizar suas cartas"/>
                         </div>
                     </div>
