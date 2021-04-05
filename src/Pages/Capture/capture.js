@@ -1,5 +1,4 @@
 import {React, useState, useEffect} from 'react';
-import { useHistory } from "react-router-dom";
 import Header from '../../Components/Header/header';
 import Footer from '../../Components/Footer/footer';
 import Button from '../../Components/Button/button';
@@ -11,7 +10,6 @@ import "./capture.css";
 function Capture(){
     const [isPhone, setPhone] = useState(window.matchMedia("(max-width: 600px), (max-height: 600px) and (orientation: landscape)").matches);
     const [isModalOpen, setModalOpen] = useState(false);
-    const history = useHistory();
 
     const meta = {
         titlePage: "Ropeup | Captura",
