@@ -3,7 +3,7 @@
     flex-direction: column;
 }
 
-#button-general{
+.button-general{
     margin-left: 30px;
     margin-top: 5%;
 }
@@ -43,13 +43,13 @@
     padding-top: 1vh;
 }
 
-#line{
+.line{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 
-#line-menu{
+.line-menu{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -70,7 +70,7 @@
     flex-direction: column;
 }
 
-#numero-menu {
+.numero-menu {
     font-size: 80px;
     color: red;
     margin-left: 10px;
@@ -110,7 +110,7 @@
 }
 
 @media(max-width: 800px){
-    #line{
+    .line{
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
@@ -177,7 +177,7 @@
         width: 100vw;
         justify-content: center;
     }
-    #line-menu{
+    .line-menu{
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
