@@ -106,7 +106,7 @@ function Home(){
                 </div>
                 <div id="home-button">
                     <div id="button-up">
-                        <Button width="200px" color="#D40F1C" color2='white' label="Quero alavancar os meus resultados" clickAction={goCapture}/>
+                        <Button width="200px" color="#D40F1C" color2='white' label="Quero alavancar os meus resultados" clickAction={()=> window.location = '/capture/#begin-form'}/>
                     </div>
                 </div>
             <Footer/>

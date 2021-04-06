@@ -82,6 +82,7 @@ function Capture(){
                     <h3>O processo de transformação</h3>
                     <img src="/Imagens/Processo.png" alt="Diagrama do processo de transformação"/>
                 </div>
+                <div id="begin-form"/>
                 <h3 id="form-title">Preencha o formulário abaixo para que possamos entrar em contato com você o mais breve possível:</h3>
                 <div id="capture-form-area">
                     <div id="capture-form">

@@ -183,6 +183,13 @@
     color: red;
 }
 
+#begin-form{
+    display: inline-block;
+    width: 1px;
+    padding-top: 50px;
+    margin-top: -50px;
+}
+
 /*Styles for small smartphones*/
 @media (max-width: 320px){
     #capture-heading{
