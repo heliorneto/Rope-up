@@ -48,13 +48,13 @@ function Home(){
                         </div>
                     </div>
                     <div id="image-top-home">
-                        {(isPhone) && <img src="/Imagens/HomeMobile1.png" alt="image1" style={{width: '70vw'}}></img>}
-                        <img src="/Imagens/Imagem1.jpg" alt="image1" style={{width: '40vw'}}></img>
+                        {(isPhone) && <img src="/Imagens/HomeMobile1.png" alt="image1" style={{maxWidth: '70vw', height: 'auto'}}></img>}
+                        <img src="/Imagens/Imagem1.png" alt="image1" style={{maxWidth: '40vw', height: 'auto'}}></img>
                     </div>
                 </div>
                 <div className="line">
                     <div id="image1">
-                        <img src="/Imagens/Imagem2.jpg" alt="image2" style={{width: '40vw'}}></img>
+                        <img src="/Imagens/Imagem2.jpg" alt="image2" style={{maxWidth: '40vw', height: 'auto'}}></img>
                     </div>
                     <div id="text20">
                         <h2>Controle todos os dados e o gerenciamento da sua empresa em um único lugar</h2>
@@ -70,11 +70,11 @@ function Home(){
                     <h2>Como funciona</h2>
                 </div>
                 <div id="left">
-                    <img src="/Imagens/Linha.jpg" alt="image2"></img>
+                    <img src="/Imagens/Linha.png" alt="image2" style={{width: "auto", height: "1065px"}}/>
                     <div id="menu-home">
                         <div className="line-menu">
                             <div id="image1-menu-home">
-                                <img src="/Imagens/Menu1.jpg" alt="image2"></img>
+                                <img src="/Imagens/Menu1.png" alt="image2" className="image-menu" style={{marginRight: "50px"}}/>
                             </div>
                             <div id="text1-menu-home">
                                 <h4 className="numero-menu">01</h4>
@@ -89,12 +89,12 @@ function Home(){
                                 <h5>Aprimoramos a tecnologia na sua empresa para que os processos funcionem adequadamente</h5>
                             </div>
                             <div id="image2-menu-home">
-                                <img src="/Imagens/Menu2.jpg" alt="image2"></img>
+                                <img src="/Imagens/Menu2.png" alt="image2" className="image-menu"/>
                             </div>
                         </div>
                         <div className="line-menu">
                             <div id="image3-menu-home">
-                                <img src="/Imagens/Menu3.jpg" alt="image2"></img>
+                                <img src="/Imagens/Menu3.png" alt="image2" className="image-menu"/>
                             </div>
                             <div id="text3-menu-home">
                                 <h4 className="numero-menu">03</h4>

@@ -1,7 +1,7 @@
 #home-general{
     display: flex;
     flex-direction: column;
-    padding-top: 125px;
+    padding-top: 70px;
 }
 
 .button-general{
@@ -25,7 +25,6 @@
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
-    padding-top: 2px;
 }
 
 #image1{
@@ -64,6 +63,7 @@
 #left{
     display: flex;
     flex-direction: row;
+    margin-bottom: 40px;
 }
 
 #menu-home{
@@ -75,6 +75,11 @@
     font-size: 80px;
     color: red;
     margin-left: 10px;
+}
+
+.image-menu{
+    width: 350px;
+    height: auto;
 }
 
 #text1-menu-home{
