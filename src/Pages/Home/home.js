@@ -74,7 +74,7 @@ function Home(){
                     <div id="menu-home">
                         <div className="line-menu">
                             <div id="image1-menu-home">
-                                <img src="/Imagens/Menu1.png" alt="image2" className="image-menu" style={{marginRight: "50px"}}/>
+                                <img src="/Imagens/Menu1.png" alt="image2" className="image-menu" id="menu-img1"/>
                             </div>
                             <div id="text1-menu-home">
                                 <h4 className="numero-menu">01</h4>
