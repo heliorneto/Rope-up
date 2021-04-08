@@ -119,6 +119,13 @@
     justify-content: center;
 }
 
+#link{
+    display: inline-block;
+    width: 1px;
+    padding-top: 85px;
+    margin-top: -85px;
+}
+
 /*Style for smartphones and low res tables*/
 @media (max-width: 750px), (max-height: 750px) and (orientation: landscape){
     #home-general{

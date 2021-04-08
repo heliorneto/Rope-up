@@ -1,5 +1,4 @@
 import {React, useState, useEffect} from 'react';
-import { useHistory } from "react-router-dom";
 import Header from '../../Components/Header/header';
 import Footer from '../../Components/Footer/footer';
 import Button from '../../Components/Button/button';
@@ -8,7 +7,6 @@ import "./home.css";
 
 function Home(){
     const [isPhone, setPhone] = useState(window.matchMedia("(max-width: 600px), (max-height: 600px) and (orientation: landscape)").matches);
-    const history = useHistory();
 
     const meta = {
         titlePage: "Ropeup | Home",
@@ -19,8 +17,14 @@ function Home(){
         imageAlt: "",
     }
 
-    function goCapture() {
-        history.push('/capture');
+    function goCapture(where = 0) {
+        switch(where){
+            case 1: window.location = '/capture#begin-diagram'; break;
+            case 2: window.location = '/capture#begin-form'; break;
+            case 0:
+            default:
+                window.location = '/capture';
+        }
     }
 
     useEffect(()=>{
@@ -48,19 +52,19 @@ function Home(){
                         </div>
                     </div>
                     <div id="image-top-home">
-                        {(isPhone) && <img src="/Imagens/HomeMobile1.png" alt="image1" style={{maxWidth: '70vw', height: 'auto'}}></img>}
-                        <img src="/Imagens/Imagem1.png" alt="image1" style={{maxWidth: '40vw', height: 'auto'}}></img>
+                        {(isPhone)? <img src="/Imagens/HomeMobile1.png" alt="image1" style={{maxWidth: '70vw', height: 'auto'}}/>:
+                        <img src="/Imagens/Imagem1.png" alt="image1" style={{maxWidth: '40vw', height: 'auto'}}/>}
                     </div>
                 </div>
                 <div className="line">
                     <div id="image1">
-                        <img src="/Imagens/Imagem2.jpg" alt="image2" style={{maxWidth: '40vw', height: 'auto'}}></img>
+                        <img src="/Imagens/Imagem2.png" alt="image2" style={{maxWidth: '40vw', height: 'auto'}}></img>
                     </div>
                     <div id="text20">
                         <h2>Controle todos os dados e o gerenciamento da sua empresa em um único lugar</h2>
                         <h3>Otimizamos seus processos para melhor implantação de um sistema integrado personalizado especialmente para sua empresa</h3>
                         <div className="button-general">
-                            <Button width="200px" color="#D40F1C" color2='white' label="Conheça como trabalhamos" clickAction={goCapture}/>
+                            <Button width="200px" color="#D40F1C" color2='white' label="Conheça como trabalhamos" clickAction={()=>goCapture(1)}/>
                         </div>
                     </div>
                 </div>
@@ -106,7 +110,7 @@ function Home(){
                 </div>
                 <div id="home-button">
                     <div id="button-up">
-                        <Button width="200px" color="#D40F1C" color2='white' label="Quero alavancar os meus resultados" clickAction={()=> window.location = '/capture/#begin-form'}/>
+                        <Button width="200px" color="#D40F1C" color2='white' label="Quero alavancar os meus resultados" clickAction={()=> goCapture(2)}/>
                     </div>
                 </div>
             <Footer/>

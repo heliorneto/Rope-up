@@ -29,7 +29,7 @@ function Capture(){
     }
 
     function goForms() {
-       window.location.href = '/capture#form-title';
+       window.location.href = '/capture#begin-form';
     }
 
     useEffect(()=>{
@@ -78,6 +78,7 @@ function Capture(){
                     </div>
                 </div>
             </div>
+                <div id="begin-diagram"/>
                 <div id="diagram">
                     <h3>O processo de transformação</h3>
                     <img src="/Imagens/Processo.png" alt="Diagrama do processo de transformação"/>
