@@ -150,7 +150,6 @@
         display: flex;
         justify-content: center;
         width: 100vw;
-        display: none;
     }
     #text1{
         flex-wrap: wrap;
