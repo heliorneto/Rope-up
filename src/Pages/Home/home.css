@@ -127,7 +127,7 @@
 }
 
 /*Style for smartphones and low res tables*/
-@media (max-width: 750px), (max-height: 750px) and (orientation: landscape){
+@media (max-width: 800px), (max-height: 500px) and (orientation: landscape){
     #home-general{
         padding-top: 100px;
     }
@@ -136,6 +136,9 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
+    }
+    .button-general{
+        margin-left: 0px;
     }
     #image-top-home{
         display: flex;
