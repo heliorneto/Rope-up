@@ -3,22 +3,22 @@ import './modal.css';
 
 /*
 This component takes the following props:
-- clickAction: The action after a click event
-- label1: The text of the Modal
-- label2: The subtext of the Modal
-- image: The image of the Modal
+error: boolean indicating if the error version of the modal should be displayed
+closeFunction: function to execute when closing the modal box
 */
 
 export function Modal(props) {
+    const successLabels = ["Obrigado!", "Você preencheu nosso formulário!"];
+    const errorLabels = ["Ops!", "Um erro ocorreu e não conseguimos receber suas informações. Tente novamente!"];
 
     return (
         <div className='modal-overlay'>
             <div className='modal-container'>
-                <header><img src={props.image} alt="Fechar modal" style={{height:'15vh'}}></img></header>
-                <strong>{props.label1}</strong>
-                <p>{props.label2}</p>
+                <div id="modal-image"><img src={(props.error)? "icons/Error.png": "icons/Success.png"} alt={(props.error)? "Erro!": "Sucesso!"} style={{height:'15vh', width: "auto"}}></img></div>
+                <strong>{(props.error)? errorLabels[0]: successLabels[0]}</strong>
+                <p>{(props.error)? errorLabels[1]: successLabels[1]}</p>
                 <button type="button">
-                    <img src="/icons/close.svg" alt="Fechar modal" onClick={()=>props.clickAction()} style={{cursor: 'pointer'}}></img>
+                    <img src="icons/Close.png" alt="Fechar" onClick={()=>props.closeFunction()} style={{cursor: 'pointer'}}></img>
                 </button>
             </div>
         </div>

@@ -5,7 +5,7 @@ import './carrousel.css';
     This component renders the child items (passed inside the tag as
     props.children) in the form of a carrousel. It also receives the
     following props:
-    - maxWidth: integer to control the maximum amount of the screen that the component should use (in %)
+    - maxWidth: integer to control the maximum amount of the screen that the component should use (in % -> 50 = 50% screen usage)
     - mobile: boolean parameter to determine the type of card to be used (smaller card on phones)
 */
 
