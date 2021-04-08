@@ -21,12 +21,8 @@
     position: relative;
 }
 
-.modal-container header {
-    font-size: 8.75rem;
-    font-weight: 600;
-    color: #5965E0;
-    background-image: url(levelup.svg) no-repeat center;
-    background-size: contain;
+#modal-image {
+    margin: 10px 0 15px 0;
 }
 
 .modal-container strong {
@@ -46,4 +42,5 @@
     top: 0.5rem;
     background: transparent;
     border: 0;
+    margin: 10px;
 }

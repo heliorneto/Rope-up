@@ -10,6 +10,7 @@ import "./capture.css";
 function Capture(){
     const [isPhone, setPhone] = useState(window.matchMedia("(max-width: 600px), (max-height: 600px) and (orientation: landscape)").matches);
     const [isModalOpen, setModalOpen] = useState(false);
+    const [formError, setFormError] = useState(false);
 
     const meta = {
         titlePage: "Ropeup | Captura",
@@ -21,10 +22,18 @@ function Capture(){
     }
 
     function openModal() {
+        document.body.style.top = `-${window.scrollY}px`;
+        document.body.style.overflowY = "hidden";
+        document.body.style.position = "fixed";
+        document.body.style.scrollBehavior = "auto";
         setModalOpen(true);
     }
 
     function closeModal() {
+        document.body.style.overflowY = "";
+        document.body.style.position = "";
+        window.scrollTo({left: 0, top: parseInt(document.body.style.top || '0') * -1, behavior: "auto"});
+        document.body.style.top = "";
         setModalOpen(false);
     }
 
@@ -92,7 +101,7 @@ function Capture(){
                     </div>
                     <img src="/Imagens/Capture3.png" alt="image1"></img>
                 </div>
-                {isModalOpen && <Modal label1='Obrigado!' label2='Você respondeu ao nosso formulário.' image="/icons/check.JPG" clickAction={closeModal}/>}
+                {isModalOpen && <Modal error={formError} closeFunction={closeModal}/>}
             <Footer/>
         </div>
     );
