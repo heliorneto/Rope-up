@@ -3,12 +3,10 @@
     flex-flow: column nowrap;
     align-items: center;
     width: min-content;
-    border: 1px solid #000;
 }
 
 .gallery-items{
     border-collapse: separate;
-    border-spacing: 30px;
     empty-cells: show;
 }
 
@@ -19,10 +17,11 @@
 
 .gallery-pages{
     border-collapse: separate;
-    border-spacing: 5px;
+    border-spacing: 10px 0;
 }
 
 .gallery-page-num{
+    font-size: 18px;
     cursor: pointer;
 }
 

@@ -7,6 +7,7 @@ import './gallery.css';
     It also receives the following props:
     - rows: The number of rows per page
     - columns: The number of columns per page
+    - cardSpacing: string, controls the amount of space between cards (in px)
 */
 
 class Gallery extends React.Component{
@@ -51,7 +52,7 @@ class Gallery extends React.Component{
         const items = this.genItemsMatrix();
         return (
             <div className="gallery-container">
-                <table className="gallery-items">
+                <table className="gallery-items" style={{borderSpacing: this.props.cardSpacing}}>
                     <tbody>
                         {
                             items.map((row,index)=><tr key={`r${index}`}>
