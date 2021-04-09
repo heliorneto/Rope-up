@@ -6,11 +6,14 @@ import Card from '../../Components/BlogCard/blog_card';
 import TextBox from '../../Components/TextBox/textBox';
 import Carrousel from '../../Components/Carrousel/carrousel';
 import Gallery from '../../Components/Gallery/gallery';
+import {Modal} from './../../Components/Modal/modal';
+import Button from './../../Components/Button/button';
 import "./blog.css";
 
 function Blog(){
     const [isPhone, setPhone] = useState(window.matchMedia("(max-width: 600px), (max-height: 600px) and (orientation: landscape)").matches);
     const [maxWidth, setMaxWidth] = useState(isPhone? 100: 80);
+    const [dialogOpen, setDialogOpen] = useState(false);
 
     const meta = {
         titlePage: "Ropeup | Blog",
@@ -19,6 +22,23 @@ function Blog(){
         keyWords: "Ropeup | Blog | tecnologia",
         imageUrl: "",
         imageAlt: "",
+    }
+
+    function openDialog() {
+        document.body.style.top = `-${window.scrollY}px`;
+        document.body.style.overflowY = "hidden";
+        document.body.style.position = "fixed";
+        document.querySelector('html').style.scrollBehavior = "auto";
+        setDialogOpen(true);
+    }
+
+    function closeDialog() {
+        document.body.style.overflowY = "";
+        document.body.style.position = "";
+        window.scrollTo(0, parseInt(document.body.style.top || '0') * -1);
+        document.body.style.top = "";
+        document.querySelector('html').removeAttribute('style');
+        setDialogOpen(false);
     }
 
     useEffect(()=>{
@@ -133,12 +153,37 @@ function Blog(){
                 <div id="line4">
                     <div id="image-bottom-blog">
                         <div id="tb">
-                            <TextBox color="#D40F1C" text="Assine nossa newsletter e fique por dentro de conteúdos de gestão e tecnologia"/>
+                            <TextBox 
+                            color="#D40F1C"
+                            text="Assine nossa newsletter e fique por dentro de conteúdos de gestão e tecnologia" 
+                            btnAction={openDialog}
+                            />
                         </div>
                         <div id="final-image-blog">
                             <img src="/Imagens/9.png" alt="image1-blog" style={{width:"auto", height: "50vh", paddingTop:"2vh"}}></img>
                         </div>
                     </div>
+                    { dialogOpen &&
+                        <Modal closeFunction={closeDialog}>
+                           <div id="dialog-container">
+                                <h4 id="dialog-title">Digite seu nome e email abaixo para começar a receber nossos conteúdos exclusivos:</h4>
+                                <label className="dialog-label" htmlFor="Name">Nome:</label>
+                                <input className="dialog-input" name="Name" type="text" required/>
+                                <label className="dialog-label" htmlFor="Email">Email:</label>
+                                <input className="dialog-input" name="Email" type="text" required/>
+                                <div id="dialog-confirm">
+                                    <Button
+                                    clickAction={()=>0}
+                                    text="Ok"
+                                    width="120px"
+                                    height="40px"
+                                    backgroundColor="#D40F1C"
+                                    textColor="#fff"
+                                    />
+                                </div>
+                            </div>
+                        </Modal>
+                    }
                 </div>
             </div>
             <Footer/>
