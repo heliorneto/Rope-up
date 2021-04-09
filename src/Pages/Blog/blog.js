@@ -2,10 +2,11 @@ import {React, useState, useEffect} from 'react';
 import Header from '../../Components/Header/header';
 import Footer from '../../Components/Footer/footer';
 import MetaData from '../../meta/reactHelmet';
-import "./blog.css";
 import Card from '../../Components/BlogCard/blog_card';
 import TextBox from '../../Components/TextBox/textBox';
 import Carrousel from '../../Components/Carrousel/carrousel';
+import Gallery from '../../Components/Gallery/gallery';
+import "./blog.css";
 
 function Blog(){
     const [isPhone, setPhone] = useState(window.matchMedia("(max-width: 600px), (max-height: 600px) and (orientation: landscape)").matches);
@@ -31,7 +32,7 @@ function Blog(){
             window.removeEventListener('resize',checkDisplay);
         }
 
-    },[isPhone,setMaxWidth]);
+    },[isPhone]);
 
     return(
         <div id="page-blog">
@@ -41,8 +42,8 @@ function Blog(){
                 <div id="line5">
                     <div id="text1-blog" >
                         <div id="text3">
-                            <h2 style={{fontSize: 49}}>Publicações sobre gestão e desenvolvimento</h2>
-                            <h3 style={{fontSize: 28}}>Porque nos movemos pelo conhecimento</h3>
+                            <h2>Publicações sobre gestão e desenvolvimento</h2>
+                            <h3>Porque nos movemos pelo conhecimento</h3>
                         </div>
                     </div>
                     <div id="image-top-blog">
@@ -97,7 +98,7 @@ function Blog(){
                     </div>    
                     <div id="line-blog">
                         <div id="left-blog">
-                            <img src="/Imagens/8.png" alt="image1-blog" style={{width:"40vw", paddingTop:"10vh"}}></img>
+                            <img src="/Imagens/10.png" alt="image1-blog" style={{width:"35vw", height: "auto", marginTop: "120px"}}></img>
                         </div>
                         <div id="right">
                             <div className="midle2">
@@ -112,51 +113,30 @@ function Blog(){
                         </div>
                     </div>
                 </div>
-                <div className="line3">
-                    <div className="components2">
-                        <div className="midle2">
-                            <Card title="Finanças" link="" coverImage="" coverAlt="Para quem busca organizar suas cartas"/>
-                        </div>
-                        <div className="midle2">
-                            <Card title="Finanças" link="" coverImage="" coverAlt="Para quem busca organizar suas cartas"/>
-                        </div>
-                        <div className="midle2">
-                            <Card title="Finanças" link="" coverImage="" coverAlt="Para quem busca organizar suas cartas"/>
-                        </div>
-                        <div className="midle2">
-                            <Card title="Finanças" link="" coverImage="" coverAlt="Para quem busca organizar suas cartas"/>
-                        </div>
-                        <div className="midle2">
-                            <Card title="Finanças" link="" coverImage="" coverAlt="Para quem busca organizar suas cartas"/>
-                        </div>
-                    </div>
-                </div>
-                <div className="line3">
-                    <div className="components2">
-                        <div className="midle2">
-                            <Card title="Finanças" link="" coverImage="" coverAlt="Para quem busca organizar suas cartas"/>
-                        </div>
-                        <div className="midle2">
-                            <Card title="Finanças" link="" coverImage="" coverAlt="Para quem busca organizar suas cartas"/>
-                        </div>
-                        <div className="midle2">
-                            <Card title="Finanças" link="" coverImage="" coverAlt="Para quem busca organizar suas cartas"/>
-                        </div>
-                        <div className="midle2">
-                            <Card title="Finanças" link="" coverImage="" coverAlt="Para quem busca organizar suas cartas"/>
-                        </div>
-                        <div className="midle2">
-                            <Card title="Finanças" link="" coverImage="" coverAlt="Para quem busca organizar suas cartas"/>
-                        </div>
-                    </div>
+                <div id="line3">
+                    <Gallery rows={3} columns={3} cardSpacing="40px">
+                    <Card title="Finanças" link="" coverImage="Imagens/Capa1.jpeg" coverAlt="Para quem busca organizar suas cartas"/>
+                            <Card title="Finanças" link="" coverImage="Imagens/Capa1.jpeg" coverAlt="Para quem busca organizar suas cartas"/>
+                            <Card title="Finanças" link="" coverImage="Imagens/Capa1.jpeg" coverAlt="Para quem busca organizar suas cartas"/>
+                            <Card title="Finanças" link="" coverImage="Imagens/Capa1.jpeg" coverAlt="Para quem busca organizar suas cartas"/>
+                            <Card title="Finanças" link="" coverImage="Imagens/Capa1.jpeg" coverAlt="Para quem busca organizar suas cartas"/>
+                            <Card title="Finanças" link="" coverImage="Imagens/Capa1.jpeg" coverAlt="Para quem busca organizar suas cartas"/>
+                            <Card title="Finanças" link="" coverImage="Imagens/Capa1.jpeg" coverAlt="Para quem busca organizar suas cartas"/>
+                            <Card title="Finanças" link="" coverImage="Imagens/Capa1.jpeg" coverAlt="Para quem busca organizar suas cartas"/>
+                            <Card title="Finanças" link="" coverImage="Imagens/Capa1.jpeg" coverAlt="Para quem busca organizar suas cartas"/>
+                            <Card title="Finanças" link="" coverImage="Imagens/Capa1.jpeg" coverAlt="Para quem busca organizar suas cartas"/>
+                            <Card title="Finanças" link="" coverImage="Imagens/Capa1.jpeg" coverAlt="Para quem busca organizar suas cartas"/>
+                            <Card title="Finanças" link="" coverImage="Imagens/Capa1.jpeg" coverAlt="Para quem busca organizar suas cartas"/>
+                            <Card title="Finanças" link="" coverImage="Imagens/Capa1.jpeg" coverAlt="Para quem busca organizar suas cartas"/>
+                    </Gallery>
                 </div>
                 <div id="line4">
                     <div id="image-bottom-blog">
                         <div id="tb">
-                            <TextBox color="#D40F1C"></TextBox>
+                            <TextBox color="#D40F1C" text="Assine nossa newsletter e fique por dentro de conteúdos de gestão e tecnologia"/>
                         </div>
                         <div id="final-image-blog">
-                            <img src="/Imagens/9.png" alt="image1-blog" style={{width:"45vw", paddingTop:"2vh"}}></img>
+                            <img src="/Imagens/9.png" alt="image1-blog" style={{width:"auto", height: "50vh", paddingTop:"2vh"}}></img>
                         </div>
                     </div>
                 </div>
