@@ -29,7 +29,7 @@ function Home(){
 
     useEffect(()=>{
         const checkDisplay = () =>{
-            setPhone(window.matchMedia("(max-width: 800px), (max-height: 200px) and (orientation: landscape)").matches);
+            setPhone(window.matchMedia("(max-width: 800px), (max-height: 500px) and (orientation: landscape)").matches);
         }
 
         window.addEventListener('resize',checkDisplay);
