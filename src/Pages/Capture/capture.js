@@ -83,7 +83,14 @@ function Capture(){
                         </div>
                     </div>
                     <div id="capture-button">
-                        <Button width={(isPhone)? "300px": "600px"} color="#D40F1C" color2='white' label="Quero alavancar os meus resultados" clickAction={goForms}/>
+                        <Button 
+                        clickAction={goForms}
+                        text="Quero alavancar os meus resultados" 
+                        width={(isPhone)? "300px": "600px"}
+                        height="65px" 
+                        backgroundColor="#D40F1C" 
+                        textColor='#fff' 
+                        />
                     </div>
                 </div>
             </div>

@@ -188,7 +188,14 @@ class Form extends React.Component{
                     </div>: null
                 }
                 <div className="button-form">
-                    <Button width="150px" color="#D40F1C" color2='white' label="Enviar" clickAction={this.props.clickAction}/>
+                    <Button 
+                    clickAction={this.props.clickAction}
+                    text="Enviar"
+                    width="140px" 
+                    height="50px"
+                    backgroundColor="#D40F1C" 
+                    textColor='#fff'                        
+                    />
                 </div>
             </form>
         );

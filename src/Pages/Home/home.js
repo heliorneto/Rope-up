@@ -48,7 +48,14 @@ function Home(){
                         <h1>Consultoria empresarial com soluções tecnológicas</h1>
                         <h3>Otimize sua gestão através de um trabalho automatizado e ágil usando softwares e transformação tecnológica</h3>
                         <div className="button-general">
-                            <Button width="200px" color="#D40F1C" color2='white' label="Otimize sua gestão com tecnologia" clickAction={goCapture}/>
+                            <Button 
+                            clickAction={goCapture} 
+                            text="Otimize sua gestão com tecnologia" 
+                            width="200px" 
+                            height="65px" 
+                            backgroundColor="#D40F1C" 
+                            textColor="#fff"
+                            />
                         </div>
                     </div>
                     <div id="image-top-home">
@@ -64,7 +71,14 @@ function Home(){
                         <h2>Controle todos os dados e o gerenciamento da sua empresa em um único lugar</h2>
                         <h3>Otimizamos seus processos para melhor implantação de um sistema integrado personalizado especialmente para sua empresa</h3>
                         <div className="button-general">
-                            <Button width="200px" color="#D40F1C" color2='white' label="Conheça como trabalhamos" clickAction={()=>goCapture(1)}/>
+                            <Button 
+                            clickAction={()=>goCapture(1)}
+                            text="Conheça como trabalhamos"
+                            width="200px"
+                            height="65px" 
+                            backgroundColor="#D40F1C" 
+                            textColor='white'  
+                            />
                         </div>
                     </div>
                 </div>
@@ -110,7 +124,14 @@ function Home(){
                 </div>
                 <div id="home-button">
                     <div id="button-up">
-                        <Button width="200px" color="#D40F1C" color2='white' label="Quero alavancar os meus resultados" clickAction={()=> goCapture(2)}/>
+                        <Button 
+                        clickAction={()=> goCapture(2)}
+                        text="Quero alavancar os meus resultados" 
+                        width="200px"
+                        height="65px" 
+                        backgroundColor="#D40F1C" 
+                        textColor='#fff' 
+                        />
                     </div>
                 </div>
             <Footer/>

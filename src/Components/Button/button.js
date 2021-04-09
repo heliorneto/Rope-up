@@ -3,11 +3,12 @@ import './button.css';
 
 /*
 This component takes the following props:
-- clickAction: The action after a click event
-- label: The text of the button
-- color: The background color of the textBox
-- color2: the color of the button text
-- width: The width of the button
+- clickAction: a function to be executed after a click on the button
+- backgroundColor: the color for the button's background
+- text: the text to be shown in the button
+- textColor: the color of the button's text (CSS colors)
+- width: the width of the button
+- height: the height of the button
 */
 
 function Button(props){
@@ -15,9 +16,9 @@ function Button(props){
         <button
         className="red-button" 
         onClick={()=>props.clickAction()}
-        style={{backgroundColor: props.color, color: props.color2 , width: props.width}}
+        style={{width: props.width, height: props.height, color: props.textColor, backgroundColor: props.backgroundColor}}
         >
-            {props.label}
+            {props.text}
         </button>
     );
 }
