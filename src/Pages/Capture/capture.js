@@ -25,15 +25,16 @@ function Capture(){
         document.body.style.top = `-${window.scrollY}px`;
         document.body.style.overflowY = "hidden";
         document.body.style.position = "fixed";
-        document.body.style.scrollBehavior = "auto";
+        document.querySelector('html').style.scrollBehavior = "auto";
         setModalOpen(true);
     }
 
     function closeModal() {
         document.body.style.overflowY = "";
         document.body.style.position = "";
-        window.scrollTo({left: 0, top: parseInt(document.body.style.top || '0') * -1, behavior: "auto"});
+        window.scrollTo(0, parseInt(document.body.style.top || '0') * -1);
         document.body.style.top = "";
+        document.querySelector('html').removeAttribute('style');
         setModalOpen(false);
     }
 
