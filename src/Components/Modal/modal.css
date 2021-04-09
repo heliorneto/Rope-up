@@ -21,21 +21,6 @@
     position: relative;
 }
 
-#modal-image {
-    margin: 10px 0 15px 0;
-}
-
-.modal-container strong {
-    font-size: 2.25rem;
-    color: #2E384D;
-}
-
-.modal-container p {
-    font-size: 1.25rem;
-    color: #666666;
-    margin-top: 0.25rem;
-}
-
 .modal-container button {
     position: absolute;
     right: 0.5rem;

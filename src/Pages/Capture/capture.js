@@ -101,7 +101,18 @@ function Capture(){
                     </div>
                     <img src="/Imagens/Capture3.png" alt="image1"></img>
                 </div>
-                {isModalOpen && <Modal error={formError} closeFunction={closeModal}/>}
+                {isModalOpen && 
+                    <Modal closeFunction={closeModal}>
+                        <div id="modal-image">
+                            <img 
+                            src={(formError)? "icons/Error.png": "icons/Success.png"} 
+                            alt={(formError)? "Erro!": "Sucesso!"} 
+                            style={{height:'15vh', width: "auto"}}/>
+                        </div>
+                        <h4 id="modal-title">{(formError)? "Ops!": "Obrigado!"}</h4>
+                        <p id="modal-text">{(formError)? "Um erro ocorreu e não conseguimos receber suas informações. Tente novamente!": "Você preencheu nosso formulário!"}</p>
+                    </Modal>
+                }
             <Footer/>
         </div>
     );

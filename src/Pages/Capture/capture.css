@@ -197,6 +197,21 @@
     margin-top: -50px;
 }
 
+#modal-image {
+    margin: 10px 0 15px 0;
+}
+
+#modal-title {
+    font-size: 2.25rem;
+    color: #023B59;
+}
+
+#modal-text {
+    font-size: 1.25rem;
+    color: #494949;
+    margin-top: 0.25rem;
+}
+
 /*Styles for small smartphones*/
 @media (max-width: 320px){
     #capture-heading{
