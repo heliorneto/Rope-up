@@ -34,7 +34,7 @@ class Gallery extends React.Component{
         let matrix = Array(this.props.rows);
         for(let i = 0; i < matrix.length; i++){
             let colStart = this.props.columns * i;
-            let colEnd = colStart + 3;
+            let colEnd = colStart + this.props.columns;
             matrix[i] = items.slice(colStart, colEnd);
             if(matrix[i].length === 0){
                 matrix[i] = Array(this.props.columns).fill("");
