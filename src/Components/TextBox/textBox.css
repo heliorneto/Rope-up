@@ -3,7 +3,11 @@
     height: 350px;
     border-radius: 30px;
     font-size: 28px;
-    text-align: justify;
+}
+
+.textBox h3{
+    text-align: center;
+    padding: 40px;
 }
 
 #button-text-box{
@@ -11,20 +15,28 @@
     justify-content: center;
 }
 
-@media(max-width: 800px){
+/*Styles for small smartphones*/
+@media (max-width: 320px){
     .textBox{
-        height: 30vh;
-        width: 75vw;
-        font-size: 26px;
-        margin-left: 12vw;
+        width: 95vw;
+        height: 340px;
+        font-size: 22px;
+    }
+
+    .textBox h3{
+        padding: 30px;
     }
 }
 
-@media(max-width: 600px){
+/*Styles for smartphones*/
+@media (min-width: 321px) and (max-width: 600px), (max-height: 600px) and (orientation: landscape){
     .textBox{
-        height: 50vh;
         width: 95vw;
+        height: 320px;
         font-size: 24px;
-        margin-left: 0.6rem;
+    }
+
+    .textBox h3{
+        padding: 40px 30px 40px 30px;
     }
 }

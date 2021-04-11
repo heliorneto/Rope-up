@@ -15,7 +15,7 @@ function TextBox(props){
         className="textBox" 
         style={{backgroundColor: props.color}}
         >
-            <h3 style={{padding: "40px", textAlign: 'center'}}>{props.text}</h3>
+            <h3>{props.text}</h3>
             <div id="button-text-box">
                 <Button 
                 clickAction={props.btnAction}
