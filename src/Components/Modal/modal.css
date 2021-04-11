@@ -28,3 +28,10 @@
     border: 0;
     margin: 10px;
 }
+
+/*Styles for smartphones*/
+@media (min-width: 321px) and (max-width: 600px), (max-height: 600px) and (orientation: landscape){
+    .modal-container{
+        padding: 1rem 2rem;
+    }
+}
