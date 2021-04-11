@@ -197,6 +197,13 @@
     margin-top: -50px;
 }
 
+#modal-container{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+}
+
 #modal-image {
     margin: 10px 0 15px 0;
 }
