@@ -26,6 +26,8 @@ function Blog(){
 
     function openDialog() {
         document.body.style.top = `-${window.scrollY}px`;
+        document.body.style.right = "0px";
+        document.body.style.left = "0px";
         document.body.style.overflowY = "hidden";
         document.body.style.position = "fixed";
         document.querySelector('html').style.scrollBehavior = "auto";
@@ -37,6 +39,8 @@ function Blog(){
         document.body.style.position = "";
         window.scrollTo(0, parseInt(document.body.style.top || '0') * -1);
         document.body.style.top = "";
+        document.body.style.right = "";
+        document.body.style.right = "";
         document.querySelector('html').removeAttribute('style');
         setDialogOpen(false);
     }
@@ -67,26 +71,20 @@ function Blog(){
                         </div>
                     </div>
                     <div id="image-top-blog">
-                        <img src="/Imagens/1.png" alt="image1-blog" style={{width: "40vw", paddingTop:"10vh"}}></img>
+                        <img src="/Imagens/1.png" alt="image1-blog"/>
                     </div>
                 </div>
-                <div>
-                    <div id="components">
-                        <div id="midle1">
+                <div id="contents-container">
+                    <div id="contents">
+                        <div id="contents-top">
                             <Card title="Finanças" link="" coverImage="" coverAlt="Para quem busca organizar suas cartas"/>
                         </div>
-                        <div>
-                            <div className="midle2">
-                                <Card title="Finanças" link="" coverImage="" coverAlt="Para quem busca organizar suas cartas"/>
-                            </div>
-                            <div id="midle3">
-                                <Card title="Finanças" link="" coverImage="" coverAlt="Para quem busca organizar suas cartas"/>
-                            </div>
-                        </div>
-                        <div id="midle4">
+                        <div id="contents-middle">
                             <Card title="Finanças" link="" coverImage="" coverAlt="Para quem busca organizar suas cartas"/>
-                            <div id="midle5">
-                            </div>
+                            <Card title="Finanças" link="" coverImage="" coverAlt="Para quem busca organizar suas cartas"/>
+                        </div>
+                        <div id="contents-bottom">
+                            <Card title="Finanças" link="" coverImage="" coverAlt="Para quem busca organizar suas cartas"/>
                         </div>
                     </div>
                 </div>
@@ -118,24 +116,20 @@ function Blog(){
                     </div>    
                     <div id="line-blog">
                         <div id="left-blog">
-                            <img src="/Imagens/10.png" alt="image1-blog" style={{width:"35vw", height: "auto", marginTop: "120px"}}></img>
+                            <img src="/Imagens/10.png" alt="image1-blog"/>
                         </div>
-                        <div id="right">
-                            <div className="midle2">
+                        <div id="right-blog">
+                            <Card title="Finanças" link="" coverImage="" coverAlt="Para quem busca organizar suas cartas"/>
+                            <div className="middle-card">
                                 <Card title="Finanças" link="" coverImage="" coverAlt="Para quem busca organizar suas cartas"/>
                             </div>
-                            <div className="midle2">
-                                <Card title="Finanças" link="" coverImage="" coverAlt="Para quem busca organizar suas cartas"/>
-                            </div>
-                            <div className="midle2">
-                                <Card title="Finanças" link="" coverImage="" coverAlt="Para quem busca organizar suas cartas"/>
-                            </div>
+                            <Card title="Finanças" link="" coverImage="" coverAlt="Para quem busca organizar suas cartas"/>
                         </div>
                     </div>
                 </div>
                 <div id="line3">
-                    <Gallery rows={3} columns={3} cardSpacing="40px">
-                    <Card title="Finanças" link="" coverImage="Imagens/Capa1.jpeg" coverAlt="Para quem busca organizar suas cartas"/>
+                    <Gallery rows={(isPhone)? 2: 3} columns={(isPhone)? 2: 3} cardSpacing={(isPhone)? "20px": "40px"}>
+                            <Card title="Finanças" link="" coverImage="Imagens/Capa1.jpeg" coverAlt="Para quem busca organizar suas cartas"/>
                             <Card title="Finanças" link="" coverImage="Imagens/Capa1.jpeg" coverAlt="Para quem busca organizar suas cartas"/>
                             <Card title="Finanças" link="" coverImage="Imagens/Capa1.jpeg" coverAlt="Para quem busca organizar suas cartas"/>
                             <Card title="Finanças" link="" coverImage="Imagens/Capa1.jpeg" coverAlt="Para quem busca organizar suas cartas"/>
@@ -160,32 +154,32 @@ function Blog(){
                             />
                         </div>
                         <div id="final-image-blog">
-                            <img src="/Imagens/9.png" alt="image1-blog" style={{width:"auto", height: "50vh", paddingTop:"2vh"}}></img>
+                            <img src="/Imagens/9.png" alt="image1-blog"/>
                         </div>
                     </div>
-                    { dialogOpen &&
-                        <Modal closeFunction={closeDialog}>
-                           <div id="dialog-container">
-                                <h4 id="dialog-title">Digite seu nome e email abaixo para começar a receber nossos conteúdos exclusivos:</h4>
-                                <label className="dialog-label" htmlFor="Name">Nome:</label>
-                                <input className="dialog-input" name="Name" type="text" required/>
-                                <label className="dialog-label" htmlFor="Email">Email:</label>
-                                <input className="dialog-input" name="Email" type="text" required/>
-                                <div id="dialog-confirm">
-                                    <Button
-                                    clickAction={()=>0}
-                                    text="Ok"
-                                    width="120px"
-                                    height="40px"
-                                    backgroundColor="#D40F1C"
-                                    textColor="#fff"
-                                    />
-                                </div>
-                            </div>
-                        </Modal>
-                    }
                 </div>
             </div>
+            {dialogOpen &&
+                <Modal closeFunction={closeDialog}>
+                    <div id="dialog-container">
+                        <h4 id="dialog-title">Digite seu nome e email abaixo para começar a receber nossos conteúdos exclusivos:</h4>
+                        <label className="dialog-label" htmlFor="Name">Nome:</label>
+                        <input className="dialog-input" name="Name" type="text" required/>
+                        <label className="dialog-label" htmlFor="Email">Email:</label>
+                        <input className="dialog-input" name="Email" type="text" required/>
+                        <div id="dialog-confirm">
+                            <Button
+                            clickAction={()=>0}
+                            text="Ok"
+                            width="120px"
+                            height="40px"
+                            backgroundColor="#D40F1C"
+                            textColor="#fff"
+                            />
+                        </div>
+                    </div>
+                </Modal>
+            }
             <Footer/>
         </div>
     );
