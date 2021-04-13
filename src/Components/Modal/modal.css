@@ -29,6 +29,14 @@
     margin: 10px;
 }
 
+
+/*Styles for small smartphones*/
+@media (max-width: 320px){
+    .modal-container{
+        padding: 2rem 2rem;
+    }
+}
+
 /*Styles for smartphones*/
 @media (min-width: 321px) and (max-width: 600px), (max-height: 600px) and (orientation: landscape){
     .modal-container{

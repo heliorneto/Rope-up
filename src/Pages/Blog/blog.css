@@ -218,7 +218,8 @@
     }
 
     #image-top-blog img{
-        width: 90vw;
+        height: 40vh;
+        width: auto;
     }
 
     #title2 h3{
@@ -240,7 +241,7 @@
 
     #text1-blog{
         width: 100%;
-        background-image: none;
+        padding: 20px 10px 0 10px;
     }
 
     #text3{
@@ -267,7 +268,7 @@
         top: 0;
         left: 0;
         margin-top: 20px;
-        margin-left: 10px;
+        margin-left: 15px;
     }
 
     #final-image-blog{
@@ -277,10 +278,14 @@
     #final-image-blog img{
         height: 200px;
     }
+
+    .dialog-input, #dialog-title{
+        width: 250px;
+    }
 }
 
 /*Styles for smartphones*/
-@media (min-width: 321px) and (max-width: 600px), (max-height: 600px) and (orientation: landscape){
+@media (min-width: 321px) and (max-width: 600px), (max-height: 600px) and (max-width: 600px) and (orientation: landscape){
     #contents{
         flex-direction: column;
     }
@@ -374,52 +379,56 @@
 /*Styles for tablets*/
 @media (min-width: 601px) and (max-width: 992px){
     #line5{
-        position: relative;
-        height: 80vh;
+        height: 55vh;
     }
 
     #text1-blog{
-        width: 100%;
+        width: 60%;
+        padding-left: 40px;
+        padding-right: 30px;
     }
 
     #image-top-blog{
-        padding-right: 0px;
-        padding-top: 200px;
-        position: absolute;
-        left: 58%;
-        z-index: 1;
-    }
-}
-
-/*Styles for very large tablets (iPad Pro)*/
-@media (min-width: 992px) and (max-width: 1024px) and (orientation: portrait){
-    #line5{
-        position: relative;
-        height: 65vh;
+        padding: 150px 20px 0 10px;
     }
 
-    #text1-blog{
-        width: 100%;
-    }
-
-    #text3{
-        margin-top: 220px;
-        margin-left: 60px;
+    #image-top-blog img{
+        width: 40vw;
+        height: auto;
     }
 
     #text3 h2{
-        font-size: 46px;
+        font-size: 45px;
     }
 
     #text3 h3{
         font-size: 26px;
     }
 
-    #image-top-blog{
-        padding-right: 0px;
-        padding-top: 200px;
-        position: absolute;
-        left: 58%;
-        z-index: 1;
+    #left-blog img{
+        width: 50vw;
     }
+}
+
+/*Styles for very large tablets (iPad Pro)*/
+@media (min-width: 992px) and (max-width: 1024px) and (orientation: portrait){
+    #line5{
+        height: 50vh;
+    }
+
+    #text1-blog{
+        width: 60%;
+        padding-left: 40px;
+        padding-right: 30px;
+    }
+
+    #image-top-blog{
+        padding: 150px 20px 0 10px;
+    }
+
+    #image-top-blog img{
+        width: 40vw;
+        height: auto;
+    }
+
 }

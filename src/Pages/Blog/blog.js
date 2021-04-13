@@ -12,6 +12,7 @@ import "./blog.css";
 
 function Blog(){
     const [isPhone, setPhone] = useState(window.matchMedia("(max-width: 600px), (max-height: 600px) and (orientation: landscape)").matches);
+    const [extraSmallPhone, setExtraSmallPhone] = useState(window.matchMedia("(max-width: 280px)").matches);
     const [maxWidth, setMaxWidth] = useState(isPhone? 100: 80);
     const [dialogOpen, setDialogOpen] = useState(false);
 
@@ -48,6 +49,7 @@ function Blog(){
     useEffect(()=>{
         const checkDisplay = () =>{
             setPhone(window.matchMedia("(max-width: 600px), (max-height: 200px) and (orientation: landscape)").matches);
+            setExtraSmallPhone(window.matchMedia("(max-width: 280px)").matches);
             setMaxWidth(isPhone? 100: 80);
         }
 
@@ -128,7 +130,7 @@ function Blog(){
                     </div>
                 </div>
                 <div id="line3">
-                    <Gallery rows={(isPhone)? 2: 3} columns={(isPhone)? 2: 3} cardSpacing={(isPhone)? "20px": "40px"}>
+                    <Gallery rows={(isPhone)? 2: 3} columns={(isPhone)? ((extraSmallPhone)? 1: 2): 3} cardSpacing={(isPhone)? "20px": "40px"}>
                             <Card title="Finanças" link="" coverImage="Imagens/Capa1.jpeg" coverAlt="Para quem busca organizar suas cartas"/>
                             <Card title="Finanças" link="" coverImage="Imagens/Capa1.jpeg" coverAlt="Para quem busca organizar suas cartas"/>
                             <Card title="Finanças" link="" coverImage="Imagens/Capa1.jpeg" coverAlt="Para quem busca organizar suas cartas"/>
