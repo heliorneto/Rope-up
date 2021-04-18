@@ -285,7 +285,7 @@
 }
 
 /*Styles for smartphones*/
-@media (min-width: 321px) and (max-width: 600px), (max-height: 600px) and (max-width: 600px) and (orientation: landscape){
+@media (min-width: 321px) and (max-width: 600px){
     #contents{
         flex-direction: column;
     }
@@ -411,7 +411,7 @@
 }
 
 /*Styles for very large tablets (iPad Pro)*/
-@media (min-width: 992px) and (max-width: 1024px) and (orientation: portrait){
+@media (min-width: 992px) and (max-width: 1024px){
     #line5{
         height: 50vh;
     }

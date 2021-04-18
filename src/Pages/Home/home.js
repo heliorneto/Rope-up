@@ -6,7 +6,7 @@ import MetaData from '../../meta/reactHelmet';
 import "./home.css";
 
 function Home(){
-    const [isPhone, setPhone] = useState(window.matchMedia("(max-width: 600px), (max-height: 600px) and (orientation: landscape)").matches);
+    const [isPhone, setPhone] = useState(window.matchMedia("(max-width: 800px)").matches);
 
     const meta = {
         titlePage: "Ropeup | Home",
@@ -29,7 +29,7 @@ function Home(){
 
     useEffect(()=>{
         const checkDisplay = () =>{
-            setPhone(window.matchMedia("(max-width: 800px), (max-height: 500px) and (orientation: landscape)").matches);
+            setPhone(window.matchMedia("(max-width: 800px)").matches);
         }
 
         window.addEventListener('resize',checkDisplay);

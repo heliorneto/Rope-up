@@ -127,7 +127,7 @@
 }
 
 /*Style for smartphones and low res tables*/
-@media (max-width: 800px), (max-height: 500px) and (orientation: landscape){
+@media (max-width: 800px){
     #home-general{
         padding-top: 100px;
     }

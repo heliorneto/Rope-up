@@ -11,7 +11,7 @@ import Button from './../../Components/Button/button';
 import "./blog.css";
 
 function Blog(){
-    const [isPhone, setPhone] = useState(window.matchMedia("(max-width: 600px), (max-height: 600px) and (orientation: landscape)").matches);
+    const [isPhone, setPhone] = useState(window.matchMedia("(max-width: 800px)").matches);
     const [extraSmallPhone, setExtraSmallPhone] = useState(window.matchMedia("(max-width: 280px)").matches);
     const [maxWidth, setMaxWidth] = useState(isPhone? 100: 80);
     const [dialogOpen, setDialogOpen] = useState(false);
@@ -48,7 +48,7 @@ function Blog(){
 
     useEffect(()=>{
         const checkDisplay = () =>{
-            setPhone(window.matchMedia("(max-width: 600px), (max-height: 200px) and (orientation: landscape)").matches);
+            setPhone(window.matchMedia("(max-width: 800px)").matches);
             setExtraSmallPhone(window.matchMedia("(max-width: 280px)").matches);
             setMaxWidth(isPhone? 100: 80);
         }

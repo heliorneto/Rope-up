@@ -8,7 +8,7 @@ import Form from '../../Components/Form/form'
 import "./capture.css";
 
 function Capture(){
-    const [isPhone, setPhone] = useState(window.matchMedia("(max-width: 600px), (max-height: 600px) and (orientation: landscape)").matches);
+    const [isPhone, setPhone] = useState(window.matchMedia("(max-width: 600px)").matches);
     const [isModalOpen, setModalOpen] = useState(false);
     const [formError, setFormError] = useState(false);
 
@@ -44,7 +44,7 @@ function Capture(){
 
     useEffect(()=>{
         const checkDisplay = () =>{
-            setPhone(window.matchMedia("(max-width: 600px), (max-height: 600px) and (orientation: landscape)").matches);
+            setPhone(window.matchMedia("(max-width: 600px)").matches);
         }
 
         window.addEventListener('resize',checkDisplay);
