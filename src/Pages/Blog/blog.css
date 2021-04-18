@@ -60,12 +60,12 @@
 }
 
 #text3 h2{
-    font-size: 49px;
+    font-size: 2.5rem;
     margin-bottom: 20px;
 }
 
 #text3 h3{
-    font-size: 28px;
+    font-size: 1.5rem;
     font-weight: normal;
 }
 
@@ -80,7 +80,7 @@
     background-color: #023B59;
     border-top-right-radius: 50%;
     border-bottom-right-radius: 50%;
-    padding: 200px 0 0 60px;
+    padding: 180px 0 0 60px;
 }
 
 .middle-card{
@@ -384,8 +384,7 @@
 
     #text1-blog{
         width: 60%;
-        padding-left: 40px;
-        padding-right: 30px;
+        padding: 150px 0 0 60px;
     }
 
     #image-top-blog{
@@ -398,11 +397,11 @@
     }
 
     #text3 h2{
-        font-size: 45px;
+        font-size: 2rem;
     }
 
     #text3 h3{
-        font-size: 26px;
+        font-size: 1.3rem;
     }
 
     #left-blog img{
@@ -418,8 +417,7 @@
 
     #text1-blog{
         width: 60%;
-        padding-left: 40px;
-        padding-right: 30px;
+        padding: 150px 0 0 60px;
     }
 
     #image-top-blog{
@@ -431,4 +429,45 @@
         height: auto;
     }
 
+    #text3 h2{
+        font-size: 2rem;
+    }
+
+    #text3 h3{
+        font-size: 1.3rem;
+    }
+}
+
+/*Styles for horizontal smartphones*/
+@media (max-height: 450px){
+    #text1-blog{
+        width: 60%;
+        padding: 120px 0 0 30px;
+    }
+
+    
+    #text3 h2{
+        font-size: 1.1rem;
+    }
+
+    #text3 h3{
+        font-size: 1rem;
+    }
+}
+
+/*Styles for horizontal smartphones (iphone5)*/
+@media (max-height: 376px){
+    #text1-blog{
+        width: 60%;
+        padding: 120px 0 0 30px;
+    }
+
+    
+    #text3 h2{
+        font-size: 1rem;
+    }
+
+    #text3 h3{
+        font-size: 0.8rem;
+    }
 }
