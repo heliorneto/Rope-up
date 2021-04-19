@@ -1,12 +1,16 @@
 import React from 'react';
-import './form.css';
 import Button from '../../Components/Button/button';
+import axios from 'axios';
+import './form.css';
 
 
 /*
    This component renders the capture page's form.
    It takes the following props:
-   - action: the url of the page that is going to receive the data
+   - name: a unique name for the form (obligatory, for unique form identification)
+   - action: the url of the page that is going to receive the form data
+   - errorFunction: a function to be executed if an error occurs on submit
+   - successFunction: a function to be executed after successful form submit
    It also has configurable error messages for the HTML5 form validation
    system (they can be configured in the errorMessages object).
 */
@@ -25,6 +29,7 @@ class Form extends React.Component{
             invalidNumberRange: "Entre um número válido."
         }
         this.generateMessage = this.generateMessage.bind(this);
+        this.submit = this.submit.bind(this);
     }
 
     componentDidMount(){
@@ -63,9 +68,40 @@ class Form extends React.Component{
         return this.formInputs[inputIndex].validationMessage;
     }
 
+    submit(event){
+        // Preventing default auto form submit
+        event.preventDefault();
+        const currentForm = document.forms[this.props.name];
+        const inputElements = currentForm.elements;
+        // Getting the current date as a ISO formatted date string (YYYY-mm-dd), as expected by the server
+        const currentDate = new Date();
+        let formattedDate = [currentDate.getFullYear(), currentDate.getMonth() + 1, currentDate.getDate()];
+        formattedDate[1] = (formattedDate[1] < 10)? "0" + formattedDate[1]: formattedDate[1];
+        formattedDate[2] = (formattedDate[2] < 10)? "0" + formattedDate[2]: formattedDate[2];
+        // Creating the expected data object
+        const inputData = {
+            Nome: inputElements[0].value,
+            Sobrenome: inputElements[1].value,
+            Email: inputElements[2].value,
+            Telefone: inputElements[3].value,
+            TelefoneAlt: (inputElements[4].value)? inputElements[4].value: null,
+            Cargo: inputElements[5].value,
+            Empresa: inputElements[6].value,
+            Funcionarios: parseInt(inputElements[7].value),
+            Chegada: formattedDate.join('-')
+        };
+        // Making a POST request to send data to the server
+        axios.post(this.props.action, inputData).then(this.props.successFunction,this.props.errorFunction);
+    }
+
     render(){
         return (
-            <form method='POST' action={this.props.action} className="form-container">
+            <form 
+            name={this.props.name} 
+            method="POST"
+            className="form-container" 
+            onSubmit={this.submit}
+            >
                 <label htmlFor="nome">Nome <span className="form-required">*</span></label>
                 <input 
                 id="nome" 
@@ -189,7 +225,7 @@ class Form extends React.Component{
                 }
                 <div className="button-form">
                     <Button 
-                    clickAction={this.props.clickAction}
+                    clickAction={()=>{}}
                     text="Enviar"
                     width="140px" 
                     height="50px"

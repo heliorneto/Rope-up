@@ -29,6 +29,18 @@ function Capture(){
         setModalOpen(true);
     }
 
+    function submitSuccess(response){
+        setFormError(false);
+        openModal();
+    }
+
+    function submitError(error){
+        setFormError(true);
+        // Printing error info on console for debug process
+        console.log(error);
+        openModal();
+    }
+
     function closeModal() {
         document.body.style.overflowY = "";
         document.body.style.position = "";
@@ -105,7 +117,12 @@ function Capture(){
                 <div id="capture-form-area">
                     <div id="capture-form">
                         <p><span id="form-obligatory">*</span> Campo obrigatório</p>
-                        <Form action="#" clickAction={openModal}/>
+                        <Form 
+                        name="cli-info" 
+                        action="http://localhost:1337/leeds" 
+                        errorFunction={submitError} 
+                        successFunction={submitSuccess}
+                        />
                     </div>
                     <img src="/Imagens/Capture3.png" alt="image1"></img>
                 </div>
