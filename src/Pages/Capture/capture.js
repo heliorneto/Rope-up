@@ -13,10 +13,10 @@ function Capture(){
     const [formError, setFormError] = useState(false);
 
     const meta = {
-        titlePage: "Ropeup | Captura",
-        titleSearch: "Ropeup | Captura",
+        titlePage: "Ropeup | Contato",
+        titleSearch: "Ropeup | Contato",
         description: "Venha conhecer mais dos nossos serviços e como podemos te ajudar através da tecnologia. Não perca tempo e fale com um especialista",
-        keyWords: "Ropeup | Captura | tecnologia",
+        keyWords: "Ropeup | Contato | tecnologia",
         imageUrl: "",
         imageAlt: "",
     }
@@ -51,7 +51,7 @@ function Capture(){
     }
 
     function goForms() {
-       window.location.href = '/capture#begin-form';
+       window.location.href = '/contato#begin-form';
     }
 
     useEffect(()=>{

@@ -12,7 +12,7 @@ function Routes() {
             <Switch>
                 <Redirect exact path="/" to="/home"/>
                 <Route path="/home" component={Home}/>
-                <Route path="/capture" component={Capture}/>
+                <Route path="/contato" component={Capture}/>
                 <Route exact path='/blog' component={Blog}/>
                 <Route path="/sobre" component={Sobre}/>
                 <Route path="/blog/artigos/:id" component={Artigos}/>

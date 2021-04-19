@@ -19,11 +19,11 @@ function Home(){
 
     function goCapture(where = 0) {
         switch(where){
-            case 1: window.location = '/capture#begin-diagram'; break;
-            case 2: window.location = '/capture#begin-form'; break;
+            case 1: window.location = '/contato#begin-diagram'; break;
+            case 2: window.location = '/contato#begin-form'; break;
             case 0:
             default:
-                window.location = '/capture';
+                window.location = '/contato';
         }
     }
 
