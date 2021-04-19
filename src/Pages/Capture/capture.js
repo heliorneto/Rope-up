@@ -136,7 +136,7 @@ function Capture(){
                                 style={{height:'15vh', width: "auto"}}/>
                             </div>
                             <h4 id="modal-title">{(formError)? "Ops!": "Obrigado!"}</h4>
-                            <p id="modal-text">{(formError)? "Um erro ocorreu e não conseguimos receber suas informações. Tente novamente!": "Você preencheu nosso formulário!"}</p>
+                            <p id="modal-text">{(formError)? "Ocorreu um erro e não conseguimos receber suas informações. Tente novamente!": "Nossa equipe entrará em contato com você o mais breve possível!"}</p>
                         </div>
                     </Modal>
                 }
