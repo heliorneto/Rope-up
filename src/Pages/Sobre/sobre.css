@@ -1,21 +1,19 @@
 #sobre-general{
     display: flex;
     flex-direction: row;
-    align-content: center;
+    align-items: center;
     background-color:#e9e9e9;
-    padding-bottom: 10px;
+    padding: 125px 100px 10px 150px;
     background-image: url(Cut-logo.png);
     background-repeat: no-repeat;
-    background-size: 45%;
-    background-position: -12vw 30vh;
+    background-size: 50vh;
+    background-position: bottom -120px left -120px;
     min-height: calc(100vh - 267px);
 }
 
 
 #introducao-text{
-    margin-top: 200px;
-    margin-right: 8%;
-    margin-left: 150px;
+    margin-right: auto;
     text-align:justify;
     max-width: 500px;
 }
@@ -33,26 +31,22 @@
 }
 
 #image-top{
-    margin-top: 110px;
-    width: 550px;
+    height: 50vh;
+    width: auto;
 }
 
 /*Styles for smartphones*/
 @media(max-width: 600px){
     #sobre-general{
-        flex-direction:column;
-        justify-content: space-evenly;
-        background-size: 80%;
-        background-position: -100% 52%;
-        padding-right: 5vh;
+        flex-direction: column;
+        align-items: center;
+        padding: 120px 20px 0 20px;
+        background-position: bottom -70px left -90px;
     }
-    
-    
+
     #introducao-text{
-        margin-top: 150px;
         text-align: justify;
-        margin-left: 5vh;
-        width: 85%;
+        margin: 0;
     }
     
     #introducao-title{
@@ -62,78 +56,64 @@
     
     .text{
         font-size: 20px;
+        margin-bottom: 5px;
     }
     
     #image-top{
-        margin-top: 2vh;
         width: 90%;
         height: auto;
-        margin-left: auto;
-    }
-}
-
-/*Styles for landscape smartphones*/
-@media(max-height: 600px) and (orientation: landscape){
-    #sobre-general{
-        flex-direction:row;
-        justify-content: space-around;
-        background-image: url(Cut-logo.png);
-        background-repeat: no-repeat;
-        background-size: 80%;
-        background-position: -100% -25%;
-        padding-bottom: 5vw;
-    }
-    
-    
-    #introducao-text{
-        margin-top: 150px;
-        margin-right: 8%;
-        margin-left: 5vh;
-        text-align: justify;
-        width: 85%;
-    }
-    
-    #introducao-title{
-        width: 80%;
-        white-space: nowrap;
-    }
-    
-    .text{
-        font-size: 20px;
-    }
-    
-    #image-top{
-        margin-top: auto;
-        width: 30%;
+        margin: 0;
     }
 }
 
 /*Styles for tables*/
-@media (min-width: 601px) and (max-width: 992px), (min-height: 601px) and (max-height: 992px) and (orientation: landscape){
+@media (min-width: 601px) and (max-width: 992px){
+    #sobre-general{
+        padding: 125px 20px 10px 50px;
+        align-items: center;
+    }
+
     #introducao-text{
-        margin: 80px 50px 0 50px;
-        max-width: 50%;
-        align-self: center;
+        width: 50%;
+        margin: 0;
+        margin-right: auto;
+    }
+
+    #introducao-title{
+        width: 80%;
+        white-space: nowrap;
+    }
+
+    .text{
+        font-size: 22px;
+        margin-bottom: 5px;
     }
 
     #image-top{
-        max-width: 35%;
-        height: 35%;
-        align-self: center;
+        width: 40vw;
+        height: auto;
     }
 }
 
 /*Styles for large tables (iPad Pro)*/
 @media (min-width: 993px) and (max-width: 1024px){
+    #sobre-general{
+        padding: 125px 20px 0 50px;
+        align-items: center;
+    }
+    
     #introducao-text{
-        margin: 80px 50px 0 50px;
-        max-width: 50%;
-        align-self: center;
+        width: 50%;
+        margin: 0;
+        margin-right: auto;
+    }
+
+    .text{
+        margin-bottom: 10px;
     }
 
     #image-top{
-        max-width: 38%;
-        height: 38%;
-        align-self: center;
+        width: 40vw;
+        height: auto;
     }
 }
