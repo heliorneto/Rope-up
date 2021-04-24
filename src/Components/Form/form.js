@@ -73,22 +73,16 @@ class Form extends React.Component{
         event.preventDefault();
         const currentForm = document.forms[this.props.name];
         const inputElements = currentForm.elements;
-        // Getting the current date as a ISO formatted date string (YYYY-mm-dd), as expected by the server
-        const currentDate = new Date();
-        let formattedDate = [currentDate.getFullYear(), currentDate.getMonth() + 1, currentDate.getDate()];
-        formattedDate[1] = (formattedDate[1] < 10)? "0" + formattedDate[1]: formattedDate[1];
-        formattedDate[2] = (formattedDate[2] < 10)? "0" + formattedDate[2]: formattedDate[2];
-        // Creating the expected data object
+        // Creating the data object that the server expects to receive
         const inputData = {
-            Nome: inputElements[0].value,
-            Sobrenome: inputElements[1].value,
-            Email: inputElements[2].value,
-            Telefone: inputElements[3].value,
-            TelefoneAlt: (inputElements[4].value)? inputElements[4].value: null,
-            Cargo: inputElements[5].value,
-            Empresa: inputElements[6].value,
-            Funcionarios: parseInt(inputElements[7].value),
-            Chegada: formattedDate.join('-')
+            name: inputElements[0].value,
+            surname: inputElements[1].value,
+            email: inputElements[2].value,
+            phone: inputElements[3].value,
+            phone_alt: (inputElements[4].value)? inputElements[4].value: null,
+            role: inputElements[5].value,
+            company: inputElements[6].value,
+            employers: parseInt(inputElements[7].value)
         };
         // Making a POST request to send data to the server
         axios.post(this.props.action, inputData).then(this.props.successFunction,this.props.errorFunction);
