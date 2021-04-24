@@ -41,6 +41,9 @@ class Artigos extends React.Component{
                     <div id="read-progress" style={{width: this.state.progress + "%"}}/>
                 </div>
                 <Article baseItemsUrl="http://localhost:8055/items/article" baseMediaUrl="http://localhost:8055/assets" articleID={this.props.match.params.id}/>
+                {/*
+                    //TODO: Add a CTA here!
+                */}
                 <Footer/>
             </div>
         );

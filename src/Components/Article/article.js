@@ -103,7 +103,6 @@ class Article extends React.Component{
 
     render(){
         if(this.state.requested && !(this.state.error)){    
-            //!Check if it is ok to allowHTML (security)
             return (
                 <article className="article-container">
                     <header className="article-header">
@@ -129,9 +128,9 @@ class Article extends React.Component{
                                 {(this.state.articleData.dateLastEdited) && <p>Atualizado em: {this.state.articleData.dateLastEdited.toLocaleDateString()}</p>}
                             </div>
                         </aside>
-                        <aside className="other-articles">
+                        <aside className="recommended-articles">
                             {/* 
-                            //TODO: add the article cards in here
+                            //TODO: add the recommended article cards in here
                             */}
                         </aside>
                     </div>
