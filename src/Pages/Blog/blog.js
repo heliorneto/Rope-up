@@ -92,7 +92,7 @@ function Blog(){
                 </div>
                 <div>
                     <div id="title">
-                        <h3 style={{fontSize: '32px'}}>Mais Lidas</h3>
+                        <h3 style={{fontSize: '32px'}}>Em destaque</h3>
                     </div>
                     <div id="carrousel">
                         <Carrousel maxWidth={maxWidth} mobile={isPhone}> 
