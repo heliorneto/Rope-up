@@ -8,34 +8,36 @@ import './gallery.css';
     - rows: The number of rows per page
     - columns: The number of columns per page
     - cardSpacing: string, controls the amount of space between cards (in px)
+    - countItems: a async function that returns a promise with the total number of items to display
+    - getPageItems: a async function that takes the {currentPage, numPageItems} context parameter 
+    and returns a promise of an array containing the "numPageItems" items of the page "currentPage"
 */
 
 class Gallery extends React.Component{
     constructor(props){
         super(props);
-        this.numItems = props.rows * props.columns;
-        this.numPages = Math.ceil(props.children.length/this.numItems);
+        this.numPageItems = props.rows * props.columns;
         this.state = {
-            currentPage: 1
+            loaded: false,
+            numItems: 0,
+            currentItems: null
         };
         this.genPageIndex = this.genPageIndex.bind(this);
         this.getItemsMatrix = this.genItemsMatrix.bind(this);
     }
 
     genPageIndex(){
-        const pageRange = [...Array(this.numPages).keys()].map((item,index)=>item+1);
+        const numPages = Math.ceil(this.state.numItems/this.numPageItems);
+        const pageRange = [...Array(numPages).keys()].map((item)=>item+1);
         return pageRange;
     }
 
-    genItemsMatrix(){
-        const begin = (this.state.currentPage - 1) * this.numItems;
-        const end = begin + this.numItems;
-        const items = this.props.children.slice(begin,end);
+    genItemsMatrix(itemsArray){
         let matrix = Array(this.props.rows);
         for(let i = 0; i < matrix.length; i++){
             let colStart = this.props.columns * i;
             let colEnd = colStart + this.props.columns;
-            matrix[i] = items.slice(colStart, colEnd);
+            matrix[i] = itemsArray.slice(colStart, colEnd);
             if(matrix[i].length === 0){
                 matrix[i] = Array(this.props.columns).fill("");
             }
@@ -43,47 +45,95 @@ class Gallery extends React.Component{
         return matrix;
     }
 
-    goToPage(pageNum){
-        this.setState({currentPage: pageNum});
+    async goToPage(pageNum){
+        const newItems = await this.props.getPageItems({
+            currentPage: pageNum, 
+            numPageItems: this.numPageItems
+        });
+        const itemsMatrix = this.getItemsMatrix(newItems);
+        this.setState({
+            loaded: true,
+            numItems: this.state.numItems,
+            currentItems: itemsMatrix
+        });
+    }
+
+    async componentDidMount(){
+        const numItems = await this.props.countItems();
+        this.setState({
+            loaded: false,
+            numItems: numItems,
+            currentItems: null
+        });
+        await this.goToPage(1);
     }
 
     render(){
         const pages = this.genPageIndex();
-        const items = this.genItemsMatrix();
-        return (
-            <div className="gallery-container">
-                <table className="gallery-items" style={{borderSpacing: this.props.cardSpacing}}>
-                    <tbody>
-                        {
-                            items.map((row,index)=><tr key={`r${index}`}>
-                                {row.map((item,index)=><td key={`c${index}`}>
-                                    {item}
-                                </td>)}
-                            </tr>)
-                        }
-                    </tbody>
-                </table>
-                <table className="gallery-pages">
-                    <tbody>
-                        <tr>
+        if(this.state.loaded){
+            return (
+                <div className="gallery-container">
+                    <table className="gallery-items" style={{borderSpacing: this.props.cardSpacing}}>
+                        <tbody>
                             {
-                                pages.map((page,index)=>(
-                                    <td key={index}>
-                                        <span 
-                                        className="gallery-page-num" 
-                                        selectedpage={(this.state.currentPage === page)? "true": "false"} 
-                                        onClick={()=>this.goToPage(page)}
-                                        >
-                                            {page}
-                                        </span>
-                                    </td>
-                                ))
+                                this.state.currentItems.map((row,index)=><tr key={`r${index}`}>
+                                    {row.map((item,index)=><td key={`c${index}`}>
+                                        {item}
+                                    </td>)}
+                                </tr>)
                             }
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        );
+                        </tbody>
+                    </table>
+                    <table className="gallery-pages">
+                        <tbody>
+                            <tr>
+                                {
+                                    pages.map((page,index)=>(
+                                        <td key={index}>
+                                            <span 
+                                            className="gallery-page-num" 
+                                            selectedpage={(this.state.currentPage === page)? "true": "false"} 
+                                            onClick={()=>this.goToPage(page)}
+                                            >
+                                                {page}
+                                            </span>
+                                        </td>
+                                    ))
+                                }
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            );
+        }else{
+            return (
+                <div className="gallery-container">
+                    <table className="gallery-items" style={{borderSpacing: this.props.cardSpacing}}>
+                        <tbody>
+                        </tbody>
+                    </table>
+                    <table className="gallery-pages">
+                        <tbody>
+                            <tr>
+                                {
+                                    pages.map((page,index)=>(
+                                        <td key={index}>
+                                            <span 
+                                            className="gallery-page-num" 
+                                            selectedpage={(this.state.currentPage === page)? "true": "false"} 
+                                            onClick={()=>this.goToPage(page)}
+                                            >
+                                                {page}
+                                            </span>
+                                        </td>
+                                    ))
+                                }
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            );
+        }
     }
 }
 
