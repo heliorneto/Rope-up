@@ -7,8 +7,8 @@ import './article.css';
 /*
     This component is used to render the article main contents.
     It receives the following props:
-    - baseServerUrl: the base URL from where to request the article
-    - baseMediaUrl: the base URL for the media requests
+    - baseItemsUrl: the base Directus server URL from where to request the items (articles)
+    - baseMediaUrl: the base Directus server URL where to request the media (such as images and videos)
     - articleID: the id of the article to recover from the server
 */
 
@@ -21,17 +21,20 @@ class Article extends React.Component{
             articleData: {
                 title: '',
                 coverImage: {
-                    altText: '', 
-                    sources: [],
-                    sizes: []
+                    id: '',
+                    description: ''
                 },
-                contentMD: '',
-                author: {
+                content: '',
+                authorInfo: {
                     name: '',
-                    photoSrc: ''
+                    avatarID: ''
                 },
                 datePublished: null,
-                dateLastEdited: null
+                dateLastEdited: null,
+                meta: {
+                    keywords: [],
+                    description: ''
+                }
             },
             errorInfo: {
                 code: 0,
@@ -40,7 +43,7 @@ class Article extends React.Component{
             }
         };
         this.webInterface = axios.create({
-            baseURL: this.props.baseServerUrl,
+            baseURL: this.props.baseItemsUrl,
             method: 'GET',
             timeout: 2000,
             responseType: 'json'
@@ -50,87 +53,84 @@ class Article extends React.Component{
     async componentDidMount(){
         try{
             let articleData = this.state.articleData;
-            const response = await this.webInterface.get(`${this.props.articleID}`);
-            articleData.title = response.data.Titulo;
-            articleData.coverImage.altText = response.data.Capa.alternativeText;
-            articleData.coverImage.sources = [response.data.Capa.formats.small.url, response.data.Capa.formats.medium.url, response.data.Capa.formats.large.url];
-            articleData.coverImage.sizes = [response.data.Capa.formats.small.width, response.data.Capa.formats.medium.width, response.data.Capa.formats.large.width];
-            articleData.contentMD = response.data.Conteudo;
-            articleData.author.name = response.data.Autor.Nome;
-            articleData.author.profilePicSrc = response.data.Autor.Foto.url;
-            const pubDate = new Date(response.data.created_at);
-            const editDate = new Date(response.data.updated_at);
-            articleData.datePublished = pubDate.toLocaleDateString();
-            if(articleData.datePublished !== editDate.toLocaleDateString()){
-                articleData.dateLastEdited = editDate.toLocaleDateString();
-            }
+            const response = await this.webInterface.get(`${this.props.articleID}`,{
+                params: {
+                    fields: '*,user_created.*,cover.id,cover.description'
+                }
+            });
+            const responseData = response.data;
+            articleData.title = responseData.data.title;
+            articleData.coverImage.id = responseData.data.cover.id;
+            articleData.coverImage.description = responseData.data.description;
+            articleData.content = responseData.data.content;
+            articleData.authorInfo.name = responseData.data.user_created.first_name + ' ' + responseData.data.user_created.last_name;
+            articleData.authorInfo.avatarID = responseData.data.user_created.avatar;
+            articleData.datePublished = new Date(responseData.data.date_created);
+            if(responseData.data.date_updated)
+                articleData.dateLastEdited = new Date(responseData.data.date_updated);
+            articleData.meta.keywords = responseData.data.keywords;
+            articleData.meta.description = responseData.data.description;
             this.setState({
                 requested: true,
                 error: false,
                 articleData: articleData,
-                errorInfo: this.state.errorInfo
+                errorInfo: null
             });
         }catch(error){
             let errorInfo = this.state.errorInfo;
             if(error.response){
                 errorInfo.code = error.response.status;
-                errorInfo.message = error.response.data;
+                errorInfo.message = error.statusText;
                 errorInfo.description = "O servidor retornou um erro ao processar a requisição!";
 
             }else if(error.request){
                 errorInfo.code = 1;
-                errorInfo.message = "Our servers could not be reached, probably due to a network error";
+                errorInfo.message = "Our servers could not be reached, probably due to a network error.";
                 errorInfo.description = "Uma requisição foi enviada ao servidor, mas uma resposta não foi recebida!";
             }else{  
-                errorInfo.message = "Something happened in setting up the request that triggered an error";
+                errorInfo.message = "Something happened in setting up the request that triggered an error.";
                 errorInfo.description = "Ocorreu um erro ao gerar a requisição para o artigo solicitado!";                  
             }
             this.setState({
                 requested: true,
                 error: true,
-                articleData: this.state.articleData,
+                articleData: null,
                 errorInfo: errorInfo
             });
-            console.log("Error during article load!");
+            console.log("An error occurred while loading article data!");
         }
     }
 
     render(){
         if(this.state.requested && !(this.state.error)){    
-            //!Check if it is ok to allowHTML (security)
             return (
                 <article className="article-container">
                     <header className="article-header">
                         <div className="decorate-circle"/>
                         <img 
-                        src={this.props.baseMediaUrl + this.state.articleData.coverImage.sources[1]}
-                        srcSet={this.state.articleData.coverImage.sources.map((item,index)=> this.props.baseMediaUrl + item + ' ' + this.state.articleData.coverImage.sizes[index] + 'w, ')}
-                        alt={this.state.articleData.coverImage.altText} 
+                        src={this.props.baseMediaUrl + '/' + this.state.articleData.coverImage.id}
+                        alt={this.state.articleData.coverImage.description} 
                         className="article-cover"/>
                         <hr/>
                         <h1>{this.state.articleData.title}</h1>
                     </header>
                     <div className="article-body">
                         <div className="article-content">
-                            <ReactMarkdown 
-                            plugins={[gmf]} 
-                            allowDangerousHtml={true}
-                            transformImageUri={(url)=> this.props.baseMediaUrl + url}
-                            >
-                                {this.state.articleData.contentMD}
+                            <ReactMarkdown plugins={[gmf]}>
+                                {this.state.articleData.content}
                             </ReactMarkdown>
                         </div>
                         <aside className="article-info">
-                            <img src={this.props.baseMediaUrl + this.state.articleData.author.profilePicSrc} alt="Foto do autor" className="author-photo"/>
+                            <img src={this.props.baseMediaUrl + '/' + this.state.articleData.authorInfo.avatarID} alt="Foto do autor" className="author-photo"/>
                             <div className="article-info-text">
-                                <p>Por: {this.state.articleData.author.name}</p>
-                                <p>Publicado em: {this.state.articleData.datePublished}</p>
-                                {(this.state.articleData.dateLastEdited) && <p>Atualizado em: {this.state.articleData.dateLastEdited}</p>}
+                                <p>Por: {this.state.articleData.authorInfo.name}</p>
+                                <p>Publicado em: {this.state.articleData.datePublished.toLocaleDateString()}</p>
+                                {(this.state.articleData.dateLastEdited) && <p>Atualizado em: {this.state.articleData.dateLastEdited.toLocaleDateString()}</p>}
                             </div>
                         </aside>
-                        <aside className="other-articles">
+                        <aside className="recommended-articles">
                             {/* 
-                            //TODO: add the article cards in here
+                            //TODO: add the recommended article cards in here
                             */}
                         </aside>
                     </div>

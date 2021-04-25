@@ -40,7 +40,10 @@ class Artigos extends React.Component{
                 <div className={(this.state.showProgress)? "read-progress-bar": "hide-progress"}>
                     <div id="read-progress" style={{width: this.state.progress + "%"}}/>
                 </div>
-                <Article baseServerUrl="http://localhost:1337/artigos" baseMediaUrl="http://localhost:1337" articleID={this.props.match.params.id}/>
+                <Article baseItemsUrl="http://localhost:8055/items/article" baseMediaUrl="http://localhost:8055/assets" articleID={this.props.match.params.id}/>
+                {/*
+                    //TODO: Add a CTA here!
+                */}
                 <Footer/>
             </div>
         );

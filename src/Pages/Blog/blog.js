@@ -1,4 +1,5 @@
 import {React, useState, useEffect} from 'react';
+import axios from 'axios';
 import Header from '../../Components/Header/header';
 import Footer from '../../Components/Footer/footer';
 import MetaData from '../../meta/reactHelmet';
@@ -44,6 +45,37 @@ function Blog(){
         document.body.style.right = "";
         document.querySelector('html').removeAttribute('style');
         setDialogOpen(false);
+    }
+
+    async function getNumArticles(){
+        const response = await axios.get("http://localhost:8055/items/article", {
+            params: {
+                "meta": "total_count",
+                "fields": "id"
+            }
+        });
+        return response.data.meta.total_count;
+    }
+
+    async function getArticlePage({currentPage, numPageItems}){
+        const response = await axios.get("http://localhost:8055/items/article", {
+            params: {
+                "filter[status][_eq]": "published",
+                fields: "id,title,cover.id,cover.description",
+                sort: "-date_created",
+                limit: numPageItems,
+                page: currentPage
+            }
+        });
+        return response.data.data.map((item)=>{
+            return <Card 
+            key={item.id} 
+            title={item.title}
+            link={"http://localhost:8055/items/article/" + item.id}
+            coverImage={"http://localhost:8055/assets/" + item.cover.id}
+            coverAlt={item.cover.description}
+            /> 
+        });
     }
 
     useEffect(()=>{
@@ -130,21 +162,13 @@ function Blog(){
                     </div>
                 </div>
                 <div id="line3">
-                    <Gallery rows={(isPhone)? 2: 3} columns={(isPhone)? ((extraSmallPhone)? 1: 2): 3} cardSpacing={(isPhone)? "20px": "40px"}>
-                            <Card title="Finanças" link="" coverImage="Imagens/Capa1.jpeg" coverAlt="Para quem busca organizar suas cartas"/>
-                            <Card title="Finanças" link="" coverImage="Imagens/Capa1.jpeg" coverAlt="Para quem busca organizar suas cartas"/>
-                            <Card title="Finanças" link="" coverImage="Imagens/Capa1.jpeg" coverAlt="Para quem busca organizar suas cartas"/>
-                            <Card title="Finanças" link="" coverImage="Imagens/Capa1.jpeg" coverAlt="Para quem busca organizar suas cartas"/>
-                            <Card title="Finanças" link="" coverImage="Imagens/Capa1.jpeg" coverAlt="Para quem busca organizar suas cartas"/>
-                            <Card title="Finanças" link="" coverImage="Imagens/Capa1.jpeg" coverAlt="Para quem busca organizar suas cartas"/>
-                            <Card title="Finanças" link="" coverImage="Imagens/Capa1.jpeg" coverAlt="Para quem busca organizar suas cartas"/>
-                            <Card title="Finanças" link="" coverImage="Imagens/Capa1.jpeg" coverAlt="Para quem busca organizar suas cartas"/>
-                            <Card title="Finanças" link="" coverImage="Imagens/Capa1.jpeg" coverAlt="Para quem busca organizar suas cartas"/>
-                            <Card title="Finanças" link="" coverImage="Imagens/Capa1.jpeg" coverAlt="Para quem busca organizar suas cartas"/>
-                            <Card title="Finanças" link="" coverImage="Imagens/Capa1.jpeg" coverAlt="Para quem busca organizar suas cartas"/>
-                            <Card title="Finanças" link="" coverImage="Imagens/Capa1.jpeg" coverAlt="Para quem busca organizar suas cartas"/>
-                            <Card title="Finanças" link="" coverImage="Imagens/Capa1.jpeg" coverAlt="Para quem busca organizar suas cartas"/>
-                    </Gallery>
+                    <Gallery 
+                    rows={(isPhone)? 2: 3} 
+                    columns={(isPhone)? ((extraSmallPhone)? 1: 2): 3} 
+                    cardSpacing={(isPhone)? "20px": "40px"}
+                    countItems={getNumArticles}
+                    getPageItems={getArticlePage}
+                    />
                 </div>
                 <div id="line4">
                     <div id="image-bottom-blog">
