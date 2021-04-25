@@ -10,6 +10,7 @@ import Carrousel from '../../Components/Carrousel/carrousel';
 import Gallery from '../../Components/Gallery/gallery';
 import {Modal} from './../../Components/Modal/modal';
 import Button from './../../Components/Button/button';
+import SearchBar from './../../Components/SearchBar/search-bar'
 import "./blog.css";
 
 function Blog(){
@@ -138,6 +139,9 @@ function Blog(){
                         <img src="/Imagens/1.png" alt="image1-blog"/>
                     </div>
                 </div>
+                    <div id="searchbar">
+                        <SearchBar placeholder="Pesquisar" width="200px"></SearchBar>
+                    </div>
                 <div id="contents-container">
                     <div id="contents">
                         <div id="contents-top">
