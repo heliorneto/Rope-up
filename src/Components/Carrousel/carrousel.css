@@ -76,10 +76,12 @@
     transform: rotate(180deg);
     left: calc(100% - 45px);
     margin-left: 2.3vw;
+    visibility: visible;
 }
 
 .carrousel-previous{
     left: 0px;
+    visibility: visible;
 }
 
 /*Carrousel slide animations*/
@@ -102,14 +104,35 @@
 }
 
 /*Styles for smartphones*/
-@media (min-width: 321px) and (max-width: 600px){
+@media (min-width: 319px) and (max-width: 600px){
     .carrousel-items div{
         margin: 0px 10px 0px 10px;
     }
+    .carrousel-next{
+        margin-left: 6vw;
+    }
 }
 
-@media (max-width: 800px){
+@media (min-width: 315px) and (max-width: 415px){
     .carrousel-next{
-        margin-left: 5vw;
+        margin-left: 7vw;
+    }
+}
+
+@media (min-width: 416px) and (max-width: 600px){
+    .carrousel-next{
+        margin-left: 6vw;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 800px){
+    .carrousel-next{
+        margin-left: 4vw;
+    }
+}
+
+@media (min-width: 801px) and (max-width: 900px){
+    .carrousel-next{
+        margin-left: 3vw;
     }
 }
