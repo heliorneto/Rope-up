@@ -4,6 +4,7 @@ import Header from '../../Components/Header/header';
 import Footer from '../../Components/Footer/footer';
 import MetaData from '../../meta/reactHelmet';
 import Card from '../../Components/BlogCard/blog_card';
+import Category from '../../Components/Category/category';
 import TextBox from '../../Components/TextBox/textBox';
 import Carrousel from '../../Components/Carrousel/carrousel';
 import Gallery from '../../Components/Gallery/gallery';
@@ -111,14 +112,14 @@ function Blog(){
                 <div id="contents-container">
                     <div id="contents">
                         <div id="contents-top">
-                            <Card title="Finanças" link="" coverImage="" coverAlt="Para quem busca organizar suas cartas"/>
+                            <Category title="Finanças" link="" coverImage="" description="Para quem busca organizar suas contas" coverAlt="Para quem busca organizar suas cartas"/>
                         </div>
                         <div id="contents-middle">
-                            <Card title="Finanças" link="" coverImage="" coverAlt="Para quem busca organizar suas cartas"/>
-                            <Card title="Finanças" link="" coverImage="" coverAlt="Para quem busca organizar suas cartas"/>
+                            <Category title="Finanças" link="" coverImage="" description="Para quem busca organizar suas contas" leiaMais="Leia mais..." coverAlt="Para quem busca organizar suas cartas"/>
+                            <Category title="Finanças" link="" coverImage="" description="Para quem busca organizar suas contas" leiaMais="Leia mais..." coverAlt="Para quem busca organizar suas cartas"/>
                         </div>
                         <div id="contents-bottom">
-                            <Card title="Finanças" link="" coverImage="" coverAlt="Para quem busca organizar suas cartas"/>
+                            <Category title="Finanças" link="" coverImage="" description="Para quem busca organizar suas contas" coverAlt="Para quem busca organizar suas cartas"/>
                         </div>
                     </div>
                 </div>

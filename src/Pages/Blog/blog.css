@@ -197,6 +197,10 @@
     align-self: center;
 }
 
+#contents-button{
+    padding: 50px 15px 50px 15px;
+}
+
 /*Styles for small smartphones*/
 @media (max-width: 320px){
     #contents{
