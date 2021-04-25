@@ -67,12 +67,13 @@ function Blog(){
                 page: currentPage
             }
         });
+        const cardWidth = (isPhone)? 150: 200;
         return response.data.data.map((item)=>{
             return <Card 
             key={item.id} 
             title={item.title}
-            link={"http://localhost:8055/items/article/" + item.id}
-            coverImage={"http://localhost:8055/assets/" + item.cover.id}
+            link={"/blog/artigos/" + item.id}
+            coverImage={"http://localhost:8055/assets/" + item.cover.id + `?fit=cover&width=${cardWidth}&height=160&withoutEnlargement`}
             coverAlt={item.cover.description}
             /> 
         });
