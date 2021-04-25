@@ -12,10 +12,13 @@ import Button from './../../Components/Button/button';
 import "./blog.css";
 
 function Blog(){
+    const articleRequestURL = "http://localhost:8055/items/article";
+    const mediaRequestURL = "http://localhost:8055/assets/";
     const [isPhone, setPhone] = useState(window.matchMedia("(max-width: 800px)").matches);
     const [extraSmallPhone, setExtraSmallPhone] = useState(window.matchMedia("(max-width: 280px)").matches);
     const [maxWidth, setMaxWidth] = useState(isPhone? 100: 80);
     const [dialogOpen, setDialogOpen] = useState(false);
+    const [featuredArticles, setFeaturedArticles] = useState([]);
 
     const meta = {
         titlePage: "Ropeup | Blog",
@@ -47,8 +50,27 @@ function Blog(){
         setDialogOpen(false);
     }
 
+    async function getFeaturedArticles(){
+        const response = await axios.get(articleRequestURL, {
+            params: {
+                "filter[status][_eq]": "published",
+                "filter[featured][_eq]": "true",
+                fields: "id,title,cover.id,cover.description"
+            }
+        });
+        return response.data.data.map((item)=>{
+            return <Card 
+            key={item.id} 
+            title={item.title}
+            link={"/blog/artigos/" + item.id} 
+            coverImage={mediaRequestURL + item.cover.id} 
+            coverAlt={item.cover.description}
+            />
+        });
+    }
+
     async function getNumArticles(){
-        const response = await axios.get("http://localhost:8055/items/article", {
+        const response = await axios.get(articleRequestURL, {
             params: {
                 "meta": "total_count",
                 "fields": "id"
@@ -85,6 +107,12 @@ function Blog(){
             setExtraSmallPhone(window.matchMedia("(max-width: 280px)").matches);
             setMaxWidth(isPhone? 100: 80);
         }
+
+        async function loadFeatured(){
+            setFeaturedArticles(await getFeaturedArticles());
+        }
+
+        loadFeatured();
 
         window.addEventListener('resize',checkDisplay);
         return () => {
@@ -129,19 +157,7 @@ function Blog(){
                     </div>
                     <div id="carrousel">
                         <Carrousel maxWidth={maxWidth} mobile={isPhone}> 
-                            <Card title="Finanças" link="" coverImage="Imagens/Capa1.jpeg" coverAlt="Para quem busca organizar suas cartas"/>
-                            <Card title="Finanças" link="" coverImage="Imagens/Capa1.jpeg" coverAlt="Para quem busca organizar suas cartas"/>
-                            <Card title="Finanças" link="" coverImage="Imagens/Capa1.jpeg" coverAlt="Para quem busca organizar suas cartas"/>
-                            <Card title="Finanças" link="" coverImage="Imagens/Capa1.jpeg" coverAlt="Para quem busca organizar suas cartas"/>
-                            <Card title="Finanças" link="" coverImage="Imagens/Capa1.jpeg" coverAlt="Para quem busca organizar suas cartas"/>
-                            <Card title="Finanças" link="" coverImage="Imagens/Capa1.jpeg" coverAlt="Para quem busca organizar suas cartas"/>
-                            <Card title="Finanças" link="" coverImage="Imagens/Capa1.jpeg" coverAlt="Para quem busca organizar suas cartas"/>
-                            <Card title="Finanças" link="" coverImage="Imagens/Capa1.jpeg" coverAlt="Para quem busca organizar suas cartas"/>
-                            <Card title="Finanças" link="" coverImage="Imagens/Capa1.jpeg" coverAlt="Para quem busca organizar suas cartas"/>
-                            <Card title="Finanças" link="" coverImage="Imagens/Capa1.jpeg" coverAlt="Para quem busca organizar suas cartas"/>
-                            <Card title="Finanças" link="" coverImage="Imagens/Capa1.jpeg" coverAlt="Para quem busca organizar suas cartas"/>
-                            <Card title="Finanças" link="" coverImage="Imagens/Capa1.jpeg" coverAlt="Para quem busca organizar suas cartas"/>
-                            <Card title="Finanças" link="" coverImage="Imagens/Capa1.jpeg" coverAlt="Para quem busca organizar suas cartas"/>
+                            {featuredArticles}
                         </Carrousel>
                     </div>
                 </div>
