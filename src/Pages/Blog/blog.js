@@ -21,6 +21,7 @@ function Blog(){
     const [maxWidth, setMaxWidth] = useState(isPhone? 100: 80);
     const [dialogOpen, setDialogOpen] = useState(false);
     const [featuredArticles, setFeaturedArticles] = useState([]);
+    const [mostRecent, setMostRecent] = useState([]);
 
     const meta = {
         titlePage: "Ropeup | Blog",
@@ -50,6 +51,25 @@ function Blog(){
         document.body.style.right = "";
         document.querySelector('html').removeAttribute('style');
         setDialogOpen(false);
+    }
+
+    async function getMostRecentArticles(){
+        const response = await axios.get(articleRequestURL, {
+            params: {
+                sort: "-date_created",
+                limit: "3",
+                fields : "id,title,cover.id,cover.description"
+            }
+        });
+        return response.data.data.map((item)=>{
+            return <Card
+            key={item.id}
+            title={item.title}
+            link={"/blog/artigos/" + item.id}
+            coverImage={mediaRequestURL + item.cover.id}
+            coverAlt={item.cover.description}
+            />
+        });
     }
 
     async function getFeaturedArticles(){
@@ -114,7 +134,12 @@ function Blog(){
             setFeaturedArticles(await getFeaturedArticles());
         }
 
+        async function loadMostRecent(){
+            setMostRecent(await getMostRecentArticles());
+        }
+
         loadFeatured();
+        loadMostRecent();
 
         window.addEventListener('resize',checkDisplay);
         return () => {
@@ -175,11 +200,7 @@ function Blog(){
                             <img src="/Imagens/10.png" alt="image1-blog"/>
                         </div>
                         <div id="right-blog">
-                            <Card title="Finanças" link="" coverImage="" coverAlt="Para quem busca organizar suas cartas"/>
-                            <div className="middle-card">
-                                <Card title="Finanças" link="" coverImage="" coverAlt="Para quem busca organizar suas cartas"/>
-                            </div>
-                            <Card title="Finanças" link="" coverImage="" coverAlt="Para quem busca organizar suas cartas"/>
+                            {mostRecent}
                         </div>
                     </div>
                 </div>
