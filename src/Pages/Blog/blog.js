@@ -189,6 +189,9 @@ function Blog(){
                         </div>
                         <div id="contents-bottom">
                             <Category title="Finanças" link="" coverImage="" description="Para quem busca organizar suas contas" coverAlt="Para quem busca organizar suas cartas"/>
+                            <div className="category-button">
+                                <Button text="Veja todos os conteúdos" width="200px" height="65px" backgroundColor="#D40F1C" textColor='white' />
+                            </div>
                         </div>
                     </div>
                 </div>

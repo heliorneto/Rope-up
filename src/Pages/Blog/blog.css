@@ -32,6 +32,13 @@
 
 #contents-bottom{
     margin-top: 40px;
+    justify-content: flex-end;
+}
+
+.category-button{
+    display: flex;
+    align-items: center;
+    margin-left: 15px;
 }
 
 #image-top-blog{
@@ -475,5 +482,19 @@
 
     #text3 h3{
         font-size: 0.8rem;
+    }
+}
+
+/*Styles for smartphones*/
+@media (max-width: 650px){
+    #contents-bottom{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .category-button{
+        margin-left: 0px;
+        margin-top: 100px;
     }
 }
