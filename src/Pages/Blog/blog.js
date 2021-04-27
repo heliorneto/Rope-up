@@ -53,6 +53,11 @@ function Blog(){
         setDialogOpen(false);
     }
 
+    function openSearch(query){
+        const escaped = encodeURIComponent(query);
+        window.location = `/blog/search?q=${escaped}`
+    }
+
     async function getMostRecentArticles(){
         const response = await axios.get(articleRequestURL, {
             params: {
@@ -176,7 +181,7 @@ function Blog(){
                     </div>
                 </div>
                     <div id="searchbar">
-                        <SearchBar placeholder="Pesquisar" width="200px"></SearchBar>
+                        <SearchBar placeholder="Sobre o que quer aprender?" width="300px" enterAction={openSearch}/>
                     </div>
                 <div id="contents-container">
                     <div id="contents">
@@ -190,7 +195,14 @@ function Blog(){
                         <div id="contents-bottom">
                             <Category title="Finanças" link="" coverImage="" description="Para quem busca organizar suas contas" coverAlt="Para quem busca organizar suas cartas"/>
                             <div className="category-button">
-                                <Button text="Veja todos os conteúdos" width="200px" height="65px" backgroundColor="#D40F1C" textColor='white' />
+                                <Button 
+                                text="Veja todos os conteúdos" 
+                                width="200px" 
+                                height="65px" 
+                                backgroundColor="#D40F1C" 
+                                textColor='white' 
+                                clickAction={()=>{window.location = "/blog/search#search-categories"}}
+                                />
                             </div>
                         </div>
                     </div>
