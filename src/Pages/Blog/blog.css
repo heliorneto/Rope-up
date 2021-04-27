@@ -44,6 +44,12 @@
     height: 60vh;
 }
 
+#searchbar{
+    display: flex;
+    flex-direction: row-reverse;
+    margin-right: 10vw;
+}
+
 #line5{
     display: flex;
     flex-direction: row;
@@ -81,10 +87,6 @@
     border-top-right-radius: 50%;
     border-bottom-right-radius: 50%;
     padding: 180px 0 0 60px;
-}
-
-.middle-card{
-    padding: 30% 0 30% 0;
 }
 
 #line-blog{

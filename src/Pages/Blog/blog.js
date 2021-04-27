@@ -10,6 +10,7 @@ import Carrousel from '../../Components/Carrousel/carrousel';
 import Gallery from '../../Components/Gallery/gallery';
 import {Modal} from './../../Components/Modal/modal';
 import Button from './../../Components/Button/button';
+import SearchBar from './../../Components/SearchBar/search-bar'
 import "./blog.css";
 
 function Blog(){
@@ -20,6 +21,7 @@ function Blog(){
     const [maxWidth, setMaxWidth] = useState(isPhone? 100: 80);
     const [dialogOpen, setDialogOpen] = useState(false);
     const [featuredArticles, setFeaturedArticles] = useState([]);
+    const [mostRecent, setMostRecent] = useState([]);
 
     const meta = {
         titlePage: "Ropeup | Blog",
@@ -49,6 +51,25 @@ function Blog(){
         document.body.style.right = "";
         document.querySelector('html').removeAttribute('style');
         setDialogOpen(false);
+    }
+
+    async function getMostRecentArticles(){
+        const response = await axios.get(articleRequestURL, {
+            params: {
+                sort: "-date_created",
+                limit: "3",
+                fields : "id,title,cover.id,cover.description"
+            }
+        });
+        return response.data.data.map((item)=>{
+            return <Card
+            key={item.id}
+            title={item.title}
+            link={"/blog/artigos/" + item.id}
+            coverImage={mediaRequestURL + item.cover.id}
+            coverAlt={item.cover.description}
+            />
+        });
     }
 
     async function getFeaturedArticles(){
@@ -102,6 +123,17 @@ function Blog(){
         });
     }
 
+    
+    function submitNL() {
+        const User = {
+            name: document.getElementById("nameU").value,
+            email: document.getElementById("nameU").value
+        }
+
+        
+        axios.post("http://localhost:8055/items/mail_list", User);
+    }
+
     useEffect(()=>{
         const checkDisplay = () =>{
             setPhone(window.matchMedia("(max-width: 800px)").matches);
@@ -113,7 +145,12 @@ function Blog(){
             setFeaturedArticles(await getFeaturedArticles());
         }
 
+        async function loadMostRecent(){
+            setMostRecent(await getMostRecentArticles());
+        }
+
         loadFeatured();
+        loadMostRecent();
 
         window.addEventListener('resize',checkDisplay);
         return () => {
@@ -138,6 +175,9 @@ function Blog(){
                         <img src="/Imagens/1.png" alt="image1-blog"/>
                     </div>
                 </div>
+                    <div id="searchbar">
+                        <SearchBar placeholder="Pesquisar" width="200px"></SearchBar>
+                    </div>
                 <div id="contents-container">
                     <div id="contents">
                         <div id="contents-top">
@@ -171,11 +211,7 @@ function Blog(){
                             <img src="/Imagens/10.png" alt="image1-blog"/>
                         </div>
                         <div id="right-blog">
-                            <Card title="Finanças" link="" coverImage="" coverAlt="Para quem busca organizar suas cartas"/>
-                            <div className="middle-card">
-                                <Card title="Finanças" link="" coverImage="" coverAlt="Para quem busca organizar suas cartas"/>
-                            </div>
-                            <Card title="Finanças" link="" coverImage="" coverAlt="Para quem busca organizar suas cartas"/>
+                            {mostRecent}
                         </div>
                     </div>
                 </div>
@@ -208,12 +244,12 @@ function Blog(){
                     <div id="dialog-container">
                         <h4 id="dialog-title">Digite seu nome e email abaixo para começar a receber nossos conteúdos exclusivos:</h4>
                         <label className="dialog-label" htmlFor="Name">Nome:</label>
-                        <input className="dialog-input" name="Name" type="text" required/>
+                        <input id="nameU" className="dialog-input" name="Name" type="text" required/>
                         <label className="dialog-label" htmlFor="Email">Email:</label>
-                        <input className="dialog-input" name="Email" type="text" required/>
+                        <input id="emailU" className="dialog-input" name="Email" type="text" required/>
                         <div id="dialog-confirm">
                             <Button
-                            clickAction={()=>0}
+                            clickAction={()=>submitNL()}
                             text="Ok"
                             width="120px"
                             height="40px"
