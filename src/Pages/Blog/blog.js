@@ -127,7 +127,7 @@ function Blog(){
     function submitNL() {
         const User = {
             name: document.getElementById("nameU").value,
-            email: document.getElementById("nameU").value
+            email: document.getElementById("emailU").value
         }
 
         
