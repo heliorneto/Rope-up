@@ -123,6 +123,17 @@ function Blog(){
         });
     }
 
+    
+    function submitNL() {
+        const User = {
+            name: document.getElementById("nameU").value,
+            email: document.getElementById("nameU").value
+        }
+
+        
+        axios.post("http://localhost:8055/items/mail_list", User);
+    }
+
     useEffect(()=>{
         const checkDisplay = () =>{
             setPhone(window.matchMedia("(max-width: 800px)").matches);
@@ -233,12 +244,12 @@ function Blog(){
                     <div id="dialog-container">
                         <h4 id="dialog-title">Digite seu nome e email abaixo para começar a receber nossos conteúdos exclusivos:</h4>
                         <label className="dialog-label" htmlFor="Name">Nome:</label>
-                        <input className="dialog-input" name="Name" type="text" required/>
+                        <input id="nameU" className="dialog-input" name="Name" type="text" required/>
                         <label className="dialog-label" htmlFor="Email">Email:</label>
-                        <input className="dialog-input" name="Email" type="text" required/>
+                        <input id="emailU" className="dialog-input" name="Email" type="text" required/>
                         <div id="dialog-confirm">
                             <Button
-                            clickAction={()=>0}
+                            clickAction={()=>submitNL()}
                             text="Ok"
                             width="120px"
                             height="40px"
