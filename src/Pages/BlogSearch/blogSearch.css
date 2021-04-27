@@ -1,0 +1,133 @@
+#search-content{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    min-height: calc(100% - 267px);
+    padding-top: 125px;
+}
+
+#search-header{
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    padding: 50px 0 50px 0;
+    background-color: #d9d9d9;
+}
+
+#search-header h2{
+    font-size: 20px;
+    border-bottom: 1px solid #000;
+    margin-bottom: 20px;
+}
+
+#search-header h1{
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+#search-header p{
+    font-size: 16px;
+    color: #575757;
+}
+
+#search-advanced{
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-items: center;
+    width: 100%;
+    background-color: #d9d9d9;
+    padding-top: 20px;
+}
+
+#search-advanced h2{
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+#search-advanced h3{
+    font-size: 25px;
+}
+
+#search-controls{
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0 20px 0;
+}
+
+#search-results{
+    margin-bottom: 20px;
+}
+
+.search-inputs{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+    justify-items: flex-start;
+    margin-right: 50px;
+}
+
+.search-inputs label{
+    display: block;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.search-inputs input[type="search"]{
+    width: 250px;
+    height: 30px;
+    border-radius: 15px;
+    border: 1px solid #000;
+    outline: none;
+    padding: 4px 10px 4px 10px;
+    font-size: 16px;
+    background-color: #b4b4b4;
+    color: #383838;
+}
+
+.search-inputs select{
+    display: flex;
+    flex-flow: column wrap;
+    align-items: flex-start;
+    justify-content: center;
+    align-self: center;
+    width: 350px;
+    height: max-content;
+    overflow: hidden;
+    font-size: 16px;
+    border: 1px solid #000;
+    border-radius: 15px;
+    outline: none;
+    background-color: #b4b4b4;
+    color: #383838;
+    padding: 4px 10px 4px 10px;
+}
+
+#search-term{
+    align-self: flex-start;
+}
+
+#search-term label{
+    margin-bottom: 20px;
+}
+
+#search-categories{
+    border: 1px solid #000;
+    border-radius: 15px;
+    padding: 20px;
+    align-self: center;
+    background-color: #b4b4b4;
+    color: #202020;
+    margin-top: 10px;
+}
+
+#search-categories label{
+    display: inline-block;
+    margin-left: 10px;
+}
