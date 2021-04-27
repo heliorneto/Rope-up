@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from './../../Components/Header/header';
 import Footer from './../../Components/Footer/footer';
+import Button from './../../Components/Button/button';
 import Article from './../../Components/Article/article';
 import './artigos.css';
 
@@ -41,9 +42,19 @@ class Artigos extends React.Component{
                     <div id="read-progress" style={{width: this.state.progress + "%"}}/>
                 </div>
                 <Article baseItemsUrl="http://localhost:8055/items/article" baseMediaUrl="http://localhost:8055/assets" articleID={this.props.match.params.id}/>
-                {/*
-                    //TODO: Add a CTA here!
-                */}
+                <div className="CTA">
+                    <img src="/Imagens/CTA.png" alt="CTA" style={{maxWidth: '40vw', height: 'auto'}}/>
+                    <div className="CTA-button">
+                        <h3 style={{marginBottom: '20px'}}>Coloque em prática essas dicas com nosso <br/> serviço de consultoria em tecnologia</h3>
+                        <Button 
+                            text="Conheça como trabalhamos"
+                            width="200px"
+                            height="65px" 
+                            backgroundColor="#D40F1C" 
+                            textColor='white'  
+                        />
+                    </div>
+                </div>
                 <Footer/>
             </div>
         );
