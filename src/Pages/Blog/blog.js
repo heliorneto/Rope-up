@@ -214,7 +214,7 @@ function Blog(){
                             <img src="/Imagens/10.png" alt="image1-blog"/>
                         </div>
                         <div id="right-blog">
-                            {mostRecent}
+                            {mostRecent} 
                         </div>
                     </div>
                 </div>
