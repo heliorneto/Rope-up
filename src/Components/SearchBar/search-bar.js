@@ -10,8 +10,18 @@ This component takes the following props:
 
 
 function SearchBar(props){
+
+    function searchKey(){
+        document.getElementById("search").addEventListener("keydown", function(event) {
+            if (event.key === "Enter") {
+                alert("You pressed a key inside the input field");
+                
+            }
+          });
+    }
+
     return(
-            <input type="search" id="search" placeholder={props.placeholder} style={{width:props.width}}/>
+            <input type="search" id="search" placeholder={props.placeholder} style={{width:props.width}} onKeyDown= {()=>searchKey()}/>
     );
 }
 
