@@ -120,6 +120,9 @@
 }
 
 #right-blog{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     padding-top: 10vh;
     padding-right: 4vw;
 }
