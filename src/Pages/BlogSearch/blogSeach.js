@@ -112,7 +112,6 @@ export default function BlogSearch(props){
                     <div id="search-header">
                         <h2>Resultados da busca por:</h2>
                         <h1>{searchQuery.q}</h1>
-                        <p>{numResults} posts</p>
                     </div>
                     <div id="search-results">
                         <Gallery
@@ -124,6 +123,7 @@ export default function BlogSearch(props){
                         />
                     </div>
                     <form id="search-advanced" name="search-query" method="get" onChange={parseCategories}>
+                        <p>Encontramos {numResults} posts</p>
                         <h2>Não encontrou o que procura?</h2>
                         <h3>Refine sua busca:</h3>
                         <div id="search-controls">
