@@ -132,7 +132,7 @@ export default function BlogSearch(props){
                                 <input name="q" type="search" placeholder="Entre uma palavra..."/> 
                             </div>
                             <div className="search-inputs">
-                                <label for="category">Selecione as categorias de artigos em que deseja procurar: </label>
+                                <label htmlFor="category">Selecione as categorias de artigos em que deseja procurar: </label>
                                 <input name={(selectedCategories === "")? "": "category"} value={selectedCategories.split(",")} type="hidden"/>
                                 <div id="search-categories">
                                     {categories}
