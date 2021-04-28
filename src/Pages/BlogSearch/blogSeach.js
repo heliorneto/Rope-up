@@ -140,7 +140,7 @@ export default function BlogSearch(props){
                             </div>
                             <Button 
                             clickAction={()=>{}} 
-                            backgroundColor="red" 
+                            backgroundColor="#D40F1C" 
                             text="Pesquisa avançada" 
                             textColor="white"
                             width="200px"
