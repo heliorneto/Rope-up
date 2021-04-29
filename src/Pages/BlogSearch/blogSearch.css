@@ -132,3 +132,49 @@
     display: inline-block;
     margin-left: 10px;
 }
+
+/*Styles for smartphones*/
+@media(max-width: 600px){
+    #search-content{
+        padding-top: 100px;
+    }
+
+    #search-header{
+        padding-top: 20px;
+        padding-bottom: 10px;
+    }
+
+    #search-advanced{
+        padding: 20px 10px 0 10px;
+    }
+
+    #search-advanced h2{
+        text-align: center;
+    }
+
+    #search-advanced h3{
+        text-align: center;
+    }
+
+    .search-inputs{
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    #search-term{
+        align-items: center;
+    }
+}
+
+/*Styles for tablets*/
+@media(max-width: 1024px){
+    .search-inputs{
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    #search-term{
+        margin-right: 25px;
+    }
+}

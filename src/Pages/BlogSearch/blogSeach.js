@@ -6,12 +6,14 @@ import Footer from "./../../Components/Footer/footer";
 import Button from "./../../Components/Button/button";
 import BlogCard from "./../../Components/BlogCard/blog_card";
 import Gallery from "./../../Components/Gallery/gallery";
+import {useMedia} from "./../../hooks/media_queries";
 import "./blogSearch.css";
 
 export default function BlogSearch(props){
     const articleRequestURL = "http://localhost:8055/items/article";
     const mediaRequestURL = "http://localhost:8055/assets/";
     const searchQuery = parseURL(props.location.search);
+    const {isSmallPhone, isPhone} = useMedia();
     const [selectedCategories, setSelectedCategories] = useState("");
     const [categories, setCategories] = useState([]);
     const [numResults, setNumResults] = useState(0);
@@ -116,8 +118,8 @@ export default function BlogSearch(props){
                     <div id="search-results">
                         <Gallery
                         rows={3}
-                        columns={3}
-                        cardSpacing="40px"
+                        columns={(isSmallPhone)? 2: ((isPhone)? 2: 3)}
+                        cardSpacing={(isSmallPhone)? "6px": ((isPhone)? "20px": "40px")}
                         countItems={getNumResults}
                         getPageItems={getResultPage}
                         />
