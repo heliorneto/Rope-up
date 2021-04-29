@@ -20,7 +20,8 @@ class Gallery extends React.Component{
         this.state = {
             loaded: false,
             numItems: 0,
-            currentItems: null
+            currentItems: null,
+            currentPage: 1
         };
         this.genPageIndex = this.genPageIndex.bind(this);
         this.getItemsMatrix = this.genItemsMatrix.bind(this);
@@ -54,7 +55,8 @@ class Gallery extends React.Component{
         this.setState({
             loaded: true,
             numItems: this.state.numItems,
-            currentItems: itemsMatrix
+            currentItems: itemsMatrix,
+            currentPage: pageNum
         });
     }
 
@@ -63,7 +65,8 @@ class Gallery extends React.Component{
         this.setState({
             loaded: false,
             numItems: numItems,
-            currentItems: null
+            currentItems: null,
+            currentPage: 1
         });
         await this.goToPage(1);
     }
@@ -92,7 +95,7 @@ class Gallery extends React.Component{
                                         <td key={index}>
                                             <span 
                                             className="gallery-page-num" 
-                                            selectedpage={(this.state.currentPage === page)? "true": "false"} 
+                                            selectedPage={(this.state.currentPage === page)? "true": "false"} 
                                             onClick={()=>this.goToPage(page)}
                                             >
                                                 {page}
