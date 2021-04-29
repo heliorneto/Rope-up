@@ -71,6 +71,17 @@ class Gallery extends React.Component{
         await this.goToPage(1);
     }
 
+    getSnapshotBeforeUpdate(prevProps){
+        return prevProps;
+    }
+
+    async componentDidUpdate(prevProps){
+        if((prevProps.rows !== this.props.rows) || (prevProps.columns !== this.props.columns)){    
+            this.numPageItems = this.props.rows * this.props.columns;
+            await this.goToPage(1);
+        }
+    }
+
     render(){
         const pages = this.genPageIndex();
         if(this.state.loaded){
@@ -95,7 +106,7 @@ class Gallery extends React.Component{
                                         <td key={index}>
                                             <span 
                                             className="gallery-page-num" 
-                                            selectedPage={(this.state.currentPage === page)? "true": "false"} 
+                                            selectedpage={(this.state.currentPage === page)? "true": "false"} 
                                             onClick={()=>this.goToPage(page)}
                                             >
                                                 {page}

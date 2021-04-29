@@ -29,6 +29,6 @@
     text-decoration: underline;
 }
 
-.gallery-page-num[selectedPage="true"]{
+.gallery-page-num[selectedpage="true"]{
     color: #023B59;
 }
