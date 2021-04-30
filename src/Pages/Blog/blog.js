@@ -15,12 +15,14 @@ import {useMedia} from "./../../hooks/media_queries";
 import "./blog.css";
 
 function Blog(){
+    const categoriesRequestURL = "http://localhost:8055/items/category/";
     const articleRequestURL = "http://localhost:8055/items/article";
     const mediaRequestURL = "http://localhost:8055/assets/";
     const newsLetterSignURL = "http://localhost:8055/items/mail_list";
     const {isPhone, isSmallPhone} = useMedia();
     const [dialogOpen, setDialogOpen] = useState(false);
     const [subStatus, setSubStatus] = useState({subscribed: false, success: false});
+    const [featuredCategories, setFeaturedCategories] = useState([]);
     const [featuredArticles, setFeaturedArticles] = useState([]);
     const [mostRecent, setMostRecent] = useState([]);
 
@@ -60,6 +62,24 @@ function Blog(){
     function openSearch(query){
         const escaped = encodeURIComponent(query);
         window.location = `/blog/search?q=${escaped}`
+    }
+
+    async function getFeaturedCategories(){
+        const response = await axios.get(categoriesRequestURL, {
+            params: {
+                "filter[featured][_eq]": "true",
+                fields: "id,name,description,icon.id,icon.description",
+                limit: "4"
+            }
+        });
+        return response.data.data.map((item)=>
+        <Category
+            categoryID={item.id}
+            name={item.name}
+            description={item.description}
+            icon={mediaRequestURL + item.icon.id + "?fit=cover&width=60&height=60&withoutEnlargement"}
+            iconAlt={item.icon.description}
+        />);
     }
 
     async function getMostRecentArticles(){
@@ -147,16 +167,21 @@ function Blog(){
     }
 
     useEffect(()=>{
-        async function loadFeatured(){
-            setFeaturedArticles(await getFeaturedArticles());
+        async function loadFeaturedCategories(){
+            setFeaturedCategories(await getFeaturedCategories());
         }
 
         async function loadMostRecent(){
             setMostRecent(await getMostRecentArticles());
         }
 
-        loadFeatured();
+        async function loadFeaturedArticles(){
+            setFeaturedArticles(await getFeaturedArticles());
+        }
+
+        loadFeaturedCategories();
         loadMostRecent();
+        loadFeaturedArticles();
     },[]);
 
     let dialogContent;
@@ -210,14 +235,13 @@ function Blog(){
                 <div id="contents-container">
                     <div id="contents">
                         <div id="contents-top">
-                            <Category title="Finanças" link="" topImage="/Imagens/Imagem2.png" description="Para quem busca organizar suas contas" coverAlt="Para quem busca organizar suas cartas"/>
+                            {featuredCategories[0]}
                         </div>
                         <div id="contents-middle">
-                            <Category title="Finanças" link="" topImage="/Imagens/Imagem2.png" description="Para quem busca organizar suas contas" leiaMais="Leia mais..." coverAlt="Para quem busca organizar suas cartas"/>
-                            <Category title="Finanças" link="" topImage="/Imagens/Imagem2.png" description="Para quem busca organizar suas contas" leiaMais="Leia mais..." coverAlt="Para quem busca organizar suas cartas"/>
+                            {featuredCategories.slice(1,3)}
                         </div>
                         <div id="contents-bottom">
-                            <Category title="Finanças" link="" topImage="/Imagens/Imagem2.png" description="Para quem busca organizar suas contas" coverAlt="Para quem busca organizar suas cartas"/>
+                            {featuredCategories[3]}
                             <div className="category-button">
                                 <Button 
                                 text="Veja todos os conteúdos" 
