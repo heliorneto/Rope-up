@@ -11,15 +11,14 @@ import Gallery from '../../Components/Gallery/gallery';
 import {Modal} from './../../Components/Modal/modal';
 import Button from './../../Components/Button/button';
 import SearchBar from './../../Components/SearchBar/search-bar'
+import {useMedia} from "./../../hooks/media_queries";
 import "./blog.css";
 
 function Blog(){
     const articleRequestURL = "http://localhost:8055/items/article";
     const mediaRequestURL = "http://localhost:8055/assets/";
     const newsLetterSignURL = "http://localhost:8055/items/mail_list";
-    const [isPhone, setPhone] = useState(window.matchMedia("(max-width: 800px)").matches);
-    const [extraSmallPhone, setExtraSmallPhone] = useState(window.matchMedia("(max-width: 280px)").matches);
-    const [maxWidth, setMaxWidth] = useState(isPhone? 100: 80);
+    const {isPhone, isSmallPhone} = useMedia();
     const [dialogOpen, setDialogOpen] = useState(false);
     const [subStatus, setSubStatus] = useState({subscribed: false, success: false});
     const [featuredArticles, setFeaturedArticles] = useState([]);
@@ -148,12 +147,6 @@ function Blog(){
     }
 
     useEffect(()=>{
-        const checkDisplay = () =>{
-            setPhone(window.matchMedia("(max-width: 800px)").matches);
-            setExtraSmallPhone(window.matchMedia("(max-width: 280px)").matches);
-            setMaxWidth(isPhone? 100: 80);
-        }
-
         async function loadFeatured(){
             setFeaturedArticles(await getFeaturedArticles());
         }
@@ -164,13 +157,7 @@ function Blog(){
 
         loadFeatured();
         loadMostRecent();
-
-        window.addEventListener('resize',checkDisplay);
-        return () => {
-            window.removeEventListener('resize',checkDisplay);
-        }
-
-    },[isPhone]);
+    },[]);
 
     let dialogContent;
 
@@ -217,7 +204,7 @@ function Blog(){
                         <img src="/Imagens/1.png" alt="image1-blog"/>
                     </div>
                 </div>
-                    <div id="searchbar">
+                    <div id="search-bar-container">
                         <SearchBar placeholder="Sobre o que quer aprender?" width="300px" enterAction={openSearch}/>
                     </div>
                 <div id="contents-container">
@@ -249,7 +236,7 @@ function Blog(){
                         <h3 style={{fontSize: '32px'}}>Em destaque</h3>
                     </div>
                     <div id="carrousel">
-                        <Carrousel maxWidth={maxWidth} mobile={isPhone}> 
+                        <Carrousel maxWidth={(isPhone)? 100: 80} mobile={isPhone}> 
                             {featuredArticles}
                         </Carrousel>
                     </div>
@@ -269,9 +256,9 @@ function Blog(){
                 </div>
                 <div id="line3">
                     <Gallery 
-                    rows={(isPhone)? 2: 3} 
-                    columns={(isPhone)? ((extraSmallPhone)? 1: 2): 3} 
-                    cardSpacing={(isPhone)? "20px": "40px"}
+                    rows={(isPhone || isSmallPhone)? 2: 3} 
+                    columns={(isPhone || isSmallPhone)? 2: 3} 
+                    cardSpacing={(isSmallPhone)? "6px": ((isPhone)? "20px": "40px")}
                     countItems={getNumArticles}
                     getPageItems={getArticlePage}
                     />
