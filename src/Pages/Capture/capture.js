@@ -1,14 +1,15 @@
-import {React, useState, useEffect} from 'react';
+import {React, useState} from 'react';
 import Header from '../../Components/Header/header';
 import Footer from '../../Components/Footer/footer';
 import Button from '../../Components/Button/button';
 import {Modal} from '../../Components/Modal/modal';
 import MetaData from '../../meta/reactHelmet';
 import Form from '../../Components/Form/form'
+import {useMedia} from "./../../hooks/media_queries";
 import "./capture.css";
 
 function Capture(){
-    const [isPhone, setPhone] = useState(window.matchMedia("(max-width: 600px)").matches);
+    const {isPhone} = useMedia(); 
     const [isModalOpen, setModalOpen] = useState(false);
     const [formError, setFormError] = useState(false);
 
@@ -53,17 +54,6 @@ function Capture(){
     function goForms() {
        window.location.href = '/contato#begin-form';
     }
-
-    useEffect(()=>{
-        const checkDisplay = () =>{
-            setPhone(window.matchMedia("(max-width: 600px)").matches);
-        }
-
-        window.addEventListener('resize',checkDisplay);
-        return () => {
-            window.removeEventListener('resize',checkDisplay);
-        }
-    },[isPhone])
 
     return(
         <div id="page-capture">

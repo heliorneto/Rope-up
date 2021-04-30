@@ -1,12 +1,13 @@
-import {React, useState, useEffect} from 'react';
+import React from 'react';
 import Header from '../../Components/Header/header';
 import Footer from '../../Components/Footer/footer';
 import Button from '../../Components/Button/button';
 import MetaData from '../../meta/reactHelmet';
+import {useMedia} from "./../../hooks/media_queries";
 import "./home.css";
 
 function Home(){
-    const [isPhone, setPhone] = useState(window.matchMedia("(max-width: 800px)").matches);
+    const { isPhone } = useMedia();
 
     const meta = {
         titlePage: "Ropeup | Home",
@@ -26,17 +27,6 @@ function Home(){
                 window.location = '/contato';
         }
     }
-
-    useEffect(()=>{
-        const checkDisplay = () =>{
-            setPhone(window.matchMedia("(max-width: 800px)").matches);
-        }
-
-        window.addEventListener('resize',checkDisplay);
-        return () => {
-            window.removeEventListener('resize',checkDisplay);
-        }
-    },[isPhone])
 
     return(
         <div id="page-home">

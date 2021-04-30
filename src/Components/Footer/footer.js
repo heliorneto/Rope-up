@@ -1,20 +1,10 @@
-import {React, useState, useEffect} from 'react';
+import React from 'react';
 import Logo from './../../Components/Logo/logo.js';
+import {useMedia} from "./../../hooks/media_queries";
 import "./footer.css";
 
 function Footer(){
-
-    const [isPhone, setPhone] = useState(window.matchMedia("(max-width: 600px),(max-height: 600px) and (orientation: landscape)").matches);
-
-    useEffect(()=>{
-        const checkDisplay = () => {
-            setPhone(window.matchMedia("(max-width: 600px),(max-height: 600px) and (orientation: landscape)").matches);
-        }
-        window.addEventListener('resize',checkDisplay);
-        return ()=>{
-            window.removeEventListener('resize',checkDisplay);
-        };
-    });
+    const {isPhone} = useMedia();
 
     if(!isPhone){
         return(

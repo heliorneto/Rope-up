@@ -1,6 +1,7 @@
 import {React, useState, useEffect} from 'react';
 import { useHistory } from 'react-router-dom';
 import Logo from '../../Components/Logo/logo.js';
+import {useMedia} from "./../../hooks/media_queries";
 import "./header.css";
 
 /*
@@ -13,12 +14,10 @@ function Header(props){
     let history = useHistory();
     const [shrink, setShrink] = useState(false);
     const [expanded, setExpanded] = useState(false);
-    const [isPhone, setPhone] = useState(window.matchMedia("(max-width: 600px), (max-height: 600px) and (orientation: landscape)").matches)
-    const [isTablet, setTablet] = useState(window.matchMedia("(max-width: 992px)").matches);
-    const [scrollOffset, setScrollOffset] = useState((isPhone)? 10: 50);
+    const { isPhone, isTablet } = useMedia();
+    const scrollOffset = (isPhone)? 10: 50;
 
     useEffect(()=>{
-    
         const shrinkHeader = ()=>{
             if(document.body.scrollTop > scrollOffset || document.documentElement.scrollTop > scrollOffset){
                 setShrink(true);
@@ -27,19 +26,11 @@ function Header(props){
             }
         }
 
-        const checkDisplay = () => {
-            setPhone(window.matchMedia("(max-width: 750px), (max-height: 500px) and (orientation: landscape)").matches);
-            setTablet(window.matchMedia("(max-width: 992px)").matches);
-            setScrollOffset((isPhone)? 10: 50);
-        }
-
         window.addEventListener('scroll',shrinkHeader);
-        window.addEventListener('resize',checkDisplay);
         return ()=>{
             window.removeEventListener('scroll',shrinkHeader);
-            window.removeEventListener('resize',checkDisplay);
         };
-    },[scrollOffset,isPhone,isTablet]);
+    },[scrollOffset]);
 
     if(!isPhone){
         return(
