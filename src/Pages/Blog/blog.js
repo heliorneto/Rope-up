@@ -210,14 +210,14 @@ function Blog(){
                 <div id="contents-container">
                     <div id="contents">
                         <div id="contents-top">
-                            <Category title="Finanças" link="" coverImage="" description="Para quem busca organizar suas contas" coverAlt="Para quem busca organizar suas cartas"/>
+                            <Category title="Finanças" link="" topImage="/Imagens/Imagem2.png" description="Para quem busca organizar suas contas" coverAlt="Para quem busca organizar suas cartas"/>
                         </div>
                         <div id="contents-middle">
-                            <Category title="Finanças" link="" coverImage="" description="Para quem busca organizar suas contas" leiaMais="Leia mais..." coverAlt="Para quem busca organizar suas cartas"/>
-                            <Category title="Finanças" link="" coverImage="" description="Para quem busca organizar suas contas" leiaMais="Leia mais..." coverAlt="Para quem busca organizar suas cartas"/>
+                            <Category title="Finanças" link="" topImage="/Imagens/Imagem2.png" description="Para quem busca organizar suas contas" leiaMais="Leia mais..." coverAlt="Para quem busca organizar suas cartas"/>
+                            <Category title="Finanças" link="" topImage="/Imagens/Imagem2.png" description="Para quem busca organizar suas contas" leiaMais="Leia mais..." coverAlt="Para quem busca organizar suas cartas"/>
                         </div>
                         <div id="contents-bottom">
-                            <Category title="Finanças" link="" coverImage="" description="Para quem busca organizar suas contas" coverAlt="Para quem busca organizar suas cartas"/>
+                            <Category title="Finanças" link="" topImage="/Imagens/Imagem2.png" description="Para quem busca organizar suas contas" coverAlt="Para quem busca organizar suas cartas"/>
                             <div className="category-button">
                                 <Button 
                                 text="Veja todos os conteúdos" 

@@ -29,7 +29,7 @@
     top: 0;
     left: 0;
     z-index: 2;
-    padding: 90px 15px 50px 15px;
+    padding: 100px 15px 50px 15px;
     text-transform: uppercase;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
     font-size: 20px;
@@ -39,10 +39,13 @@
 
 .category-description{
     max-width: 100%;
+    top: 0;
+    left: 0;
     height: auto;
     opacity: 0.35;
     position: absolute;
-    padding: 135px 15px 50px 15px;
+    z-index: 2;
+    padding: 140px 15px 50px 15px;
     top: center;
     left: center;
     z-index: 2;
@@ -50,12 +53,19 @@
 
 .category-leia-mais{
     max-width: 100%;
+    top: 0;
+    left: 0;
     height: auto;
     position: absolute;
     padding: 190px 15px 50px 15px;
     top: center;
     left: center;
     z-index: 2;
+}
+
+.category-image{
+    height: 140px;
+    padding: 10px 15px 50px 15px;
 }
 
 @media (max-width: 320px){
@@ -86,17 +96,21 @@
         width: 150px;
         height: 160px;
     }
+    .category-image{
+        height: 120px;
+        padding: 10px 15px 50px 15px;
+    }
     .category-cover{
         padding: 10px 15px 50px 15px;
         font-size: 10px;
     }
     .category-title{
-        padding: 50px 15px 50px 15px;
+        padding: 70px 15px 50px 15px;
     }
     .category-description{
-        padding: 80px 15px 50px 15px;
+        padding: 100px 15px 50px 15px;
     }
     .category-leia-mais{
-        padding: 135px 15px 50px 15px;
+        padding: 170px 15px 50px 15px;
     }
 }
