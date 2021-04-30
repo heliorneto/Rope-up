@@ -1,116 +1,96 @@
 .category-container{
-    width: 200px;
-    height: 230px;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 20px;
+    width: 220px;
+    height: 240px;
     background-color: #fff;
     box-shadow: 0px 0px 15px 2px rgba(0,0,0,0.6);
-    position: relative;
     overflow: hidden;
+    overflow-wrap:  break-word;
     border-radius: 10px;
 }
 
-.category-container:hover{
-    cursor: pointer;
-}
-
-.category-cover{
-    max-width: 100%;
-    height: auto;
-    opacity: 0.35;
-    position: absolute;
-    padding: 20px 15px 50px 15px;
-    top: center;
-    left: center;
-    z-index: 1;
-}
-
 .category-title{
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 2;
-    padding: 100px 15px 50px 15px;
     text-transform: uppercase;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
     user-select: none;
+    margin-bottom: 10px;
 }
 
 .category-description{
-    max-width: 100%;
-    top: 0;
-    left: 0;
-    height: auto;
-    opacity: 0.35;
-    position: absolute;
-    z-index: 2;
-    padding: 140px 15px 50px 15px;
-    top: center;
-    left: center;
-    z-index: 2;
+    font-size: 14px;
+    margin-bottom: 10px;
+    user-select: none;
 }
 
 .category-leia-mais{
-    max-width: 100%;
-    top: 0;
-    left: 0;
-    height: auto;
-    position: absolute;
-    padding: 190px 15px 50px 15px;
-    top: center;
-    left: center;
-    z-index: 2;
+    color: #000;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.category-leia-mais:hover{
+    text-decoration: underline;
 }
 
 .category-image{
-    height: 140px;
-    padding: 10px 15px 50px 15px;
+    width: 60px;
+    height: 60px;
+    margin-bottom: 20px;
 }
 
+/*Styles for small smartphones*/
 @media (max-width: 320px){
     .category-container{
         width: 130px;
-        height: 140px;
+        height: 220px;
+        padding: 10px;
     }
-    .category-cover{
-        padding: 10px 15px 50px 15px;
-        font-size: 10px;
+
+    .category-image{
+        margin-bottom: 10px;
     }
+
     .category-title{
-        padding: 45px 15px 50px 15px;
-        font-size: 18px;
+        font-size: 16px;
+        word-break: break-all;
     }
+
     .category-description{
-        padding: 75px 15px 50px 15px;
         font-size: 12px;
     }
+
     .category-leia-mais{
-        padding: 120px 15px 50px 15px;
+        font-size: 14px;
     }
+
 }
 
 /*Styles for smartphones*/
 @media (min-width: 321px) and (max-width: 600px){
     .category-container{
-        width: 150px;
-        height: 160px;
+        width: 160px;
+        height: 200px;
+        padding: 10px;
     }
+
     .category-image{
-        height: 120px;
-        padding: 10px 15px 50px 15px;
+        margin-bottom: 10px;
     }
-    .category-cover{
-        padding: 10px 15px 50px 15px;
-        font-size: 10px;
-    }
+
     .category-title{
-        padding: 70px 15px 50px 15px;
+        font-size: 16px;
     }
+
     .category-description{
-        padding: 100px 15px 50px 15px;
+        font-size: 12px;
     }
+
     .category-leia-mais{
-        padding: 170px 15px 50px 15px;
+        font-size: 14px;
     }
 }
