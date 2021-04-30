@@ -179,6 +179,31 @@
     padding-top: 20px;
 }
 
+#dialog-content{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items:  center;
+    justify-content: center;
+    align-self: center;
+}
+
+#dialog-content img{
+    width: 150px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+#dialog-content p{
+    font-size: 18px;
+    color: #023B59;
+    font-weight: bold;
+    margin-bottom: 2px;
+}
+
+#dialog-content label{
+    align-self: flex-start;
+}
+
 #dialog-title{
     width: 400px;
     font-size: 22px;

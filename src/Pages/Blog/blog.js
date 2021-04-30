@@ -16,10 +16,12 @@ import "./blog.css";
 function Blog(){
     const articleRequestURL = "http://localhost:8055/items/article";
     const mediaRequestURL = "http://localhost:8055/assets/";
+    const newsLetterSignURL = "http://localhost:8055/items/mail_list";
     const [isPhone, setPhone] = useState(window.matchMedia("(max-width: 800px)").matches);
     const [extraSmallPhone, setExtraSmallPhone] = useState(window.matchMedia("(max-width: 280px)").matches);
     const [maxWidth, setMaxWidth] = useState(isPhone? 100: 80);
     const [dialogOpen, setDialogOpen] = useState(false);
+    const [subStatus, setSubStatus] = useState({subscribed: false, success: false});
     const [featuredArticles, setFeaturedArticles] = useState([]);
     const [mostRecent, setMostRecent] = useState([]);
 
@@ -50,6 +52,9 @@ function Blog(){
         document.body.style.right = "";
         document.body.style.right = "";
         document.querySelector('html').removeAttribute('style');
+        if(!subStatus.success){
+            setSubStatus({subscribed: false, success: false});
+        }
         setDialogOpen(false);
     }
 
@@ -107,7 +112,7 @@ function Blog(){
     }
 
     async function getArticlePage({currentPage, numPageItems}){
-        const response = await axios.get("http://localhost:8055/items/article", {
+        const response = await axios.get(articleRequestURL, {
             params: {
                 "filter[status][_eq]": "published",
                 fields: "id,title,cover.id,cover.description",
@@ -122,21 +127,24 @@ function Blog(){
             key={item.id} 
             title={item.title}
             link={"/blog/artigos/" + item.id}
-            coverImage={"http://localhost:8055/assets/" + item.cover.id + `?fit=cover&width=${cardWidth}&height=160&withoutEnlargement`}
+            coverImage={mediaRequestURL + item.cover.id + `?fit=cover&width=${cardWidth}&height=160&withoutEnlargement`}
             coverAlt={item.cover.description}
             /> 
         });
     }
 
     
-    function submitNL() {
+    async function submitNL() {
         const User = {
             name: document.getElementById("nameU").value,
             email: document.getElementById("emailU").value
         }
-
-        
-        axios.post("http://localhost:8055/items/mail_list", User);
+        try{
+            await axios.post(newsLetterSignURL, User);
+            setSubStatus({subscribed: true, success: true});
+        }catch{
+            setSubStatus({subscribed: true, success: false});
+        }   
     }
 
     useEffect(()=>{
@@ -163,6 +171,35 @@ function Blog(){
         }
 
     },[isPhone]);
+
+    let dialogContent;
+
+    if(!subStatus.subscribed){
+        dialogContent = (
+            <div id="dialog-content">
+                <label className="dialog-label" htmlFor="Name">Nome:</label>
+                <input id="nameU" className="dialog-input" name="Name" type="text" required/>
+                <label className="dialog-label" htmlFor="Email">Email:</label>
+                <input id="emailU" className="dialog-input" name="Email" type="email" required/>
+            </div>
+        );
+    }else if(subStatus.success){
+        dialogContent = (
+            <div id="dialog-content" className="dialog-info">
+                <img src="/icons/Success.png" alt="Sucesso!"/>
+                <p>A inscrição foi concluída com sucesso!</p>
+            </div>
+        );
+    }else{
+        dialogContent = (
+            <div id="dialog-content" className="dialog-info">
+                <img src="/icons/Error.png" alt="Ocorreu um erro!"/>
+                <p>Ops!</p>
+                <p>Ocorreu um erro ao realizar a sua inscrição!</p>
+                <p>Por favor, tente novamente.</p>
+            </div>
+        );
+    }
 
     return(
         <div id="page-blog">
@@ -258,15 +295,12 @@ function Blog(){
                 <Modal closeFunction={closeDialog}>
                     <div id="dialog-container">
                         <h4 id="dialog-title">Digite seu nome e email abaixo para começar a receber nossos conteúdos exclusivos:</h4>
-                        <label className="dialog-label" htmlFor="Name">Nome:</label>
-                        <input id="nameU" className="dialog-input" name="Name" type="text" required/>
-                        <label className="dialog-label" htmlFor="Email">Email:</label>
-                        <input id="emailU" className="dialog-input" name="Email" type="text" required/>
+                       {dialogContent}
                         <div id="dialog-confirm">
                             <Button
-                            clickAction={()=>submitNL()}
-                            text="Ok"
-                            width="120px"
+                            clickAction={(subStatus.subscribed)? closeDialog: ()=>submitNL()}
+                            text={(subStatus.subscribed)? "Ok": "Inscrever-se"}
+                            width="140px"
                             height="40px"
                             backgroundColor="#D40F1C"
                             textColor="#fff"
