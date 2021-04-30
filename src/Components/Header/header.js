@@ -14,8 +14,8 @@ function Header(props){
     let history = useHistory();
     const [shrink, setShrink] = useState(false);
     const [expanded, setExpanded] = useState(false);
-    const { isPhone, isTablet } = useMedia();
-    const scrollOffset = (isPhone)? 10: 50;
+    const { isSmallPhone, isPhone, isTablet } = useMedia();
+    const scrollOffset = (isPhone || isSmallPhone)? 10: 50;
 
     useEffect(()=>{
         const shrinkHeader = ()=>{
@@ -32,7 +32,7 @@ function Header(props){
         };
     },[scrollOffset]);
 
-    if(!isPhone){
+    if(!(isSmallPhone || isPhone)){
         return(
             <div id="header-container">
                 <header id="header" className={shrink? 'small': ''}>
