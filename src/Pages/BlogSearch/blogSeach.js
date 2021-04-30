@@ -10,8 +10,8 @@ import {useMedia} from "./../../hooks/media_queries";
 import "./blogSearch.css";
 
 export default function BlogSearch(props){
-    const articleRequestURL = "http://localhost:8055/items/article";
-    const mediaRequestURL = "http://localhost:8055/assets/";
+    const articleRequestURL = "https://ropeup-cms-test.herokuapp.com/items/article";
+    const mediaRequestURL = "https://ropeup-cms-test.herokuapp.com/assets/";
     const searchQuery = parseURL(props.location.search);
     const {isSmallPhone, isPhone} = useMedia();
     const [selectedCategories, setSelectedCategories] = useState("");
@@ -41,7 +41,7 @@ export default function BlogSearch(props){
     }
 
     async function getCategories(){
-        const response = await axios.get("http://localhost:8055/items/category/");
+        const response = await axios.get("https://ropeup-cms-test.herokuapp.com/items/category/");
         return response.data.data.map((item)=>(
             <div key={item.id} className="category-check">
                 <input type="checkbox" data-id={item.id}/>

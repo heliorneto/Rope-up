@@ -15,10 +15,10 @@ import {useMedia} from "./../../hooks/media_queries";
 import "./blog.css";
 
 function Blog(){
-    const categoriesRequestURL = "http://localhost:8055/items/category/";
-    const articleRequestURL = "http://localhost:8055/items/article";
-    const mediaRequestURL = "http://localhost:8055/assets/";
-    const newsLetterSignURL = "http://localhost:8055/items/mail_list";
+    const categoriesRequestURL = "https://ropeup-cms-test.herokuapp.com/items/category/";
+    const articleRequestURL = "https://ropeup-cms-test.herokuapp.com/items/article";
+    const mediaRequestURL = "https://ropeup-cms-test.herokuapp.com/assets/";
+    const newsLetterSignURL = "https://ropeup-cms-test.herokuapp.com/items/mail_list";
     const {isPhone, isSmallPhone} = useMedia();
     const [dialogOpen, setDialogOpen] = useState(false);
     const [subStatus, setSubStatus] = useState({subscribed: false, success: false});
