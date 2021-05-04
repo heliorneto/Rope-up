@@ -19,10 +19,8 @@ function MediaProvider(props){
 
         function handleMediaChange(){
             let newState = {};
-            let previous = false;
             for(const device of devices){
-                newState[deviceToCheck(device)] = (!previous && mediaQueries[device].matches);
-                previous = mediaQueries[device].matches;
+                newState[deviceToCheck(device)] = mediaQueries[device].matches;
             }
             setMediaState(newState);
         }
