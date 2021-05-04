@@ -74,6 +74,7 @@ function Blog(){
         });
         return response.data.data.map((item)=>
         <Category
+            key={item.id}
             categoryID={item.id}
             name={item.name}
             description={item.description}
