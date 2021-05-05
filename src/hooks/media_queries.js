@@ -1,6 +1,6 @@
 import {createContext, useContext, useState, useEffect} from 'react';
 
-const defaultValue = {};
+const defaultValue = {mediaLoaded: false};
 
 const MediaContext = createContext(defaultValue);
 
@@ -22,6 +22,7 @@ function MediaProvider(props){
             for(const device of devices){
                 newState[deviceToCheck(device)] = mediaQueries[device].matches;
             }
+            newState.loaded = true;
             setMediaState(newState);
         }
 
@@ -55,4 +56,4 @@ function useMedia(){
     return mediaState;
 }
 
-export {MediaProvider, useMedia};
+export {MediaContext, MediaProvider, useMedia}; 
