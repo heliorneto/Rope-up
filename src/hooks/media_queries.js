@@ -22,7 +22,7 @@ function MediaProvider(props){
             for(const device of devices){
                 newState[deviceToCheck(device)] = mediaQueries[device].matches;
             }
-            newState.loaded = true;
+            newState.mediaLoaded = true;
             setMediaState(newState);
         }
 
