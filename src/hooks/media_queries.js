@@ -32,6 +32,7 @@ function MediaProvider(props){
         }
         attached = true;
         setMediaState(initialState);
+        handleMediaChange();
 
         return () => {
             if(attached){
