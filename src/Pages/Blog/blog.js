@@ -290,18 +290,16 @@ function Blog(){
                     getPageItems={getArticlePage}
                     />
                 </div>
-                <div id="line4">
-                    <div id="image-bottom-blog">
-                        <div id="tb">
-                            <TextBox 
-                            color="#D40F1C"
-                            text="Assine nossa newsletter e fique por dentro de conteúdos de gestão e tecnologia" 
-                            btnAction={openDialog}
-                            />
-                        </div>
-                        <div id="final-image-blog">
-                            <img src="/Imagens/9.png" alt="image1-blog"/>
-                        </div>
+                <div id="image-bottom-blog">
+                    <div id="tb">
+                        <TextBox 
+                        color="#D40F1C"
+                        text="Assine nossa newsletter e fique por dentro de conteúdos de gestão e tecnologia" 
+                        btnAction={openDialog}
+                        />
+                    </div>
+                    <div id="final-image-blog">
+                        <img src="/Imagens/9.png" alt="image1-blog"/>
                     </div>
                 </div>
             </div>
