@@ -5,6 +5,7 @@
     box-shadow: 0px 0px 15px 2px rgba(0,0,0,0.6);
     position: relative;
     overflow: hidden;
+    flex-shrink: 0;
 }
 
 .bcard-container:hover{
@@ -39,8 +40,10 @@
     font-size: 20px;
     font-weight: bold;
     user-select: none;
+    word-wrap: break-word;
 }
 
+/*Styles for small smartphones*/
 @media (max-width: 320px){
     .bcard-container{
         width: 130px;
@@ -48,12 +51,12 @@
     }
 
     .bcard-title{
-        font-size: 16px;
+        font-size: 14px;
     }
 }
 
 /*Styles for smartphones*/
-@media (max-width: 600px){
+@media (min-width: 321px) and (max-width: 600px){
     .bcard-container{
         width: 150px;
     }

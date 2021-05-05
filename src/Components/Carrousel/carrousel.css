@@ -74,8 +74,7 @@
 
 .carrousel-next{
     transform: rotate(180deg);
-    left: calc(100% - 45px);
-    margin-left: 2.3vw;
+    left: calc(100% - 18px);
     visibility: visible;
 }
 
@@ -104,35 +103,15 @@
 }
 
 /*Styles for smartphones*/
-@media (min-width: 319px) and (max-width: 600px){
+@media screen and (max-width: 480px){
     .carrousel-items div{
-        margin: 0px 10px 0px 10px;
-    }
-    .carrousel-next{
-        margin-left: 6vw;
+        margin: 0 10px;
     }
 }
 
-@media (min-width: 315px) and (max-width: 415px){
-    .carrousel-next{
-        margin-left: 7vw;
-    }
-}
-
-@media (min-width: 416px) and (max-width: 600px){
-    .carrousel-next{
-        margin-left: 6vw;
-    }
-}
-
-@media (min-width: 601px) and (max-width: 800px){
-    .carrousel-next{
-        margin-left: 4vw;
-    }
-}
-
-@media (min-width: 801px) and (max-width: 900px){
-    .carrousel-next{
-        margin-left: 3vw;
+/*Styles for small smartphones*/
+@media screen and (max-width: 320px){
+    .carrousel-items div{
+        margin: 0 8px;
     }
 }

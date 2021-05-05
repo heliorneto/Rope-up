@@ -19,7 +19,7 @@ function Blog(){
     const articleRequestURL = "http://localhost:8055/items/article";
     const mediaRequestURL = "http://localhost:8055/assets/";
     const newsLetterSignURL = "http://localhost:8055/items/mail_list";
-    const {isPhone, isSmallPhone} = useMedia();
+    const {isSmallPhone, isPhone, mediaLoaded} = useMedia();
     const [dialogOpen, setDialogOpen] = useState(false);
     const [subStatus, setSubStatus] = useState({subscribed: false, success: false});
     const [featuredCategories, setFeaturedCategories] = useState([]);
@@ -231,7 +231,7 @@ function Blog(){
                     </div>
                 </div>
                     <div id="search-bar-container">
-                        <SearchBar placeholder="Sobre o que quer aprender?" width="300px" enterAction={openSearch}/>
+                        <SearchBar placeholder="Sobre o que quer aprender?" width={(isPhone)? "90%": "300px"} enterAction={openSearch}/>
                     </div>
                 <div id="contents-container">
                     <div id="contents">
@@ -261,9 +261,11 @@ function Blog(){
                         <h3 style={{fontSize: '32px'}}>Em destaque</h3>
                     </div>
                     <div id="carrousel">
-                        <Carrousel maxWidth={(isPhone)? 100: 80} mobile={isPhone}> 
-                            {featuredArticles}
-                        </Carrousel>
+                        {
+                            mediaLoaded && <Carrousel> 
+                                {featuredArticles}
+                            </Carrousel>
+                        }
                     </div>
                 </div>
                 <div>
@@ -281,8 +283,8 @@ function Blog(){
                 </div>
                 <div id="line3">
                     <Gallery 
-                    rows={(isPhone || isSmallPhone)? 2: 3} 
-                    columns={(isPhone || isSmallPhone)? 2: 3} 
+                    rows={(isPhone)? 2: 3} 
+                    columns={(isPhone)? 2: 3} 
                     cardSpacing={(isSmallPhone)? "6px": ((isPhone)? "20px": "40px")}
                     countItems={getNumArticles}
                     getPageItems={getArticlePage}
