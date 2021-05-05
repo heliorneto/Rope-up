@@ -499,16 +499,16 @@
 
     #text1-blog{
         width: 60%;
-        padding: 150px 0 0 60px;
+        padding: 150px 0 0 40px;
     }
 
     #image-top-blog{
-        padding: 150px 20px 0 10px;
+        padding: 150px 20px 0 0;
     }
 
     #image-top-blog img{
-        width: 40vw;
-        height: auto;
+        width: auto;
+        height: 100%;
     }
 
     #text3 h2{
