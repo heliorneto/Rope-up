@@ -231,7 +231,7 @@ function Blog(){
                     </div>
                 </div>
                     <div id="search-bar-container">
-                        <SearchBar placeholder="Sobre o que quer aprender?" width="300px" enterAction={openSearch}/>
+                        <SearchBar placeholder="Sobre o que quer aprender?" width={(isPhone)? "90%": "300px"} enterAction={openSearch}/>
                     </div>
                 <div id="contents-container">
                     <div id="contents">

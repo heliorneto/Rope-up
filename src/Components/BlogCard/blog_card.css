@@ -40,6 +40,7 @@
     font-size: 20px;
     font-weight: bold;
     user-select: none;
+    word-wrap: break-word;
 }
 
 /*Styles for small smartphones*/
@@ -50,7 +51,7 @@
     }
 
     .bcard-title{
-        font-size: 16px;
+        font-size: 14px;
     }
 }
 
