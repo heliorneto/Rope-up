@@ -39,6 +39,11 @@
     margin-bottom: 5vh;
 }
 
+.CTA-image{
+    max-width: 40vw;
+    height: 500px;
+}
+
 .CTA-button{
     display: flex;
     flex-direction: column;
@@ -55,6 +60,9 @@
     .CTA-button h3{
         font-size: 16px;
     }
+    .CTA-image{
+        height: 200px;
+    }
 }
 
 /*Styles for small smartphones*/
@@ -65,12 +73,18 @@
     .CTA-button h3{
         font-size: 16px;
     }
+    .CTA-image{
+        height: 150px;
+    }
 }
 
 /*Styles for responsive*/
 @media (min-width: 871px) and (max-width: 1100px){
     .CTA-button h3{
         font-size: 16px;
+    }
+    .CTA-image{
+        height: 400px;
     }
 }
 
@@ -82,5 +96,8 @@
     .CTA{
         margin-left: 0vw;
         max-width: 80vw;
+    }
+    .CTA-image{
+        height: 300px;
     }
 }

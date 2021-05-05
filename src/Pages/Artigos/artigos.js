@@ -43,7 +43,7 @@ class Artigos extends React.Component{
                 </div>
                 <Article baseItemsUrl="http://localhost:8055/items/article" baseMediaUrl="http://localhost:8055/assets" articleID={this.props.match.params.id}/>
                 <div className="CTA">
-                    <img src="/Imagens/CTA.png" alt="CTA" style={{maxWidth: '40vw', height: 'auto'}}/>
+                    <img src="/Imagens/CTA.png" alt="CTA" className="CTA-image"/>
                     <div className="CTA-button">
                         <h3 style={{marginBottom: '20px'}}>Coloque em prática essas dicas com nosso <br/> serviço de consultoria em tecnologia</h3>
                         <Button 
