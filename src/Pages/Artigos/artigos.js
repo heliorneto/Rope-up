@@ -48,6 +48,7 @@ class Artigos extends React.Component{
                         <h3 style={{marginBottom: '20px'}}>Coloque em prática essas dicas com nosso <br/> serviço de consultoria em tecnologia</h3>
                         <Button 
                             text="Conheça como trabalhamos"
+                            clickAction={()=>{window.location = "/contato"}}
                             width="200px"
                             height="65px" 
                             backgroundColor="#D40F1C" 
