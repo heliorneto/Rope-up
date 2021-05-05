@@ -6,14 +6,16 @@ import './carrousel.css';
     props.children) in the form of a carrousel. It also receives the
     following props:
     - maxWidth: integer to control the maximum amount of the screen that the component should use (in % -> 50 = 50% screen usage)
-    - mobile: boolean parameter to determine the type of card to be used (smaller card on phones)
+    - mediaState: object containing the current media state (must contain isSmallPhone and isPhone boolean proprieties indicating the state)
 */
 
 class Carrousel extends React.Component{
     constructor(props){
         super(props);
         const availableSize = (window.innerWidth * props.maxWidth)/100;
-        const cardSize = (props.mobile)? ((window.innerWidth <= 320)? 155: 185): 235;
+        let cardSize = (props.mobile.isSmallPhone)? 130: ((props.mobile.isPhone)? 150: 200);
+        const cardMargin = (props.mobile.isPhone)? ((props.mobile.isSmallPhone)? 8: 10): 15;
+        cardSize += 2 * cardMargin;
         const numCards = Math.floor(availableSize/cardSize); 
         const componentSize = (numCards * cardSize) + 30;
         const numPages = Math.ceil(props.children.length/numCards);
@@ -42,7 +44,7 @@ class Carrousel extends React.Component{
         }
         this.setState({
             numCards: this.state.numCards,
-            width: this.state.componentSize,
+            width: this.state.width,
             numPages: this.state.numPages,
             currentPage: newPage,
             previousPage: previousPage,
@@ -50,7 +52,7 @@ class Carrousel extends React.Component{
         });
         setTimeout(()=>this.setState({
             numCards: this.state.numCards,
-            width: this.state.componentSize,
+            width: this.state.width,
             numPages: this.state.numPages,
             currentPage: this.state.currentPage,
             previousPage: this.state.currentPage, 
@@ -59,22 +61,22 @@ class Carrousel extends React.Component{
     }
 
     previousPage(){
-        const previrousPage = this.state.currentPage;
-        let newPage = previrousPage - 1;
+        const previousPage = this.state.currentPage;
+        let newPage = previousPage - 1;
         if(newPage <= 0){
             newPage = this.state.numPages;
         }
         this.setState({
             numCards: this.state.numCards,
-            width: this.state.componentSize,
+            width: this.state.width,
             numPages: this.state.numPages,
             currentPage: newPage,
-            previousPage: previrousPage,
+            previousPage: previousPage,
             animationDirection: "left"
         });
         setTimeout(()=>this.setState({
             numCards: this.state.numCards,
-            width: this.state.componentSize,
+            width: this.state.width,
             numPages: this.state.numPages,
             currentPage: this.state.currentPage,
             previousPage: this.state.currentPage,
@@ -84,7 +86,9 @@ class Carrousel extends React.Component{
 
     resize(){
         const availableSize = (window.innerWidth * this.props.maxWidth)/100;
-        const cardSize = (this.props.mobile)? ((window.innerWidth <= 320)? 130: 150): 200;
+        let cardSize = (this.props.mobile.isSmallPhone)? 130: ((this.props.mobile.isPhone)? 150: 200);
+        const cardMargin = (this.props.mobile.isPhone)? ((this.props.mobile.isSmallPhone)? 8: 10): 15;
+        cardSize += 2 * cardMargin;
         const numCards = Math.floor(availableSize/cardSize); 
         const componentSize = (numCards * cardSize) + 30;
         const numPages = Math.ceil(this.props.children.length/numCards);
@@ -117,6 +121,21 @@ class Carrousel extends React.Component{
         }
     }
 
+    // Checking if cards already loaded
+    componentDidUpdate(){
+        if(this.props.length){
+            const numPages = Math.ceil(this.props.children.length/this.state.numCards);
+            this.setState({
+                numCards: this.state.numCards,
+                width: this.state.width,
+                numPages: numPages,
+                currentPage: this.state.currentPage,
+                previousPage: this.state.previousPage,
+                animationDirection: this.state.animationDirection
+            });
+        }
+    }
+
     componentDidMount(){
         window.addEventListener('resize',this.resize);
     }
@@ -129,7 +148,7 @@ class Carrousel extends React.Component{
         const begin = (this.state.currentPage - 1) * this.state.numCards;
         const slicedItems = this.props.children.slice(begin,begin + this.state.numCards);
         const pbegin = (this.state.previousPage - 1) * this.state.numCards;
-        const previrousItems = this.props.children.slice(pbegin,pbegin + this.state.numCards);
+        const previousItems = this.props.children.slice(pbegin,pbegin + this.state.numCards);
         return (
             <div 
             className="carrousel-container" 
@@ -143,7 +162,7 @@ class Carrousel extends React.Component{
                 {
                     (this.state.animationDirection) && (
                     <div className={`carrousel-animator-duplicate carrousel-slide-${this.state.animationDirection}`}>
-                        {previrousItems}
+                        {previousItems}
                     </div>)
                 }
                 <button className="carrousel-next" onClick={()=>this.nextPage()}/>
