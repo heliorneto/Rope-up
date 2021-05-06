@@ -11,7 +11,7 @@ function Footer(){
             <div id="upper-footer">
                 {
                     (isPhone)? <Logo color='#ffffff' width="60" heigth="60" fontSize="26"/>:
-                    <Logo color='#ffffff' width="130" heigth="120" fontSize="40"/>
+                    <Logo color='#ffffff' width="100" heigth="100" fontSize="36"/>
                 }
                 <a id="onde-estamos-footer" href='/sobre'>Onde Estamos</a>
             </div>
