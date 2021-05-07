@@ -127,7 +127,7 @@
 }
 
 /*Style for smartphones and low res tables*/
-@media (max-width: 800px){
+@media (max-width: 600px){
     #home-general{
         padding-top: 100px;
     }
@@ -267,5 +267,11 @@
     }
     #text3-menu-home h5{
         padding-top: 2vh;
+    }
+}
+
+@media screen and (max-width: 992px){
+    #text1{
+        margin-top: 50px;
     }
 }
