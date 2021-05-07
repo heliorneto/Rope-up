@@ -268,6 +268,10 @@
     #text3-menu-home h5{
         padding-top: 2vh;
     }
+    #link{
+        padding-top: 105px;
+        margin-top: -105px;
+    }
 }
 
 @media screen and (max-width: 992px){

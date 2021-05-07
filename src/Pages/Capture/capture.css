@@ -425,3 +425,16 @@
         margin: 0;
     }
 }
+
+/*Styles for right offset on mobile header*/
+@media screen and (max-width: 750px){
+    #begin-diagram{
+        padding-top: 80px;
+        margin-top: -80px;
+    }
+
+    #begin-form{
+        padding-top: 80px;
+        margin-top: -80px;
+    }
+}
