@@ -11,7 +11,6 @@ link will receive a different colour in the Header.
 */
 
 function Header(props){
-    let history = useHistory();
     const [shrink, setShrink] = useState(false);
     const [expanded, setExpanded] = useState(false);
     const {isPhone, isTablet } = useMedia();
@@ -36,7 +35,7 @@ function Header(props){
         return(
             <div id="header-container">
                 <header id="header" className={shrink? 'small': ''}>
-                    <div id="logo" onClick={()=>{history.push("/home")}}>
+                    <div id="logo" onClick={()=>{window.location = "/home"}}>
                         {
                             (isTablet)? 
                             ((shrink)? <Logo width="80" height="80" color="#000" fontSize="26"/>:
@@ -65,7 +64,7 @@ function Header(props){
         return (
             <div id="header-container" className={expanded? "expanded": ""}>
                 <header id="header" className={(shrink || expanded)? 'small': ''}>
-                    <div id="logo" onClick={()=>{history.push("/home")}}>
+                    <div id="logo" onClick={()=>{window.location = "/home"}}>
                         <Logo width="80" height="80" color="#000" fontSize="26"/>
                     </div>
                     <button id="menu-icon" onClick={()=>{setExpanded(!expanded)}}/>
