@@ -140,7 +140,6 @@ class Carrousel extends React.Component{
     }
 
     componentDidMount(){
-        console.log(this.context);
         // Configuring the maxWidth that can be occupied by the component according to the device type
         const maxWidth = (this.context.isPhone)? 100: 80;
         const availableWidth = (window.innerWidth * maxWidth)/100;
