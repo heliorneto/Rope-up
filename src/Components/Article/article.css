@@ -62,6 +62,15 @@
     flex-flow: row nowrap;
     align-items: flex-start;
     justify-items: center;
+    width: 100%;
+}
+
+.article-sidebar{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: flex-end;
+    width: 20%;
     padding-right: 40px;
 }
 
@@ -75,6 +84,43 @@
     font-size: 18px;
     font-weight: 600;
     line-height: 1.5;
+    margin-bottom: 40px;
+}
+
+
+.recommended-articles{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: flex-start;
+    height: 650px;
+}
+
+.recommended-articles h4{
+    font-size: 22px;
+    margin-bottom: 30px;
+}
+
+.recommended-articles div{
+    margin-bottom: 40px;
+}
+
+.recommended-articles-mobile{
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.recommended-articles-mobile h4{
+    width: 100%;
+    font-size: 22px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.recommended-articles-mobile div{
+    margin-bottom: 30px;
 }
 
 .author-photo{
@@ -85,7 +131,8 @@
 }
 
 .article-content{
-    margin: 0px 56px 96px 96px;
+    width: 80%;
+    padding: 0 96px;
 }
 
 .article-content p{
@@ -229,7 +276,7 @@
 }
 
 /*Styles for small smartphones*/
-@media (max-width: 360px), (max-height: 360px) and (orientation: landscape){
+@media (max-width: 360px){
     .article-container{
         padding-top: 90px;
         min-height: calc(100% - 165px);
@@ -258,10 +305,15 @@
         padding-right: 0px;
     }
 
+    .article-sidebar{
+        width: 100%;
+    }
+
     .article-info{
         order: 1;
         flex-flow: row nowrap;
-        padding: 0px 20px 0px 20px;
+        padding: 0 20px;
+        margin: 20px 0;
         font-size: 16px;
     }
 
@@ -273,10 +325,11 @@
     }
 
     .article-content{
+        width: 100%;
         max-width: 100vw;
         margin: 0;
         margin-bottom: 20px;
-        padding: 0px 8px 0px 8px;
+        padding: 0 15px;
         order: 2;
     }
     
@@ -317,7 +370,7 @@
 }
 
 /*Styles for smartphones and low res tablets*/
-@media (min-width: 361px) and (max-width: 600px), (min-height: 361px) and (max-height: 600px) and (orientation: landscape){
+@media (min-width: 361px) and (max-width: 600px){
     .article-container{
         padding-top: 90px;
         min-height: calc(100% - 165px);
@@ -346,10 +399,15 @@
         padding-right: 0px;
     }
 
+    .article-sidebar{
+        width: 100%;
+    }
+
     .article-info{
         order: 1;
         flex-flow: row nowrap;
-        padding: 0px 20px 0px 20px;
+        padding: 0 20px;
+        margin: 20px 0;
         font-size: 16px;
     }
 
@@ -361,10 +419,11 @@
     }
 
     .article-content{
+        width: 100%;
         max-width: 100vw;
         margin: 0;
         margin-bottom: 20px;
-        padding: 0px 10px 0px 10px;
+        padding: 0 20px;
         order: 2;
     }
     
@@ -404,6 +463,17 @@
     }
 }
 
+/*Styles for landscape smartphones*/
+@media screen and (max-height: 600px) and (orientation: landscape){
+    .decorate-circle{
+        display: none;
+    }
+
+    .article-header hr{
+        padding: 4px;
+    }
+}
+
 /*Styles for tablets*/
 @media (min-width: 601px) and (max-width: 992px){
     .decorate-circle{
@@ -416,12 +486,13 @@
         text-align: center;
     }
 
-    .article-body{
-        padding-right: 10px;
+    .article-content{
+        padding: 0 30px 0 25px;        
     }
 
-    .article-content{
-        margin: 0px 25px 25px 25px;
+    .article-sidebar{
+        width: auto;
+        padding-right: 25px;
     }
 
     .author-photo{
@@ -447,12 +518,6 @@
 }
 
 @media (min-height: 601px) and (max-height: 992px) and (orientation: landscape){
-    .decorate-circle{
-        width: 65vh;
-        left: -40vh;
-        top: -4vh;
-    }
-
     .article-header hr{
         padding: 4px;
     }
@@ -463,7 +528,7 @@
 }
 
 /*Styles for very large tablets (iPad Pro)*/
-@media (min-width: 601px) and (max-width: 1024px) and (orientation: portrait){
+@media (min-width: 601px) and (max-width: 1024px){
     .article-header h1{
         text-align: center;
     }

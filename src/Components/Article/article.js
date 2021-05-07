@@ -2,6 +2,8 @@ import React from 'react';
 import axios from 'axios';
 import ReactMarkdown from 'react-markdown';
 import gmf from 'remark-gfm';
+import BlogCard from './../../Components/BlogCard/blog_card';
+import {MediaContext} from './../../hooks/media_queries';
 import './article.css';
 
 /*
@@ -13,6 +15,8 @@ import './article.css';
 */
 
 class Article extends React.Component{
+    static contextType = MediaContext;
+
     constructor(props){
         super(props);
         this.state = {
@@ -34,7 +38,8 @@ class Article extends React.Component{
                 meta: {
                     keywords: [],
                     description: ''
-                }
+                },
+                recommended: []
             },
             errorInfo: {
                 code: 0,
@@ -55,7 +60,7 @@ class Article extends React.Component{
             let articleData = this.state.articleData;
             const response = await this.webInterface.get(`${this.props.articleID}`,{
                 params: {
-                    fields: '*,user_created.*,cover.id,cover.description'
+                    fields: '*,user_created.*,cover.id,cover.description,recommended.article_related_id'
                 }
             });
             const responseData = response.data;
@@ -70,6 +75,20 @@ class Article extends React.Component{
                 articleData.dateLastEdited = new Date(responseData.data.date_updated);
             articleData.meta.keywords = responseData.data.keywords;
             articleData.meta.description = responseData.data.description;
+            const recommendedIDs = responseData.data.recommended.map((item)=>item.article_related_id);
+            const recommendedCards = await this.webInterface.get("",{
+                params: {
+                    "filter[id][_in]": recommendedIDs.toString(),
+                    fields: "id,title,cover.id,cover.description"
+                }
+            });
+            articleData.recommended = recommendedCards.data.data.map((item)=><BlogCard
+                key={item.id}
+                title={item.title}
+                link={`/blog/artigos/${item.id}`}
+                coverImage={this.props.baseMediaUrl + '/' + item.cover.id}
+                coverAlt={item.cover.description}
+            />);
             this.setState({
                 requested: true,
                 error: false,
@@ -97,7 +116,7 @@ class Article extends React.Component{
                 articleData: null,
                 errorInfo: errorInfo
             });
-            console.log("An error occurred while loading article data!");
+            console.error("An error occurred while loading article data!\n", error);
         }
     }
 
@@ -120,20 +139,25 @@ class Article extends React.Component{
                                 {this.state.articleData.content}
                             </ReactMarkdown>
                         </div>
-                        <aside className="article-info">
-                            <img src={this.props.baseMediaUrl + '/' + this.state.articleData.authorInfo.avatarID} alt="Foto do autor" className="author-photo"/>
-                            <div className="article-info-text">
-                                <p>Por: {this.state.articleData.authorInfo.name}</p>
-                                <p>Publicado em: {this.state.articleData.datePublished.toLocaleDateString()}</p>
-                                {(this.state.articleData.dateLastEdited) && <p>Atualizado em: {this.state.articleData.dateLastEdited.toLocaleDateString()}</p>}
-                            </div>
-                        </aside>
-                        <aside className="recommended-articles">
-                            {/* 
-                            //TODO: add the recommended article cards in here
-                            */}
-                        </aside>
+                        <div className="article-sidebar">
+                            <aside className="article-info">
+                                <img src={this.props.baseMediaUrl + '/' + this.state.articleData.authorInfo.avatarID} alt="Foto do autor" className="author-photo"/>
+                                <div className="article-info-text">
+                                    <p>Por: {this.state.articleData.authorInfo.name}</p>
+                                    <p>Publicado em: {this.state.articleData.datePublished.toLocaleDateString()}</p>
+                                    {(this.state.articleData.dateLastEdited) && <p>Atualizado em: {this.state.articleData.dateLastEdited.toLocaleDateString()}</p>}
+                                </div>
+                            </aside>
+                            {!this.context.isPhone && <aside className="recommended-articles">
+                                <h4>Artigos recomendados:</h4>
+                                {this.state.articleData.recommended}
+                            </aside>}
+                        </div>
                     </div>
+                    {this.context.isPhone && <aside className="recommended-articles-mobile">
+                            <h4>Artigos recomendados:</h4>
+                            {this.state.articleData.recommended}
+                    </aside>}
                 </article>
             );
         }else if(this.state.requested && this.state.error){    
