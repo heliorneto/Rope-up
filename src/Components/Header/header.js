@@ -1,5 +1,4 @@
 import {React, useState, useEffect} from 'react';
-import { useHistory } from 'react-router-dom';
 import Logo from '../../Components/Logo/logo.js';
 import {useMedia} from "./../../hooks/media_queries";
 import "./header.css";
