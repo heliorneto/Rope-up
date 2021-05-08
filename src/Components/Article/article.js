@@ -3,6 +3,7 @@ import axios from 'axios';
 import ReactMarkdown from 'react-markdown';
 import gmf from 'remark-gfm';
 import BlogCard from './../../Components/BlogCard/blog_card';
+import Button from "./../../Components/Button/button";
 import {MediaContext} from './../../hooks/media_queries';
 import './article.css';
 
@@ -158,6 +159,20 @@ class Article extends React.Component{
                             <h4>Artigos recomendados:</h4>
                             {this.state.articleData.recommended}
                     </aside>}
+                    <div className="CTA">
+                    <img src="/Imagens/CTA.png" alt="CTA" className="CTA-image"/>
+                    <div className="CTA-button">
+                        <h3 style={{marginBottom: '20px'}}>Coloque em prática essas dicas com nosso <br/> serviço de consultoria em tecnologia</h3>
+                        <Button 
+                            text="Conheça como trabalhamos"
+                            clickAction={()=>{window.location = "/contato"}}
+                            width="200px"
+                            height="65px" 
+                            backgroundColor="#D40F1C" 
+                            textColor='white'  
+                        />
+                    </div>
+                </div>
                 </article>
             );
         }else if(this.state.requested && this.state.error){    
