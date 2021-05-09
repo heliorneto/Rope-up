@@ -5,6 +5,7 @@ import gmf from 'remark-gfm';
 import BlogCard from './../../Components/BlogCard/blog_card';
 import Button from "./../../Components/Button/button";
 import {MediaContext} from './../../hooks/media_queries';
+import MetaData from '../../meta/reactHelmet';
 import './article.css';
 
 /*
@@ -37,6 +38,8 @@ class Article extends React.Component{
                 datePublished: null,
                 dateLastEdited: null,
                 meta: {
+                    titlePage: 'Ropeup',
+                    titleSearch: 'Ropeup',
                     keywords: [],
                     description: ''
                 },
@@ -74,6 +77,8 @@ class Article extends React.Component{
             articleData.datePublished = new Date(responseData.data.date_created);
             if(responseData.data.date_updated)
                 articleData.dateLastEdited = new Date(responseData.data.date_updated);
+            articleData.meta.titlePage = responseData.data.title;
+            articleData.meta.titleSearch = responseData.data.title;
             articleData.meta.keywords = responseData.data.keywords;
             articleData.meta.description = responseData.data.description;
             const recommendedIDs = responseData.data.recommended.map((item)=>item.article_related_id);
@@ -125,6 +130,7 @@ class Article extends React.Component{
         if(this.state.requested && !(this.state.error)){    
             return (
                 <article className="article-container">
+                    <MetaData titlePage={this.state.articleData.meta.titlePage} titleSearch={this.state.articleData.meta.titleSearch} description={this.state.articleData.meta.description} keyWords={this.state.articleData.meta.keywords} imageUrl="" imageAlt=""/>
                     <header className="article-header">
                         <div className="decorate-circle"/>
                         <img 
