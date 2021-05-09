@@ -278,20 +278,29 @@
 .CTA{
     display: flex;
     flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
     margin-left: auto;
-    margin-bottom: 5vh;
+    margin-right: auto;
 }
 
 .CTA-image{
     max-width: 40vw;
+    width: auto;
     height: 500px;
 }
 
 .CTA-button{
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
     justify-content: center;
-    margin-left: 1vw;
+    margin-left: 20px;
+}
+
+.CTA-button h3{
+    font-size: 22px;
+    margin-bottom: 20px;
 }
 
 /*Styles for small smartphones*/
@@ -387,56 +396,23 @@
         height: 28px;
     }
 
-    .CTA-button h3{
-        font-size: 16px;
-    }
-    .CTA-image{
-        height: 200px;
-    }
-}
-
-/*Styles for smartphones*/
-@media (max-width: 600px){
-    .read-progress-bar{
-        height: 12px;
-        top: 100px;
-    }
-}
-
-/*Styles for small smartphones*/
-@media (max-width: 340px){
-    .CTA-button{
-        margin-left: 0vw;
-    }
-    .CTA-button h3{
-        font-size: 16px;
-    }
-    .CTA-image{
-        height: 150px;
-    }
-}
-
-/*Styles for responsive*/
-@media (min-width: 871px) and (max-width: 1100px){
-    .CTA-button h3{
-        font-size: 16px;
-    }
-    .CTA-image{
-        height: 400px;
-    }
-}
-
-/*Styles for responsive*/
-@media (min-width: 600px) and (max-width: 870px){
-    .CTA-button h3{
-        font-size: 16px;
-    }
     .CTA{
-        margin-left: 0vw;
-        max-width: 80vw;
+        margin-top: 10px;
+        margin-bottom: 20px;
     }
+
+    .CTA-button{
+        margin-left: 10px;
+    }
+
+    .CTA-button h3{
+        font-size: 16px;
+        padding-right: 5px;
+    }
+
     .CTA-image{
-        height: 300px;
+        width: 40%;
+        height: auto;
     }
 }
 
@@ -531,6 +507,25 @@
     
     .error-info:not([open]){
         height: 28px;
+    }
+
+    .CTA{
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+
+    .CTA-button{
+        margin-left: 10px;
+    }
+
+    .CTA-button h3{
+        font-size: 18px;
+        padding-right: 5px;
+    }
+
+    .CTA-image{
+        width: 40%;
+        height: auto;
     }
 }
 

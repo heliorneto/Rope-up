@@ -162,12 +162,12 @@ class Article extends React.Component{
                     <div className="CTA">
                     <img src="/Imagens/CTA.png" alt="CTA" className="CTA-image"/>
                     <div className="CTA-button">
-                        <h3 style={{marginBottom: '20px'}}>Coloque em prática essas dicas com nosso <br/> serviço de consultoria em tecnologia</h3>
+                        <h3>Coloque em prática essas dicas com nosso <br/> serviço de consultoria em tecnologia</h3>
                         <Button 
                             text="Conheça como trabalhamos"
                             clickAction={()=>{window.location = "/contato"}}
-                            width="200px"
-                            height="65px" 
+                            width={(this.context.isSmallPhone)? "150px": ((this.context.isPhone)? "180px": "200px")}
+                            height={(this.context.isSmallPhone)? "55px": ("65px")}
                             backgroundColor="#D40F1C" 
                             textColor='white'  
                         />
