@@ -9,6 +9,7 @@ import {useMedia} from "./../../hooks/media_queries";
 import "./capture.css";
 
 function Capture(){
+    const APIBaseURL = "https://ropeup-cms-test.herokuapp.com";
     const {isPhone} = useMedia(); 
     const [isModalOpen, setModalOpen] = useState(false);
     const [formError, setFormError] = useState(false);
@@ -109,7 +110,7 @@ function Capture(){
                         <p><span id="form-obligatory">*</span> Campo obrigatório</p>
                         <Form 
                         name="cli-info" 
-                        action="http://localhost:8055/items/lead" 
+                        action={APIBaseURL + "/items/lead"}
                         errorFunction={submitError} 
                         successFunction={submitSuccess}
                         />

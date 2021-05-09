@@ -10,8 +10,10 @@ import {useMedia} from "./../../hooks/media_queries";
 import "./blogSearch.css";
 
 export default function BlogSearch(props){
-    const articleRequestURL = "https://ropeup-cms-test.herokuapp.com/items/article";
-    const mediaRequestURL = "https://ropeup-cms-test.herokuapp.com/assets/";
+    const APIBaseURL = "https://ropeup-cms-test.herokuapp.com";
+    const articleRequestURL = APIBaseURL + "/items/article";
+    const mediaRequestURL = APIBaseURL + "/assets/";
+    const categoryRequestURL = APIBaseURL + "/items/category/";
     const searchQuery = parseURL(props.location.search);
     const {isSmallPhone, isPhone} = useMedia();
     const [selectedCategories, setSelectedCategories] = useState("");
@@ -92,7 +94,7 @@ export default function BlogSearch(props){
 
     useEffect(()=>{
         async function getCategories(){
-            const response = await axios.get("http://localhost:8055/items/category/");
+            const response = await axios.get(categoryRequestURL);
             let categories = [];
             for(const category of response.data.data){
                 categories[category.id] = category.name;
@@ -119,7 +121,7 @@ export default function BlogSearch(props){
         }
         
         loadCategories();
-    },[searchQuery.category]);
+    },[searchQuery.category,categoryRequestURL]);
 
     return (
         <div id="page-blog-search">

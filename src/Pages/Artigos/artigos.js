@@ -4,6 +4,8 @@ import Footer from './../../Components/Footer/footer';
 import Article from './../../Components/Article/article';
 import './artigos.css';
 
+const APIBaseURL = "https://ropeup-cms-test.herokuapp.com";
+
 class Artigos extends React.Component{
     constructor(props){
         super(props);
@@ -40,7 +42,7 @@ class Artigos extends React.Component{
                 <div className={(this.state.showProgress)? "read-progress-bar": "hide-progress"}>
                     <div id="read-progress" style={{width: this.state.progress + "%"}}/>
                 </div>
-                <Article baseItemsUrl="http://localhost:8055/items/article" baseMediaUrl="http://localhost:8055/assets" articleID={this.props.match.params.id}/>
+                <Article baseItemsUrl={APIBaseURL + "/items/article"} baseMediaUrl={APIBaseURL + "/assets"} articleID={this.props.match.params.id}/>
                 <Footer/>
             </div>
         );
