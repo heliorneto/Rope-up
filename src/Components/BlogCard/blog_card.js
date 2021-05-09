@@ -1,5 +1,4 @@
 import React from 'react';
-import {useHistory} from 'react-router-dom';
 import './blog_card.css';
 
 /*
@@ -11,10 +10,8 @@ This component takes the following props:
 */
 
 function BlogCard(props){
-    const history = useHistory();
-
     return (
-        <div className="bcard-container" onClick={()=>{history.push(props.link)}}>
+        <div className="bcard-container" onClick={()=>{window.location = props.link}}>
             <img src={props.coverImage} alt={props.coverAlt}  className="bcard-cover"/>
             <h3 className="bcard-title">{props.title}</h3>
         </div>

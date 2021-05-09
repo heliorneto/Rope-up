@@ -1,5 +1,4 @@
 import {React, useState, useEffect} from 'react';
-import { useHistory } from 'react-router-dom';
 import Logo from '../../Components/Logo/logo.js';
 import {useMedia} from "./../../hooks/media_queries";
 import "./header.css";
@@ -11,11 +10,10 @@ link will receive a different colour in the Header.
 */
 
 function Header(props){
-    let history = useHistory();
     const [shrink, setShrink] = useState(false);
     const [expanded, setExpanded] = useState(false);
-    const { isSmallPhone, isPhone, isTablet } = useMedia();
-    const scrollOffset = (isPhone || isSmallPhone)? 10: 50;
+    const {isPhone, isTablet } = useMedia();
+    const scrollOffset = (isPhone)? 10: 50;
 
     useEffect(()=>{
         const shrinkHeader = ()=>{
@@ -32,11 +30,11 @@ function Header(props){
         };
     },[scrollOffset]);
 
-    if(!(isSmallPhone || isPhone)){
+    if(!(isPhone)){
         return(
             <div id="header-container">
                 <header id="header" className={shrink? 'small': ''}>
-                    <div id="logo" onClick={()=>{history.push("/home")}}>
+                    <div id="logo" onClick={()=>{window.location = "/home"}}>
                         {
                             (isTablet)? 
                             ((shrink)? <Logo width="80" height="80" color="#000" fontSize="26"/>:
@@ -65,7 +63,7 @@ function Header(props){
         return (
             <div id="header-container" className={expanded? "expanded": ""}>
                 <header id="header" className={(shrink || expanded)? 'small': ''}>
-                    <div id="logo" onClick={()=>{history.push("/home")}}>
+                    <div id="logo" onClick={()=>{window.location = "/home"}}>
                         <Logo width="80" height="80" color="#000" fontSize="26"/>
                     </div>
                     <button id="menu-icon" onClick={()=>{setExpanded(!expanded)}}/>

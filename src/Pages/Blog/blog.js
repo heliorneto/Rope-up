@@ -15,11 +15,11 @@ import {useMedia} from "./../../hooks/media_queries";
 import "./blog.css";
 
 function Blog(){
-    const categoriesRequestURL = "https://ropeup-cms-test.herokuapp.com/items/category/";
-    const articleRequestURL = "https://ropeup-cms-test.herokuapp.com/items/article";
-    const mediaRequestURL = "https://ropeup-cms-test.herokuapp.com/assets/";
-    const newsLetterSignURL = "https://ropeup-cms-test.herokuapp.com/items/mail_list";
-    const {isPhone, isSmallPhone} = useMedia();
+    const categoriesRequestURL = "http://localhost:8055/items/category/";
+    const articleRequestURL = "http://localhost:8055/items/article";
+    const mediaRequestURL = "http://localhost:8055/assets/";
+    const newsLetterSignURL = "http://localhost:8055/items/mail_list";
+    const {isSmallPhone, isPhone, mediaLoaded} = useMedia();
     const [dialogOpen, setDialogOpen] = useState(false);
     const [subStatus, setSubStatus] = useState({subscribed: false, success: false});
     const [featuredCategories, setFeaturedCategories] = useState([]);
@@ -74,6 +74,7 @@ function Blog(){
         });
         return response.data.data.map((item)=>
         <Category
+            key={item.id}
             categoryID={item.id}
             name={item.name}
             description={item.description}
@@ -230,7 +231,7 @@ function Blog(){
                     </div>
                 </div>
                     <div id="search-bar-container">
-                        <SearchBar placeholder="Sobre o que quer aprender?" width="300px" enterAction={openSearch}/>
+                        <SearchBar placeholder="Sobre o que quer aprender?" width={(isPhone)? "90%": "300px"} enterAction={openSearch}/>
                     </div>
                 <div id="contents-container">
                     <div id="contents">
@@ -260,9 +261,11 @@ function Blog(){
                         <h3 style={{fontSize: '32px'}}>Em destaque</h3>
                     </div>
                     <div id="carrousel">
-                        <Carrousel maxWidth={(isPhone)? 100: 80} mobile={isPhone}> 
-                            {featuredArticles}
-                        </Carrousel>
+                        {
+                            mediaLoaded && <Carrousel> 
+                                {featuredArticles}
+                            </Carrousel>
+                        }
                     </div>
                 </div>
                 <div>
@@ -280,25 +283,23 @@ function Blog(){
                 </div>
                 <div id="line3">
                     <Gallery 
-                    rows={(isPhone || isSmallPhone)? 2: 3} 
-                    columns={(isPhone || isSmallPhone)? 2: 3} 
+                    rows={(isPhone)? 2: 3} 
+                    columns={(isPhone)? 2: 3} 
                     cardSpacing={(isSmallPhone)? "6px": ((isPhone)? "20px": "40px")}
                     countItems={getNumArticles}
                     getPageItems={getArticlePage}
                     />
                 </div>
-                <div id="line4">
-                    <div id="image-bottom-blog">
-                        <div id="tb">
-                            <TextBox 
-                            color="#D40F1C"
-                            text="Assine nossa newsletter e fique por dentro de conteúdos de gestão e tecnologia" 
-                            btnAction={openDialog}
-                            />
-                        </div>
-                        <div id="final-image-blog">
-                            <img src="/Imagens/9.png" alt="image1-blog"/>
-                        </div>
+                <div id="image-bottom-blog">
+                    <div id="tb">
+                        <TextBox 
+                        color="#D40F1C"
+                        text="Assine nossa newsletter e fique por dentro de conteúdos de gestão e tecnologia" 
+                        btnAction={openDialog}
+                        />
+                    </div>
+                    <div id="final-image-blog">
+                        <img src="/Imagens/9.png" alt="image1-blog"/>
                     </div>
                 </div>
             </div>

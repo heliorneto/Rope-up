@@ -1,6 +1,6 @@
 import {createContext, useContext, useState, useEffect} from 'react';
 
-const defaultValue = {};
+const defaultValue = {mediaLoaded: false};
 
 const MediaContext = createContext(defaultValue);
 
@@ -19,11 +19,10 @@ function MediaProvider(props){
 
         function handleMediaChange(){
             let newState = {};
-            let previous = false;
             for(const device of devices){
-                newState[deviceToCheck(device)] = (!previous && mediaQueries[device].matches);
-                previous = mediaQueries[device].matches;
+                newState[deviceToCheck(device)] = mediaQueries[device].matches;
             }
+            newState.mediaLoaded = true;
             setMediaState(newState);
         }
 
@@ -34,6 +33,7 @@ function MediaProvider(props){
         }
         attached = true;
         setMediaState(initialState);
+        handleMediaChange();
 
         return () => {
             if(attached){
@@ -56,4 +56,4 @@ function useMedia(){
     return mediaState;
 }
 
-export {MediaProvider, useMedia};
+export {MediaContext, MediaProvider, useMedia}; 

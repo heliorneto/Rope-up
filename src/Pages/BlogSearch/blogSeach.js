@@ -16,6 +16,7 @@ export default function BlogSearch(props){
     const {isSmallPhone, isPhone} = useMedia();
     const [selectedCategories, setSelectedCategories] = useState("");
     const [categories, setCategories] = useState([]);
+    const [searchedCategories, setSearchedCategories] = useState("");
     const [numResults, setNumResults] = useState(0);
 
     function parseURL(searchString){
@@ -38,16 +39,6 @@ export default function BlogSearch(props){
             }
         }
         setSelectedCategories(selected.join(','));
-    }
-
-    async function getCategories(){
-        const response = await axios.get("https://ropeup-cms-test.herokuapp.com/items/category/");
-        return response.data.data.map((item)=>(
-            <div key={item.id} className="category-check">
-                <input type="checkbox" data-id={item.id}/>
-                <label>{item.name}</label>
-            </div>
-        ));
     }
 
     async function getNumResults(){
@@ -100,20 +91,44 @@ export default function BlogSearch(props){
     }
 
     useEffect(()=>{
+        async function getCategories(){
+            const response = await axios.get("http://localhost:8055/items/category/");
+            let categories = [];
+            for(const category of response.data.data){
+                categories[category.id] = category.name;
+            }
+            const searched = (searchQuery.category)? searchQuery.category.split(','): [];
+            let searchedString = "";
+            if(searched.length !== 0){    
+                for(let i = 0; i < searched.length - 1; i++){
+                    searchedString += categories[searched[i]] + ", ";
+                }
+                searchedString += categories[searched[searched.length - 1]];
+            }
+            setSearchedCategories(searchedString);
+            return response.data.data.map((item)=>(
+                <div key={item.id} className="category-check">
+                    <input type="checkbox" data-id={item.id}/>
+                    <label>{item.name}</label>
+                </div>
+            ));
+        }
+
         async function loadCategories(){
             setCategories(await getCategories());
         }
         
         loadCategories();
-    },[]);
+    },[searchQuery.category]);
 
     return (
         <div id="page-blog-search">
             <Header/>
                 <div id="search-content">
                     <div id="search-header">
-                        <h2>Resultados da busca por:</h2>
+                        <h3>Resultados da busca por:</h3>
                         <h1>{searchQuery.q}</h1>
+                        {(searchedCategories !== "")? <h2>Categorias: {searchedCategories}</h2>: null}
                     </div>
                     <div id="search-results">
                         <Gallery
