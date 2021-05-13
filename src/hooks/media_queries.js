@@ -7,6 +7,7 @@ const MediaContext = createContext(defaultValue);
 function MediaProvider(props){
     const [mediaState, setMediaState] = useState(defaultValue);
     const devices = Object.keys(props.breakpoints);
+    const useOldListener = (window.matchMedia("").addEventListener)? false: true;
 
     function deviceToCheck(deviceName){
         return "is" + deviceName.charAt(0).toUpperCase() + deviceName.substring(1);
@@ -28,7 +29,11 @@ function MediaProvider(props){
 
         for(const device of devices){
             mediaQueries[device] = window.matchMedia(props.breakpoints[device]);
-            mediaQueries[device].addEventListener("change", handleMediaChange);
+            if(useOldListener){
+                mediaQueries[device].addListener(handleMediaChange);
+            }else{
+                mediaQueries[device].addEventListener("change", handleMediaChange);
+            }
             initialState[deviceToCheck(device)] = mediaQueries[device].matches;
         }
         attached = true;
@@ -38,7 +43,11 @@ function MediaProvider(props){
         return () => {
             if(attached){
                 for(const device of devices){
-                    mediaQueries[device].removeEventListener("change", handleMediaChange);
+                    if(useOldListener){
+                        mediaQueries[device].removeListener(handleMediaChange);
+                    }else{
+                        mediaQueries[device].removeEventListener("change", handleMediaChange);
+                    }
                 }
             }
         }

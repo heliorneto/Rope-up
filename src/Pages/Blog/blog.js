@@ -12,14 +12,14 @@ import {Modal} from './../../Components/Modal/modal';
 import Button from './../../Components/Button/button';
 import SearchBar from './../../Components/SearchBar/search-bar'
 import {useMedia} from "./../../hooks/media_queries";
+import CMSConfig from "./../../cms_config";
 import "./blog.css";
 
 function Blog(){
-    const APIBaseURL = "https://ropeup-cms-test.herokuapp.com";
-    const categoriesRequestURL = APIBaseURL + "/items/category/";
-    const articleRequestURL =  APIBaseURL + "/items/article";
-    const mediaRequestURL = APIBaseURL + "/assets/";
-    const newsLetterSignURL = APIBaseURL + "/items/mail_list";
+    const categoriesRequestURL = `${CMSConfig.BASE_URL}:${CMSConfig.PORT}/items/category/`;
+    const articleRequestURL = `${CMSConfig.BASE_URL}:${CMSConfig.PORT}/items/article`;
+    const mediaRequestURL = `${CMSConfig.BASE_URL}:${CMSConfig.PORT}/assets/`;
+    const newsLetterSignURL = `${CMSConfig.BASE_URL}:${CMSConfig.PORT}/items/mail_list`;
     const {isSmallPhone, isPhone, mediaLoaded} = useMedia();
     const [dialogOpen, setDialogOpen] = useState(false);
     const [subStatus, setSubStatus] = useState({subscribed: false, success: false});
