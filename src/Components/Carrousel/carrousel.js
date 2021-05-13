@@ -111,7 +111,7 @@ class Carrousel extends React.Component{
         if(this.x0 || this.x0 === 0){
             const dx = unify.clientX - this.x0;
             const signal = Math.sign(dx);
-            if(Math.abs(dx) >= this.state.width){    
+            if(Math.abs(dx) >= this.state.width - 30){    
                 if(signal > 0){
                     this.nextPage();
                 }else{
