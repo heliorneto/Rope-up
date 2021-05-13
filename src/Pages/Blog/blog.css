@@ -42,22 +42,17 @@
 }
 
 #image-top-blog{
-    padding-top: 100px;
-    padding-right: 60px;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+    padding-top: 120px;
 }
 
 #image-top-blog img{
-    width: auto;
-    height: 60vh;
-}
-
-#search-bar-container{
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-left: 50%;
-    margin-bottom: 50px;
+    max-width: 50vw;
+    max-height: 50vh;
 }
 
 #line5{
@@ -65,7 +60,8 @@
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
-    height: 70vh;
+    margin-bottom: 50px;
+    min-height: 400px;
 }
 
 #text3{
@@ -91,7 +87,6 @@
 
 #text1-blog{
     width: 50%;
-    height: 100%;
     background-color: #023B59;
     border-top-right-radius: 50%;
     border-bottom-right-radius: 50%;
@@ -252,11 +247,6 @@
 
 /*Styles for small smartphones*/
 @media (max-width: 320px){
-    #search-bar-container{
-        width: 100%;
-        margin-left: 0;
-    }
-
     #contents{
         flex-direction: column;
     }
@@ -265,7 +255,6 @@
         flex-direction: column;
         align-items: center;
         width: 100%;
-        height: auto;
         padding-top: 100px;
         margin-bottom: 20px;
         background-color: #023B59;
@@ -273,11 +262,14 @@
 
     #image-top-blog{
         padding: 0;
+        width: 100%;
+        height: auto;
+        margin-bottom: 20px;
     }
 
     #image-top-blog img{
-        height: 40vh;
-        width: auto;
+        max-width: 90vw;
+        max-height: 50vh;
     }
 
     #title2 h3{
@@ -302,14 +294,13 @@
 
     #text1-blog{
         width: 100%;
-        padding: 20px 10px 0 10px;
+        padding: 0 10px 0 10px;
     }
 
     #text3{
         width: 100%;
-        margin: 20px 0 40px 0;
+        margin-top: 20px;
         align-items: center;
-        padding: 0 10px 0 10px;
     }
 
     #text3 h2{
@@ -320,8 +311,8 @@
 
     #text3 h3{
         font-size: 20px;
-        margin-top: 10px;
         max-width: initial;
+        text-align: center;
     }
 
     #image-bottom-blog{
@@ -351,11 +342,6 @@
 
 /*Styles for smartphones*/
 @media (min-width: 321px) and (max-width: 600px){
-    #search-bar-container{
-        width: 100%;
-        margin-left: 0;
-    }
-
     #contents{
         flex-direction: column;
     }
@@ -364,7 +350,6 @@
         flex-direction: column;
         align-items: center;
         width: 100%;
-        height: auto;
         padding-top: 100px;
         margin-bottom: 20px;
         background-color: #023B59;
@@ -372,11 +357,14 @@
 
     #image-top-blog{
         padding: 0;
+        width: 100%;
+        height: auto;
+        margin-bottom: 20px;
     }
 
     #image-top-blog img{
-        height: 35vh;
-        width: auto;
+        max-width: 90vw;
+        max-height: 40vh;
     }
 
     #title2 h3{
@@ -408,7 +396,7 @@
 
     #text3{
         width: 100%;
-        margin: 20px 0 40px 0;
+        margin-top: 20px;
         align-items: center;
         padding: 0 10px 0 10px;
     }
@@ -421,8 +409,7 @@
 
     #text3 h3{
         font-size: 20px;
-        margin-top: 10px;
-        max-width: initial;
+        text-align: center;
     }
 
     #image-bottom-blog{
@@ -456,22 +443,13 @@
 
 /*Styles for tablets*/
 @media (min-width: 601px) and (max-width: 992px){
-    #line5{
-        height: 55vh;
-    }
-
     #text1-blog{
         width: 60%;
-        padding: 150px 0 0 60px;
+        padding: 150px 30px 0 40px;
     }
 
     #image-top-blog{
-        padding: 150px 20px 0 10px;
-    }
-
-    #image-top-blog img{
-        width: 40vw;
-        height: auto;
+        padding: 120px 20px 0 10px;
     }
 
     #text3 h2{
@@ -503,7 +481,7 @@
     }
 
     #image-top-blog{
-        padding: 150px 20px 0 0;
+        padding: 120px 20px 0 0;
     }
 
     #image-top-blog img{
@@ -517,40 +495,6 @@
 
     #text3 h3{
         font-size: 1.3rem;
-    }
-}
-
-/*Styles for horizontal smartphones*/
-@media (max-height: 450px){
-    #text1-blog{
-        width: 60%;
-        padding: 120px 0 0 30px;
-    }
-
-    
-    #text3 h2{
-        font-size: 1.1rem;
-    }
-
-    #text3 h3{
-        font-size: 1rem;
-    }
-}
-
-/*Styles for horizontal smartphones (iPhone 5)*/
-@media (max-height: 376px){
-    #text1-blog{
-        width: 60%;
-        padding: 120px 0 0 30px;
-    }
-
-    
-    #text3 h2{
-        font-size: 1rem;
-    }
-
-    #text3 h3{
-        font-size: 0.8rem;
     }
 }
 
