@@ -41,7 +41,7 @@ class Artigos extends React.Component{
                 <div className={(this.state.showProgress)? "read-progress-bar": "hide-progress"}>
                     <div id="read-progress" style={{width: this.state.progress + "%"}}/>
                 </div>
-                <Article baseItemsUrl={`${CMSConfig.BASE_URL}:${CMSConfig.PORT}/items/article`} baseMediaUrl={`${CMSConfig.BASE_URL}:${CMSConfig.PORT}/assets`} articleID={this.props.match.params.id}/>
+                <Article baseItemsUrl={`${CMSConfig.getFullURL()}/items/article`} baseMediaUrl={`${CMSConfig.getFullURL()}/assets`} articleID={this.props.match.params.id}/>
                 <Footer/>
             </div>
         );

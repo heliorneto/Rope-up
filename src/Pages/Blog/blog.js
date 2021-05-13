@@ -16,10 +16,10 @@ import CMSConfig from "./../../cms_config";
 import "./blog.css";
 
 function Blog(){
-    const categoriesRequestURL = `${CMSConfig.BASE_URL}:${CMSConfig.PORT}/items/category/`;
-    const articleRequestURL = `${CMSConfig.BASE_URL}:${CMSConfig.PORT}/items/article`;
-    const mediaRequestURL = `${CMSConfig.BASE_URL}:${CMSConfig.PORT}/assets/`;
-    const newsLetterSignURL = `${CMSConfig.BASE_URL}:${CMSConfig.PORT}/items/mail_list`;
+    const categoriesRequestURL = `${CMSConfig.getFullURL()}/items/category/`;
+    const articleRequestURL = `${CMSConfig.getFullURL()}/items/article`;
+    const mediaRequestURL = `${CMSConfig.getFullURL()}/assets/`;
+    const newsLetterSignURL = `${CMSConfig.getFullURL()}/items/mail_list`;
     const {isSmallPhone, isPhone, mediaLoaded} = useMedia();
     const [dialogOpen, setDialogOpen] = useState(false);
     const [subStatus, setSubStatus] = useState({subscribed: false, success: false});

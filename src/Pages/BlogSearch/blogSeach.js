@@ -11,8 +11,8 @@ import CMSConfig from "./../../cms_config";
 import "./blogSearch.css";
 
 export default function BlogSearch(props){
-    const articleRequestURL = `${CMSConfig.BASE_URL}:${CMSConfig.PORT}/items/article`;
-    const mediaRequestURL = `${CMSConfig.BASE_URL}:${CMSConfig.PORT}/assets/`;
+    const articleRequestURL = `${CMSConfig.getFullURL()}/items/article`;
+    const mediaRequestURL = `${CMSConfig.getFullURL()}/assets/`;
     const searchQuery = parseURL(props.location.search);
     const {isSmallPhone, isPhone} = useMedia();
     const [selectedCategories, setSelectedCategories] = useState("");
@@ -93,7 +93,7 @@ export default function BlogSearch(props){
 
     useEffect(()=>{
         async function getCategories(){
-            const response = await axios.get(`${CMSConfig.BASE_URL}:${CMSConfig.PORT}/items/category/`);
+            const response = await axios.get(`${CMSConfig.getFullURL()}/items/category/`);
             let categories = [];
             for(const category of response.data.data){
                 categories[category.id] = category.name;
