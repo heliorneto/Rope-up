@@ -65,63 +65,6 @@ function Blog(){
         window.location = `/blog/search?q=${escaped}`
     }
 
-    async function getFeaturedCategories(){
-        const response = await axios.get(categoriesRequestURL, {
-            params: {
-                "filter[featured][_eq]": "true",
-                fields: "id,name,description,icon.id,icon.description",
-                limit: "4"
-            }
-        });
-        return response.data.data.map((item)=>
-        <Category
-            key={item.id}
-            categoryID={item.id}
-            name={item.name}
-            description={item.description}
-            icon={mediaRequestURL + item.icon.id + "?fit=cover&width=60&height=60&withoutEnlargement"}
-            iconAlt={item.icon.description}
-        />);
-    }
-
-    async function getMostRecentArticles(){
-        const response = await axios.get(articleRequestURL, {
-            params: {
-                sort: "-date_created",
-                limit: "3",
-                fields : "id,title,cover.id,cover.description"
-            }
-        });
-        return response.data.data.map((item)=>{
-            return <Card
-            key={item.id}
-            title={item.title}
-            link={"/blog/artigos/" + item.id}
-            coverImage={mediaRequestURL + item.cover.id}
-            coverAlt={item.cover.description}
-            />
-        });
-    }
-
-    async function getFeaturedArticles(){
-        const response = await axios.get(articleRequestURL, {
-            params: {
-                "filter[status][_eq]": "published",
-                "filter[featured][_eq]": "true",
-                fields: "id,title,cover.id,cover.description"
-            }
-        });
-        return response.data.data.map((item)=>{
-            return <Card 
-            key={item.id} 
-            title={item.title}
-            link={"/blog/artigos/" + item.id} 
-            coverImage={mediaRequestURL + item.cover.id} 
-            coverAlt={item.cover.description}
-            />
-        });
-    }
-
     async function getNumArticles(){
         const response = await axios.get(articleRequestURL, {
             params: {
@@ -169,6 +112,63 @@ function Blog(){
     }
 
     useEffect(()=>{
+        async function getFeaturedCategories(){
+            const response = await axios.get(categoriesRequestURL, {
+                params: {
+                    "filter[featured][_eq]": "true",
+                    fields: "id,name,description,icon.id,icon.description",
+                    limit: "4"
+                }
+            });
+            return response.data.data.map((item)=>
+            <Category
+                key={item.id}
+                categoryID={item.id}
+                name={item.name}
+                description={item.description}
+                icon={mediaRequestURL + item.icon.id + "?fit=cover&width=60&height=60&withoutEnlargement"}
+                iconAlt={item.icon.description}
+            />);
+        }
+    
+        async function getMostRecentArticles(){
+            const response = await axios.get(articleRequestURL, {
+                params: {
+                    sort: "-date_created",
+                    limit: "3",
+                    fields : "id,title,cover.id,cover.description"
+                }
+            });
+            return response.data.data.map((item)=>{
+                return <Card
+                key={item.id}
+                title={item.title}
+                link={"/blog/artigos/" + item.id}
+                coverImage={mediaRequestURL + item.cover.id}
+                coverAlt={item.cover.description}
+                />
+            });
+        }
+    
+        async function getFeaturedArticles(){
+            const response = await axios.get(articleRequestURL, {
+                params: {
+                    "filter[status][_eq]": "published",
+                    "filter[featured][_eq]": "true",
+                    fields: "id,title,cover.id,cover.description"
+                }
+            });
+            return response.data.data.map((item)=>{
+                return <Card 
+                key={item.id} 
+                title={item.title}
+                link={"/blog/artigos/" + item.id} 
+                coverImage={mediaRequestURL + item.cover.id} 
+                coverAlt={item.cover.description}
+                />
+            });
+        }
+
         async function loadFeaturedCategories(){
             setFeaturedCategories(await getFeaturedCategories());
         }
@@ -184,7 +184,7 @@ function Blog(){
         loadFeaturedCategories();
         loadMostRecent();
         loadFeaturedArticles();
-    },[]);
+    },[articleRequestURL, categoriesRequestURL, mediaRequestURL]);
 
     let dialogContent;
 
@@ -229,11 +229,9 @@ function Blog(){
                     </div>
                     <div id="image-top-blog">
                         <img src="/Imagens/1.png" alt="image1-blog"/>
-                    </div>
-                </div>
-                    <div id="search-bar-container">
                         <SearchBar placeholder="Sobre o que quer aprender?" width={(isPhone)? "90%": "300px"} enterAction={openSearch}/>
                     </div>
+                </div>
                 <div id="contents-container">
                     <div id="contents">
                         <div id="contents-top">
