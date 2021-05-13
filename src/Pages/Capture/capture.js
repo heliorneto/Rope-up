@@ -110,7 +110,7 @@ function Capture(){
                         <p><span id="form-obligatory">*</span> Campo obrigatório</p>
                         <Form 
                         name="cli-info" 
-                        action={`${CMSConfig.BASE_URL}:${CMSConfig.PORT}/items/lead`}
+                        action={`${CMSConfig.getFullURL()}/items/lead`}
                         errorFunction={submitError} 
                         successFunction={submitSuccess}
                         />
