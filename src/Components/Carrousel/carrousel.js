@@ -14,6 +14,7 @@ class Carrousel extends React.Component{
         super(props);
         this.animationDuration = 750; // Sets the slide animation duration in milliseconds
         this.x0 = null; // Class variable used in the touch slide implementation (stores first touch x coordinate)
+        this.sliderOffset = 40; // The touch slide offset, in pixels.
         this.state = {
             numCards: 3,
             width: 600,
@@ -111,7 +112,7 @@ class Carrousel extends React.Component{
         if(this.x0 || this.x0 === 0){
             const dx = unify.clientX - this.x0;
             const signal = Math.sign(dx);
-            if(Math.abs(dx) >= this.state.width - 30){    
+            if(Math.abs(dx) >= this.state.width - this.sliderOffset){    
                 if(signal > 0){
                     this.nextPage();
                 }else{
