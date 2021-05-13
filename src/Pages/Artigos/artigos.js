@@ -2,6 +2,7 @@ import React from 'react';
 import Header from './../../Components/Header/header';
 import Footer from './../../Components/Footer/footer';
 import Article from './../../Components/Article/article';
+import CMSConfig from './../../cms_config';
 import './artigos.css';
 
 class Artigos extends React.Component{
@@ -40,7 +41,7 @@ class Artigos extends React.Component{
                 <div className={(this.state.showProgress)? "read-progress-bar": "hide-progress"}>
                     <div id="read-progress" style={{width: this.state.progress + "%"}}/>
                 </div>
-                <Article baseItemsUrl="http://localhost:8055/items/article" baseMediaUrl="http://localhost:8055/assets" articleID={this.props.match.params.id}/>
+                <Article baseItemsUrl={`${CMSConfig.BASE_URL}:${CMSConfig.PORT}/items/article`} baseMediaUrl={`${CMSConfig.BASE_URL}:${CMSConfig.PORT}/assets`} articleID={this.props.match.params.id}/>
                 <Footer/>
             </div>
         );

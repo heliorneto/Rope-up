@@ -12,13 +12,14 @@ import {Modal} from './../../Components/Modal/modal';
 import Button from './../../Components/Button/button';
 import SearchBar from './../../Components/SearchBar/search-bar'
 import {useMedia} from "./../../hooks/media_queries";
+import CMSConfig from "./../../cms_config";
 import "./blog.css";
 
 function Blog(){
-    const categoriesRequestURL = "http://localhost:8055/items/category/";
-    const articleRequestURL = "http://localhost:8055/items/article";
-    const mediaRequestURL = "http://localhost:8055/assets/";
-    const newsLetterSignURL = "http://localhost:8055/items/mail_list";
+    const categoriesRequestURL = `${CMSConfig.BASE_URL}:${CMSConfig.PORT}/items/category/`;
+    const articleRequestURL = `${CMSConfig.BASE_URL}:${CMSConfig.PORT}/items/article`;
+    const mediaRequestURL = `${CMSConfig.BASE_URL}:${CMSConfig.PORT}/assets/`;
+    const newsLetterSignURL = `${CMSConfig.BASE_URL}:${CMSConfig.PORT}/items/mail_list`;
     const {isSmallPhone, isPhone, mediaLoaded} = useMedia();
     const [dialogOpen, setDialogOpen] = useState(false);
     const [subStatus, setSubStatus] = useState({subscribed: false, success: false});

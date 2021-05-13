@@ -6,6 +6,7 @@ import {Modal} from '../../Components/Modal/modal';
 import MetaData from '../../meta/reactHelmet';
 import Form from '../../Components/Form/form'
 import {useMedia} from "./../../hooks/media_queries";
+import CMSConfig from "./../../cms_config";
 import "./capture.css";
 
 function Capture(){
@@ -109,7 +110,7 @@ function Capture(){
                         <p><span id="form-obligatory">*</span> Campo obrigatório</p>
                         <Form 
                         name="cli-info" 
-                        action="http://localhost:8055/items/lead" 
+                        action={`${CMSConfig.BASE_URL}:${CMSConfig.PORT}/items/lead`}
                         errorFunction={submitError} 
                         successFunction={submitSuccess}
                         />
