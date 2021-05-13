@@ -31,7 +31,6 @@ function MediaProvider(props){
             mediaQueries[device] = window.matchMedia(props.breakpoints[device]);
             if(useOldListener){
                 mediaQueries[device].addListener(handleMediaChange);
-                console.log("Using old listener!")
             }else{
                 mediaQueries[device].addEventListener("change", handleMediaChange);
             }

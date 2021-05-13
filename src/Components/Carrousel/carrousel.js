@@ -49,7 +49,7 @@ class Carrousel extends React.Component{
             width: this.state.width,
             numPages: this.state.numPages,
             currentPage: this.state.currentPage,
-            previousPage: this.state.currentPage, 
+            previousPage: this.state.previousPage, 
             animationDirection: null
         }), this.animationDuration - 20);
     }
@@ -73,7 +73,7 @@ class Carrousel extends React.Component{
             width: this.state.width,
             numPages: this.state.numPages,
             currentPage: this.state.currentPage,
-            previousPage: this.state.currentPage,
+            previousPage: this.state.previousPage,
             animationDirection: null
         }), this.animationDuration - 20);
     }
@@ -95,8 +95,8 @@ class Carrousel extends React.Component{
             numCards: numCards,
             width: componentWidth,
             numPages: numPages,
-            currentPage: this.state.currentPage,
-            previousPage: this.state.previousPage,
+            currentPage: 1,
+            previousPage: 1,
             animationDirection: null
         });
     }
@@ -111,10 +111,12 @@ class Carrousel extends React.Component{
         if(this.x0 || this.x0 === 0){
             const dx = unify.clientX - this.x0;
             const signal = Math.sign(dx);
-            if(signal > 0){
-                this.nextPage();
-            }else{
-                this.previousPage();
+            if(Math.abs(dx) >= this.state.width){    
+                if(signal > 0){
+                    this.nextPage();
+                }else{
+                    this.previousPage();
+                }
             }
             this.x0 = null;
         }
@@ -132,8 +134,8 @@ class Carrousel extends React.Component{
                 numCards: this.state.numCards,
                 width: this.state.width,
                 numPages: numPages,
-                currentPage: this.state.currentPage,
-                previousPage: this.state.previousPage,
+                currentPage: 1,
+                previousPage: 1,
                 animationDirection: this.state.animationDirection
             });
         }
