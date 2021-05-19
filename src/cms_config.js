@@ -1,5 +1,5 @@
 export default Object.freeze({
-    BASE_URL: "https://ropeup-cms-test.herokuapp.com",
+    BASE_URL: "https://www.ropeup.com.br/cms",
     PORT: null,
     getFullURL: function(){
         if(this.PORT){
