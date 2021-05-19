@@ -122,7 +122,7 @@ function Capture(){
                         <div id="modal-container">
                             <div id="modal-image">
                                 <img 
-                                src={(formError)? "icons/Error.png": "icons/Success.png"} 
+                                src={(formError)? "/Imagens/icons/Error.png": "/Imagens/icons/Success.png"} 
                                 alt={(formError)? "Erro!": "Sucesso!"} 
                                 style={{height:'15vh', width: "auto"}}/>
                             </div>

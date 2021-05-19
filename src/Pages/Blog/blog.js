@@ -200,14 +200,14 @@ function Blog(){
     }else if(subStatus.success){
         dialogContent = (
             <div id="dialog-content" className="dialog-info">
-                <img src="/icons/Success.png" alt="Sucesso!"/>
+                <img src="/Imagens/icons/Success.png" alt="Sucesso!"/>
                 <p>A inscrição foi concluída com sucesso!</p>
             </div>
         );
     }else{
         dialogContent = (
             <div id="dialog-content" className="dialog-info">
-                <img src="/icons/Error.png" alt="Ocorreu um erro!"/>
+                <img src="/Imagens/icons/Error.png" alt="Ocorreu um erro!"/>
                 <p>Ops!</p>
                 <p>Ocorreu um erro ao realizar a sua inscrição!</p>
                 <p>Por favor, tente novamente.</p>

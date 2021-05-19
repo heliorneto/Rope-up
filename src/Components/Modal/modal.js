@@ -12,7 +12,7 @@ export function Modal(props) {
         <div className='modal-overlay'>
             <div className='modal-container'>
                 <button className="modal-close" type="button">
-                    <img src="icons/Close.png" alt="Fechar" onClick={()=>props.closeFunction()} style={{cursor: 'pointer'}}></img>
+                    <img src="/Imagens/icons/Close.png" alt="Fechar" onClick={()=>props.closeFunction()} style={{cursor: 'pointer'}}></img>
                 </button>
                 {props.children}
             </div>
